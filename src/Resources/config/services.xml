@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+        http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="PlusForta\RuVSoapBundle\Messages\SoapMessageBuilder" public="true">
+            <argument type="service" id="ruv_soap.logger"/>
+        </service>
+        <service id="PlusForta\RuVSoapBundle\Messages\SoapMessageBuilderInterface" alias="PlusForta\RuVSoapBundle\Messages\SoapMessageBuilder"/>
+        <service id="PlusForta\RuVSoapBundle\RuvSoapClient" public="true">
+            <factory service="PlusForta\RuVSoapBundle\RuvSoapClientFactory" method="factory"/>
+        </service>
+        <service id="PlusForta\RuVSoapBundle\RuvSoapClientFactory">
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="ruv_soap.logger"/>
+            <argument/>
+            <argument/>
+        </service>
+        <service id="Phpro\SoapClient\Soap\Engine\Engine"/>
+        <service id="ruv_soap.logger" class="Psr\Log\NullLogger"/>
+        <service id="PlusForta\RuVSoapBundle\Messages\PruefeBonitaetFactory" public="true">
+            <argument type="service" id="PlusForta\RuVSoapBundle\Messages\Factories\KennungFactory"/>
+        </service>
+        <service id="PlusForta\RuVSoapBundle\Messages\GibAntragsstatusFactory" public="true">
+            <argument type="service" id="PlusForta\RuVSoapBundle\Messages\Factories\KennungFactory"/>
+        </service>
+        <service id="PlusForta\RuVSoapBundle\Messages\StelleAntragFactory" public="true">
+            <argument type="service" id="PlusForta\RuVSoapBundle\Messages\Factories\KennungFactory"/>
+            <argument type="service" id="PlusForta\RuVSoapBundle\Messages\Factories\AntragMietkautionFactory"/>
+        </service>
+        <service id="PlusForta\RuVSoapBundle\Messages\Factories\KennungFactory">
+            <argument/>
+            <argument/>
+        </service>
+        <service id="PlusForta\RuVSoapBundle\Messages\Factories\AgenturdatenFactory">
+            <argument/>
+            <argument/>
+            <argument/>
+            <argument/>
+        </service>
+        <service id="PlusForta\RuVSoapBundle\Messages\Factories\VertragsdatenFactory">
+            <argument type="service" id="PlusForta\RuVSoapBundle\Messages\Factories\UebergabeDokumenteFactory"/>
+            <argument/>
+            <argument/>
+        </service>
+        <service id="PlusForta\RuVSoapBundle\Messages\Factories\AntragMietkautionFactory">
+            <argument type="service" id="PlusForta\RuVSoapBundle\Messages\Factories\AgenturdatenFactory"/>
+            <argument type="service" id="PlusForta\RuVSoapBundle\Messages\Factories\VertragsdatenFactory"/>
+            <argument/>
+            <argument/>
+            <argument/>
+            <argument/>
+        </service>
+        <service id="PlusForta\RuVSoapBundle\Messages\Factories\UebergabeDokumenteFactory">
+            <argument/>
+            <argument/>
+            <argument/>
+            <argument/>
+        </service>
+    </services>
+</container>

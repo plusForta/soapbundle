@@ -1,0 +1,110 @@
+<?php
+
+
+namespace PlusForta\RuVSoapBundle\Messages\Factories;
+
+
+use PlusForta\RuVSoapBundle\Messages\Dtos\JuristischePersonDto;
+use PlusForta\RuVSoapBundle\Type\AdresseJuristischePersonTyp;
+use PlusForta\RuVSoapBundle\Type\AnredeTyp;
+use PlusForta\RuVSoapBundle\Type\JuristischePersonTyp;
+use PlusForta\RuVSoapBundle\Type\NameJuristischePersonTyp;
+
+class JuristischePersonFactory
+{
+    /** @var JuristischePersonDto  */
+    private $dto;
+
+    public function __construct(JuristischePersonDto $dto)
+    {
+        $this->dto = $dto;
+    }
+
+    public function create(): JuristischePersonTyp
+    {
+        $person = new JuristischePersonTyp();
+        return $person
+            ->withNameJuristischePerson($this->getNameJuristischePerson())
+            ->withAdresseJuristischePerson($this->getAdresseJuristischePerson())
+            ;
+    }
+
+    private function getNameJuristischePerson(): NameJuristischePersonTyp
+    {
+        $name = new NameJuristischePersonTyp();
+        return $name
+            ->withAnrede($this->getAnrede())
+            ->withName($this->getName())
+            ->withNamenszusatz($this->getNamenszusatz())
+            ;
+    }
+
+    private function getAnrede(): AnredeTyp
+    {
+        $anrede = new AnredeTyp();
+        return $anrede->withAnrede($this->dto->anrede);
+    }
+
+    private function getName(): string
+    {
+        return $this->dto->name;
+    }
+
+    private function getNamenszusatz(): ?string
+    {
+        return $this->dto->namenszusatz;
+    }
+
+    private function getAdresseJuristischePerson(): ?AdresseJuristischePersonTyp
+    {
+        if ($this->dto->adresse === null) {
+            return null;
+        }
+        $adresse = new AdresseJuristischePersonTyp();
+        $adresse = $adresse->withPostleitzahl($this->getPostleitzahl())
+            ->withOrt($this->getOrt())
+            ->withLand($this->getLand())
+            ;
+
+        if ($this->dto->postfach) {
+            return $adresse->withPostfach($this->dto->postfach);
+        }
+
+        return $adresse->withStrasse($this->getStrasse())
+            ->withHausnummer($this->getHausnummer())
+            ->withHausnummerZusatz($this->getHausnummerZusatz())
+            ;
+    }
+
+    private function getPostleitzahl(): string
+    {
+        return $this->dto->adresse->postleitzahl;
+    }
+
+    private function getOrt(): string
+    {
+        return $this->dto->adresse->ort;
+    }
+
+    private function getLand(): string
+    {
+        return $this->dto->adresse->land;
+    }
+
+    private function getStrasse(): string
+    {
+        return $this->dto->adresse->strasse;
+    }
+
+    private function getHausnummer(): string
+    {
+        return $this->dto->adresse->hausnummer;
+    }
+
+    private function getHausnummerZusatz(): ?string
+    {
+        return $this->dto->adresse->hausnummerZusatz;
+    }
+
+
+}
