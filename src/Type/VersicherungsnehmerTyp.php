@@ -4,7 +4,7 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 /**
  * @property NatuerlichePersonErweitertTyp NatuerlichePerson
- * @property GemeinschaftTyp Gemeinschaft
+ * @property \SoapVar<GemeinschaftTyp> Gemeinschaft
  */
 class VersicherungsnehmerTyp
 {
@@ -28,7 +28,7 @@ class VersicherungsnehmerTyp
     public function withGemeinschaft(GemeinschaftTyp $Gemeinschaft): VersicherungsnehmerTyp
     {
         $new = clone $this;
-        $new->Gemeinschaft = $Gemeinschaft;
+        $new->Gemeinschaft = $Gemeinschaft->toSoapVar();
 
         return $new;
     }

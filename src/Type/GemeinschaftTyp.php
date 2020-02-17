@@ -73,6 +73,50 @@ class GemeinschaftTyp
         return $new;
     }
 
+    /**
+     * @return \SoapVar
+     */
+    public function toSoapVar(): \SoapVar
+    {
+        $object = [];
+        $object[] = new \SoapVar(
+            $this->AnredeGemeinschaft,
+            XSD_STRING,
+            '',
+            '',
+            'AnredeGemeinschaft'
+        );
+
+        foreach ($this->Name as $Name) {
+            $object[] = new \SoapVar(
+                $Name,
+                SOAP_ENC_OBJECT,
+                '',
+                '',
+                'Name',
+                ''
+            );
+        }
+
+        $object[] = new \SoapVar(
+            $this->Adresse,
+            SOAP_ENC_OBJECT,
+            '',
+            '',
+            'Adresse'
+        );
+
+        $object[] = new \SoapVar(
+            $this->Kontaktdaten,
+            SOAP_ENC_OBJECT,
+            '',
+            '',
+            'Kontaktdaten'
+        );
+
+        return new \SoapVar($object, SOAP_ENC_OBJECT, null, null, 'Bla', null);
+    }
+
 
 }
 

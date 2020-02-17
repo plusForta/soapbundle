@@ -45,7 +45,7 @@ class NamePersonGemeinschaftTyp
     public function withAnrede($Anrede)
     {
         $new = clone $this;
-        $new->Anrede = $Anrede;
+        $new->Anrede = $Anrede->toString();
 
         return $new;
     }
