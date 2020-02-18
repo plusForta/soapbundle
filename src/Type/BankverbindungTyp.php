@@ -47,7 +47,7 @@ class BankverbindungTyp
      */
     public function withKreditinstitut(string $Kreditinstitut): BankverbindungTyp
     {
-        Assert::length($Kreditinstitut, 30);
+        Assert::maxLength($Kreditinstitut, 30);
 
         $new = clone $this;
         $new->Kreditinstitut = $Kreditinstitut;
