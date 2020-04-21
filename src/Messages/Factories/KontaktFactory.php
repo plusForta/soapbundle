@@ -84,7 +84,7 @@ class KontaktFactory
     }
 
 
-    private function getEMail(): string
+    private function getEMail(): ?string
     {
         return $this->dto->email;
     }
