@@ -10,6 +10,7 @@ use Webmozart\Assert\Assert;
  */
 class AdresseJuristischePersonTyp
 {
+    public const DEUTSCHLAND = 'Deutschland';
 
     /**
      * @var string
@@ -56,6 +57,7 @@ class AdresseJuristischePersonTyp
      */
     public function withOrt(string $Ort): AdresseJuristischePersonTyp
     {
+        Assert::maxLength($Ort, 25);
         $new = clone $this;
         $new->Ort = $Ort;
 
@@ -68,6 +70,7 @@ class AdresseJuristischePersonTyp
      */
     public function withStrasse(string $Strasse): AdresseJuristischePersonTyp
     {
+        Assert::maxLength($Strasse, 30);
         $new = clone $this;
         $new->Strasse = $Strasse;
 
@@ -80,6 +83,7 @@ class AdresseJuristischePersonTyp
      */
     public function withHausnummer(string $Hausnummer): AdresseJuristischePersonTyp
     {
+        Assert::maxLength($Hausnummer, 10);
         $new = clone $this;
         $new->Hausnummer = $Hausnummer;
 
@@ -94,6 +98,7 @@ class AdresseJuristischePersonTyp
     {
         $new = clone $this;
         if ($HausnummerZusatz !== null) {
+            Assert::maxLength($HausnummerZusatz, 5);
             $new->HausnummerZusatz = $HausnummerZusatz;
         }
 
@@ -108,6 +113,7 @@ class AdresseJuristischePersonTyp
     {
         $new = clone $this;
         if ($Postfach !== null) {
+            Assert::maxLength($Postfach, 8);
             $new->Postfach = $Postfach;
         }
 
@@ -120,6 +126,9 @@ class AdresseJuristischePersonTyp
      */
     public function withLand(string $Land): AdresseJuristischePersonTyp
     {
+        Assert::oneOf($Land,
+            [self::DEUTSCHLAND]
+        );
         $new = clone $this;
         $new->Land = $Land;
 

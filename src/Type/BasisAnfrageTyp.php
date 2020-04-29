@@ -2,6 +2,8 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
+use Webmozart\Assert\Assert;
+
 class BasisAnfrageTyp
 {
 
@@ -21,6 +23,7 @@ class BasisAnfrageTyp
      */
     public function withBenutzer(string $Benutzer): BasisAnfrageTyp
     {
+        Assert::maxLength($Benutzer, 50);
         $new = clone $this;
         $new->Benutzer = $Benutzer;
 
@@ -33,6 +36,7 @@ class BasisAnfrageTyp
      */
     public function withPasswort(string $Passwort): BasisAnfrageTyp
     {
+        Assert::maxLength($Passwort, 50);
         $new = clone $this;
         $new->Passwort = $Passwort;
 

@@ -64,6 +64,7 @@ class PrivatTyp
 
         $new = clone $this;
         if ($EMail !== null) {
+            Assert::maxLength($EMail, 50);
             Assert::email($EMail);
             $new->EMail = $EMail;
         }

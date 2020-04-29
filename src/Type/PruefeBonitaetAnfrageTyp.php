@@ -71,6 +71,7 @@ class PruefeBonitaetAnfrageTyp implements RequestInterface
     {
         $new = clone $this;
         if ($Referenznummer !== null) {
+            Assert::maxLength($Referenznummer, 30);
             $new->Referenznummer = $Referenznummer;
         }
 
@@ -85,6 +86,7 @@ class PruefeBonitaetAnfrageTyp implements RequestInterface
     {
         $new = clone $this;
         if ($Anrede !== null) {
+            Assert::maxLength($Anrede, 10);
             $new->Anrede = $Anrede;
         }
 
@@ -99,6 +101,7 @@ class PruefeBonitaetAnfrageTyp implements RequestInterface
     {
         $new = clone $this;
         if ($Titel !== null) {
+            Assert::maxLength($Titel, 10);
             $new->Titel = $Titel;
         }
 
@@ -111,6 +114,7 @@ class PruefeBonitaetAnfrageTyp implements RequestInterface
      */
     public function withVorname(string $Vorname): PruefeBonitaetAnfrageTyp
     {
+        Assert::maxLength($Vorname, 50);
         $new = clone $this;
         $new->Vorname = $Vorname;
 
@@ -123,6 +127,7 @@ class PruefeBonitaetAnfrageTyp implements RequestInterface
      */
     public function withNachname(string $Nachname): PruefeBonitaetAnfrageTyp
     {
+        Assert::maxLength($Nachname, 50);
         $new = clone $this;
         $new->Nachname = $Nachname;
 
@@ -135,6 +140,7 @@ class PruefeBonitaetAnfrageTyp implements RequestInterface
      */
     public function withStrasse(string $Strasse): PruefeBonitaetAnfrageTyp
     {
+        Assert::maxLength($Strasse, 50);
         $new = clone $this;
         $new->Strasse = $Strasse;
 
@@ -149,6 +155,7 @@ class PruefeBonitaetAnfrageTyp implements RequestInterface
     {
         $new = clone $this;
         if ($Hausnummer !== null) {
+            Assert::maxLength($Hausnummer, 15);
             $new->Hausnummer = $Hausnummer;
         }
 
@@ -174,6 +181,7 @@ class PruefeBonitaetAnfrageTyp implements RequestInterface
      */
     public function withOrt(string $Ort): PruefeBonitaetAnfrageTyp
     {
+        Assert::maxLength($Ort, 50);
         $new = clone $this;
         $new->Ort = $Ort;
 

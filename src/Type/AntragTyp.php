@@ -4,6 +4,8 @@
 namespace PlusForta\RuVSoapBundle\Type;
 
 
+use Webmozart\Assert\Assert;
+
 class AntragTyp
 {
     /** @var BewertungTyp */
@@ -27,6 +29,7 @@ class AntragTyp
      */
     public function withVorgangsnummer(string $Referenznummer): AntragTyp
     {
+        Assert::maxLength($Referenznummer, 50);
         $new = clone $this;
         $new->Vorgangsnummer = $Referenznummer;
 

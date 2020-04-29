@@ -2,12 +2,15 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
+use Webmozart\Assert\Assert;
+
 /**
  * @property string|null HausnummerZusatz
  * @property string|null WeitereObjektbeschreibung
  */
 class MietobjektTyp
 {
+    const DEUTSCHLAND = 'Deutschland';
 
     /**
      * @var string
@@ -41,6 +44,7 @@ class MietobjektTyp
      */
     public function withStrasse(string $Strasse): MietobjektTyp
     {
+        Assert::maxLength($Strasse, 30);
         $new = clone $this;
         $new->Strasse = $Strasse;
 
@@ -53,6 +57,7 @@ class MietobjektTyp
      */
     public function withHausnummer(string $Hausnummer): MietobjektTyp
     {
+        Assert::maxLength($Hausnummer, 30);
         $new = clone $this;
         $new->Hausnummer = $Hausnummer;
 
@@ -67,6 +72,7 @@ class MietobjektTyp
     {
         $new = clone $this;
         if ($HausnummerZusatz !== null) {
+            Assert::maxLength($HausnummerZusatz, 5);
             $new->HausnummerZusatz = $HausnummerZusatz;
         }
 
@@ -79,6 +85,7 @@ class MietobjektTyp
      */
     public function withPostleitzahl(string $Postleitzahl): MietobjektTyp
     {
+        Assert::length($Postleitzahl, 5);
         $new = clone $this;
         $new->Postleitzahl = $Postleitzahl;
 
@@ -91,6 +98,7 @@ class MietobjektTyp
      */
     public function withOrt(string $Ort): MietobjektTyp
     {
+        Assert::maxLength($Ort, 30);
         $new = clone $this;
         $new->Ort = $Ort;
 
@@ -105,6 +113,9 @@ class MietobjektTyp
     {
         $new = clone $this;
         if ($Land !== null) {
+            Assert::oneOf($Land,
+                [self::DEUTSCHLAND]
+            );
             $new->Land = $Land;
         }
 
@@ -118,7 +129,10 @@ class MietobjektTyp
     public function withWeitereObjektbeschreibung(?string $WeitereObjektbeschreibung): MietobjektTyp
     {
         $new = clone $this;
-        $new->WeitereObjektbeschreibung = $WeitereObjektbeschreibung;
+        if ($WeitereObjektbeschreibung !== null) {
+            Assert::maxLength($WeitereObjektbeschreibung, 60);
+            $new->WeitereObjektbeschreibung = $WeitereObjektbeschreibung;
+        }
 
         return $new;
     }

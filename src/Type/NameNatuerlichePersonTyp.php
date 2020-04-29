@@ -2,6 +2,8 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
+use Webmozart\Assert\Assert;
+
 /**
  * @property string|null Titel
  * @property string|null Namenszusatz
@@ -44,6 +46,7 @@ class NameNatuerlichePersonTyp
     {
         $new = clone $this;
         if ($Titel !== null) {
+            Assert::maxLength($Titel, 10);
             $new->Titel = $Titel;
         }
 
@@ -56,6 +59,7 @@ class NameNatuerlichePersonTyp
      */
     public function withVorname(string $Vorname)
     {
+        Assert::maxLength($Vorname, 30);
         $new = clone $this;
         $new->Vorname = $Vorname;
 
@@ -68,6 +72,7 @@ class NameNatuerlichePersonTyp
      */
     public function withNachname(string $Nachname): NameNatuerlichePersonTyp
     {
+        Assert::maxLength($Nachname, 30);
         $new = clone $this;
         $new->Nachname = $Nachname;
 
@@ -82,6 +87,7 @@ class NameNatuerlichePersonTyp
     {
         $new = clone $this;
         if ($Namenszusatz !== null) {
+            Assert::maxLength($Namenszusatz, 30);
             $new->Namenszusatz = $Namenszusatz;
         }
 

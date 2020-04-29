@@ -4,6 +4,8 @@
 namespace PlusForta\RuVSoapBundle\Type;
 
 
+use Webmozart\Assert\Assert;
+
 /**
  * @property string|null ZahlungsartID
  */
@@ -19,6 +21,7 @@ class ZahlungsdienstleisterTyp
     {
         $new = clone $this;
         if ($ZahlungsartID !== null) {
+            Assert::maxLength($ZahlungsartID, 50);
             $new->ZahlungsartID = $ZahlungsartID;
         }
 
@@ -27,6 +30,7 @@ class ZahlungsdienstleisterTyp
 
     public function withZahlungsvorgangID(string $ZahlungsvorgangID): ZahlungsdienstleisterTyp
     {
+        Assert::maxLength($ZahlungsvorgangID, 50);
         $new = clone $this;
         $new->ZahlungsvorgangID = $ZahlungsvorgangID;
 

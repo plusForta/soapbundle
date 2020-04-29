@@ -2,6 +2,8 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
+use Webmozart\Assert\Assert;
+
 /**
  * @property string Mitarbeiternummer
  * @property string MitarbeiternummerZusaetzlicherMA
@@ -19,6 +21,7 @@ class MitarbeiterdatenTyp
     {
         $new = clone $this;
         if ($Mitarbeiternummer !== null) {
+            Assert::maxLength($Mitarbeiternummer, 12);
             $new->Mitarbeiternummer = $Mitarbeiternummer;
         }
 
@@ -33,6 +36,7 @@ class MitarbeiterdatenTyp
     {
         $new = clone $this;
         if ($MitarbeiternummerZusaetzlicherMA !== null) {
+            Assert::maxLength($MitarbeiternummerZusaetzlicherMA, 6);
             $new->MitarbeiternummerZusaetzlicherMA = $MitarbeiternummerZusaetzlicherMA;
         }
 
@@ -47,6 +51,7 @@ class MitarbeiterdatenTyp
     {
         $new = clone $this;
         if ($StellennummerZusaetzlicherMA !== null) {
+            Assert::maxLength($StellennummerZusaetzlicherMA, 6);
             $new->StellennummerZusaetzlicherMA = $StellennummerZusaetzlicherMA;
         }
 
@@ -61,6 +66,7 @@ class MitarbeiterdatenTyp
     {
         $new = clone $this;
         if ($VermittlereigeneVorgangsnummer !== null) {
+            Assert::maxLength($VermittlereigeneVorgangsnummer, 9);
             $new->VermittlereigeneVorgangsnummer = $VermittlereigeneVorgangsnummer;
         }
 

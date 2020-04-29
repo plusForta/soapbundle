@@ -3,9 +3,11 @@
 namespace PlusForta\RuVSoapBundle\Type;
 
 use DateTimeImmutable;
+use Webmozart\Assert\Assert;
 
 class VertragsdatenTyp
 {
+    public const MIETKAUTION = 'Mietkaution';
 
     /**
      * @var string
@@ -45,6 +47,9 @@ class VertragsdatenTyp
     {
         $new = clone $this;
         if ($Produkt !== null) {
+            Assert::oneOf($Produkt,
+                [self::MIETKAUTION]
+            );
             $new->Produkt = $Produkt;
         }
 

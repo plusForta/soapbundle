@@ -2,6 +2,8 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
+use Webmozart\Assert\Assert;
+
 /**
  * @property string|null Referenznummer
  * @property AllgemeineAngabenTyp AllgemeineAngaben
@@ -18,6 +20,7 @@ class AntragMietkautionTyp
     {
         $new = clone $this;
         if ($Referenznummer !== null) {
+            Assert::maxLength($Referenznummer, 30);
             $new->Referenznummer = $Referenznummer;
         }
 

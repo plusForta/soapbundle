@@ -2,6 +2,8 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
+use Webmozart\Assert\Assert;
+
 class AgenturTyp
 {
 
@@ -16,6 +18,7 @@ class AgenturTyp
      */
     public function withAgenturnummer(string $Agenturnummer): AgenturTyp
     {
+        Assert::length($Agenturnummer, 5);
         $new = clone $this;
         $new->Agenturnummer = $Agenturnummer;
 

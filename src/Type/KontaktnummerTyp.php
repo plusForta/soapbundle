@@ -39,6 +39,7 @@ class KontaktnummerTyp
      */
     public function withRufnummer(string $Rufnummer): KontaktnummerTyp
     {
+        Assert::maxLength($Rufnummer, 15);
         $new = clone $this;
         $new->Rufnummer = $Rufnummer;
 

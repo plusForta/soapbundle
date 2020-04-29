@@ -62,7 +62,8 @@ class GeschaeftlichTyp
     {
         $new = clone $this;
         if ($EMail !== null) {
-           Assert::email($EMail);
+            Assert::maxLength($EMail, 50);
+            Assert::email($EMail);
             $new->EMail = $EMail;
         }
 
