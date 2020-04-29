@@ -12,6 +12,8 @@ use Webmozart\Assert\Assert;
  */
 class BankverbindungTyp
 {
+    public const MAX_LENGTH_KREDITINSTITUT = 30;
+    public const MAX_LENGTH_KONTOINHABER = 30;
 
     /**
      * @param ?LastschriftverfahrenTyp $Lastschriftverfahren
@@ -47,7 +49,7 @@ class BankverbindungTyp
      */
     public function withKreditinstitut(string $Kreditinstitut): BankverbindungTyp
     {
-        Assert::maxLength($Kreditinstitut, 30);
+        Assert::maxLength($Kreditinstitut, self::MAX_LENGTH_KREDITINSTITUT);
         $new = clone $this;
         $new->Kreditinstitut = $Kreditinstitut;
 
@@ -60,7 +62,7 @@ class BankverbindungTyp
      */
     public function withKontoinhaber(string $Kontoinhaber): BankverbindungTyp
     {
-        Assert::maxLength($Kontoinhaber, 30);
+        Assert::maxLength($Kontoinhaber, self::MAX_LENGTH_KONTOINHABER);
         $new = clone $this;
         $new->Kontoinhaber = $Kontoinhaber;
 

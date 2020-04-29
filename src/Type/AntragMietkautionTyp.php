@@ -11,6 +11,7 @@ use Webmozart\Assert\Assert;
  */
 class AntragMietkautionTyp
 {
+    public const MAX_LENGTH_REFERENZNUMMER = 30;
 
     /**
      * @param ?string $Referenznummer
@@ -20,7 +21,7 @@ class AntragMietkautionTyp
     {
         $new = clone $this;
         if ($Referenznummer !== null) {
-            Assert::maxLength($Referenznummer, 30);
+            Assert::maxLength($Referenznummer, self::MAX_LENGTH_REFERENZNUMMER);
             $new->Referenznummer = $Referenznummer;
         }
 

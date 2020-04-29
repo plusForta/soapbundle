@@ -11,6 +11,8 @@ use Webmozart\Assert\Assert;
  */
 class ZahlungsdienstleisterTyp
 {
+    public const MAX_LENGTH_ZAHLUNGSART_ID = 50;
+    public const MAX_LENGTH_ZAHLUNGSVORGANG_ID = 50;
 
     /**
      * @var string
@@ -21,7 +23,7 @@ class ZahlungsdienstleisterTyp
     {
         $new = clone $this;
         if ($ZahlungsartID !== null) {
-            Assert::maxLength($ZahlungsartID, 50);
+            Assert::maxLength($ZahlungsartID, self::MAX_LENGTH_ZAHLUNGSART_ID);
             $new->ZahlungsartID = $ZahlungsartID;
         }
 
@@ -30,7 +32,7 @@ class ZahlungsdienstleisterTyp
 
     public function withZahlungsvorgangID(string $ZahlungsvorgangID): ZahlungsdienstleisterTyp
     {
-        Assert::maxLength($ZahlungsvorgangID, 50);
+        Assert::maxLength($ZahlungsvorgangID, self::MAX_LENGTH_ZAHLUNGSVORGANG_ID);
         $new = clone $this;
         $new->ZahlungsvorgangID = $ZahlungsvorgangID;
 

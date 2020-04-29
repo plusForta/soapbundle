@@ -45,7 +45,8 @@ class KennungFactory
     private function getBenutzer(): string
     {
 
-        return $this->kennungDto->benutzer ?? $this->benutzer;
+        $benutzer = $this->kennungDto->benutzer ?? $this->benutzer;
+        return $benutzer;
     }
 
     /**

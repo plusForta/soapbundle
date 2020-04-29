@@ -10,6 +10,10 @@ use Webmozart\Assert\Assert;
  */
 class NameNatuerlichePersonHerrFrauTyp
 {
+    const MAX_LENGTH_TITEL = 10;
+    const MAX_LENGTH_VORNAME = 30;
+    const MAX_LENGTH_NACHNAME = 30;
+    const MAX_LENGTH_NAMENSZUSATZ = 30;
 
     /**
      * @var string
@@ -47,7 +51,7 @@ class NameNatuerlichePersonHerrFrauTyp
     {
         $new = clone $this;
         if ($Titel !== null) {
-            Assert::maxLength($Titel, 10);
+            Assert::maxLength($Titel, self::MAX_LENGTH_TITEL);
             $new->Titel = $Titel;
         }
 
@@ -60,7 +64,7 @@ class NameNatuerlichePersonHerrFrauTyp
      */
     public function withVorname(string $Vorname): NameNatuerlichePersonHerrFrauTyp
     {
-        Assert::maxLength($Vorname, 30);
+        Assert::maxLength($Vorname, self::MAX_LENGTH_VORNAME);
         $new = clone $this;
         $new->Vorname = $Vorname;
 
@@ -73,7 +77,7 @@ class NameNatuerlichePersonHerrFrauTyp
      */
     public function withNachname(string $Nachname): NameNatuerlichePersonHerrFrauTyp
     {
-        Assert::maxLength($Nachname, 30);
+        Assert::maxLength($Nachname, self::MAX_LENGTH_NACHNAME);
         $new = clone $this;
         $new->Nachname = $Nachname;
 
@@ -88,7 +92,7 @@ class NameNatuerlichePersonHerrFrauTyp
     {
         $new = clone $this;
         if ($Namenszusatz !== null) {
-            Assert::maxLength($Namenszusatz, 30);
+            Assert::maxLength($Namenszusatz, self::MAX_LENGTH_NAMENSZUSATZ);
             $new->Namenszusatz = $Namenszusatz;
         }
 

@@ -12,6 +12,13 @@ class AdresseJuristischePersonTyp
 {
     public const DEUTSCHLAND = 'Deutschland';
 
+    public const LENGTH_POSTLEITZAHL = 5;
+    public const MAX_LENGTH_ORT = 25;
+    public const MAX_LENGTH_STRASSE = 30;
+    public const MAX_LENGTH_HAUSNUMMER = 10;
+    public const MAX_LENGTH_HAUSNUMMER_ZUSATZ = 5;
+    public const MAX_LENGTH_POSTFACH = 8;
+
     /**
      * @var string
      */
@@ -44,7 +51,7 @@ class AdresseJuristischePersonTyp
      */
     public function withPostleitzahl(string $Postleitzahl): AdresseJuristischePersonTyp
     {
-        Assert::length($Postleitzahl, 5);
+        Assert::length($Postleitzahl, self::LENGTH_POSTLEITZAHL);
         $new = clone $this;
         $new->Postleitzahl = $Postleitzahl;
 
@@ -57,7 +64,7 @@ class AdresseJuristischePersonTyp
      */
     public function withOrt(string $Ort): AdresseJuristischePersonTyp
     {
-        Assert::maxLength($Ort, 25);
+        Assert::maxLength($Ort, self::MAX_LENGTH_ORT);
         $new = clone $this;
         $new->Ort = $Ort;
 
@@ -70,7 +77,7 @@ class AdresseJuristischePersonTyp
      */
     public function withStrasse(string $Strasse): AdresseJuristischePersonTyp
     {
-        Assert::maxLength($Strasse, 30);
+        Assert::maxLength($Strasse, self::MAX_LENGTH_STRASSE);
         $new = clone $this;
         $new->Strasse = $Strasse;
 
@@ -83,7 +90,7 @@ class AdresseJuristischePersonTyp
      */
     public function withHausnummer(string $Hausnummer): AdresseJuristischePersonTyp
     {
-        Assert::maxLength($Hausnummer, 10);
+        Assert::maxLength($Hausnummer, self::MAX_LENGTH_HAUSNUMMER);
         $new = clone $this;
         $new->Hausnummer = $Hausnummer;
 
@@ -98,7 +105,7 @@ class AdresseJuristischePersonTyp
     {
         $new = clone $this;
         if ($HausnummerZusatz !== null) {
-            Assert::maxLength($HausnummerZusatz, 5);
+            Assert::maxLength($HausnummerZusatz, self::MAX_LENGTH_HAUSNUMMER_ZUSATZ);
             $new->HausnummerZusatz = $HausnummerZusatz;
         }
 
@@ -113,7 +120,7 @@ class AdresseJuristischePersonTyp
     {
         $new = clone $this;
         if ($Postfach !== null) {
-            Assert::maxLength($Postfach, 8);
+            Assert::maxLength($Postfach, self::MAX_LENGTH_POSTFACH);
             $new->Postfach = $Postfach;
         }
 

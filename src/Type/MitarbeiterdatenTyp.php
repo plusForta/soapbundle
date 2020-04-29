@@ -12,6 +12,10 @@ use Webmozart\Assert\Assert;
  */
 class MitarbeiterdatenTyp
 {
+    public const MAX_LENGTH_MITARBEITERNUMMER = 12;
+    public const MAX_LENGTH_MITARBEITER_ZUSAETZLICHER_MA = 6;
+    public const MAX_LENGTH_STELLENNUMMER_ZUSAETZLICHER_MA = 6;
+    public const MAX_LENGTH_VERMITTLEREIGENE_VORGANGSNUMMER = 9;
 
     /**
      * @param ?string $Mitarbeiternummer
@@ -21,7 +25,7 @@ class MitarbeiterdatenTyp
     {
         $new = clone $this;
         if ($Mitarbeiternummer !== null) {
-            Assert::maxLength($Mitarbeiternummer, 12);
+            Assert::maxLength($Mitarbeiternummer, self::MAX_LENGTH_MITARBEITERNUMMER);
             $new->Mitarbeiternummer = $Mitarbeiternummer;
         }
 
@@ -36,7 +40,7 @@ class MitarbeiterdatenTyp
     {
         $new = clone $this;
         if ($MitarbeiternummerZusaetzlicherMA !== null) {
-            Assert::maxLength($MitarbeiternummerZusaetzlicherMA, 6);
+            Assert::maxLength($MitarbeiternummerZusaetzlicherMA, self::MAX_LENGTH_MITARBEITER_ZUSAETZLICHER_MA);
             $new->MitarbeiternummerZusaetzlicherMA = $MitarbeiternummerZusaetzlicherMA;
         }
 
@@ -51,7 +55,7 @@ class MitarbeiterdatenTyp
     {
         $new = clone $this;
         if ($StellennummerZusaetzlicherMA !== null) {
-            Assert::maxLength($StellennummerZusaetzlicherMA, 6);
+            Assert::maxLength($StellennummerZusaetzlicherMA, self::MAX_LENGTH_STELLENNUMMER_ZUSAETZLICHER_MA);
             $new->StellennummerZusaetzlicherMA = $StellennummerZusaetzlicherMA;
         }
 
@@ -66,7 +70,7 @@ class MitarbeiterdatenTyp
     {
         $new = clone $this;
         if ($VermittlereigeneVorgangsnummer !== null) {
-            Assert::maxLength($VermittlereigeneVorgangsnummer, 9);
+            Assert::maxLength($VermittlereigeneVorgangsnummer, self::MAX_LENGTH_VERMITTLEREIGENE_VORGANGSNUMMER);
             $new->VermittlereigeneVorgangsnummer = $VermittlereigeneVorgangsnummer;
         }
 

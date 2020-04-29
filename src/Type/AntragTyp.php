@@ -8,6 +8,8 @@ use Webmozart\Assert\Assert;
 
 class AntragTyp
 {
+    public const MAX_LENGTH_REFERENZNUMMER = 50;
+
     /** @var BewertungTyp */
     private $Bewertung;
 
@@ -29,7 +31,7 @@ class AntragTyp
      */
     public function withVorgangsnummer(string $Referenznummer): AntragTyp
     {
-        Assert::maxLength($Referenznummer, 50);
+        Assert::maxLength($Referenznummer, self::MAX_LENGTH_REFERENZNUMMER);
         $new = clone $this;
         $new->Vorgangsnummer = $Referenznummer;
 

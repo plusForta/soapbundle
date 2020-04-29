@@ -9,6 +9,7 @@ use PlusForta\RuVSoapBundle\Type\AdresseJuristischePersonTyp;
 use PlusForta\RuVSoapBundle\Type\AnredeTyp;
 use PlusForta\RuVSoapBundle\Type\JuristischePersonTyp;
 use PlusForta\RuVSoapBundle\Type\NameJuristischePersonTyp;
+use PlusForta\RuVSoapBundle\Utils\Modify;
 
 class JuristischePersonFactory
 {
@@ -47,12 +48,14 @@ class JuristischePersonFactory
 
     private function getName(): string
     {
-        return $this->dto->name;
+        $name = $this->dto->name;
+        return Modify::trim($name, NameJuristischePersonTyp::MAX_LENGTH_NAME);
     }
 
     private function getNamenszusatz(): ?string
     {
-        return $this->dto->namenszusatz;
+        $namenszusatz = $this->dto->namenszusatz;
+        return Modify::trim($namenszusatz, NameJuristischePersonTyp::MAX_LENGTH_NAMENSZUSATZ);
     }
 
     private function getAdresseJuristischePerson(): ?AdresseJuristischePersonTyp
@@ -67,7 +70,7 @@ class JuristischePersonFactory
             ;
 
         if ($this->dto->postfach) {
-            return $adresse->withPostfach($this->dto->postfach);
+            return $adresse->withPostfach(Modify::trim($this->dto->postfach, AdresseJuristischePersonTyp::MAX_LENGTH_POSTFACH));
         }
 
         return $adresse->withStrasse($this->getStrasse())
@@ -83,7 +86,8 @@ class JuristischePersonFactory
 
     private function getOrt(): string
     {
-        return $this->dto->adresse->ort;
+        $ort = $this->dto->adresse->ort;
+        return Modify::trim($ort, AdresseJuristischePersonTyp::MAX_LENGTH_ORT);
     }
 
     private function getLand(): string
@@ -93,17 +97,20 @@ class JuristischePersonFactory
 
     private function getStrasse(): string
     {
-        return $this->dto->adresse->strasse;
+        $strasse = $this->dto->adresse->strasse;
+        return Modify::trim($strasse, AdresseJuristischePersonTyp::MAX_LENGTH_STRASSE);
     }
 
     private function getHausnummer(): string
     {
-        return $this->dto->adresse->hausnummer;
+        $hausnummer = $this->dto->adresse->hausnummer;
+        return Modify::trim($hausnummer, AdresseJuristischePersonTyp::MAX_LENGTH_HAUSNUMMER);
     }
 
     private function getHausnummerZusatz(): ?string
     {
-        return $this->dto->adresse->hausnummerZusatz;
+        $hausnummerZusatz = $this->dto->adresse->hausnummerZusatz;
+        return Modify::trimOrNull($hausnummerZusatz, AdresseJuristischePersonTyp::MAX_LENGTH_HAUSNUMMER_ZUSATZ);
     }
 
 

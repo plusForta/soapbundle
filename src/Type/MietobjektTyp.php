@@ -10,7 +10,12 @@ use Webmozart\Assert\Assert;
  */
 class MietobjektTyp
 {
-    const DEUTSCHLAND = 'Deutschland';
+    public const DEUTSCHLAND = 'Deutschland';
+    public const MAX_LENGTH_STRASSE = 30;
+    public const MAX_LENGTH_HAUSNUMMER = 10;
+    public const MAX_LENGTH_HAUSNUMMER_ZUSATZ = 5;
+    public const MAX_LENGTH_ORT = 30;
+    public const MAX_LENGTH_WEITERE_OBJECTBESCHREIBUNG = 60;
 
     /**
      * @var string
@@ -44,7 +49,7 @@ class MietobjektTyp
      */
     public function withStrasse(string $Strasse): MietobjektTyp
     {
-        Assert::maxLength($Strasse, 30);
+        Assert::maxLength($Strasse, self::MAX_LENGTH_STRASSE);
         $new = clone $this;
         $new->Strasse = $Strasse;
 
@@ -57,7 +62,7 @@ class MietobjektTyp
      */
     public function withHausnummer(string $Hausnummer): MietobjektTyp
     {
-        Assert::maxLength($Hausnummer, 30);
+        Assert::maxLength($Hausnummer, self::MAX_LENGTH_HAUSNUMMER);
         $new = clone $this;
         $new->Hausnummer = $Hausnummer;
 
@@ -72,7 +77,7 @@ class MietobjektTyp
     {
         $new = clone $this;
         if ($HausnummerZusatz !== null) {
-            Assert::maxLength($HausnummerZusatz, 5);
+            Assert::maxLength($HausnummerZusatz, self::MAX_LENGTH_HAUSNUMMER_ZUSATZ);
             $new->HausnummerZusatz = $HausnummerZusatz;
         }
 
@@ -98,7 +103,7 @@ class MietobjektTyp
      */
     public function withOrt(string $Ort): MietobjektTyp
     {
-        Assert::maxLength($Ort, 30);
+        Assert::maxLength($Ort, self::MAX_LENGTH_ORT);
         $new = clone $this;
         $new->Ort = $Ort;
 
@@ -130,7 +135,7 @@ class MietobjektTyp
     {
         $new = clone $this;
         if ($WeitereObjektbeschreibung !== null) {
-            Assert::maxLength($WeitereObjektbeschreibung, 60);
+            Assert::maxLength($WeitereObjektbeschreibung, self::MAX_LENGTH_WEITERE_OBJECTBESCHREIBUNG);
             $new->WeitereObjektbeschreibung = $WeitereObjektbeschreibung;
         }
 

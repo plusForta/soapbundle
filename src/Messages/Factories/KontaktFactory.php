@@ -10,6 +10,7 @@ use PlusForta\RuVSoapBundle\Type\GeschaeftlichTyp;
 use PlusForta\RuVSoapBundle\Type\KontaktdatenTyp;
 use PlusForta\RuVSoapBundle\Type\KontaktnummerTyp;
 use PlusForta\RuVSoapBundle\Type\PrivatTyp;
+use PlusForta\RuVSoapBundle\Utils\Modify;
 use Webmozart\Assert\Assert;
 
 class KontaktFactory
@@ -52,7 +53,7 @@ class KontaktFactory
             ->withTelefon($this->getContactNumber($this->dto->telefon))
             ->withMobil($this->getContactNumber($this->dto->mobile))
             ->withFax($this->getContactNumber($this->dto->fax))
-            ->withEMail($this->getEMail())
+            ->withEMail(Modify::trimOrNull($this->getEMail(), PrivatTyp::MAX_LENGTH_EMAIL))
             ;
     }
 
@@ -63,7 +64,7 @@ class KontaktFactory
             ->withTelefon($this->getContactNumber($this->dto->telefon))
             ->withMobil($this->getContactNumber($this->dto->mobile))
             ->withFax($this->getContactNumber($this->dto->fax))
-            ->withEMail($this->getEMail())
+            ->withEMail(Modify::trimOrNull($this->getEMail(), GeschaeftlichTyp::MAX_LENGTH_EMAIL))
             ;
     }
 
@@ -80,7 +81,7 @@ class KontaktFactory
 
         return $telefon
             ->withVorwahl($number->vorwahl)
-            ->withRufnummer($number->rufnummer);
+            ->withRufnummer(Modify::trim($number->rufnummer, KontaktnummerTyp::MAX_LENGTH_VORWAHL));
     }
 
 

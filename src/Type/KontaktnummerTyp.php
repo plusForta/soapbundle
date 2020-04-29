@@ -8,6 +8,7 @@ class KontaktnummerTyp
 {
 
     protected const PHONE_NUMBER_REGEX = '#^(\+[0-9]{1,2}|0[0-9]{2,4})\s*[0-9\.\-\/\(\)]\s*[0-9\.\-\/\(\) ]+$#';
+    public const MAX_LENGTH_VORWAHL = 15;
 
     /**
      * @var mixed
@@ -39,7 +40,7 @@ class KontaktnummerTyp
      */
     public function withRufnummer(string $Rufnummer): KontaktnummerTyp
     {
-        Assert::maxLength($Rufnummer, 15);
+        Assert::maxLength($Rufnummer, self::MAX_LENGTH_VORWAHL);
         $new = clone $this;
         $new->Rufnummer = $Rufnummer;
 

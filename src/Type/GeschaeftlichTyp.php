@@ -12,6 +12,7 @@ use Webmozart\Assert\Assert;
  */
 class GeschaeftlichTyp
 {
+    public const MAX_LENGTH_EMAIL = 50;
 
     /**
      * @param ?KontaktnummerTyp $Telefon
@@ -62,7 +63,7 @@ class GeschaeftlichTyp
     {
         $new = clone $this;
         if ($EMail !== null) {
-            Assert::maxLength($EMail, 50);
+            Assert::maxLength($EMail, self::MAX_LENGTH_EMAIL);
             Assert::email($EMail);
             $new->EMail = $EMail;
         }

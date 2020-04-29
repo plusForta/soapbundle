@@ -7,9 +7,9 @@ use Webmozart\Assert\Assert;
 class SepaMandatTyp
 {
 
-    const BIC_NONE = 'ohne Angabe';
-    const IBAN_LENGTH_MAX = 34;
-    const BIC_LENGTH_MAX = 11;
+    public const BIC_NONE = 'ohne Angabe';
+    public const IBAN_LENGTH_MAX = 34;
+    public const BIC_LENGTH_MAX = 11;
 
     /**
      * @var string

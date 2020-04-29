@@ -14,6 +14,7 @@ use PlusForta\RuVSoapBundle\Type\AntragsdatenTyp;
 use PlusForta\RuVSoapBundle\Type\InkassodatenTyp;
 use PlusForta\RuVSoapBundle\Type\VertragsdatenTyp;
 use PlusForta\RuVSoapBundle\Type\WerbewiderspruchTyp;
+use PlusForta\RuVSoapBundle\Utils\Modify;
 
 class AntragMietkautionFactory
 {
@@ -81,7 +82,8 @@ class AntragMietkautionFactory
 
     private function getReferenzNummer(): ?string
     {
-        return $this->antragMietkautionDto->referenzNummer;
+        $referenzNummer = $this->antragMietkautionDto->referenzNummer;
+        return Modify::trim($referenzNummer, AntragMietkautionTyp::MAX_LENGTH_REFERENZNUMMER);
     }
 
     private function getAllgemeineAngaben(): AllgemeineAngabenTyp

@@ -11,6 +11,11 @@ use Webmozart\Assert\Assert;
 class AdresseNatuerlichePersonTyp
 {
     public const DEUTSCHLAND = 'Deutschland';
+    public const MAX_LENGTH_HAUSNUMMER_ZUSATZ = 5;
+    public const MAX_LENGTH_HAUSNUMMER = 10;
+    public const MAX_LENGTH_STRASSE = 30;
+    public const MAX_LENGTH_ORT = 25;
+    public const MAX_LENGTH_TEILORT = 30;
 
     /**
      * @var string
@@ -43,7 +48,7 @@ class AdresseNatuerlichePersonTyp
      */
     public function withStrasse(string $Strasse): AdresseNatuerlichePersonTyp
     {
-        Assert::maxLength($Strasse, 30);
+        Assert::maxLength($Strasse, self::MAX_LENGTH_STRASSE);
         $new = clone $this;
         $new->Strasse = $Strasse;
 
@@ -56,7 +61,7 @@ class AdresseNatuerlichePersonTyp
      */
     public function withHausnummer(string $Hausnummer): AdresseNatuerlichePersonTyp
     {
-        Assert::maxLength($Hausnummer, 10);
+        Assert::maxLength($Hausnummer, self::MAX_LENGTH_HAUSNUMMER);
         $new = clone $this;
         $new->Hausnummer = $Hausnummer;
 
@@ -71,7 +76,7 @@ class AdresseNatuerlichePersonTyp
     {
         $new = clone $this;
         if ($HausnummerZusatz !== null) {
-            Assert::maxLength($HausnummerZusatz, 5);
+            Assert::maxLength($HausnummerZusatz, self::MAX_LENGTH_HAUSNUMMER_ZUSATZ);
             $new->HausnummerZusatz = $HausnummerZusatz;
         }
 
@@ -98,7 +103,7 @@ class AdresseNatuerlichePersonTyp
      */
     public function withOrt(string $Ort): AdresseNatuerlichePersonTyp
     {
-        Assert::maxLength($Ort, 25);
+        Assert::maxLength($Ort, self::MAX_LENGTH_ORT);
         $new = clone $this;
         $new->Ort = $Ort;
 
@@ -113,7 +118,7 @@ class AdresseNatuerlichePersonTyp
     {
         $new = clone $this;
         if ($Teilort !== null) {
-            Assert::maxLength($Teilort, 30);
+            Assert::maxLength($Teilort, self::MAX_LENGTH_TEILORT);
             $new->Teilort = $Teilort;
         }
 

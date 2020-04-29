@@ -15,6 +15,7 @@ use PlusForta\RuVSoapBundle\Type\NameNatuerlichePersonTyp;
 use PlusForta\RuVSoapBundle\Type\NatuerlichePersonErweitertTyp;
 use PlusForta\RuVSoapBundle\Type\NatuerlichePersonTyp;
 use PlusForta\RuVSoapBundle\Type\PrivatTyp;
+use PlusForta\RuVSoapBundle\Utils\Modify;
 
 class NatuerlichePersonFactory
 {
@@ -62,10 +63,10 @@ class NatuerlichePersonFactory
         $name = new NameNatuerlichePersonTyp();
         return $name
             ->withAnrede($this->getAnrede())
-            ->withTitel($this->getTitel())
-            ->withVorname($this->getVorname())
-            ->withNachname($this->getNachname())
-            ->withNamenszusatz($this->getNamenszusatz())
+            ->withTitel(Modify::trimOrNull($this->getTitel(), NameNatuerlichePersonTyp::MAX_LENGTH_TITEL))
+            ->withVorname(Modify::trim($this->getVorname(), NameNatuerlichePersonTyp::MAX_LENGTH_VORNAME))
+            ->withNachname(Modify::trim($this->getNachname(), NameNatuerlichePersonTyp::MAX_LENGTH_NACHNAME))
+            ->withNamenszusatz(Modify::trimOrNull($this->getNamenszusatz(), NameNatuerlichePersonTyp::MAX_LENGTH_NAMENSZUSATZ))
             ;
     }
 
@@ -74,10 +75,10 @@ class NatuerlichePersonFactory
         $name = new NameNatuerlichePersonHerrFrauTyp();
         return $name
             ->withAnrede($this->getAnredeErweitert())
-            ->withTitel($this->getTitel())
-            ->withVorname($this->getVorname())
-            ->withNachname($this->getNachname())
-            ->withNamenszusatz($this->getNamenszusatz())
+            ->withTitel(Modify::trimOrNull($this->getTitel(), NameNatuerlichePersonHerrFrauTyp::MAX_LENGTH_TITEL))
+            ->withVorname(Modify::trim($this->getVorname(), NameNatuerlichePersonHerrFrauTyp::MAX_LENGTH_VORNAME))
+            ->withNachname(Modify::trim($this->getNachname(), NameNatuerlichePersonHerrFrauTyp::MAX_LENGTH_NACHNAME))
+            ->withNamenszusatz(Modify::trimOrNull($this->getNamenszusatz(), NameNatuerlichePersonHerrFrauTyp::MAX_LENGTH_NAMENSZUSATZ))
             ;
     }
 

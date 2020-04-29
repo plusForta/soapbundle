@@ -7,6 +7,7 @@ namespace PlusForta\RuVSoapBundle\Messages;
 use PlusForta\RuVSoapBundle\Messages\Dtos\PruefeBonitaetDto;
 use PlusForta\RuVSoapBundle\Messages\Factories\KennungFactory;
 use PlusForta\RuVSoapBundle\Type\PruefeBonitaetAnfrageTyp;
+use PlusForta\RuVSoapBundle\Utils\Modify;
 
 class PruefeBonitaetFactory
 {
@@ -49,39 +50,46 @@ class PruefeBonitaetFactory
         return $this->kennungFactory->create($this->dto->kennungDto);
     }
 
-    private function getReferenznummer()
+    private function getReferenznummer(): string
     {
-        return $this->dto->referenznummer;
+        $referenznummer = $this->dto->referenznummer;
+        return Modify::trim($referenznummer, PruefeBonitaetAnfrageTyp::MAX_LENGTH_REFERENZNUMMER);
     }
 
-    private function getAnrede()
+    private function getAnrede(): string
     {
-        return $this->dto->anrede;
+        $anrede = $this->dto->anrede;
+        return Modify::trim($anrede, PruefeBonitaetAnfrageTyp::MAX_LENGTH_ANREDE);
     }
 
-    private function getTitel()
+    private function getTitel(): string
     {
-        return $this->dto->titel;
+        $titel = $this->dto->titel;
+        return Modify::trim($titel, PruefeBonitaetAnfrageTyp::MAX_LENGTH_TITEL);
     }
 
-    private function getVorname()
+    private function getVorname(): string
     {
-        return $this->dto->vorname;
+        $vorname = $this->dto->vorname;
+        return Modify::trim($vorname, PruefeBonitaetAnfrageTyp::MAX_LENGTH_VORNAME);
     }
 
-    private function getNachname()
+    private function getNachname(): string
     {
-        return $this->dto->nachname;
+        $nachname = $this->dto->nachname;
+        return Modify::trim($nachname, PruefeBonitaetAnfrageTyp::MAX_LENGTH_NACHNAME);
     }
 
-    private function getStrasse()
+    private function getStrasse(): string
     {
-        return $this->dto->strasse;
+        $strasse = $this->dto->strasse;
+        return Modify::trim($strasse, PruefeBonitaetAnfrageTyp::MAX_LENGTH_STRASSE);
     }
 
-    private function getHausnummer()
+    private function getHausnummer(): string
     {
-        return $this->dto->Hausnummer;
+        $hausnummer = $this->dto->Hausnummer;
+        return Modify::trim($hausnummer, PruefeBonitaetAnfrageTyp::MAX_LENGTH_HAUSNUMMER);
     }
 
     private function getPlz()
@@ -91,7 +99,8 @@ class PruefeBonitaetFactory
 
     private function getOrt()
     {
-        return $this->dto->ort;
+        $ort = $this->dto->ort;
+        return Modify::trim($ort, PruefeBonitaetAnfrageTyp::MAX_LENGTH_ORT);
     }
 
     private function getLand()

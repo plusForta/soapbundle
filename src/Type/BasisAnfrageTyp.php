@@ -6,6 +6,8 @@ use Webmozart\Assert\Assert;
 
 class BasisAnfrageTyp
 {
+    public const MAX_LENGTH_BENUTZER = 50;
+    public const MAX_LENGTH_PASSWORT = 50;
 
     /**
      * @var string
@@ -23,7 +25,7 @@ class BasisAnfrageTyp
      */
     public function withBenutzer(string $Benutzer): BasisAnfrageTyp
     {
-        Assert::maxLength($Benutzer, 50);
+        Assert::maxLength($Benutzer, self::MAX_LENGTH_BENUTZER);
         $new = clone $this;
         $new->Benutzer = $Benutzer;
 
@@ -36,7 +38,7 @@ class BasisAnfrageTyp
      */
     public function withPasswort(string $Passwort): BasisAnfrageTyp
     {
-        Assert::maxLength($Passwort, 50);
+        Assert::maxLength($Passwort, self::MAX_LENGTH_PASSWORT);
         $new = clone $this;
         $new->Passwort = $Passwort;
 

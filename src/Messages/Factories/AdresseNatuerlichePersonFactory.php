@@ -6,6 +6,7 @@ namespace PlusForta\RuVSoapBundle\Messages\Factories;
 
 use PlusForta\RuVSoapBundle\Messages\Dtos\AdresseDto;
 use PlusForta\RuVSoapBundle\Type\AdresseNatuerlichePersonTyp;
+use PlusForta\RuVSoapBundle\Utils\Modify;
 
 class AdresseNatuerlichePersonFactory
 {
@@ -33,19 +34,20 @@ class AdresseNatuerlichePersonFactory
 
     private function getStrasse(): string
     {
-
-        return $this->adresseDto->strasse;
+        $strasse = $this->adresseDto->strasse;
+        return Modify::trim($strasse, AdresseNatuerlichePersonTyp::MAX_LENGTH_STRASSE);
     }
 
     private function getHausnummer(): string
     {
-
-        return $this->adresseDto->hausnummer;
+        $hausnummer = $this->adresseDto->hausnummer;
+        return Modify::trim($hausnummer, AdresseNatuerlichePersonTyp::MAX_LENGTH_HAUSNUMMER);
     }
 
     private function getHausnummerZusatz(): ?string
     {
-        return $this->adresseDto->hausnummerZusatz;
+        $hausnummerZusatz = $this->adresseDto->hausnummerZusatz;
+        return Modify::trimOrNull($hausnummerZusatz, AdresseNatuerlichePersonTyp::MAX_LENGTH_HAUSNUMMER_ZUSATZ);
     }
 
     private function getPostleitzahl(): string
@@ -55,12 +57,14 @@ class AdresseNatuerlichePersonFactory
 
     private function getOrt(): string
     {
-        return $this->adresseDto->ort;
+        $ort = $this->adresseDto->ort;
+        return Modify::trim($ort, AdresseNatuerlichePersonTyp::MAX_LENGTH_ORT);
     }
 
     private function getTeilOrt(): ?string
     {
-        return $this->adresseDto->teilort;
+        $teilort = $this->adresseDto->teilort;
+        return Modify::trimOrNull($teilort, AdresseNatuerlichePersonTyp::MAX_LENGTH_TEILORT);
     }
 
     private function getLand(): string

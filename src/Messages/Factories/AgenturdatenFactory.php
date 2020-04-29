@@ -8,6 +8,7 @@ use PlusForta\RuVSoapBundle\Messages\Dtos\AgenturdatenDto;
 use PlusForta\RuVSoapBundle\Type\AgenturdatenTyp;
 use PlusForta\RuVSoapBundle\Type\AgenturTyp;
 use PlusForta\RuVSoapBundle\Type\MitarbeiterdatenTyp;
+use PlusForta\RuVSoapBundle\Utils\Modify;
 
 class AgenturdatenFactory
 {
@@ -90,22 +91,26 @@ class AgenturdatenFactory
      */
     private function getMitarbeiternummer(): ?string
     {
-        return $this->agenturdatenDto->mitarbeiternummer ?? $this->mitarbeiternummer;
+        $mitarbeiternummer = $this->agenturdatenDto->mitarbeiternummer ?? $this->mitarbeiternummer;
+        return Modify::trim($mitarbeiternummer, MitarbeiterdatenTyp::MAX_LENGTH_MITARBEITERNUMMER);
     }
 
     private function getMitarbeiternummerZusaetzlicherMA(): ?string
     {
-        return $this->agenturdatenDto->mitarbeiternummerZusaetzlicherMA ?? $this->mitarbeiternummerZusaetzlicherMA;
+        $mitarbtiernummerZusaetzlicherMA = $this->agenturdatenDto->mitarbeiternummerZusaetzlicherMA ?? $this->mitarbeiternummerZusaetzlicherMA;
+        return Modify::trim($mitarbtiernummerZusaetzlicherMA, MitarbeiterdatenTyp::MAX_LENGTH_MITARBEITER_ZUSAETZLICHER_MA);
     }
 
     private function getStellennummerZusaetzlicherMA(): ?string
     {
-        return $this->agenturdatenDto->stellennummerZusaetzlicherMA ?? $this->stellennummerZusaetzlicherMA;
+        $stellennummerZusaetzlicherMA = $this->agenturdatenDto->stellennummerZusaetzlicherMA ?? $this->stellennummerZusaetzlicherMA;
+        return Modify::trim($stellennummerZusaetzlicherMA, MitarbeiterdatenTyp::MAX_LENGTH_STELLENNUMMER_ZUSAETZLICHER_MA);
     }
 
     private function getVermittlereigeneVorgangsnummer(): ?string
     {
-        return $this->agenturdatenDto->vermittlereigeneVorgangsnummer;
+        $vermittlereigeneVorgangsnummer = $this->agenturdatenDto->vermittlereigeneVorgangsnummer;
+        return Modify::trim($vermittlereigeneVorgangsnummer, MitarbeiterdatenTyp::MAX_LENGTH_VERMITTLEREIGENE_VORGANGSNUMMER);
     }
 
 

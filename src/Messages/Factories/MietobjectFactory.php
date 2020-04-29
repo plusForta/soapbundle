@@ -6,6 +6,7 @@ namespace PlusForta\RuVSoapBundle\Messages\Factories;
 
 use PlusForta\RuVSoapBundle\Messages\Dtos\MietobjektDto;
 use PlusForta\RuVSoapBundle\Type\MietobjektTyp;
+use PlusForta\RuVSoapBundle\Utils\Modify;
 
 class MietobjectFactory
 {
@@ -32,17 +33,20 @@ class MietobjectFactory
 
     private function getStrasse(): string
     {
-        return $this->mietobjektDto->strasse;
+        $strasse = $this->mietobjektDto->strasse;
+        return Modify::trim($strasse, MietobjektTyp::MAX_LENGTH_STRASSE);
     }
 
     private function getHausnummer(): string
     {
-        return $this->mietobjektDto->hausnummer;
+        $hausnummer = $this->mietobjektDto->hausnummer;
+        return Modify::trim($hausnummer, MietobjektTyp::MAX_LENGTH_HAUSNUMMER);
     }
 
     private function getHausnummerZusatz(): ?string
     {
-        return $this->mietobjektDto->hausnummerZusatz;
+        $hausnummerZusatz = $this->mietobjektDto->hausnummerZusatz;
+        return Modify::trim($hausnummerZusatz, MietobjektTyp::MAX_LENGTH_HAUSNUMMER_ZUSATZ);
     }
 
     private function getPostleitzahl(): string
@@ -52,7 +56,8 @@ class MietobjectFactory
 
     private function getOrt(): string
     {
-        return $this->mietobjektDto->ort;
+        $ort = $this->mietobjektDto->ort;
+        return Modify::trim($ort, MietobjektTyp::MAX_LENGTH_ORT);
     }
 
     private function getLand(): ?string
@@ -62,6 +67,7 @@ class MietobjectFactory
 
     private function getWeitereObjektbeschreibung(): ?string
     {
-        return $this->mietobjektDto->beschreibung;
+        $beschreibung = $this->mietobjektDto->beschreibung;
+        return Modify::trim($beschreibung, MietobjektTyp::MAX_LENGTH_WEITERE_OBJECTBESCHREIBUNG);
     }
 }
