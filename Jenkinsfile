@@ -1,22 +1,15 @@
 pipeline {
-    agent {
-        docker {
-            image 'dock.pfdev.de/plusforta/php-ci:7.4'
-            registryUrl "https://dock.pfdev.de"
-            registryCredentialsId "cec23a25-eb2e-4331-bb78-940508d74d39"
-            reuseNode true
-        }
-    }
+    agent any
     stages {
-        stage('Build') {
+        stage('Lint') {
             steps {
-                sh 'composer install'
+                sh 'docker build . --target lint'
             }
         }
-        stage('Psalm') {
-           steps {
-               sh './vendor/bin/psalm'
-           }
+        stage('Type Checking') {
+            steps {
+                sh 'docker build . --target psalm'
+            }
         }
     }
  }

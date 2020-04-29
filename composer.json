@@ -29,6 +29,7 @@
         "symfony/dependency-injection": "^4.3",
         "vimeo/psalm": "^3.5",
         "symfony/http-kernel": "^4.3",
-        "zendframework/zend-code": "3.1.0"
+        "zendframework/zend-code": "3.1.0",
+        "php-parallel-lint/php-parallel-lint": "^1.2"
     }
 }

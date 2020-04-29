@@ -1,0 +1,11 @@
+.DS_Store
+.phpunit.result.cache
+Jenkinsfile
+Dockerfile
+var
+vendor
+.git
+.idea
+.docker-sync
+node_modules
+docker-compose.*
