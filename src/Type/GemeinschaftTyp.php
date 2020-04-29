@@ -114,6 +114,7 @@ class GemeinschaftTyp
             'Kontaktdaten'
         );
 
+        /** @psalm-suppress NullArgument*/
         return new \SoapVar($object, SOAP_ENC_OBJECT, null, null, 'Bla', null);
     }
 
