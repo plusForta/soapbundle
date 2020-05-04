@@ -66,16 +66,22 @@ class JuristischePersonFactory
         $adresse = new AdresseJuristischePersonTyp();
         $adresse = $adresse->withPostleitzahl($this->getPostleitzahl())
             ->withOrt($this->getOrt())
-            ->withLand($this->getLand())
             ;
 
         if ($this->dto->postfach) {
-            return $adresse->withPostfach(Modify::trim($this->dto->postfach, AdresseJuristischePersonTyp::MAX_LENGTH_POSTFACH));
+            return $adresse
+                ->withPostfach(Modify::trim(
+                    $this->dto->postfach,
+                    AdresseJuristischePersonTyp::MAX_LENGTH_POSTFACH)
+                )
+                ->withLand($this->getLand())
+                ;
         }
 
         return $adresse->withStrasse($this->getStrasse())
             ->withHausnummer($this->getHausnummer())
             ->withHausnummerZusatz($this->getHausnummerZusatz())
+            ->withLand($this->getLand())
             ;
     }
 
