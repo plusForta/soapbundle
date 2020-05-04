@@ -83,7 +83,7 @@ class AntragMietkautionFactory
     private function getReferenzNummer(): ?string
     {
         $referenzNummer = $this->antragMietkautionDto->referenzNummer;
-        return Modify::trim($referenzNummer, AntragMietkautionTyp::MAX_LENGTH_REFERENZNUMMER);
+        return Modify::trimOrNull($referenzNummer, AntragMietkautionTyp::MAX_LENGTH_REFERENZNUMMER);
     }
 
     private function getAllgemeineAngaben(): AllgemeineAngabenTyp

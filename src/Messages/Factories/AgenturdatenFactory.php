@@ -92,25 +92,25 @@ class AgenturdatenFactory
     private function getMitarbeiternummer(): ?string
     {
         $mitarbeiternummer = $this->agenturdatenDto->mitarbeiternummer ?? $this->mitarbeiternummer;
-        return Modify::trim($mitarbeiternummer, MitarbeiterdatenTyp::MAX_LENGTH_MITARBEITERNUMMER);
+        return Modify::trimOrNull($mitarbeiternummer, MitarbeiterdatenTyp::MAX_LENGTH_MITARBEITERNUMMER);
     }
 
     private function getMitarbeiternummerZusaetzlicherMA(): ?string
     {
         $mitarbtiernummerZusaetzlicherMA = $this->agenturdatenDto->mitarbeiternummerZusaetzlicherMA ?? $this->mitarbeiternummerZusaetzlicherMA;
-        return Modify::trim($mitarbtiernummerZusaetzlicherMA, MitarbeiterdatenTyp::MAX_LENGTH_MITARBEITER_ZUSAETZLICHER_MA);
+        return Modify::trimOrNull($mitarbtiernummerZusaetzlicherMA, MitarbeiterdatenTyp::MAX_LENGTH_MITARBEITER_ZUSAETZLICHER_MA);
     }
 
     private function getStellennummerZusaetzlicherMA(): ?string
     {
         $stellennummerZusaetzlicherMA = $this->agenturdatenDto->stellennummerZusaetzlicherMA ?? $this->stellennummerZusaetzlicherMA;
-        return Modify::trim($stellennummerZusaetzlicherMA, MitarbeiterdatenTyp::MAX_LENGTH_STELLENNUMMER_ZUSAETZLICHER_MA);
+        return Modify::trimOrNull($stellennummerZusaetzlicherMA, MitarbeiterdatenTyp::MAX_LENGTH_STELLENNUMMER_ZUSAETZLICHER_MA);
     }
 
     private function getVermittlereigeneVorgangsnummer(): ?string
     {
         $vermittlereigeneVorgangsnummer = $this->agenturdatenDto->vermittlereigeneVorgangsnummer;
-        return Modify::trim($vermittlereigeneVorgangsnummer, MitarbeiterdatenTyp::MAX_LENGTH_VERMITTLEREIGENE_VORGANGSNUMMER);
+        return Modify::trimOrNull($vermittlereigeneVorgangsnummer, MitarbeiterdatenTyp::MAX_LENGTH_VERMITTLEREIGENE_VORGANGSNUMMER);
     }
 
 
