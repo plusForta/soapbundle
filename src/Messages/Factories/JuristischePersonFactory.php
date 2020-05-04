@@ -55,7 +55,7 @@ class JuristischePersonFactory
     private function getNamenszusatz(): ?string
     {
         $namenszusatz = $this->dto->namenszusatz;
-        return Modify::trim($namenszusatz, NameJuristischePersonTyp::MAX_LENGTH_NAMENSZUSATZ);
+        return Modify::trimOrNull($namenszusatz, NameJuristischePersonTyp::MAX_LENGTH_NAMENSZUSATZ);
     }
 
     private function getAdresseJuristischePerson(): ?AdresseJuristischePersonTyp

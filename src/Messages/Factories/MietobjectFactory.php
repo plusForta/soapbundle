@@ -46,7 +46,7 @@ class MietobjectFactory
     private function getHausnummerZusatz(): ?string
     {
         $hausnummerZusatz = $this->mietobjektDto->hausnummerZusatz;
-        return Modify::trim($hausnummerZusatz, MietobjektTyp::MAX_LENGTH_HAUSNUMMER_ZUSATZ);
+        return Modify::trimOrNull($hausnummerZusatz, MietobjektTyp::MAX_LENGTH_HAUSNUMMER_ZUSATZ);
     }
 
     private function getPostleitzahl(): string
@@ -68,6 +68,6 @@ class MietobjectFactory
     private function getWeitereObjektbeschreibung(): ?string
     {
         $beschreibung = $this->mietobjektDto->beschreibung;
-        return Modify::trim($beschreibung, MietobjektTyp::MAX_LENGTH_WEITERE_OBJECTBESCHREIBUNG);
+        return Modify::trimOrNull($beschreibung, MietobjektTyp::MAX_LENGTH_WEITERE_OBJECTBESCHREIBUNG);
     }
 }
