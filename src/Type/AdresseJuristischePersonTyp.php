@@ -5,8 +5,11 @@ namespace PlusForta\RuVSoapBundle\Type;
 use Webmozart\Assert\Assert;
 
 /**
+ * @property string|null Strasse
+ * @property string|null Hausnummer
  * @property string|null HausnummerZusatz
  * @property string|null Postfach
+ * @property string|null Land
  */
 class AdresseJuristischePersonTyp
 {
@@ -28,22 +31,6 @@ class AdresseJuristischePersonTyp
      * @var string
      */
     private $Ort;
-
-    /**
-     * @var string
-     */
-    private $Strasse;
-
-    /**
-     * @var string
-     */
-    private $Hausnummer;
-
-
-    /**
-     * @var mixed
-     */
-    private $Land = 'Deutschland';
 
     /**
      * @param string $Postleitzahl
