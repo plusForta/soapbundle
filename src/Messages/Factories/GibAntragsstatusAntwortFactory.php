@@ -66,7 +66,7 @@ class GibAntragsstatusAntwortFactory
         $antrag = new AntragTyp();
 
         return $antrag
-            ->withVorgangsnummer($this->result->Antraege->Antrag->Vorgangsnummer)
+            ->withVorgangsnummer($this->getAntragDto()->Vorgangsnummer)
             ->withBewertung($this->getBewertung());
     }
 
@@ -83,13 +83,22 @@ class GibAntragsstatusAntwortFactory
     {
         $egebnis = new BewertungsergebnisEnumTyp();
         return $egebnis
-            ->withBewertungsergebnis($this->result->Antraege->Antrag->Bewertung->Bewertungsergebnis);
+            ->withBewertungsergebnis($this->getAntragDto()->Bewertung->Bewertungsergebnis);
         ;
     }
 
     private function getKommentar(): string
     {
-        return $this->result->Antraege->Antrag->Bewertung->Kommentar;
+        return $this->getAntragDto()->Bewertung->Kommentar;
+    }
+
+    /**
+     * @return mixed
+     */
+    private function getAntragDto()
+    {
+        $antrag = $this->result->Antraege->Antrag;
+        return is_array($antrag) ? $antrag[0] : $antrag;
     }
 
 
