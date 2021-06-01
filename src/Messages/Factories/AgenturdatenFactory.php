@@ -72,7 +72,7 @@ class AgenturdatenFactory
      */
     private function getAgenturNummer(): string
     {
-        return $this->agenturNummer ?? $this->agenturdatenDto->agenturNummer;
+        return $this->agenturdatenDto->agenturNummer ?? $this->agenturNummer;
     }
 
     private function getMitarbeiterdaten(): MitarbeiterdatenTyp
