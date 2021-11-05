@@ -4,8 +4,6 @@
 namespace PlusForta\RuVSoapBundle\DependencyInjection;
 
 
-use PlusForta\RuVSoapBundle\Messages\SoapMessageBuilder;
-use PlusForta\RuVSoapBundle\Messages\SoapMessageBuilderInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\Config\FileLocator;
@@ -18,7 +16,7 @@ class PlusFortaRuVSoapExtension extends Extension
     /**
      * Loads a specific configuration.
      *
-     * @throws \InvalidArgumentException When provided tag is not defined in this extension
+     * @throws \InvalidArgumentException|\Exception When provided tag is not defined in this extension
      */
     public function load(array $configs, ContainerBuilder $container)
     {
