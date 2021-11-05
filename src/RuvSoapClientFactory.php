@@ -2,10 +2,7 @@
 
 namespace PlusForta\RuVSoapBundle;
 
-use PlusForta\RuVSoapBundle\RuvSoapClient;
-use PlusForta\RuVSoapBundle\RuvSoapClientClassmap;
 use Psr\Log\LoggerInterface;
-use Symfony\Component\EventDispatcher\EventDispatcher;
 use Phpro\SoapClient\Soap\Driver\ExtSoap\ExtSoapEngineFactory;
 use Phpro\SoapClient\Soap\Driver\ExtSoap\ExtSoapOptions;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;

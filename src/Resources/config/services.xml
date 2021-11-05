@@ -4,10 +4,6 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services
         http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
-        <service id="PlusForta\RuVSoapBundle\Messages\SoapMessageBuilder" public="true">
-            <argument type="service" id="ruv_soap.logger"/>
-        </service>
-        <service id="PlusForta\RuVSoapBundle\Messages\SoapMessageBuilderInterface" alias="PlusForta\RuVSoapBundle\Messages\SoapMessageBuilder"/>
         <service id="PlusForta\RuVSoapBundle\RuvSoapClient" public="true">
             <factory service="PlusForta\RuVSoapBundle\RuvSoapClientFactory" method="factory"/>
         </service>
