@@ -14,10 +14,7 @@
         }
     },
     "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/plusForta/soap-client.git"
-        }
+
     ],
     "require": {
         "phpro/soap-client": "^1.1.2",
@@ -25,11 +22,10 @@
     },
     "require-dev": {
         "roave/security-advisories": "dev-master",
-        "symfony/config": "^4.3",
-        "symfony/dependency-injection": "^4.3",
+        "symfony/config": "^5.3",
+        "symfony/dependency-injection": "^5.3",
         "vimeo/psalm": "^3.5",
-        "symfony/http-kernel": "^4.3",
-        "zendframework/zend-code": "3.1.0",
+        "symfony/http-kernel": "^5.3",
         "php-parallel-lint/php-parallel-lint": "^1.2"
     }
 }
