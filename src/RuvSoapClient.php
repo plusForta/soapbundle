@@ -41,7 +41,7 @@ class RuvSoapClient extends Client
 
     public function gibVertragsdatenOperation(Type\GibVertragsdatenAnfrageTyp $inDoc): Type\GibVertragsdatenAntwortTyp
     {
-        $result = $this->call('stelleAntragOperation', $inDoc);
+        $result = $this->call('gibVertragsdatenOperation', $inDoc);
         $factory = new GibVertragsdatenFactory();
         return $factory->create($result);
     }
