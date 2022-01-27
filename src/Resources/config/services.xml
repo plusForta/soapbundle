@@ -21,6 +21,9 @@
         <service id="PlusForta\RuVSoapBundle\Messages\GibAntragsstatusFactory" public="true">
             <argument type="service" id="PlusForta\RuVSoapBundle\Messages\Factories\KennungFactory"/>
         </service>
+        <service id="PlusForta\RuVSoapBundle\Messages\GibVertragsdatenFactory" public="true">
+            <argument type="service" id="PlusForta\RuVSoapBundle\Messages\Factories\KennungFactory"/>
+        </service>
         <service id="PlusForta\RuVSoapBundle\Messages\StelleAntragFactory" public="true">
             <argument type="service" id="PlusForta\RuVSoapBundle\Messages\Factories\KennungFactory"/>
             <argument type="service" id="PlusForta\RuVSoapBundle\Messages\Factories\AntragMietkautionFactory"/>
