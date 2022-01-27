@@ -7,6 +7,7 @@ use Phpro\SoapClient\Type\MixedResult;
 use PlusForta\RuVSoapBundle\Messages\Factories\GibAntragsstatusAntwortFactory;
 use PlusForta\RuVSoapBundle\Messages\Factories\StelleAntragAntwortFactory;
 use PlusForta\RuVSoapBundle\Messages\Factories\BasisAntwortFactory;
+use PlusForta\RuVSoapBundle\Messages\GibVertragsdatenFactory;
 use PlusForta\RuVSoapBundle\Type;
 use PlusForta\RuVSoapBundle\Type\GibAntragsstatusAnfrageTyp;
 use PlusForta\RuVSoapBundle\Type\PruefeBonitaetAnfrageTyp;
@@ -34,6 +35,14 @@ class RuvSoapClient extends Client
     {
         $result = $this->call('stelleAntragOperation', $inDoc);
         $factory = new StelleAntragAntwortFactory();
+        return $factory->create($result);
+    }
+
+
+    public function gibVertragsdatenOperation(Type\GibVertragsdatenAnfrageTyp $inDoc): Type\GibVertragsdatenAntwortTyp
+    {
+        $result = $this->call('stelleAntragOperation', $inDoc);
+        $factory = new GibVertragsdatenFactory();
         return $factory->create($result);
     }
 
