@@ -15,19 +15,7 @@ class GibVertragsdatenAnfrageTyp implements RequestInterface
      * @var \PlusForta\RuVSoapBundle\Type\ZugriffsschluesselTyp
      */
     private $Zugriffsschluessel;
-
-    /**
-     * Constructor
-     *
-     * @var \PlusForta\RuVSoapBundle\Type\BasisAnfrageTyp $Kennung
-     * @var \PlusForta\RuVSoapBundle\Type\ZugriffsschluesselTyp $Zugriffsschluessel
-     */
-    public function __construct($Kennung, $Zugriffsschluessel)
-    {
-        $this->Kennung = $Kennung;
-        $this->Zugriffsschluessel = $Zugriffsschluessel;
-    }
-
+    
     /**
      * @return \PlusForta\RuVSoapBundle\Type\BasisAnfrageTyp
      */
@@ -40,7 +28,7 @@ class GibVertragsdatenAnfrageTyp implements RequestInterface
      * @param \PlusForta\RuVSoapBundle\Type\BasisAnfrageTyp $Kennung
      * @return GibVertragsdatenAnfrageTyp
      */
-    public function withKennung($Kennung)
+    public function withKennung($Kennung): GibVertragsdatenAnfrageTyp
     {
         $new = clone $this;
         $new->Kennung = $Kennung;
