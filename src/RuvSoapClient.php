@@ -5,6 +5,7 @@ namespace PlusForta\RuVSoapBundle;
 use Phpro\SoapClient\Client;
 use Phpro\SoapClient\Type\MixedResult;
 use PlusForta\RuVSoapBundle\Messages\Factories\GibAntragsstatusAntwortFactory;
+use PlusForta\RuVSoapBundle\Messages\Factories\GibVertragsdatenAntwortFactory;
 use PlusForta\RuVSoapBundle\Messages\Factories\StelleAntragAntwortFactory;
 use PlusForta\RuVSoapBundle\Messages\Factories\BasisAntwortFactory;
 use PlusForta\RuVSoapBundle\Messages\GibVertragsdatenFactory;
@@ -42,7 +43,7 @@ class RuvSoapClient extends Client
     public function gibVertragsdatenOperation(Type\GibVertragsdatenAnfrageTyp $inDoc): Type\GibVertragsdatenAntwortTyp
     {
         $result = $this->call('gibVertragsdatenOperation', $inDoc);
-        $factory = new GibVertragsdatenFactory();
+        $factory = new GibVertragsdatenAntwortFactory();
         return $factory->create($result);
     }
 
