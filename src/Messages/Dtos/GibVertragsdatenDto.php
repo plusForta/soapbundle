@@ -12,4 +12,10 @@ class GibVertragsdatenDto
 
     /** @var string */
     public $vorgangsnummer;
+
+    /** @var int */
+    public $arbeitesgebiet;
+
+    /** @var string */
+    public $versicherungsnummer;
 }

@@ -6,6 +6,7 @@ use PlusForta\RuVSoapBundle\Messages\Dtos\GibVertragsdatenDto;
 use PlusForta\RuVSoapBundle\Messages\Factories\KennungFactory;
 use PlusForta\RuVSoapBundle\Type\BasisAnfrageTyp;
 use PlusForta\RuVSoapBundle\Type\GibVertragsdatenAnfrageTyp;
+use PlusForta\RuVSoapBundle\Type\RechtsgeschaeftTyp;
 use PlusForta\RuVSoapBundle\Type\ZugriffsschluesselTyp;
 
 class GibVertragsdatenFactory
@@ -41,6 +42,18 @@ class GibVertragsdatenFactory
     private function getZugriffsschluessel(): ZugriffsschluesselTyp
     {
         $zugriffsschluessel = new ZugriffsschluesselTyp();
-        return $zugriffsschluessel->withVorgangsnummer($this->dto->vorgangsnummer);
+        return $zugriffsschluessel
+            ->withVorgangsnummer($this->dto->vorgangsnummer)
+            ->withRechtsgeschaeft($this->getReqchtsgeschaeft())
+            ;
+    }
+
+    private function getReqchtsgeschaeft(): RechtsgeschaeftTyp
+    {
+        $rechtsgeschaeft = new RechtsgeschaeftTyp();
+        return $rechtsgeschaeft
+            ->withArbeitsgebiet($this->dto->arbeitesgebiet)
+            ->withVersicherungsnummer($this->dto->versicherungsnummer)
+            ;
     }
 }
