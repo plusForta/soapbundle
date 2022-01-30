@@ -5,9 +5,10 @@ namespace PlusForta\RuVSoapBundle\Messages\Factories;
 use Phpro\SoapClient\Type\MixedResult;
 use Phpro\SoapClient\Type\ResultInterface;
 use PlusForta\RuVSoapBundle\Type\AdressdatenTyp;
-use PlusForta\RuVSoapBundle\Type\AnredeHerrFrauTyp;
 use PlusForta\RuVSoapBundle\Type\CodeEnumTyp;
 use PlusForta\RuVSoapBundle\Type\GibVertragsdatenAntwortTyp;
+use PlusForta\RuVSoapBundle\Type\KlauselnTyp;
+use PlusForta\RuVSoapBundle\Type\KlauselTyp;
 use PlusForta\RuVSoapBundle\Type\NameNatuerlichePersonHerrFrauTyp;
 use PlusForta\RuVSoapBundle\Type\NatuerlichePersonErweitertTyp;
 use PlusForta\RuVSoapBundle\Type\RechtsgeschaeftTyp;
@@ -63,7 +64,7 @@ class GibVertragsdatenAntwortFactory
             ->withBuergschaftsnummer((int) $this->result->Vertrag->Buergschaftsnummer)
             ->withBuergschaftssumme((float) $this->result->Vertrag->Buergschaftssumme)
             ->withAdressdaten($this->getAdressdaten())
-//            ->withKlauseln()
+            ->withKlauseln($this->getKlauseln())
             ->withBuergschaft($this->getBuergschaft())
             ;
     }
@@ -72,8 +73,8 @@ class GibVertragsdatenAntwortFactory
     {
         $rechtsgeschaeft = new RechtsgeschaeftTyp();
         return $rechtsgeschaeft
-            ->withArbeitsgebiet((int) $this->result->Rechtsgeschaeft->Arbeitsgebiet)
-            ->withVersicherungsnummer((int) $this->result->Rechtsgeschaeft->Versicherungsnummer)
+            ->withArbeitsgebiet((int) $this->result->Vertrag->Rechtsgeschaeft->Arbeitsgebiet)
+            ->withVersicherungsnummer((int) $this->result->Vertrag->Rechtsgeschaeft->Versicherungsnummer)
             ;
     }
 
@@ -119,6 +120,19 @@ class GibVertragsdatenAntwortFactory
     private function getBuergschaft(): ?string
     {
         return $this->result->Vertrag->Buergschaft;
+    }
+
+    private function getKlauseln(): KlauselnTyp
+    {
+        $klauseln = new KlauselnTyp();
+        $klauselArray = [];
+        foreach($this->result->Vertrag->Klauseln->Klausel as $item)
+        {
+            $klausel = new KlauselTyp();
+            $klauselArray[] = $klausel->withText($item->text);
+        }
+
+        return $klauseln->withKlausel($klauselArray);
     }
 
 

@@ -5,12 +5,12 @@ namespace PlusForta\RuVSoapBundle\Type;
 class KlauselnTyp
 {
     /**
-     * @var \PlusForta\RuVSoapBundle\Type\KlauselTyp
+     * @var \PlusForta\RuVSoapBundle\Type\KlauselTyp[]
      */
     private $Klausel;
 
     /**
-     * @return \PlusForta\RuVSoapBundle\Type\KlauselTyp
+     * @return \PlusForta\RuVSoapBundle\Type\KlauselTyp[]
      */
     public function getKlausel()
     {
@@ -18,10 +18,10 @@ class KlauselnTyp
     }
 
     /**
-     * @param \PlusForta\RuVSoapBundle\Type\KlauselTyp $Klausel
+     * @param \PlusForta\RuVSoapBundle\Type\KlauselTyp[] $Klausel
      * @return KlauselnTyp
      */
-    public function withKlausel($Klausel)
+    public function withKlausel(array $Klausel)
     {
         $new = clone $this;
         $new->Klausel = $Klausel;
