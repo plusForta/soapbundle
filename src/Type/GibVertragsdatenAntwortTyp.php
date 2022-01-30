@@ -2,9 +2,9 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
-use Phpro\SoapClient\Type\ResultInterface;
+use PlusForta\RuVSoapBundle\Messages\ResponseStatusInterface;
 
-class GibVertragsdatenAntwortTyp implements ResultInterface
+class GibVertragsdatenAntwortTyp implements ResponseStatusInterface
 {
     /**
      * @var \PlusForta\RuVSoapBundle\Type\StatusTyp
