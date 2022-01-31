@@ -19,7 +19,7 @@ class GibVertragsdatenAntwortTyp implements ResponseStatusInterface
     /**
      * @return \PlusForta\RuVSoapBundle\Type\StatusTyp
      */
-    public function getStatus()
+    public function getStatus(): StatusTyp
     {
         return $this->Status;
     }
