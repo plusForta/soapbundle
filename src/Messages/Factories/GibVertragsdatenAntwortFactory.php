@@ -129,7 +129,7 @@ class GibVertragsdatenAntwortFactory
         foreach($this->result->Vertrag->Klauseln->Klausel as $item)
         {
             $klausel = new KlauselTyp();
-            $klauselArray[] = $klausel->withText($item->text);
+            $klauselArray[] = $klausel->withText($item->Text);
         }
 
         return $klauseln->withKlausel($klauselArray);
