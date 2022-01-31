@@ -18,6 +18,8 @@ use PlusForta\RuVSoapBundle\Type\VertragTyp;
 
 class GibVertragsdatenAntwortFactory
 {
+    private const STATUS_OK = 'OK';
+
     /** @var \stdClass */
     private $result;
 
@@ -29,11 +31,13 @@ class GibVertragsdatenAntwortFactory
 
         $this->result = $result->getResult();
         $antwort = new GibVertragsdatenAntwortTyp();
-        return $antwort
-            ->withStatus($this->getStatus())
-            ->withVertrag($this->getVertrag())
-            ;
+        $status = $this->getStatus();
+        $antwort = $antwort->withStatus($status);
+        if ($status->getCode() === self::STATUS_OK) {
+            return $antwort->withVertrag($this->getVertrag());
+        }
 
+        return $antwort;
     }
 
     private function getStatus(): StatusTyp
