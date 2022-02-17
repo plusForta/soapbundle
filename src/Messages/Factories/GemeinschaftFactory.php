@@ -12,6 +12,7 @@ use PlusForta\RuVSoapBundle\Type\AnredeHerrFrauTyp;
 use PlusForta\RuVSoapBundle\Type\GemeinschaftTyp;
 use PlusForta\RuVSoapBundle\Type\GeschaeftlichTyp;
 use PlusForta\RuVSoapBundle\Type\KontaktdatenTyp;
+use PlusForta\RuVSoapBundle\Type\NamePersonGemeinschaftOhneNamenszusatzTyp;
 use PlusForta\RuVSoapBundle\Type\NamePersonGemeinschaftTyp;
 use PlusForta\RuVSoapBundle\Type\PrivatTyp;
 
@@ -30,8 +31,9 @@ class GemeinschaftFactory
     {
         $gemeinschaft = new GemeinschaftTyp();
         return $gemeinschaft
-            ->withAnredeGemeinschaft($this->getAnredeGemeinschaft())
-            ->withName($this->getNames())
+            ->withAnredeGemeinschaft($this->getAnredeGemeinschaft()->toString())
+            ->withNameErstePerson($this->getNameErstePerson())
+            ->withNameZweitePerson($this->getNameZweitePerson())
             ->withAdresse($this->getAdresse())
             ->withKontaktdaten($this->getKontaktdaten())
             ;
@@ -43,27 +45,26 @@ class GemeinschaftFactory
         return $anrede->withAnrede($this->dto->anredeGemeinschaft);
     }
 
-    /**
-     * @return NamePersonGemeinschaftTyp[]
-     */
-    private function getNames(): array
+    private function getNameErstePerson(): NamePersonGemeinschaftTyp
     {
-        $names = [];
-        foreach ($this->dto->lessees as $lessee) {
-            $names[] = $this->getName($lessee);
-        }
-
-        return $names;
-    }
-
-    private function getName(LesseeDto $lessee): NamePersonGemeinschaftTyp
-    {
+        $lessee = $this->dto->lessees[0];
         $name = new NamePersonGemeinschaftTyp();
         return $name->withAnrede($this->getAnrede($lessee))
             ->withTitel($this->getTitel($lessee))
             ->withVorname($this->getVorname($lessee))
             ->withNachname($this->getNachname($lessee))
-            ->withNamenszusatz($this->getNamenszusatz($lessee));
+            ;
+    }
+
+    private function getNameZweitePerson(): NamePersonGemeinschaftOhneNamenszusatzTyp
+    {
+        $lessee = $this->dto->lessees[1];
+        $name = new NamePersonGemeinschaftOhneNamenszusatzTyp();
+        return $name->withAnrede($this->getAnrede($lessee)->toString())
+            ->withTitel($this->getTitel($lessee))
+            ->withVorname($this->getVorname($lessee))
+            ->withNachname($this->getNachname($lessee))
+            ;
     }
 
     private function getAnrede(LesseeDto $lessee): AnredeHerrFrauTyp
@@ -85,11 +86,6 @@ class GemeinschaftFactory
     private function getNachname(LesseeDto $lessee): string
     {
         return $lessee->nachname;
-    }
-
-    private function getNamenszusatz(LesseeDto $lessee): string
-    {
-        return $lessee->namenszusatz;
     }
 
     private function getAdresse(): AdresseNatuerlichePersonTyp
