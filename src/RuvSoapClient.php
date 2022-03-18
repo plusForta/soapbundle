@@ -2,20 +2,28 @@
 
 namespace PlusForta\RuVSoapBundle;
 
-use Phpro\SoapClient\Client;
-use Phpro\SoapClient\Type\MixedResult;
+use Phpro\SoapClient\Caller\Caller;
+use Phpro\SoapClient\Type\RequestInterface;
 use PlusForta\RuVSoapBundle\Messages\Factories\GibAntragsstatusAntwortFactory;
 use PlusForta\RuVSoapBundle\Messages\Factories\GibVertragsdatenAntwortFactory;
 use PlusForta\RuVSoapBundle\Messages\Factories\StelleAntragAntwortFactory;
 use PlusForta\RuVSoapBundle\Messages\Factories\BasisAntwortFactory;
-use PlusForta\RuVSoapBundle\Messages\GibVertragsdatenFactory;
 use PlusForta\RuVSoapBundle\Type;
 use PlusForta\RuVSoapBundle\Type\GibAntragsstatusAnfrageTyp;
 use PlusForta\RuVSoapBundle\Type\PruefeBonitaetAnfrageTyp;
 use PlusForta\RuVSoapBundle\Type\StelleAntragAnfrageTyp;
 
-class RuvSoapClient extends Client
+class RuvSoapClient
 {
+
+    public function __construct(private Caller $caller)
+    {
+    }
+
+    private function call(string $method, RequestInterface $request)
+    {
+        return ($this->caller)($method, $request);
+    }
 
     /**
      * @param PruefeBonitaetAnfrageTyp $inDoc

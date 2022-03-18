@@ -2,17 +2,16 @@
 
 namespace PlusForta\RuVSoapBundle;
 
-use http\Exception\InvalidArgumentException;
 use PlusForta\RuVSoapBundle\Type;
-use Phpro\SoapClient\Soap\ClassMap\ClassMapCollection;
-use Phpro\SoapClient\Soap\ClassMap\ClassMap;
+use Soap\ExtSoapEngine\Configuration\ClassMap\ClassMap;
+use Soap\ExtSoapEngine\Configuration\ClassMap\ClassMapCollection;
 
 class RuvSoapClientClassmap
 {
 
-    public static function getCollection() : \Phpro\SoapClient\Soap\ClassMap\ClassMapCollection
+    public static function getCollection() : ClassMapCollection
     {
-        return new ClassMapCollection([
+        return new ClassMapCollection(...[
             new ClassMap('protocolHeaderTyp', Type\ProtocolHeaderTyp::class),
             new ClassMap('identityHeaderTyp', Type\IdentityHeaderTyp::class),
             new ClassMap('identityCompanyTyp', Type\IdentityCompanyTyp::class),
