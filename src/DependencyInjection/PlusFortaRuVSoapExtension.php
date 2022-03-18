@@ -66,7 +66,7 @@ class PlusFortaRuVSoapExtension extends Extension
 
     }
 
-    public function getAlias()
+    public function getAlias(): string
     {
         return 'plusforta_ruv_soap';
     }
