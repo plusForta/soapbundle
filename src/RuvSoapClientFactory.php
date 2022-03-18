@@ -2,9 +2,12 @@
 
 namespace PlusForta\RuVSoapBundle;
 
+use Phpro\SoapClient\Caller\EngineCaller;
+use Phpro\SoapClient\Caller\EventDispatchingCaller;
 use Psr\Log\LoggerInterface;
 use Soap\ExtSoapEngine\ExtSoapEngineFactory;
 use Soap\ExtSoapEngine\ExtSoapOptions;
+use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class RuvSoapClientFactory
@@ -42,7 +45,8 @@ class RuvSoapClientFactory
                 ->withClassMap(RuvSoapClientClassmap::getCollection())
         );
 
-        return new RuvSoapClient($engine, $this->eventDispatcher);
+        $caller = new EventDispatchingCaller(new EngineCaller($engine), $this->eventDispatcher);
+        return new RuvSoapClient($caller);
     }
 
     /**
