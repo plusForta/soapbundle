@@ -3,8 +3,8 @@
 namespace PlusForta\RuVSoapBundle;
 
 use Psr\Log\LoggerInterface;
-use Phpro\SoapClient\Soap\Driver\ExtSoap\ExtSoapEngineFactory;
-use Phpro\SoapClient\Soap\Driver\ExtSoap\ExtSoapOptions;
+use Soap\ExtSoapEngine\ExtSoapEngineFactory;
+use Soap\ExtSoapEngine\ExtSoapOptions;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class RuvSoapClientFactory
