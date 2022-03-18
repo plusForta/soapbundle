@@ -17,8 +17,10 @@
 
     ],
     "require": {
-        "phpro/soap-client": "^1.1.2",
-        "webmozart/assert": "^1.5"
+        "phpro/soap-client": "^2.1.0",
+        "webmozart/assert": "^1.5",
+        "symfony/http-client": "^6.0",
+        "nyholm/psr7": "^1.4"
     },
     "require-dev": {
         "roave/security-advisories": "dev-master",
@@ -27,5 +29,10 @@
         "vimeo/psalm": "^3.5",
         "symfony/http-kernel": "^5.3",
         "php-parallel-lint/php-parallel-lint": "^1.2"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true
+        }
     }
 }
