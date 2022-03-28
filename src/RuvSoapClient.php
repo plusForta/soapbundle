@@ -12,17 +12,23 @@ use PlusForta\RuVSoapBundle\Type;
 use PlusForta\RuVSoapBundle\Type\GibAntragsstatusAnfrageTyp;
 use PlusForta\RuVSoapBundle\Type\PruefeBonitaetAnfrageTyp;
 use PlusForta\RuVSoapBundle\Type\StelleAntragAnfrageTyp;
+use Soap\ExtSoapEngine\AbusedClient;
 
 class RuvSoapClient
 {
 
-    public function __construct(private Caller $caller)
+    public function __construct(private Caller $caller, private AbusedClient $client)
     {
     }
 
     private function call(string $method, RequestInterface $request)
     {
         return ($this->caller)($method, $request);
+    }
+
+    public function getClient(): AbusedClient
+    {
+        return $this->client;
     }
 
     /**
