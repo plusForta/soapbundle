@@ -46,6 +46,10 @@ class VertragsdatenFactory
     {
         $this->vertragsdatenDto = $vertragsdatenDto;
         $vertragsdaten = new VertragsdatenTyp();
+        if ($vertragsdatenDto->Buergschaftsvariante !== null) {
+            $vertragsdaten = $vertragsdaten->withBuergschaftsvariante($vertragsdatenDto->Buergschaftsvariante);
+        }
+
         return $vertragsdaten
             ->withProdukt($this->getProduct())
             ->withVertragsbeginn($this->getVertragsbeginn())
