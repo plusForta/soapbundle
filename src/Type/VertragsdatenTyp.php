@@ -5,6 +5,9 @@ namespace PlusForta\RuVSoapBundle\Type;
 use DateTimeImmutable;
 use Webmozart\Assert\Assert;
 
+/**
+ * @property string $Buergschaftsvariante
+ */
 class VertragsdatenTyp
 {
     public const MIETKAUTION = 'Mietkaution';
@@ -112,6 +115,14 @@ class VertragsdatenTyp
     {
         $new = clone $this;
         $new->UebergabeDokumente = $UebergabeDokumente;
+
+        return $new;
+    }
+
+    public function withBuergschaftsvariante(string $buergschaftsvariante): VertragsdatenTyp
+    {
+        $new = clone $this;
+        $new->Buergschaftsvariante = $buergschaftsvariante;
 
         return $new;
     }

@@ -5,7 +5,6 @@ namespace PlusForta\RuVSoapBundle\Messages\Dtos;
 
 
 
-
 class VertragsdatenDto
 {
 
@@ -14,6 +13,9 @@ class VertragsdatenDto
 
     /** @var \DateTimeImmutable */
     public $vertragsbeginn;
+
+    /** @var ?string  */
+    public $Buergschaftsvariante = null;
 
     /** @var string */
     public $versicherungsBedingungen;
