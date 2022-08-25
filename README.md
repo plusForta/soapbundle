@@ -20,7 +20,7 @@ Zuerst muss das github-Repository zur composer.json hinzugefügt werden.
 
 
 ```shell
-composer install plusforta/soapbundle:dev-master
+composer install plusforta/soapbundle:x.x.x
 ```
 
 
