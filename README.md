@@ -20,7 +20,7 @@ Zuerst muss das github-Repository zur composer.json hinzugefügt werden.
 
 
 ```shell
-composer install plusforta/soapbundle:x.x.x
+composer require plusforta/soapbundle:x.x.x
 ```
 
 
@@ -38,7 +38,7 @@ plusforta_ruv_soap:
   connection:
     proxy:
       host: '%env(PROXY_HOST)%'
-      port: '%env(PROXY_PORt)%'
+      port: '%env(PROXY_PORT)%'
 
     ssl:
       verify_peer: false
