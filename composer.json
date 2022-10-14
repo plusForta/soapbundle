@@ -2,10 +2,15 @@
     "name": "plusforta/soapbundle",
     "description": "SOAP for R+V Api",
     "type": "symfony-bundle",
+    "version": "1.01",
     "authors": [
         {
             "name": "Jan Hentschel",
             "email": "jan.hentschel@plusforta.de"
+        },
+        {
+            "name": "Marc Runkel",
+            "email": "marc.runkel@plusforta.de"
         }
     ],
     "autoload": {
@@ -20,7 +25,8 @@
         "phpro/soap-client": "^2.1.0",
         "webmozart/assert": "^1.5",
         "symfony/http-client": "^6.0",
-        "nyholm/psr7": "^1.4"
+        "nyholm/psr7": "^1.4",
+        "ext-mbstring": "*"
     },
     "require-dev": {
         "roave/security-advisories": "dev-master",

@@ -17,7 +17,7 @@ class Modify
 
         $trace = self::getTrace();
         self::logTrace($trace);
-        return substr($value, 0, $length);
+        return mb_strcut($value, 0, $length);
     }
 
     public static function trim(string $value, int $length): string
@@ -28,7 +28,7 @@ class Modify
 
         $trace = self::getTrace();
         self::logTrace($trace);
-        return substr($value, 0, $length);
+        return mb_strcut($value, 0, $length);
     }
 
     private static function getTrace() {
