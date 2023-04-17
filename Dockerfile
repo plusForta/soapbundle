@@ -1,5 +1,5 @@
 ## Stage 1 (base)
-FROM dock.pfdev.de/public/php-nginx-base:latest as base
+FROM dock.pfdev.de/public/php82-nginx-base:latest as base
 
 ENV PATH=/var/www/bin:$PATH
 

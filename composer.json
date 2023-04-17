@@ -30,15 +30,16 @@
     },
     "require-dev": {
         "roave/security-advisories": "dev-master",
-        "symfony/config": "^5.3",
-        "symfony/dependency-injection": "^5.3",
-        "vimeo/psalm": "^3.5",
-        "symfony/http-kernel": "^5.3",
-        "php-parallel-lint/php-parallel-lint": "^1.2"
+        "symfony/config": "^6.2",
+        "symfony/dependency-injection": "^6.2",
+        "vimeo/psalm": "^5.9.0",
+        "symfony/http-kernel": "^6.2",
+        "php-parallel-lint/php-parallel-lint": "^v1.3.2"
     },
     "config": {
         "allow-plugins": {
-            "composer/package-versions-deprecated": true
+            "composer/package-versions-deprecated": true,
+            "php-http/discovery": true
         }
     }
 }

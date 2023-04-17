@@ -15,33 +15,16 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class RuvSoapClientFactory
 {
-
-    /** @var array */
-    private $config;
-
-    /** @var EventDispatcherInterface */
-    private $eventDispatcher;
-
-    /** @var LoggerInterface */
-    private $logger;
-
-    /** @var string  */
-    private $wsdl;
-
     public function __construct(
-        EventDispatcherInterface $eventDispatcher,
-        LoggerInterface $logger,
-        array $config,
-        string $wsdl
+        private EventDispatcherInterface $eventDispatcher,
+        private LoggerInterface $logger,
+        private array $config,
+        private string $wsdl
     )
     {
-        $this->eventDispatcher = $eventDispatcher;
-        $this->logger = $logger;
-        $this->config = $config;
-        $this->wsdl = $wsdl;
     }
 
-    public function factory() : \PlusForta\RuVSoapBundle\RuvSoapClient
+    public function factory() : RuvSoapClient
     {
         $options = ExtSoapOptions::defaults($this->wsdl, $this->getDefaults())
             ->withClassMap(RuvSoapClientClassmap::getCollection()
@@ -52,6 +35,7 @@ class RuvSoapClientFactory
         $engine = new SimpleEngine($driver, $handler);
 
         $caller = new EventDispatchingCaller(new EngineCaller($engine), $this->eventDispatcher);
+
         return new RuvSoapClient($caller, $driver->getClient());
     }
 
@@ -75,7 +59,9 @@ class RuvSoapClientFactory
                 'ssl' => $this->config['ssl']
             ]
         );
+
         $this->logger->debug('ExtSoapOptions::defaults', $defaults);
+
         return $defaults;
     }
 
