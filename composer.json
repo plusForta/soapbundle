@@ -2,7 +2,7 @@
     "name": "plusforta/soapbundle",
     "description": "SOAP for R+V Api",
     "type": "symfony-bundle",
-    "version": "1.7.0",
+    "version": "1.7.1",
     "authors": [
         {
             "name": "Jan Hentschel",
