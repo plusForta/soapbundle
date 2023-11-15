@@ -54,6 +54,10 @@ class RuvSoapClientFactory
             'cache_wsdl' => 1
         ];
 
+        if (isset($this->config['location'])) {
+            $defaults['location'] = $this->config['location'];
+        }
+
         if (isset($this->config['proxy'])) {
             $defaults['proxy_host'] = $this->config['proxy']['host'];
             $defaults['proxy_port'] = $this->config['proxy']['port'];
@@ -72,6 +76,5 @@ class RuvSoapClientFactory
         $this->logger->debug('ExtSoapOptions::defaults', $defaults);
         return $defaults;
     }
-
 }
 

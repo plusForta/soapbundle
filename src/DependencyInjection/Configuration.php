@@ -21,6 +21,7 @@ class Configuration implements ConfigurationInterface
         /** @psalm-suppress PossiblyUndefinedMethod */
         $treeBuilder->getRootNode()->children()
             ->scalarNode('wsdl')->defaultNull()->end()
+            ->scalarNode('location')->defaultNull()->end()
             ->arrayNode('connection')->addDefaultsIfNotSet()
                 ->children()
                     ->arrayNode('basicAuth')
@@ -28,6 +29,7 @@ class Configuration implements ConfigurationInterface
                             ->scalarNode('username')->end()
                             ->scalarNode('password')->end()
                         ->end()
+                    ->end()
                     ->arrayNode('proxy')
                         ->children()
                             ->scalarNode('host')->end()

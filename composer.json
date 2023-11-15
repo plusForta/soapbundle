@@ -12,7 +12,7 @@
             "email": "marc.runkel@plusforta.de"
         }
     ],
-    "version": "1.4.3",
+    "version": "1.4.4",
     "autoload": {
         "psr-4": {
             "PlusForta\\RuVSoapBundle\\": "src/"

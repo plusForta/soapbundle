@@ -10,7 +10,7 @@ class VersicherungsbedingungenEnumTyp
 {
     private string $Versicherungsbedingungen;
 
-    public function withVersicherungsbedingungen($bedingung = 'MIET0422'): VersicherungsbedingungenEnumTyp
+    public function withVersicherungsbedingungen($bedingung = 'Miet0422'): VersicherungsbedingungenEnumTyp
     {
         $new = clone $this;
         $new->Versicherungsbedingungen = $bedingung;
