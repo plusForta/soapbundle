@@ -35,7 +35,7 @@ class RuvSoapClientFactory
         $this->wsdl = $wsdl;
     }
 
-    public function factory() : \PlusForta\RuVSoapBundle\RuvSoapClient
+    public function factory() : RuvSoapClient
     {
         $engine = ExtSoapEngineFactory::fromOptions(
             ExtSoapOptions::defaults($this->wsdl, $this->getDefaults())
@@ -54,10 +54,18 @@ class RuvSoapClientFactory
             'cache_wsdl' => 1
         ];
 
+        if (isset($this->config['location'])) {
+            $defaults['location'] = $this->config['location'];
+        }
+
         if (isset($this->config['proxy'])) {
             $defaults['proxy_host'] = $this->config['proxy']['host'];
             $defaults['proxy_port'] = $this->config['proxy']['port'];
+        }
 
+        if (isset($this->config['basicAuth'])) {
+            $defaults['login'] = $this->config['basicAuth']['username'];
+            $defaults['password'] = $this->config['basicAuth']['password'];
         }
 
         $defaults['stream_context'] = stream_context_create(
@@ -68,7 +76,5 @@ class RuvSoapClientFactory
         $this->logger->debug('ExtSoapOptions::defaults', $defaults);
         return $defaults;
     }
-
-
 }
 
