@@ -10,17 +10,13 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 class RuvSoapClientFactory
 {
 
-    /** @var array */
-    private $config;
+    private array $config;
 
-    /** @var EventDispatcherInterface */
-    private $eventDispatcher;
+    private EventDispatcherInterface $eventDispatcher;
 
-    /** @var LoggerInterface */
-    private $logger;
+    private LoggerInterface $logger;
 
-    /** @var string  */
-    private $wsdl;
+    private string $wsdl;
 
     public function __construct(
         EventDispatcherInterface $eventDispatcher,
@@ -45,9 +41,6 @@ class RuvSoapClientFactory
         return new RuvSoapClient($engine, $this->eventDispatcher);
     }
 
-    /**
-     * @return array
-     */
     private function getDefaults(): array
     {
         $defaults = [
@@ -61,11 +54,6 @@ class RuvSoapClientFactory
         if (isset($this->config['proxy'])) {
             $defaults['proxy_host'] = $this->config['proxy']['host'];
             $defaults['proxy_port'] = $this->config['proxy']['port'];
-        }
-
-        if (isset($this->config['basicAuth'])) {
-            $defaults['login'] = $this->config['basicAuth']['username'];
-            $defaults['password'] = $this->config['basicAuth']['password'];
         }
 
         $defaults['stream_context'] = stream_context_create(
