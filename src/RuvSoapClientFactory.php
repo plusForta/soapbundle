@@ -16,17 +16,13 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 class RuvSoapClientFactory
 {
 
-    /** @var array */
-    private $config;
+    private array $config;
 
-    /** @var EventDispatcherInterface */
-    private $eventDispatcher;
+    private EventDispatcherInterface $eventDispatcher;
 
-    /** @var LoggerInterface */
-    private $logger;
+    private LoggerInterface $logger;
 
-    /** @var string  */
-    private $wsdl;
+    private string $wsdl;
 
     public function __construct(
         EventDispatcherInterface $eventDispatcher,
@@ -41,11 +37,10 @@ class RuvSoapClientFactory
         $this->wsdl = $wsdl;
     }
 
-    public function factory() : \PlusForta\RuVSoapBundle\RuvSoapClient
+    public function factory() : RuvSoapClient
     {
         $options = ExtSoapOptions::defaults($this->wsdl, $this->getDefaults())
-            ->withClassMap(RuvSoapClientClassmap::getCollection()
-        );
+            ->withClassMap(RuvSoapClientClassmap::getCollection());
 
         $driver = ExtSoapDriver::createFromOptions($options);
         $handler = new ExtSoapClientTransport($driver->getClient());
@@ -64,10 +59,14 @@ class RuvSoapClientFactory
             'cache_wsdl' => 1
         ];
 
+        if (isset($this->config['basicAuth'])) {
+            $defaults['login'] = $this->config['basicAuth']['username'];
+            $defaults['password'] = $this->config['basicAuth']['password'];
+        }
+
         if (isset($this->config['proxy'])) {
             $defaults['proxy_host'] = $this->config['proxy']['host'];
             $defaults['proxy_port'] = $this->config['proxy']['port'];
-
         }
 
         $defaults['stream_context'] = stream_context_create(
