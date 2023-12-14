@@ -4,6 +4,8 @@ namespace PlusForta\RuVSoapBundle;
 
 use Phpro\SoapClient\Caller\EngineCaller;
 use Phpro\SoapClient\Caller\EventDispatchingCaller;
+use Psr\Log\LoggerAwareInterface;
+use Psr\Log\LoggerAwareTrait;
 use Psr\Log\LoggerInterface;
 use Soap\Engine\SimpleEngine;
 use Soap\ExtSoapEngine\ExtSoapDriver;
@@ -13,11 +15,12 @@ use Soap\ExtSoapEngine\Transport\ExtSoapClientTransport;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
-class RuvSoapClientFactory
+class RuvSoapClientFactory implements LoggerAwareInterface
 {
+    use LoggerAwareTrait;
+
     public function __construct(
         private EventDispatcherInterface $eventDispatcher,
-        private LoggerInterface $logger,
         private array $config,
         private string $wsdl
     )
@@ -47,10 +50,12 @@ class RuvSoapClientFactory
             'cache_wsdl' => 1
         ];
 
+        // support optional location override
         if (isset($this->config['location'])) {
             $defaults['location'] = $this->config['location'];
         }
 
+        // support basicauth for the request to the API interface
         if (isset($this->config['basicAuth'])) {
             $defaults['login'] = $this->config['basicAuth']['username'];
             $defaults['password'] = $this->config['basicAuth']['password'];
@@ -59,8 +64,11 @@ class RuvSoapClientFactory
         if (isset($this->config['proxy'])) {
             $defaults['proxy_host'] = $this->config['proxy']['host'];
             $defaults['proxy_port'] = $this->config['proxy']['port'];
-            $defaults['proxy_login'] = $this->config['proxy']['username'];
-            $defaults['proxy_password'] = $this->config['proxy']['password'];
+            // support optional username/password for connection to proxy
+            if (isset($this->config['proxy']['username']) && isset($this->config['proxy']['password'])) {
+                $defaults['proxy_login'] = $this->config['proxy']['username'];
+                $defaults['proxy_password'] = $this->config['proxy']['password'];
+            }
         }
 
         $defaults['stream_context'] = stream_context_create(
