@@ -47,7 +47,7 @@ class RuvSoapClientFactory
             'cache_wsdl' => 1
         ];
 
-        if ($this->config['location']) {
+        if (isset($this->config['location'])) {
             $defaults['location'] = $this->config['location'];
         }
 

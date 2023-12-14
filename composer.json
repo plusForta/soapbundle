@@ -2,7 +2,7 @@
     "name": "plusforta/soapbundle",
     "description": "SOAP for R+V Api",
     "type": "symfony-bundle",
-    "version": "1.7.2",
+    "version": "1.7.3",
     "authors": [
         {
             "name": "Anar Haqverdiyev@plusforta.de",
