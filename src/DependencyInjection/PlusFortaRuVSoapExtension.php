@@ -31,6 +31,7 @@ class PlusFortaRuVSoapExtension extends Extension
         $definition = $container->getDefinition('PlusForta\RuVSoapBundle\RuvSoapClientFactory');
         $definition->setArgument(2, $this->getConnectionConfig($config));
         $definition->setArgument(3, $this->getWsdl($config));
+        $definition->setArgument(4, $this->getLocation($config));
 
         // KennungsFactory
         $definition = $container->getDefinition('PlusForta\RuVSoapBundle\Messages\Factories\KennungFactory');
@@ -161,5 +162,10 @@ class PlusFortaRuVSoapExtension extends Extension
     private function getWsdl(array $config)
     {
         return $config['wsdl'];
+    }
+
+    private function getLocation(array $config)
+    {
+        return $config['location'];
     }
 }

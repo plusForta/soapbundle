@@ -21,7 +21,8 @@ class RuvSoapClientFactory
         private EventDispatcherInterface $eventDispatcher,
         private LoggerInterface $logger,
         private array $config,
-        private string $wsdl
+        private string $wsdl,
+        private string $location
     )
     {
     }
@@ -46,12 +47,12 @@ class RuvSoapClientFactory
     private function getDefaults(): array
     {
         $defaults = [
-            'cache_wsdl' => 1
+            'cache_wsdl' => 0 // no need to cache the WSDL as we load it from the local file system now
         ];
 
         // support optional location override
-        if (isset($this->config['location'])) {
-            $defaults['location'] = $this->config['location'];
+        if ($this->location) {
+            $defaults['location'] = $this->location;
         }
 
         // support basicauth for the request to the API interface

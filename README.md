@@ -133,14 +133,12 @@ To update a particular version, checkout the corresponding branch, make a new co
 git pull
 git checkout 1.7.x
 # make changes
-# also make sure to update composer.json with the new version number
 git add .
 git commit -m "Describe what you changed"
-git tag $newVersion
+git tag $newVersion  # $newVersion is the new version number.
 git push --tags
 git push
 ```
-**Don't forget to update the version # is composer.json!**
 
 ## Testing
 
