@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Mit XMLSpy v2019 rel. 3 sp1 (x64) (http://www.altova.com) von  (R + V Allgemeine Versicherung AG) bearbeitet -->
+<xsd:schema xmlns:service="http://ruv-schema.de/Mietkaution/2019/2/_types" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" version="1.0">
+	<xsd:annotation>
+		<xsd:documentation>Schema fuer Typen der Methode pruefeBonitaet</xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexType name="basisAnfrageTyp">
+		<xsd:sequence>
+			<!-- Anmeldedaten -->
+			<xsd:element name="Benutzer" type="string_50"/>
+			<xsd:element name="Passwort" type="string_50"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="basisAntwortTyp">
+		<xsd:sequence>
+			<xsd:element name="Status" type="statusTyp"/>
+			<xsd:element name="Referenznummer" type="string_50" minOccurs="0"/>
+			<xsd:element name="Bewertung" type="bewertungTyp" minOccurs="0"/>
+			<xsd:element name="Vorgangsnummer" type="string_20" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="statusTyp">
+		<xsd:sequence>
+			<xsd:element name="Code" type="statusCodeTyp"/>
+			<xsd:element name="Nachricht" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="statusCodeTyp">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="OK"/>
+			<xsd:enumeration value="ANMELDEFEHLER"/>
+			<xsd:enumeration value="FEHLER"/>
+			<xsd:enumeration value="DATENBANKFEHLER"/>
+			<xsd:enumeration value="INFOSCOREFEHLER"/>
+			<xsd:enumeration value="PARAMETER_NICHT_GEFUNDEN"/>
+			<xsd:enumeration value="UNGUELTIGE_ANFRAGE"/>
+			<xsd:enumeration value="XPSFEHLER"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="bewertungTyp">
+		<xsd:sequence>
+			<xsd:element name="Bewertungsergebnis" type="bewertungsergebnisTyp"/>
+			<xsd:element name="Kommentar" type="string_1000"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="bewertungsergebnisTyp">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Positiv"/>
+			<xsd:enumeration value="Negativ"/>
+			<xsd:enumeration value="Pruefung">
+				<xsd:annotation>
+					<xsd:documentation>Es ist eine manuelle Prüfung des Antrags notwendig. Statusänderung des Antrags kann über die Operation gibAntragsstatus abgefragt werden.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string_10">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:maxLength value="10"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string_1000">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:maxLength value="1000"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string_12">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:maxLength value="12"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string_15">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:maxLength value="15"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string_20">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string_25">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:maxLength value="25"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string_30">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:maxLength value="30"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string_5">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:maxLength value="5"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string_50">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:maxLength value="50"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string_60">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:maxLength value="60"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string_8">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:maxLength value="8"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string_9">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:maxLength value="9"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string_exakt_13">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:minLength value="13"/>
+			<xsd:maxLength value="13"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string_exakt_6">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:minLength value="6"/>
+			<xsd:maxLength value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string_exakt_8">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:minLength value="8"/>
+			<xsd:maxLength value="8"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="datumTyp">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{2}\.[0-9]{2}\.[0-9]{4}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="decimal_bis_10000">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0.00"/>
+			<xsd:maxInclusive value="10000.00"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="decimal_bis_99999">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0.00"/>
+			<xsd:maxInclusive value="99999.00"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="int_2">
+		<xsd:restriction base="xsd:integer">
+			<xsd:minInclusive value="0"/>
+			<xsd:maxInclusive value="99"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="int_3">
+		<xsd:restriction base="xsd:integer">
+			<xsd:minInclusive value="0"/>
+			<xsd:maxInclusive value="999"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="int_9">
+		<xsd:restriction base="xsd:integer">
+			<xsd:minInclusive value="0"/>
+			<xsd:maxInclusive value="999999999"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

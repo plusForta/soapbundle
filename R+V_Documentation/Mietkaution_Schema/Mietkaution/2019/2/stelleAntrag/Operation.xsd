@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+  Datei: Operation.xsd
+  Zweck: XSD Definition fuer Methoden-Nachrichten
+  Datum: 13.12.2019 10:01:20
+  
+  Diese Datei wurde automatisch mit dem VRS2WSDL Generator erstellt
+-->
+
+<xsd:schema
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://www.w3.org/2001/XMLSchema" 
+    targetNamespace="http://ruv-schema.de/Mietkaution/2019/2/stelleAntrag">
+  
+  <!-- Include der XML-Schemata fuer Methoden-Nachrichten -->
+  <xsd:include 
+      schemaLocation="./Anfrage.xsd"/>
+  <xsd:include 
+      schemaLocation="./Antwort.xsd"/>
+
+</xsd:schema>
+

@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema xmlns:service="http://ruv-schema.de/Mietkaution/2019/1/_types" xmlns:method="http://ruv-schema.de/Mietkaution/2019/1/stelleAntrag/_types" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" version="1.0">
+	<xsd:annotation>
+		<xsd:documentation>Schema fuer Typen der Methode stelleAntrag</xsd:documentation>
+	</xsd:annotation>
+	<xsd:import namespace="http://ruv-schema.de/Mietkaution/2019/1/_types" schemaLocation="../../../_types/types.xsd"/>
+	<xsd:complexType name="stelleAntragAnfrageTyp">
+		<xsd:sequence>
+			<xsd:element name="Kennung" type="service:basisAnfrageTyp"/>
+			<xsd:element name="BonitaetspruefungDurchfuehren" type="xsd:boolean"/>
+			<xsd:element name="AntragMietkaution" type="antragMietkautionTyp"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="antragMietkautionTyp">
+		<xsd:sequence>
+			<xsd:element name="Referenznummer" type="service:string_30" minOccurs="0"/>
+			<xsd:element name="AllgemeineAngaben" type="allgemeineAngabenTyp"/>
+			<xsd:element name="Antragsdaten" type="antragsdatenTyp"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="allgemeineAngabenTyp">
+		<xsd:sequence>
+			<xsd:element name="Agenturdaten" type="agenturdatenTyp"/>
+			<xsd:element name="Inkassodaten" type="inkassodatenTyp"/>
+			<xsd:element name="Werbewiderspruch" type="werbewiderspruchTyp"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="agenturdatenTyp">
+		<xsd:sequence>
+			<xsd:element name="Agentur" type="agenturTyp"/>
+			<xsd:element name="Mitarbeiterdaten" type="mitarbeiterdatenTyp"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="agenturTyp">
+		<xsd:sequence>
+			<xsd:element name="Agenturnummer" type="service:string_exakt_6"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="mitarbeiterdatenTyp">
+		<xsd:sequence>
+			<xsd:element name="Mitarbeiternummer" type="service:string_12" minOccurs="0"/>
+			<xsd:element name="MitarbeiternummerZusaetzlicherMA" type="service:string_exakt_6" minOccurs="0"/>
+			<xsd:element name="StellennummerZusaetzlicherMA" type="service:string_exakt_6" minOccurs="0"/>
+			<xsd:element name="VermittlereigeneVorgangsnummer" type="service:string_9" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="inkassodatenTyp">
+		<xsd:sequence>
+			<xsd:element name="Zahlungsweise" type="zahlungsweiseTyp"/>
+			<xsd:element name="Inkassoart" type="inkassoartTyp"/>
+			<xsd:element name="Bankverbindung" type="bankverbindungTyp" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="zahlungsweiseTyp">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:enumeration value="monatlich"/>
+			<xsd:enumeration value="jaehrlich"/>
+			<xsd:enumeration value="halbjaehrlich"/>
+			<xsd:enumeration value="vierteljaehrlich"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="inkassoartTyp">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:enumeration value="Lastschrift"/>
+			<xsd:enumeration value="Selbstzahler"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="bankverbindungTyp">
+		<xsd:sequence>
+			<xsd:choice>
+				<xsd:element name="Lastschriftverfahren" type="lastschriftverfahrenTyp"/>
+				<xsd:element name="SepaMandat" type="sepaMandatTyp"/>
+			</xsd:choice>
+			<xsd:element name="Kreditinstitut" type="service:string_30"/>
+			<xsd:element name="Kontoinhaber" type="service:string_30"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="lastschriftverfahrenTyp">
+		<xsd:sequence>
+			<xsd:element name="Kontonummer" type="kontonummerTyp"/>
+			<xsd:element name="Bankleitzahl" type="bankleitzahlTyp"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="kontonummerTyp">
+		<xsd:restriction base="xsd:integer">
+			<xsd:minInclusive value="0"/>
+			<xsd:maxInclusive value="9999999999"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="bankleitzahlTyp">
+		<xsd:restriction base="xsd:integer">
+			<xsd:minInclusive value="0"/>
+			<xsd:maxInclusive value="99999999"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="sepaMandatTyp">
+		<xsd:sequence>
+			<xsd:element name="IBAN" type="ibanTyp"/>
+			<xsd:element name="BIC" type="bicTyp"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="ibanTyp">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:maxLength value="34"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="bicTyp">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:maxLength value="11"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="werbewiderspruchTyp">
+		<xsd:sequence>
+			<xsd:element name="KeineTelefonWerbung" type="xsd:boolean"/>
+			<xsd:element name="KeineEMailWerbung" type="xsd:boolean"/>
+			<xsd:element name="KeineDatenweitergabe" type="xsd:boolean"/>
+			<xsd:element name="KeineSchriftlicheWerbung" type="xsd:boolean"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="antragsdatenTyp">
+		<xsd:sequence>
+			<xsd:element name="Adressdaten" type="adressdatenTyp"/>
+			<xsd:element name="Vertragsdaten" type="vertragsdatenTyp"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="adressdatenTyp">
+		<xsd:sequence>
+			<xsd:element name="Versicherungsnehmer" type="versicherungsnehmerTyp"/>
+			<xsd:element name="Vermieter" type="vermieterTyp"/>
+			<xsd:element name="Mietobjekt" type="mietobjektTyp"/>
+			<xsd:element name="AbweichBuergEmpfaenger" type="abweichBuergEmpfaengerTyp" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="versicherungsnehmerTyp">
+		<xsd:choice>
+			<xsd:element name="NatuerlichePerson" type="natuerlichePersonErweitertTyp"/>
+			<xsd:element name="Gemeinschaft" type="gemeinschaftTyp"/>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="natuerlichePersonErweitertTyp">
+		<xsd:sequence>
+			<xsd:element name="Name" type="nameNatuerlichePersonHerrFrauTyp"/>
+			<xsd:element name="Adresse" type="adresseNatuerlichePersonOptionalAdresseTyp"/>
+			<xsd:element name="Kontaktdaten" type="kontaktdatenTyp"/>
+			<xsd:element name="Geburtsdatum" type="service:datumTyp"/>
+			<xsd:element name="Nationalitaet" type="xsd:normalizedString"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="nameNatuerlichePersonHerrFrauTyp">
+		<xsd:sequence minOccurs="0">
+			<xsd:element name="Anrede" type="anredeHerrFrauTyp"/>
+			<xsd:element name="Titel" type="service:string_15" minOccurs="0"/>
+			<xsd:element name="Vorname" type="service:string_30"/>
+			<xsd:element name="Nachname" type="service:string_30"/>
+			<xsd:element name="Namenszusatz" type="service:string_30" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="anredeHerrFrauTyp">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:enumeration value="Herr"/>
+			<xsd:enumeration value="Frau"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="natuerlichePersonTyp">
+		<xsd:sequence>
+			<xsd:element name="Name" type="nameNatuerlichePersonTyp"/>
+			<xsd:element name="Adresse" type="adresseNatuerlichePersonOptionalAdresseTyp"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="natuerlichePersonOptionalAdresseTyp">
+		<xsd:sequence>
+			<xsd:element name="Name" type="nameNatuerlichePersonTyp"/>
+			<xsd:element name="Adresse" type="adresseNatuerlichePersonTyp" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="nameNatuerlichePersonTyp">
+		<xsd:sequence minOccurs="0">
+			<xsd:element name="Anrede" type="anredeTyp"/>
+			<xsd:element name="Titel" type="service:string_15" minOccurs="0"/>
+			<xsd:element name="Vorname" type="service:string_30"/>
+			<xsd:element name="Nachname" type="service:string_30"/>
+			<xsd:element name="Namenszusatz" type="service:string_30" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="anredeTyp">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:enumeration value="Herr"/>
+			<xsd:enumeration value="Frau"/>
+			<xsd:enumeration value="ohne Anrede"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="adresseNatuerlichePersonOptionalAdresseTyp">
+		<xsd:sequence>
+			<xsd:element name="Strasse" type="service:string_30" minOccurs="0"/>
+			<xsd:element name="Hausnummer" type="service:string_10" minOccurs="0"/>
+			<xsd:element name="HausnummerZusatz" type="service:string_5" minOccurs="0"/>
+			<xsd:element name="Postleitzahl" type="service:string_5" minOccurs="0"/>
+			<xsd:element name="Ort" type="service:string_25" minOccurs="0"/>
+			<xsd:element name="Teilort" type="service:string_30" minOccurs="0"/>
+			<xsd:element name="Land" type="landTyp"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="adresseNatuerlichePersonTyp">
+		<xsd:sequence>
+			<xsd:element name="Strasse" type="service:string_30"/>
+			<xsd:element name="Hausnummer" type="service:string_10"/>
+			<xsd:element name="HausnummerZusatz" type="service:string_5" minOccurs="0"/>
+			<xsd:element name="Postleitzahl" type="service:string_5"/>
+			<xsd:element name="Ort" type="service:string_25"/>
+			<xsd:element name="Teilort" type="service:string_30" minOccurs="0"/>
+			<xsd:element name="Land" type="landTyp"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="landTyp">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:enumeration value="Deutschland"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="kontaktdatenTyp">
+		<xsd:sequence>
+			<xsd:element name="Privat" type="privatTyp" minOccurs="0"/>
+			<xsd:element name="Geschaeftlich" type="geschaeftlichTyp" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="privatTyp">
+		<xsd:sequence>
+			<xsd:element name="Telefon" type="kontaktnummerTyp" minOccurs="0"/>
+			<xsd:element name="Mobil" type="kontaktnummerTyp" minOccurs="0"/>
+			<xsd:element name="Fax" type="kontaktnummerTyp" minOccurs="0"/>
+			<xsd:element name="EMail" type="service:string_50" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="kontaktnummerTyp">
+		<xsd:sequence>
+			<xsd:element name="Vorwahl" type="vorwahlTyp"/>
+			<xsd:element name="Rufnummer" type="service:string_15"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="vorwahlTyp">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0+][0-9]{2,7}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="geschaeftlichTyp">
+		<xsd:sequence>
+			<xsd:element name="Telefon" type="kontaktnummerTyp" minOccurs="0"/>
+			<xsd:element name="Mobil" type="kontaktnummerTyp" minOccurs="0"/>
+			<xsd:element name="Fax" type="kontaktnummerTyp" minOccurs="0"/>
+			<xsd:element name="Email" type="service:string_50" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="gemeinschaftTyp">
+		<xsd:sequence>
+			<xsd:element name="AnredeGemeinschaft" type="anredeGemeinschaftTyp"/>
+			<xsd:element name="Name" type="namePersonGemeinschaftTyp" minOccurs="2" maxOccurs="2"/>
+			<xsd:element name="Adresse" type="adresseNatuerlichePersonOptionalAdresseTyp"/>
+			<xsd:element name="Kontaktdaten" type="kontaktdatenTyp"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="anredeGemeinschaftTyp">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:enumeration value="Ehepaar"/>
+			<xsd:enumeration value="ohne Anrede"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="namePersonGemeinschaftTyp">
+		<xsd:sequence>
+			<xsd:element name="Anrede" type="anredeHerrFrauTyp"/>
+			<xsd:element name="Titel" type="service:string_15" minOccurs="0"/>
+			<xsd:element name="Vorname" type="service:string_30"/>
+			<xsd:element name="Nachname" type="service:string_30"/>
+			<xsd:element name="Namenszusatz" type="service:string_30" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="vermieterTyp">
+		<xsd:choice>
+			<xsd:element name="NatuerlichePerson" type="natuerlichePersonOptionalAdresseTyp"/>
+			<xsd:element name="JuristischePerson" type="juristischePersonOptionalAdresseTyp"/>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="juristischePersonTyp">
+		<xsd:sequence>
+			<xsd:element name="NameJuristischePerson" type="nameJuristischePersonTyp"/>
+			<xsd:element name="AdresseJuristischePerson" type="adresseJuristischePersonOptionalAdresseTyp"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="juristischePersonOptionalAdresseTyp">
+		<xsd:sequence>
+			<xsd:element name="NameJuristischePerson" type="nameJuristischePersonTyp"/>
+			<xsd:element name="AdresseJuristischePerson" type="adresseJuristischePersonTyp" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="nameJuristischePersonTyp">
+		<xsd:sequence>
+			<xsd:element name="Anrede" type="anredeTyp"/>
+			<xsd:element name="Name" type="service:string_30"/>
+			<xsd:element name="Namenszusatz" type="service:string_30" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="adresseJuristischePersonOptionalAdresseTyp">
+		<xsd:sequence>
+			<xsd:element name="Postleitzahl" type="service:string_5" minOccurs="0"/>
+			<xsd:element name="Ort" type="service:string_25" minOccurs="0"/>
+			<xsd:choice>
+				<xsd:sequence>
+					<xsd:element name="Strasse" type="service:string_30" minOccurs="0"/>
+					<xsd:element name="Hausnummer" type="service:string_10" minOccurs="0"/>
+					<xsd:element name="HausnummerZusatz" type="service:string_5" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:element name="Postfach" type="service:string_8" minOccurs="0"/>
+			</xsd:choice>
+			<xsd:element name="Land" type="landTyp"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="adresseJuristischePersonTyp">
+		<xsd:sequence>
+			<xsd:element name="Postleitzahl" type="service:string_5"/>
+			<xsd:element name="Ort" type="service:string_25"/>
+			<xsd:choice>
+				<xsd:sequence>
+					<xsd:element name="Strasse" type="service:string_30"/>
+					<xsd:element name="Hausnummer" type="service:string_10"/>
+					<xsd:element name="HausnummerZusatz" type="service:string_5" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:element name="Postfach" type="service:string_8"/>
+			</xsd:choice>
+			<xsd:element name="Land" type="landTyp"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="mietobjektTyp">
+		<xsd:sequence>
+			<xsd:element name="Strasse" type="service:string_30"/>
+			<xsd:element name="Hausnummer" type="service:string_10"/>
+			<xsd:element name="HausnummerZusatz" type="service:string_5" minOccurs="0"/>
+			<xsd:element name="Postleitzahl" type="service:string_5"/>
+			<xsd:element name="Ort" type="service:string_30"/>
+			<xsd:element name="Land" type="landTyp"/>
+			<xsd:element name="WeitereObjektbeschreibung" type="service:string_60" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="abweichBuergEmpfaengerTyp">
+		<xsd:choice>
+			<xsd:element name="NatuerlichePerson" type="natuerlichePersonTyp"/>
+			<xsd:element name="JuristischePerson" type="juristischePersonTyp"/>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="vertragsdatenTyp">
+		<xsd:sequence>
+			<xsd:element name="Produkt" type="produktTyp"/>
+			<xsd:element name="Vertragsbeginn" type="service:datumTyp"/>
+			<xsd:element name="Tarifdaten" type="tarifdatenTyp"/>
+			<xsd:element name="Mietvertrag" type="mietvertragTyp"/>
+			<xsd:element name="Dokumentenversand" type="dokumentenversandTyp"/>
+			<xsd:element name="UebergabeDokumente" type="uebergabeDokumenteTyp"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="produktTyp">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:enumeration value="Mietkaution"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="tarifdatenTyp">
+		<xsd:sequence>
+			<xsd:element name="Versicherungsbedingungen" type="versicherungsbedingungenTyp"/>
+			<xsd:element name="Buergschaftssumme" type="service:decimal_bis_99999"/>
+			<xsd:element name="Jahresbeitrag" type="service:decimal_bis_10000"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="versicherungsbedingungenTyp">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Miet2017"/>
+			<xsd:enumeration value="Miet2018"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="mietvertragTyp">
+		<xsd:sequence>
+			<xsd:element name="MietvertragVom" type="service:datumTyp"/>
+			<xsd:element name="Einzugsdatum" type="service:datumTyp" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="dokumentenversandTyp">
+		<xsd:sequence>
+			<xsd:element name="VersandBuergschaft" type="versandBuergschaftTyp"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="versandBuergschaftTyp">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Versicherungsnehmer"/>
+			<xsd:enumeration value="Vermieter"/>
+			<xsd:enumeration value="Hausverwalter"/>
+			<xsd:enumeration value="Versand an Dritten"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="uebergabeDokumenteTyp">
+		<xsd:sequence>
+			<xsd:element name="VertragsbestimmungenUebergeben" type="xsd:boolean"/>
+			<xsd:element name="BuergschaftUebergeben" type="xsd:boolean"/>
+			<xsd:element name="VersicherungsscheinUebergeben" type="xsd:boolean"/>
+			<xsd:element name="RechnungUebergeben" type="xsd:boolean"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="stelleAntragAntwortTyp">
+		<xsd:complexContent>
+			<xsd:extension base="service:basisAntwortTyp">
+				<xsd:sequence>
+					<xsd:element name="Rechtsgeschaeft" type="rechtsgeschaeftTyp"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="rechtsgeschaeftTyp">
+		<xsd:sequence>
+			<xsd:element name="Arbeitsgebiet" type="service:int_2"/>
+			<xsd:element name="Versicherungsnummer" type="service:int_9"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

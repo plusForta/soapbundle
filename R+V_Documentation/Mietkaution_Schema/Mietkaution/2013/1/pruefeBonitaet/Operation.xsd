@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+  Datei: Operation.xsd
+  Zweck: XSD Definition fuer Methoden-Nachrichten
+  Datum: 25.07.2012 17:01:21
+  
+  Diese Datei wurde automatisch mit dem VRS2WSDL Generator erstellt
+-->
+<xsd:schema xmlns:pruefeBonitaet="http://ruv-schema.de/Mietkaution/2013/1/pruefeBonitaet" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ruv-schema.de/Mietkaution/2013/1/pruefeBonitaet">
+	<!-- Include der XML-Schemata fuer Methoden-Nachrichten -->
+	<xsd:include schemaLocation="./Anfrage.xsd"/>
+	<xsd:include schemaLocation="./Antwort.xsd"/>
+</xsd:schema>
