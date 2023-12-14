@@ -35,7 +35,6 @@ class RuvSoapClientFactory
         $engine = new SimpleEngine($driver, $handler);
 
         $caller = new EventDispatchingCaller(new EngineCaller($engine), $this->eventDispatcher);
-
         return new RuvSoapClient($caller, $driver->getClient());
     }
 
@@ -48,10 +47,20 @@ class RuvSoapClientFactory
             'cache_wsdl' => 1
         ];
 
+        if ($this->config['location']) {
+            $defaults['location'] = $this->config['location'];
+        }
+
+        if (isset($this->config['basicAuth'])) {
+            $defaults['login'] = $this->config['basicAuth']['username'];
+            $defaults['password'] = $this->config['basicAuth']['password'];
+        }
+
         if (isset($this->config['proxy'])) {
             $defaults['proxy_host'] = $this->config['proxy']['host'];
             $defaults['proxy_port'] = $this->config['proxy']['port'];
-
+            $defaults['proxy_login'] = $this->config['proxy']['username'];
+            $defaults['proxy_password'] = $this->config['proxy']['password'];
         }
 
         $defaults['stream_context'] = stream_context_create(
@@ -64,7 +73,5 @@ class RuvSoapClientFactory
 
         return $defaults;
     }
-
-
 }
 

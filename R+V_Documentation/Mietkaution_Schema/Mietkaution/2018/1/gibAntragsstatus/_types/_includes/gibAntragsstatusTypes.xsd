@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Mit XMLSpy v2013 (http://www.altova.com) von R+V Allgemeine Versicherung AG (R+V Allgemeine Versicherung AG) bearbeitet -->
+<xsd:schema xmlns:service="http://ruv-schema.de/Mietkaution/2018/1/_types" xmlns:method="http://ruv-schema.de/Mietkaution/2018/1/gibAntragsstatus/_types" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" version="1.0">
+	<xsd:annotation>
+		<xsd:documentation>Schema fuer Typen der Methode gibAntragsstatus</xsd:documentation>
+	</xsd:annotation>
+	<xsd:import namespace="http://ruv-schema.de/Mietkaution/2018/1/_types" schemaLocation="../../../_types/types.xsd"/>
+	<xsd:complexType name="gibAntragsstatusAnfrageTyp">
+		<xsd:sequence>
+			<xsd:element name="Kennung" type="service:basisAnfrageTyp"/>
+			<xsd:element name="Vorgangsnummern" type="vorgangsnummernTyp"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="vorgangsnummernTyp">
+		<xsd:sequence>
+			<xsd:element name="Vorgangsnummer" type="service:string_20" maxOccurs="50"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="gibAntragsstatusAntwortTyp">
+		<xsd:sequence>
+			<xsd:element name="Status" type="service:statusTyp"/>
+			<xsd:element name="Antraege" type="antraegeTyp"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="antraegeTyp">
+		<xsd:sequence>
+			<xsd:element name="Antrag" type="antragTyp" maxOccurs="50"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="antragTyp">
+		<xsd:sequence>
+			<xsd:element name="Vorgangsnummer" type="service:string_20"/>
+			<xsd:element name="Bewertung" type="service:bewertungTyp"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>
