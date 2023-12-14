@@ -15,12 +15,11 @@ use Soap\ExtSoapEngine\Transport\ExtSoapClientTransport;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
-class RuvSoapClientFactory implements LoggerAwareInterface
+class RuvSoapClientFactory
 {
-    use LoggerAwareTrait;
-
     public function __construct(
         private EventDispatcherInterface $eventDispatcher,
+        private LoggerInterface $logger,
         private array $config,
         private string $wsdl
     )
