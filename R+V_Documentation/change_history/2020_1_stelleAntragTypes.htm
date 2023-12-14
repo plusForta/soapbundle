@@ -1,0 +1,1991 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>WinMerge File Compare Report</title>
+<style type="text/css">
+<!--
+table {margin: 0; border: 1px solid #a0a0a0; box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);}
+td,th {word-break: break-all; font-size: 8pt;padding: 0 3px;}
+tr { vertical-align: top; }
+.ln {text-align: right; word-break: normal; background-color: lightgrey;}
+.title {color: white; background-color: blue; vertical-align: top; padding: 4px 4px; background: linear-gradient(mediumblue, darkblue);}
+.sf3b2 {color: #000000; background-color: #ffffff; }
+.sf3b5 {color: #000000; background-color: #0078d7; }
+.sf3b14 {color: #000000; background-color: #ffa0a0; }
+.sf3b16 {color: #000000; background-color: #f1e2ad; }
+.sf3b18 {color: #000000; background-color: #ffaa82; }
+.sf3b19 {color: #000000; background-color: #c8816c; }
+.sf6b2 {color: #ffffff; background-color: #ffffff; }
+.sf6b5 {color: #ffffff; background-color: #0078d7; }
+.sf6b14 {color: #ffffff; background-color: #ffa0a0; }
+.sf6b16 {color: #ffffff; background-color: #f1e2ad; }
+.sf6b18 {color: #ffffff; background-color: #ffaa82; }
+.sf6b19 {color: #ffffff; background-color: #c8816c; }
+.sf7b2 {color: #0000ff; background-color: #ffffff; font-weight: bold; }
+.sf7b5 {color: #0000ff; background-color: #0078d7; font-weight: bold; }
+.sf7b14 {color: #0000ff; background-color: #ffa0a0; font-weight: bold; }
+.sf7b16 {color: #0000ff; background-color: #f1e2ad; font-weight: bold; }
+.sf7b18 {color: #0000ff; background-color: #ffaa82; font-weight: bold; }
+.sf7b19 {color: #0000ff; background-color: #c8816c; font-weight: bold; }
+.sf8b2 {color: #800080; background-color: #ffffff; }
+.sf8b5 {color: #800080; background-color: #0078d7; }
+.sf8b14 {color: #800080; background-color: #ffa0a0; }
+.sf8b16 {color: #800080; background-color: #f1e2ad; }
+.sf8b18 {color: #800080; background-color: #ffaa82; }
+.sf8b19 {color: #800080; background-color: #c8816c; }
+.sf9b2 {color: #008000; background-color: #ffffff; }
+.sf9b5 {color: #008000; background-color: #0078d7; }
+.sf9b14 {color: #008000; background-color: #ffa0a0; }
+.sf9b16 {color: #008000; background-color: #f1e2ad; }
+.sf9b18 {color: #008000; background-color: #ffaa82; }
+.sf9b19 {color: #008000; background-color: #c8816c; }
+.sf10b2 {color: #ff0000; background-color: #ffffff; }
+.sf10b5 {color: #ff0000; background-color: #0078d7; }
+.sf10b14 {color: #ff0000; background-color: #ffa0a0; }
+.sf10b16 {color: #ff0000; background-color: #f1e2ad; }
+.sf10b18 {color: #ff0000; background-color: #ffaa82; }
+.sf10b19 {color: #ff0000; background-color: #c8816c; }
+.sf11b2 {color: #606060; background-color: #ffffff; }
+.sf11b5 {color: #606060; background-color: #0078d7; }
+.sf11b14 {color: #606060; background-color: #ffa0a0; }
+.sf11b16 {color: #606060; background-color: #f1e2ad; }
+.sf11b18 {color: #606060; background-color: #ffaa82; }
+.sf11b19 {color: #606060; background-color: #c8816c; }
+.sf12b2 {color: #800000; background-color: #ffffff; }
+.sf12b5 {color: #800000; background-color: #0078d7; }
+.sf12b14 {color: #800000; background-color: #ffa0a0; }
+.sf12b16 {color: #800000; background-color: #f1e2ad; }
+.sf12b18 {color: #800000; background-color: #ffaa82; }
+.sf12b19 {color: #800000; background-color: #c8816c; }
+.sf13b2 {color: #0080c0; background-color: #ffffff; }
+.sf13b5 {color: #0080c0; background-color: #0078d7; }
+.sf13b14 {color: #0080c0; background-color: #ffa0a0; }
+.sf13b16 {color: #0080c0; background-color: #f1e2ad; }
+.sf13b18 {color: #0080c0; background-color: #ffaa82; }
+.sf13b19 {color: #0080c0; background-color: #c8816c; }
+.sf15b2 {color: #000000; background-color: #ffffff; }
+.sf15b5 {color: #000000; background-color: #0078d7; }
+.sf15b14 {color: #000000; background-color: #ffa0a0; }
+.sf15b16 {color: #000000; background-color: #f1e2ad; }
+.sf15b18 {color: #000000; background-color: #ffaa82; }
+.sf15b19 {color: #000000; background-color: #c8816c; }
+.sf17b2 {color: #000000; background-color: #ffffff; }
+.sf17b5 {color: #000000; background-color: #0078d7; }
+.sf17b14 {color: #000000; background-color: #ffa0a0; }
+.sf17b16 {color: #000000; background-color: #f1e2ad; }
+.sf17b18 {color: #000000; background-color: #ffaa82; }
+.sf17b19 {color: #000000; background-color: #c8816c; }
+.sf20b2 {color: #000080; background-color: #ffffff; }
+.sf20b5 {color: #000080; background-color: #0078d7; }
+.sf20b14 {color: #000080; background-color: #ffa0a0; }
+.sf20b16 {color: #000080; background-color: #f1e2ad; }
+.sf20b18 {color: #000080; background-color: #ffaa82; }
+.sf20b19 {color: #000080; background-color: #c8816c; }
+.sf21b2 {color: #0080c0; background-color: #ffffff; }
+.sf21b5 {color: #0080c0; background-color: #0078d7; }
+.sf21b14 {color: #0080c0; background-color: #ffa0a0; }
+.sf21b16 {color: #0080c0; background-color: #f1e2ad; }
+.sf21b18 {color: #0080c0; background-color: #ffaa82; }
+.sf21b19 {color: #0080c0; background-color: #c8816c; }
+-->
+</style>
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" style="width:100%;">
+<thead>
+<tr>
+<th colspan="2" class="title" style="width:50.000000%">D:\Projekte\ruv_ktvm_trunk\ktvm_bonipruef\doc\extern\Mietkaution_Schema\Mietkaution\2020\1\stelleAntrag\_types\_includes\stelleAntragTypes.xsd</th>
+<th colspan="2" class="title" style="width:50.000000%">D:\Projekte\ruv_ktvm_trunk\ktvm_bonipruef\doc\extern\Mietkaution_Schema\Mietkaution\2019\2\stelleAntrag\_types\_includes\stelleAntragTypes.xsd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&lt;!-- Mit XMLSpy v2019 rel. 3 sp1 (x64) (http://www.altova.com) von &nbsp;(R + V Allgemeine Versicherung AG) bearbeitet --&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&lt;!-- Mit XMLSpy v2019 rel. 3 sp1 (x64) (http://www.altova.com) von &nbsp;(R + V Allgemeine Versicherung AG) bearbeitet --&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d1" href="#d1">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; ">&lt;xsd:schema </span><span class="sf17b16">xmlns:service="http://ruv-schema.de/Mie<wbr>tkaution/2020/1/_types"</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b16">xmlns:method="http://ruv-schema.de/Miet<wbr>kaution/2020/1/stelleAntrag/_types"</span><span style="color: #000000; background-color: #efcb05; "> xmlns:xsd="http://www.w3.org/2001/XMLSc<wbr>hema" elementFormDefault="unqualified" version="1.0"&gt;</span></code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; ">&lt;xsd:schema </span><span class="sf17b16">xmlns:service="http://ruv-schema.de/Mie<wbr>tkaution/2019/2/_types"</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b16">xmlns:method="http://ruv-schema.de/Miet<wbr>kaution/2019/2/stelleAntrag/_types"</span><span style="color: #000000; background-color: #efcb05; "> xmlns:xsd="http://www.w3.org/2001/XMLSc<wbr>hema" elementFormDefault="unqualified" version="1.0"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:annotation&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:annotation&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:documentation&gt;Schema fuer Typen der Methode stelleAntrag&lt;/xsd:documentation&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:documentation&gt;Schema fuer Typen der Methode stelleAntrag&lt;/xsd:documentation&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:annotation&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:annotation&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d2" href="#d2">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp;&lt;xsd:import </span><span class="sf17b16">namespace="http://ruv-schema.de/Mietkau<wbr>tion/2020/1/_types"</span><span style="color: #000000; background-color: #efcb05; "> schemaLocation="../../../_types/types.x<wbr>sd"/&gt;</span></code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp;&lt;xsd:import </span><span class="sf17b16">namespace="http://ruv-schema.de/Mietkau<wbr>tion/2019/2/_types"</span><span style="color: #000000; background-color: #efcb05; "> schemaLocation="../../../_types/types.x<wbr>sd"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="stelleAntragAnfrageTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="stelleAntragAnfrageTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d3" href="#d3">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Kennung" </span><span class="sf17b16">type="service:basisAnfrageTyp"&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Kennung" </span><span class="sf17b16">type="service:basisAnfrageTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;xsd:annotation&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="color: #000000; background-color: #efcb05; ">&lt;xsd:element name="BonitaetspruefungDurchfuehren" </span><span class="sf17b16">type="xsd:boolean"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;xsd:documentation&gt;Mandanteninformation<wbr>en&lt;/xsd:documentation&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="color: #000000; background-color: #efcb05; ">&lt;xsd:element name="AntragMietkaution" </span><span class="sf17b16">type="antragMietkautionTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;/xsd:annotation&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;/xsd:element&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="BonitaetspruefungDurchfuehren" </span><span class="sf17b16">type="xsd:boolean"&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;xsd:annotation&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;xsd:documentation&gt;Gibt</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">an,</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">ob</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">eine</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">Bonitätsprüfung</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">durchgeführt</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">werden</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">soll.</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">Nur</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">in</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">Ausnahmefällen</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">kann</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">diese</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">abgewählt</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">werden.</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">Dazu</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">ist</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">eine</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">spezielle</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">Berechtigung</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">für</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">den</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">Mandanten</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">erforderlich&lt;/xsd:documentation&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;/xsd:annotation&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;/xsd:element&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="AntragMietkaution" </span><span class="sf17b16">type="method:antragMietkautionTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="antragMietkautionTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="antragMietkautionTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d4" href="#d4">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Referenznummer" type="service:string_30" </span><span class="sf17b16">minOccurs="0"&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Referenznummer" type="service:string_30" </span><span class="sf17b16">minOccurs="0"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;xsd:annotation&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="color: #000000; background-color: #efcb05; ">&lt;xsd:element name="AllgemeineAngaben" </span><span class="sf17b16">type="allgemeineAngabenTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;xsd:documentation&gt;Hier</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">kann</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">die</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">Vorgangsnummer</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">eines</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">zuvor</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">durchgeführten</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">pruefeBonitaet-Aufrufs</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">übergeben</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">werden,</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">sodass</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">keine</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">erneute</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">Bonitaetspruefung</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">erfolgen</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">muss&lt;/xsd:documentation&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Antragsdaten" </span><span class="sf17b16">type="antragsdatenTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;/xsd:annotation&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;/xsd:element&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="AllgemeineAngaben" </span><span class="sf17b16">type="method:allgemeineAngabenTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Antragsdaten" </span><span class="sf17b16">type="method:antragsdatenTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="allgemeineAngabenTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="allgemeineAngabenTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d5" href="#d5">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Agenturdaten" </span><span class="sf17b16">type="method:agenturdatenTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Agenturdaten" </span><span class="sf17b16">type="agenturdatenTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Inkassodaten" </span><span class="sf17b16">type="method:inkassodatenTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Inkassodaten" </span><span class="sf17b16">type="inkassodatenTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Werbewiderspruch" </span><span class="sf17b16">type="method:werbewiderspruchTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Werbewiderspruch" </span><span class="sf17b16">type="werbewiderspruchTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="agenturdatenTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="agenturdatenTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d6" href="#d6">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Agentur" </span><span class="sf17b16">type="method:agenturTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Agentur" </span><span class="sf17b16">type="agenturTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Mitarbeiterdaten" </span><span class="sf17b16">type="method:mitarbeiterdatenTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Mitarbeiterdaten" </span><span class="sf17b16">type="mitarbeiterdatenTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="agenturTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="agenturTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Agenturnummer" type="service:string_exakt_6"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Agenturnummer" type="service:string_exakt_6"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="mitarbeiterdatenTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="mitarbeiterdatenTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Mitarbeiternummer" type="service:string_12" minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Mitarbeiternummer" type="service:string_12" minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="MitarbeiternummerZusaetzlicherMA"<wbr> type="service:string_exakt_6" minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="MitarbeiternummerZusaetzlicherMA"<wbr> type="service:string_exakt_6" minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="StellennummerZusaetzlicherMA" type="service:string_exakt_6" minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="StellennummerZusaetzlicherMA" type="service:string_exakt_6" minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="VermittlereigeneVorgangsnummer" type="service:string_9" minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="VermittlereigeneVorgangsnummer" type="service:string_9" minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="inkassodatenTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="inkassodatenTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d7" href="#d7">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Zahlungsweise" </span><span class="sf17b16">type="method:zahlungsweiseTyp"&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Zahlungsweise" </span><span class="sf17b16">type="zahlungsweiseTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;xsd:annotation&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="color: #000000; background-color: #efcb05; ">&lt;xsd:element name="Inkassoart" </span><span class="sf17b16">type="inkassoartTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;xsd:documentation&gt;Zahlungsintervall&lt;/x<wbr>sd:documentation&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;/xsd:annotation&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;/xsd:element&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Inkassoart" </span><span class="sf17b16">type="method:inkassoartTyp"&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;xsd:annotation&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;xsd:documentation&gt;Zahlungsmethode&lt;/xsd<wbr>:documentation&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;/xsd:annotation&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;/xsd:element&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Zahlungseinzug" minOccurs="0"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Zahlungseinzug" minOccurs="0"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:choice&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:choice&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d8" href="#d8">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Bankverbindung" </span><span class="sf17b16">type="method:bankverbindungTyp"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Bankverbindung" </span><span class="sf17b16">type="bankverbindungTyp"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Zahlungsdienstleister" </span><span class="sf17b16">type="method:zahlungsdienstleisterTyp"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Zahlungsdienstleister" </span><span class="sf17b16">type="zahlungsdienstleisterTyp"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:choice&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:choice&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:element&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:element&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:simpleType name="zahlungsweiseTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:simpleType name="zahlungsweiseTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:restriction base="xsd:normalizedString"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:restriction base="xsd:normalizedString"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="monatlich"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="monatlich"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="jaehrlich"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="jaehrlich"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="halbjaehrlich"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="halbjaehrlich"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="vierteljaehrlich"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="vierteljaehrlich"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:restriction&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:restriction&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:simpleType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:simpleType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:simpleType name="inkassoartTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:simpleType name="inkassoartTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:restriction base="xsd:normalizedString"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:restriction base="xsd:normalizedString"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="Lastschrift"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="Lastschrift"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="Selbstzahler"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="Selbstzahler"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="Zahlungsdienstleister"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="Zahlungsdienstleister"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:restriction&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:restriction&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:simpleType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:simpleType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="bankverbindungTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="bankverbindungTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:choice&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:choice&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d9" href="#d9">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Lastschriftverfahren" </span><span class="sf17b16">type="method:lastschriftverfahrenTyp"/&gt;<wbr></span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Lastschriftverfahren" </span><span class="sf17b16">type="lastschriftverfahrenTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="SepaMandat" </span><span class="sf17b16">type="method:sepaMandatTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="SepaMandat" </span><span class="sf17b16">type="sepaMandatTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:choice&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:choice&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Kreditinstitut" type="service:string_30"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Kreditinstitut" type="service:string_30"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Kontoinhaber" type="service:string_30"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Kontoinhaber" type="service:string_30"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="lastschriftverfahrenTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="lastschriftverfahrenTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d10" href="#d10">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Kontonummer" </span><span class="sf17b16">type="method:kontonummerTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Kontonummer" </span><span class="sf17b16">type="kontonummerTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Bankleitzahl" </span><span class="sf17b16">type="method:bankleitzahlTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Bankleitzahl" </span><span class="sf17b16">type="bankleitzahlTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:simpleType name="kontonummerTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:simpleType name="kontonummerTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:restriction base="xsd:integer"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:restriction base="xsd:integer"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:minInclusive value="0"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:minInclusive value="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:maxInclusive value="9999999999"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:maxInclusive value="9999999999"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:restriction&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:restriction&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:simpleType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:simpleType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:simpleType name="bankleitzahlTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:simpleType name="bankleitzahlTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:restriction base="xsd:integer"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:restriction base="xsd:integer"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:minInclusive value="0"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:minInclusive value="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:maxInclusive value="99999999"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:maxInclusive value="99999999"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:restriction&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:restriction&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:simpleType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:simpleType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="sepaMandatTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="sepaMandatTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d11" href="#d11">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="IBAN" </span><span class="sf17b16">type="method:ibanTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="IBAN" </span><span class="sf17b16">type="ibanTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="BIC" </span><span class="sf17b16">type="method:bicTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="BIC" </span><span class="sf17b16">type="bicTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:simpleType name="ibanTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:simpleType name="ibanTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:restriction base="xsd:normalizedString"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:restriction base="xsd:normalizedString"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:maxLength value="34"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:maxLength value="34"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:restriction&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:restriction&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:simpleType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:simpleType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:simpleType name="bicTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:simpleType name="bicTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:restriction base="xsd:normalizedString"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:restriction base="xsd:normalizedString"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:maxLength value="11"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:maxLength value="11"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:restriction&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:restriction&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:simpleType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:simpleType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="werbewiderspruchTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="werbewiderspruchTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="KeineTelefonWerbung" type="xsd:boolean"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="KeineTelefonWerbung" type="xsd:boolean"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="KeineEMailWerbung" type="xsd:boolean"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="KeineEMailWerbung" type="xsd:boolean"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="KeineDatenweitergabe" type="xsd:boolean"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="KeineDatenweitergabe" type="xsd:boolean"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="KeineSchriftlicheWerbung" type="xsd:boolean"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="KeineSchriftlicheWerbung" type="xsd:boolean"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="antragsdatenTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="antragsdatenTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d12" href="#d12">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Adressdaten" </span><span class="sf17b16">type="method:adressdatenTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Adressdaten" </span><span class="sf17b16">type="adressdatenTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Vertragsdaten" </span><span class="sf17b16">type="method:vertragsdatenTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Vertragsdaten" </span><span class="sf17b16">type="vertragsdatenTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="AntragsdatenIdentifikation" </span><span class="sf17b16">type="method:antragsdatenIdentifikation<wbr>Typ"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="AntragsdatenIdentifikation" </span><span class="sf17b16">type="antragsdatenIdentifikationTyp"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="adressdatenTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="adressdatenTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d13" href="#d13">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Versicherungsnehmer" </span><span class="sf17b16">type="method:versicherungsnehmerTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Versicherungsnehmer" </span><span class="sf17b16">type="versicherungsnehmerTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Vermieter" </span><span class="sf17b16">type="method:vermieterTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Vermieter" </span><span class="sf17b16">type="vermieterTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Mietobjekt" </span><span class="sf17b16">type="method:mietobjektTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Mietobjekt" </span><span class="sf17b16">type="mietobjektTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="AbweichBuergEmpfaenger" </span><span class="sf17b16">type="method:abweichBuergEmpfaengerTyp"<wbr></span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="AbweichBuergEmpfaenger" </span><span class="sf17b16">type="abweichBuergEmpfaengerTyp"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="versicherungsnehmerTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="versicherungsnehmerTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:choice&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:choice&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d14" href="#d14">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="NatuerlichePerson" </span><span class="sf17b16">type="method:natuerlichePersonErweitert<wbr>Typ"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="NatuerlichePerson" </span><span class="sf17b16">type="natuerlichePersonErweitertTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Gemeinschaft" </span><span class="sf17b16">type="method:gemeinschaftTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Gemeinschaft" </span><span class="sf17b16">type="gemeinschaftTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:choice&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:choice&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="natuerlichePersonErweitertTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="natuerlichePersonErweitertTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d15" href="#d15">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Name" </span><span class="sf17b16">type="method:nameNatuerlichePersonHerrF<wbr>rauTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Name" </span><span class="sf17b16">type="nameNatuerlichePersonHerrFrauTyp"<wbr>/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Adresse" </span><span class="sf17b16">type="method:adresseNatuerlichePersonTy<wbr>p"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Adresse" </span><span class="sf17b16">type="adresseNatuerlichePersonTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Kontaktdaten" </span><span class="sf17b16">type="method:kontaktdatenTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Kontaktdaten" </span><span class="sf17b16">type="kontaktdatenTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Geburtsdatum" type="service:datumTyp"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Geburtsdatum" type="service:datumTyp"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Nationalitaet" type="xsd:normalizedString"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Nationalitaet" type="xsd:normalizedString"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="nameNatuerlichePersonHerrFrauTyp"<wbr>&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="nameNatuerlichePersonHerrFrauTyp"<wbr>&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d16" href="#d16">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Anrede" </span><span class="sf17b16">type="method:anredeHerrFrauTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Anrede" </span><span class="sf17b16">type="anredeHerrFrauTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Titel" type="service:string_10" minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Titel" type="service:string_10" minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Vorname" type="service:string_30"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Vorname" type="service:string_30"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Nachname" type="service:string_30"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Nachname" type="service:string_30"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Namenszusatz" type="service:string_30" minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Namenszusatz" type="service:string_30" minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:simpleType name="anredeHerrFrauTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:simpleType name="anredeHerrFrauTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:restriction base="xsd:normalizedString"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:restriction base="xsd:normalizedString"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="Herr"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="Herr"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="Frau"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="Frau"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:restriction&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:restriction&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:simpleType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:simpleType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="natuerlichePersonTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="natuerlichePersonTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d17" href="#d17">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Name" </span><span class="sf17b16">type="method:nameNatuerlichePersonTyp"/<wbr>&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Name" </span><span class="sf17b16">type="nameNatuerlichePersonTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Adresse" </span><span class="sf17b16">type="method:adresseNatuerlichePersonTy<wbr>p"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Adresse" </span><span class="sf17b16">type="adresseNatuerlichePersonTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="natuerlichePersonOptionalAdresseT<wbr>yp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="natuerlichePersonOptionalAdresseT<wbr>yp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d18" href="#d18">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Name" </span><span class="sf17b16">type="method:nameNatuerlichePersonTyp"/<wbr>&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Name" </span><span class="sf17b16">type="nameNatuerlichePersonTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Adresse" </span><span class="sf17b16">type="method:adresseNatuerlichePersonTy<wbr>p"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Adresse" </span><span class="sf17b16">type="adresseNatuerlichePersonTyp"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="nameNatuerlichePersonTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="nameNatuerlichePersonTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d19" href="#d19">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Anrede" </span><span class="sf17b16">type="method:anredeTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Anrede" </span><span class="sf17b16">type="anredeTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Titel" type="service:string_10" minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Titel" type="service:string_10" minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Vorname" type="service:string_30"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Vorname" type="service:string_30"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Nachname" type="service:string_30"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Nachname" type="service:string_30"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Namenszusatz" type="service:string_30" minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Namenszusatz" type="service:string_30" minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:simpleType name="anredeTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:simpleType name="anredeTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:restriction base="xsd:normalizedString"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:restriction base="xsd:normalizedString"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="Herr"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="Herr"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="Frau"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="Frau"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="ohne Anrede"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="ohne Anrede"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:restriction&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:restriction&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:simpleType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:simpleType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="adresseNatuerlichePersonTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="adresseNatuerlichePersonTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Strasse" type="service:string_30"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Strasse" type="service:string_30"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Hausnummer" type="service:string_10"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Hausnummer" type="service:string_10"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="HausnummerZusatz" type="service:string_5" minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="HausnummerZusatz" type="service:string_5" minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Postleitzahl" type="service:string_5"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Postleitzahl" type="service:string_5"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Ort" type="service:string_25"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Ort" type="service:string_25"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Teilort" type="service:string_30" minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Teilort" type="service:string_30" minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d20" href="#d20">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Land" </span><span class="sf17b16">type="service:landTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Land" </span><span class="sf17b16">type="landTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d21" href="#d21">.</a></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp;&lt;xsd:simpleType name="landTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:restriction base="xsd:normalizedString"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="Deutschland"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:restriction&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp;&lt;/xsd:simpleType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="kontaktdatenTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="kontaktdatenTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d22" href="#d22">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Privat" </span><span class="sf17b16">type="method:privatTyp"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Privat" </span><span class="sf17b16">type="privatTyp"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Geschaeftlich" </span><span class="sf17b16">type="method:geschaeftlichTyp"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Geschaeftlich" </span><span class="sf17b16">type="geschaeftlichTyp"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="privatTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="privatTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d23" href="#d23">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Telefon" </span><span class="sf17b16">type="method:kontaktnummerTyp"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Telefon" </span><span class="sf17b16">type="kontaktnummerTyp"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Mobil" </span><span class="sf17b16">type="method:kontaktnummerTyp"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Mobil" </span><span class="sf17b16">type="kontaktnummerTyp"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Fax" </span><span class="sf17b16">type="method:kontaktnummerTyp"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Fax" </span><span class="sf17b16">type="kontaktnummerTyp"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="EMail" type="service:string_50" minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="EMail" type="service:string_50" minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="kontaktnummerTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="kontaktnummerTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d24" href="#d24">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Vorwahl" </span><span class="sf17b16">type="method:vorwahlTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Vorwahl" </span><span class="sf17b16">type="vorwahlTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Rufnummer" type="service:string_15"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Rufnummer" type="service:string_15"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:simpleType name="vorwahlTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:simpleType name="vorwahlTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:restriction base="xsd:string"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:restriction base="xsd:string"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:pattern value="[0+][0-9]{2,7}"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:pattern value="[0+][0-9]{2,7}"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:restriction&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:restriction&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:simpleType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:simpleType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="geschaeftlichTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="geschaeftlichTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d25" href="#d25">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Telefon" </span><span class="sf17b16">type="method:kontaktnummerTyp"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Telefon" </span><span class="sf17b16">type="kontaktnummerTyp"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Mobil" </span><span class="sf17b16">type="method:kontaktnummerTyp"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Mobil" </span><span class="sf17b16">type="kontaktnummerTyp"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Fax" </span><span class="sf17b16">type="method:kontaktnummerTyp"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Fax" </span><span class="sf17b16">type="kontaktnummerTyp"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Email" type="service:string_50" minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Email" type="service:string_50" minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="gemeinschaftTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="gemeinschaftTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d26" href="#d26">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="AnredeGemeinschaft" </span><span class="sf17b16">type="method:anredeGemeinschaftTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="AnredeGemeinschaft" </span><span class="sf17b16">type="anredeGemeinschaftTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element </span><span class="sf17b16">name="NameErstePerson"</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b16">type="method:namePersonGemeinschaftTyp"<wbr>/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element </span><span class="sf17b16">name="Name"</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b16">type="namePersonGemeinschaftTyp"</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b16">minOccurs="2"</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b16">maxOccurs="2"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b16">&lt;xsd:element</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b16">name="NameZweitePerson"</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">type="method:namePersonGemeinschaftOhne<wbr>NamenszusatzTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="color: #000000; background-color: #efcb05; ">&lt;xsd:element name="Adresse" </span><span class="sf17b16">type="adresseNatuerlichePersonTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Adresse" </span><span class="sf17b16">type="method:adresseNatuerlichePersonTy<wbr>p"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Kontaktdaten" </span><span class="sf17b16">type="kontaktdatenTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Kontaktdaten" </span><span class="sf17b16">type="method:kontaktdatenTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:simpleType name="anredeGemeinschaftTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:simpleType name="anredeGemeinschaftTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:restriction base="xsd:normalizedString"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:restriction base="xsd:normalizedString"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="Ehepaar"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="Ehepaar"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="ohne Anrede"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="ohne Anrede"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:restriction&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:restriction&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:simpleType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:simpleType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="namePersonGemeinschaftTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="namePersonGemeinschaftTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d27" href="#d27">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Anrede" </span><span class="sf17b16">type="method:anredeHerrFrauTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Anrede" </span><span class="sf17b16">type="anredeHerrFrauTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Titel" type="service:string_10" minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Titel" type="service:string_10" minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Vorname" type="service:string_30"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Vorname" type="service:string_30"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Nachname" type="service:string_30"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Nachname" type="service:string_30"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Namenszusatz" type="service:string_30" minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Namenszusatz" type="service:string_30" minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d28" href="#d28">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp;&lt;xsd:complexType name="namePersonGemeinschaftOhneNamensz<wbr>usatzTyp"&gt;</span></code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Anrede" type="method:anredeHerrFrauTyp"/&gt;</span></code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Titel" type="service:string_10" minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Vorname" type="service:string_30"/&gt;</span></code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Nachname" type="service:string_30"/&gt;</span></code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="vermieterTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="vermieterTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:choice&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:choice&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d29" href="#d29">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="NatuerlichePerson" </span><span class="sf17b16">type="method:natuerlichePersonOptionalA<wbr>dresseTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="NatuerlichePerson" </span><span class="sf17b16">type="natuerlichePersonOptionalAdresseT<wbr>yp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="JuristischePerson" </span><span class="sf17b16">type="method:juristischePersonOptionalA<wbr>dresseTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="JuristischePerson" </span><span class="sf17b16">type="juristischePersonOptionalAdresseT<wbr>yp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:choice&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:choice&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="juristischePersonTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="juristischePersonTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d30" href="#d30">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="NameJuristischePerson" </span><span class="sf17b16">type="method:nameJuristischePersonTyp"/<wbr>&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="NameJuristischePerson" </span><span class="sf17b16">type="nameJuristischePersonTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="AdresseJuristischePerson" </span><span class="sf17b16">type="method:adresseJuristischePersonTy<wbr>p"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="AdresseJuristischePerson" </span><span class="sf17b16">type="adresseJuristischePersonTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="juristischePersonOptionalAdresseT<wbr>yp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="juristischePersonOptionalAdresseT<wbr>yp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d31" href="#d31">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="NameJuristischePerson" </span><span class="sf17b16">type="method:nameJuristischePersonTyp"/<wbr>&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="NameJuristischePerson" </span><span class="sf17b16">type="nameJuristischePersonTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="AdresseJuristischePerson" </span><span class="sf17b16">type="method:adresseJuristischePersonTy<wbr>p"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="AdresseJuristischePerson" </span><span class="sf17b16">type="adresseJuristischePersonTyp"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="nameJuristischePersonTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="nameJuristischePersonTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d32" href="#d32">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Anrede" </span><span class="sf17b16">type="method:anredeTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Anrede" </span><span class="sf17b16">type="anredeTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Name" type="service:string_30"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Name" type="service:string_30"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Namenszusatz" type="service:string_30" minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Namenszusatz" type="service:string_30" minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="adresseJuristischePersonTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="adresseJuristischePersonTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Postleitzahl" type="service:string_5"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Postleitzahl" type="service:string_5"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Ort" type="service:string_25"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Ort" type="service:string_25"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:choice&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:choice&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Strasse" type="service:string_30"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Strasse" type="service:string_30"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Hausnummer" type="service:string_10"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Hausnummer" type="service:string_10"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="HausnummerZusatz" type="service:string_5" minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="HausnummerZusatz" type="service:string_5" minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Postfach" type="service:string_8"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Postfach" type="service:string_8"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:choice&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:choice&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d33" href="#d33">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Land" </span><span class="sf17b16">type="service:landTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Land" </span><span class="sf17b16">type="landTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="mietobjektTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="mietobjektTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Strasse" type="service:string_30"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Strasse" type="service:string_30"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Hausnummer" type="service:string_10"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Hausnummer" type="service:string_10"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="HausnummerZusatz" type="service:string_5" minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="HausnummerZusatz" type="service:string_5" minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Postleitzahl" type="service:string_5"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Postleitzahl" type="service:string_5"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Ort" type="service:string_30"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Ort" type="service:string_30"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d34" href="#d34">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Land" </span><span class="sf17b16">type="service:landTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Land" </span><span class="sf17b16">type="landTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="WeitereObjektbeschreibung" type="service:string_60" </span><span class="sf17b16">minOccurs="0"&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="WeitereObjektbeschreibung" type="service:string_60" </span><span class="sf17b16">minOccurs="0"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;xsd:annotation&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;xsd:documentation&gt;ergänzende</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">Informationen</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">über</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">das</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">Mietobjekt&lt;/xsd:documentation&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;/xsd:annotation&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;/xsd:element&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="abweichBuergEmpfaengerTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="abweichBuergEmpfaengerTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:choice&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:choice&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d35" href="#d35">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="NatuerlichePerson" </span><span class="sf17b16">type="method:natuerlichePersonTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="NatuerlichePerson" </span><span class="sf17b16">type="natuerlichePersonTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="JuristischePerson" </span><span class="sf17b16">type="method:juristischePersonTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="JuristischePerson" </span><span class="sf17b16">type="juristischePersonTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:choice&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:choice&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="vertragsdatenTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="vertragsdatenTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d36" href="#d36">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Produkt" </span><span class="sf17b16">type="method:produktTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Produkt" </span><span class="sf17b16">type="produktTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Vertragsbeginn" type="service:datumTyp"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Vertragsbeginn" type="service:datumTyp"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d37" href="#d37">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element </span><span class="sf17b18">name="Buergschaftsvariante"</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">type="xsd:normalizedString"</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">minOccurs="0"&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element </span><span style="color: #000000; background-color: #efcb05; ">name="Tarifdaten" </span><span class="sf17b16">type="tarifdatenTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;xsd:annotation&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Mietvertrag" </span><span class="sf17b16">type="mietvertragTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;xsd:documentation&gt;beispielsweise</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">AufErstesAnfordern&lt;/xsd:documentation&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Dokumentenversand" </span><span class="sf17b16">type="dokumentenversandTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;/xsd:annotation&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="UebergabeDokumente" </span><span class="sf17b16">type="uebergabeDokumenteTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;/xsd:element&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;xsd:element</span><span style="color: #000000; background-color: #efcb05; "> name="Tarifdaten" </span><span class="sf17b16">type="method:tarifdatenTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Mietvertrag" </span><span class="sf17b16">type="method:mietvertragTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Dokumentenversand" </span><span class="sf17b16">type="method:dokumentenversandTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="UebergabeDokumente" </span><span class="sf17b16">type="method:uebergabeDokumenteTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:simpleType name="produktTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:simpleType name="produktTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:restriction base="xsd:normalizedString"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:restriction base="xsd:normalizedString"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="Mietkaution"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="Mietkaution"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:restriction&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:restriction&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:simpleType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:simpleType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="tarifdatenTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="tarifdatenTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Versicherungsbedingungen" type="xsd:normalizedString"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Versicherungsbedingungen" type="xsd:normalizedString"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:annotation&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:annotation&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:documentation&gt;beispielsweise Miet2017, Miet2018&lt;/xsd:documentation&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:documentation&gt;beispielsweise Miet2017, Miet2018&lt;/xsd:documentation&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:annotation&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:annotation&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:element&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:element&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Buergschaftssumme" type="service:decimal_bis_99999"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Buergschaftssumme" type="service:decimal_bis_99999"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Jahresbeitrag" type="service:decimal_bis_10000"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Jahresbeitrag" type="service:decimal_bis_10000"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="mietvertragTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="mietvertragTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="MietvertragVom" type="service:datumTyp"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="MietvertragVom" type="service:datumTyp"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Einzugsdatum" type="service:datumTyp" minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Einzugsdatum" type="service:datumTyp" minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="dokumentenversandTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="dokumentenversandTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d38" href="#d38">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="VersandBuergschaft" </span><span class="sf17b16">type="method:versandBuergschaftTyp"&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="VersandBuergschaft" </span><span class="sf17b16">type="versandBuergschaftTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;xsd:annotation&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;xsd:documentation&gt;Empfänger</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">der</span><span style="color: #000000; background-color: #efcb05; "> </span><span class="sf17b18">Bürgschaft&lt;/xsd:documentation&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;/xsd:annotation&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="sf17b18">&lt;/xsd:element&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:simpleType name="versandBuergschaftTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:simpleType name="versandBuergschaftTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:restriction base="xsd:string"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:restriction base="xsd:string"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="Versicherungsnehmer"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="Versicherungsnehmer"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="Vermieter"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="Vermieter"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="Hausverwalter"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="Hausverwalter"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="Versand an Dritten"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:enumeration value="Versand an Dritten"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:restriction&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:restriction&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:simpleType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:simpleType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="uebergabeDokumenteTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="uebergabeDokumenteTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="VertragsbestimmungenUebergeben" type="xsd:boolean"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="VertragsbestimmungenUebergeben" type="xsd:boolean"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="BuergschaftUebergeben" type="xsd:boolean"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="BuergschaftUebergeben" type="xsd:boolean"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="VersicherungsscheinUebergeben" type="xsd:boolean"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="VersicherungsscheinUebergeben" type="xsd:boolean"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="RechnungUebergeben" type="xsd:boolean"/&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="RechnungUebergeben" type="xsd:boolean"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="stelleAntragAntwortTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="stelleAntragAntwortTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:complexContent&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:complexContent&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:extension base="service:basisAntwortTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:extension base="service:basisAntwortTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d39" href="#d39">.</a></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Rechtsgeschaeft" </span><span class="sf17b16">type="service:rechtsgeschaeftTyp"/&gt;</span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Rechtsgeschaeft" </span><span class="sf17b16">type="rechtsgeschaeftTyp"/&gt;</span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="AntragsdatenIdentifikation" </span><span class="sf17b16">type="method:antragsdatenIdentifikation<wbr>Typ"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="AntragsdatenIdentifikation" </span><span class="sf17b16">type="antragsdatenIdentifikationTyp"</span><span style="color: #000000; background-color: #efcb05; "> minOccurs="0"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:extension&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:extension&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:complexContent&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:complexContent&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d40" href="#d40">.</a></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp;&lt;xsd:complexType name="rechtsgeschaeftTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Arbeitsgebiet" type="service:int_2"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="Versicherungsnummer" type="service:int_9"/&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; "> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="zahlungsdienstleisterTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="zahlungsdienstleisterTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="ZahlungsartID" type="service:string_50" minOccurs="0"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="ZahlungsartID" type="service:string_50" minOccurs="0"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:annotation&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:annotation&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:documentation&gt;Enthält die vom Nutzer ausgewählte Zahlungsart. Z.b. VISA, Mastercard, PayPal etc.&lt;/xsd:documentation&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:documentation&gt;Enthält die vom Nutzer ausgewählte Zahlungsart. Z.b. VISA, Mastercard, PayPal etc.&lt;/xsd:documentation&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:annotation&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:annotation&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:element&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:element&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="ZahlungsvorgangID" type="service:string_50"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="ZahlungsvorgangID" type="service:string_50"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:annotation&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:annotation&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:documentation&gt;Ist die Referenz auf eine vom Kunden autorisierte Zahlung. Diese wird zum Einzug des Erstbeitrags genutzt und für erneute Buchungen bei wiederkehrenden Zahlungen.&lt;/xsd:documentation&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:documentation&gt;Ist die Referenz auf eine vom Kunden autorisierte Zahlung. Diese wird zum Einzug des Erstbeitrags genutzt und für erneute Buchungen bei wiederkehrenden Zahlungen.&lt;/xsd:documentation&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:annotation&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:annotation&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:element&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:element&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="antragsdatenIdentifikationTyp"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;xsd:complexType name="antragsdatenIdentifikationTyp"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="AntragsdatenID" type="xsd:normalizedString" minOccurs="0"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="AntragsdatenID" type="xsd:normalizedString" minOccurs="0"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:annotation&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:annotation&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:documentation&gt;Identifizierung des internen Auftragsdatensatzes eines Servicenehmers. Es handelt sich um die eindeutige Identifizierung der vom Vermieter eingegebenen Daten. Es ist somit sichergestellt, dass der Vermieter und R+V die gleichen Daten zur Bürgschaft haben und diese auch eindeutig identifizieren können.&lt;/xsd:documentation&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:documentation&gt;Identifizierung des internen Auftragsdatensatzes eines Servicenehmers. Es handelt sich um die eindeutige Identifizierung der vom Vermieter eingegebenen Daten. Es ist somit sichergestellt, dass der Vermieter und R+V die gleichen Daten zur Bürgschaft haben und diese auch eindeutig identifizieren können.&lt;/xsd:documentation&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:annotation&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:annotation&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:element&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:element&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="BuergschaftstextVersion" type="xsd:normalizedString" minOccurs="0"&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:element name="BuergschaftstextVersion" type="xsd:normalizedString" minOccurs="0"&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:annotation&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:annotation&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:documentation&gt;Identifizierung eines Bürgschaftstextes. Dadurch wird sichergestellt, dass dem Vermieter und der R+V je Bürgschaftsverhältnis der zugrundeliegende Haftungstext ersichtlich ist.&lt;/xsd:documentation&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsd:documentation&gt;Identifizierung eines Bürgschaftstextes. Dadurch wird sichergestellt, dass dem Vermieter und der R+V je Bürgschaftsverhältnis der zugrundeliegende Haftungstext ersichtlich ist.&lt;/xsd:documentation&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:annotation&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:annotation&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:element&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:element&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsd:sequence&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2"> &nbsp; &nbsp;&lt;/xsd:complexType&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&lt;/xsd:schema&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&lt;/xsd:schema&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code>&nbsp;</code></td>
+<td class="ln"></td><td class="sf3b2"><code>&nbsp;</code></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

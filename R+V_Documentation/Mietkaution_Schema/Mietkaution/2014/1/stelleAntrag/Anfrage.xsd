@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema xmlns:stelleAntrag="http://ruv-schema.de/Mietkaution/2014/1/stelleAntrag" xmlns:service="http://ruv-schema.de/Mietkaution/2014/1/_types" xmlns:method="http://ruv-schema.de/Mietkaution/2014/1/stelleAntrag/_types" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" version="1.0">
+	<xsd:import namespace="http://ruv-schema.de/Mietkaution/2014/1/stelleAntrag/_types" schemaLocation="_types/types.xsd"/>
+	<xsd:element name="stelleAntrag" type="method:stelleAntragAnfrageTyp">
+		<xsd:annotation>
+			<xsd:documentation>Service: Mietkaution
+Method: stelleAntrag
+Schema: Anfrage.xsd
+Version: 2013/1
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+</xsd:schema>
