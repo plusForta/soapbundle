@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<xsd:schema xmlns:gibVertragsdaten="http://ruv-schema.de/Mietkaution/v1.0/gibVertragsdaten" xmlns:service="http://ruv-schema.de/Mietkaution/v1.0/_types" xmlns:method="http://ruv-schema.de/Mietkaution/v1.0/gibVertragsdaten/_types" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" version="1.0">
-	<xsd:import namespace="http://ruv-schema.de/Mietkaution/v1.0/gibVertragsdaten/_types" schemaLocation="_types/types.xsd"/>
-	<xsd:element name="gibVertragsdaten" type="method:gibVertragsdatenAnfrageTyp">
-		<xsd:annotation>
-			<xsd:documentation>Vertragsdaten zu einem Mietkautionsbürgschaftsvertrag</xsd:documentation>
-		</xsd:annotation>
-	</xsd:element>
-</xsd:schema>

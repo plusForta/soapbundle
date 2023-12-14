@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:service="http://ruv-schema.de/Mietkaution/2020/1/_types" xmlns:method="http://ruv-schema.de/Mietkaution/2020/1/gibAntragsstatus/_types" targetNamespace="http://ruv-schema.de/Mietkaution/2020/1/gibAntragsstatus/_types" elementFormDefault="unqualified" version="1.0">
-	<xsd:include schemaLocation="_includes/gibAntragsstatusTypes.xsd"/>
-</xsd:schema>
