@@ -3,25 +3,15 @@
 namespace PlusForta\RuVSoapBundle\Type;
 
 /**
- * @property AntragsdatenIdentifikationTyp|null AntragsdatenIdentifikation
+ * @property |null AntragsdatenIdentifikation
  */
 class AntragsdatenTyp
 {
 
-    /**
-     * @var AdressdatenTyp
-     */
-    private $Adressdaten;
+    public ?AntragsdatenIdentifikationTyp $AntragsdatenIdentifikation;
+    private ?AdressdatenTyp $Adressdaten;
+    private ?VertragsdatenTyp $Vertragsdaten;
 
-    /**
-     * @var VertragsdatenTyp
-     */
-    private $Vertragsdaten;
-
-    /**
-     * @param AdressdatenTyp $Adressdaten
-     * @return AntragsdatenTyp
-     */
     public function withAdressdaten(AdressdatenTyp $Adressdaten): AntragsdatenTyp
     {
         $new = clone $this;
@@ -30,10 +20,6 @@ class AntragsdatenTyp
         return $new;
     }
 
-    /**
-     * @param VertragsdatenTyp $Vertragsdaten
-     * @return AntragsdatenTyp
-     */
     public function withVertragsdaten(VertragsdatenTyp $Vertragsdaten): AntragsdatenTyp
     {
         $new = clone $this;
@@ -51,7 +37,5 @@ class AntragsdatenTyp
 
         return $new;
     }
-
-
 }
 

@@ -9,20 +9,10 @@ class BasisAnfrageTyp
     public const MAX_LENGTH_BENUTZER = 50;
     public const MAX_LENGTH_PASSWORT = 50;
 
-    /**
-     * @var string
-     */
-    private $Benutzer;
+    private ?string $Benutzer;
 
-    /**
-     * @var string
-     */
-    private $Passwort;
+    private ?string $Passwort;
 
-    /**
-     * @param string $Benutzer
-     * @return BasisAnfrageTyp
-     */
     public function withBenutzer(string $Benutzer): BasisAnfrageTyp
     {
         Assert::maxLength($Benutzer, self::MAX_LENGTH_BENUTZER);
@@ -32,10 +22,6 @@ class BasisAnfrageTyp
         return $new;
     }
 
-    /**
-     * @param string $Passwort
-     * @return BasisAnfrageTyp
-     */
     public function withPasswort(string $Passwort): BasisAnfrageTyp
     {
         Assert::maxLength($Passwort, self::MAX_LENGTH_PASSWORT);
@@ -44,7 +30,5 @@ class BasisAnfrageTyp
 
         return $new;
     }
-
-
 }
 

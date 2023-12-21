@@ -7,39 +7,19 @@ use Psalm\Internal\Analyzer\StatementsAnalyzer;
 
 class BasisAntwortTyp implements ResponseStatusInterface
 {
+    private ?StatusTyp $Status;
 
-    /**
-     * @var StatusTyp
-     */
-    private $Status;
+    private ?string $Referenznummer;
 
-    /**
-     * @var ?string
-     */
-    private $Referenznummer;
+    private ?BewertungTyp $Bewertung;
 
-    /**
-     * @var ?BewertungTyp
-     */
-    private $Bewertung;
+    private ?string $Vorgangsnummer;
 
-    /**
-     * @var ?string
-     */
-    private $Vorgangsnummer;
-
-    /**
-     * @return StatusTyp
-     */
     public function getStatus(): StatusTyp
     {
         return $this->Status;
     }
 
-    /**
-     * @param StatusTyp $Status
-     * @return BasisAntwortTyp
-     */
     public function withStatus(StatusTyp $Status): BasisAntwortTyp
     {
         $new = clone $this;
@@ -48,18 +28,11 @@ class BasisAntwortTyp implements ResponseStatusInterface
         return $new;
     }
 
-    /**
-     * @return string|null
-     */
     public function getReferenznummer(): ?string
     {
         return $this->Referenznummer;
     }
 
-    /**
-     * @param ?string $Referenznummer
-     * @return BasisAntwortTyp
-     */
     public function withReferenznummer(?string $Referenznummer): BasisAntwortTyp
     {
         $new = clone $this;
@@ -68,18 +41,11 @@ class BasisAntwortTyp implements ResponseStatusInterface
         return $new;
     }
 
-    /**
-     * @return BewertungTyp|null
-     */
     public function getBewertung(): ?BewertungTyp
     {
         return $this->Bewertung;
     }
 
-    /**
-     * @param BewertungTyp|null $Bewertung
-     * @return BasisAntwortTyp
-     */
     public function withBewertung(?BewertungTyp $Bewertung): BasisAntwortTyp
     {
         $new = clone $this;
@@ -88,18 +54,11 @@ class BasisAntwortTyp implements ResponseStatusInterface
         return $new;
     }
 
-    /**
-     * @return string|null
-     */
     public function getVorgangsnummer(): ?string
     {
         return $this->Vorgangsnummer;
     }
 
-    /**
-     * @param string|null $Vorgangsnummer
-     * @return BasisAntwortTyp
-     */
     public function withVorgangsnummer(?string $Vorgangsnummer): BasisAntwortTyp
     {
         $new = clone $this;
@@ -107,7 +66,5 @@ class BasisAntwortTyp implements ResponseStatusInterface
 
         return $new;
     }
-
-
 }
 

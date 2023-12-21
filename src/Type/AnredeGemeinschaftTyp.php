@@ -11,10 +11,7 @@ class AnredeGemeinschaftTyp
     const EHEPAAR = 'Ehepaar';
     const OHNE_ANREDE = 'ohne Anrede';
 
-    /**
-     * @var string
-     */
-    private $AnredeGemeinschaft;
+    private ?string $AnredeGemeinschaft;
 
     public function withAnrede(string $anrede): AnredeGemeinschaftTyp
     {

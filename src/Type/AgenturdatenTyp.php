@@ -5,15 +5,9 @@ namespace PlusForta\RuVSoapBundle\Type;
 class AgenturdatenTyp
 {
 
-    /**
-     * @var AgenturTyp
-     */
-    private $Agentur;
+    private ?AgenturTyp $Agentur;
 
-    /**
-     * @var MitarbeiterdatenTyp
-     */
-    private $Mitarbeiterdaten;
+    private ?MitarbeiterdatenTyp $Mitarbeiterdaten;
 
     /**
      * @param AgenturTyp $Agentur

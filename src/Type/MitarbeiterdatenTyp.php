@@ -4,18 +4,17 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 use Webmozart\Assert\Assert;
 
-/**
- * @property string Mitarbeiternummer
- * @property string MitarbeiternummerZusaetzlicherMA
- * @property string StellennummerZusaetzlicherMA
- * @property string VermittlereigeneVorgangsnummer
- */
 class MitarbeiterdatenTyp
 {
     public const MAX_LENGTH_MITARBEITERNUMMER = 12;
     public const MAX_LENGTH_MITARBEITER_ZUSAETZLICHER_MA = 6;
     public const MAX_LENGTH_STELLENNUMMER_ZUSAETZLICHER_MA = 6;
     public const MAX_LENGTH_VERMITTLEREIGENE_VORGANGSNUMMER = 9;
+
+    public string $Mitarbeiternummer;
+    public string $MitarbeiternummerZusaetzlicherMA;
+    public string $StellennummerZusaetzlicherMA;
+    public string $VermittlereigeneVorgangsnummer;
 
     /**
      * @param ?string $Mitarbeiternummer

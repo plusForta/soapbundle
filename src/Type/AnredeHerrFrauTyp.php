@@ -10,16 +10,18 @@ class AnredeHerrFrauTyp
 {
     const HERR = 'Herr';
     const FRAU = 'Frau';
-    /**
-     * @var string
-     */
-    private $Anrede;
+
+    const DIVERS = 'Divers'; // need to switch to WSDL 2023 for this
+
+    private ?string $Anrede;
 
     public function withAnrede(string $andrede): AnredeHerrFrauTyp
     {
         Assert::oneOf($andrede, [
             self::HERR,
             self::FRAU,
+            self::DIVERS,
+            '',
         ]);
         $new = clone $this;
         $new->Anrede = $andrede;

@@ -2,31 +2,17 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
-/**
- * @property AbweichBuergEmpfaengerTyp|null AbweichBuergEmpfaenger
- */
 class AdressdatenTyp
 {
 
-    /**
-     * @var VersicherungsnehmerTyp
-     */
-    private $Versicherungsnehmer;
+    public ?AbweichBuergEmpfaengerTyp $AbweichBuergEmpfaenger;
 
-    /**
-     * @var VermieterTyp
-     */
-    private $Vermieter;
+    private ?VersicherungsnehmerTyp $Versicherungsnehmer;
 
-    /**
-     * @var MietobjektTyp
-     */
-    private $Mietobjekt;
+    private ?VermieterTyp $Vermieter;
 
-    /**
-     * @param VersicherungsnehmerTyp $Versicherungsnehmer
-     * @return AdressdatenTyp
-     */
+    private ?MietobjektTyp $Mietobjekt;
+
     public function withVersicherungsnehmer(VersicherungsnehmerTyp $Versicherungsnehmer): AdressdatenTyp
     {
         $new = clone $this;
@@ -35,10 +21,6 @@ class AdressdatenTyp
         return $new;
     }
 
-    /**
-     * @param VermieterTyp $Vermieter
-     * @return AdressdatenTyp
-     */
     public function withVermieter(VermieterTyp $Vermieter): AdressdatenTyp
     {
         $new = clone $this;
@@ -47,10 +29,6 @@ class AdressdatenTyp
         return $new;
     }
 
-    /**
-     * @param MietobjektTyp $Mietobjekt
-     * @return AdressdatenTyp
-     */
     public function withMietobjekt(MietobjektTyp $Mietobjekt): AdressdatenTyp
     {
         $new = clone $this;
@@ -59,10 +37,6 @@ class AdressdatenTyp
         return $new;
     }
 
-    /**
-     * @param ?AbweichBuergEmpfaengerTyp $AbweichBuergEmpfaenger
-     * @return AdressdatenTyp
-     */
     public function withAbweichBuergEmpfaenger(?AbweichBuergEmpfaengerTyp $AbweichBuergEmpfaenger): AdressdatenTyp
     {
         $new = clone $this;
@@ -72,7 +46,5 @@ class AdressdatenTyp
 
         return $new;
     }
-
-
 }
 

@@ -5,25 +5,12 @@ namespace PlusForta\RuVSoapBundle\Type;
 class AllgemeineAngabenTyp
 {
 
-    /**
-     * @var AgenturdatenTyp
-     */
-    private $Agenturdaten;
+    private ?AgenturdatenTyp $Agenturdaten;
 
-    /**
-     * @var InkassodatenTyp
-     */
-    private $Inkassodaten;
+    private ?InkassodatenTyp $Inkassodaten;
 
-    /**
-     * @var WerbewiderspruchTyp
-     */
-    private $Werbewiderspruch;
+    private ?WerbewiderspruchTyp $Werbewiderspruch;
 
-    /**
-     * @param AgenturdatenTyp $Agenturdaten
-     * @return AllgemeineAngabenTyp
-     */
     public function withAgenturdaten(AgenturdatenTyp $Agenturdaten): AllgemeineAngabenTyp
     {
         $new = clone $this;
@@ -32,10 +19,6 @@ class AllgemeineAngabenTyp
         return $new;
     }
 
-    /**
-     * @param InkassodatenTyp $Inkassodaten
-     * @return AllgemeineAngabenTyp
-     */
     public function withInkassodaten(InkassodatenTyp $Inkassodaten): AllgemeineAngabenTyp
     {
         $new = clone $this;
@@ -44,10 +27,6 @@ class AllgemeineAngabenTyp
         return $new;
     }
 
-    /**
-     * @param WerbewiderspruchTyp $Werbewiderspruch
-     * @return AllgemeineAngabenTyp
-     */
     public function withWerbewiderspruch(WerbewiderspruchTyp $Werbewiderspruch): AllgemeineAngabenTyp
     {
         $new = clone $this;
@@ -55,7 +34,5 @@ class AllgemeineAngabenTyp
 
         return $new;
     }
-
-
 }
 

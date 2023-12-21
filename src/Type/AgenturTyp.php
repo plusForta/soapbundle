@@ -8,10 +8,7 @@ class AgenturTyp
 {
     const MAX_LENGTH_AGENTURNUMMER = 6;
 
-    /**
-     * @var string
-     */
-    private $Agenturnummer;
+    private ?string $Agenturnummer;
 
     /**
      * @param string $Agenturnummer
@@ -25,7 +22,5 @@ class AgenturTyp
 
         return $new;
     }
-
-
 }
 

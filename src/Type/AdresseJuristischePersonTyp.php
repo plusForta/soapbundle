@@ -4,13 +4,6 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 use Webmozart\Assert\Assert;
 
-/**
- * @property string|null Strasse
- * @property string|null Hausnummer
- * @property string|null HausnummerZusatz
- * @property string|null Postfach
- * @property string|null Land
- */
 class AdresseJuristischePersonTyp
 {
     public const DEUTSCHLAND = 'Deutschland';
@@ -22,20 +15,16 @@ class AdresseJuristischePersonTyp
     public const MAX_LENGTH_HAUSNUMMER_ZUSATZ = 5;
     public const MAX_LENGTH_POSTFACH = 8;
 
-    /**
-     * @var string
-     */
-    private $Postleitzahl;
+    public ?string $Strasse;
+    public ?string $Hausnummer;
+    public ?string $HausnummerZusatz;
+    public ?string $Postfach;
+    public ?string $Land;
 
-    /**
-     * @var string
-     */
-    private $Ort;
+    private ?string $Postleitzahl;
 
-    /**
-     * @param string $Postleitzahl
-     * @return AdresseJuristischePersonTyp
-     */
+    private ?string $Ort;
+
     public function withPostleitzahl(string $Postleitzahl): AdresseJuristischePersonTyp
     {
         Assert::length($Postleitzahl, self::LENGTH_POSTLEITZAHL);
@@ -45,10 +34,6 @@ class AdresseJuristischePersonTyp
         return $new;
     }
 
-    /**
-     * @param string $Ort
-     * @return AdresseJuristischePersonTyp
-     */
     public function withOrt(string $Ort): AdresseJuristischePersonTyp
     {
         Assert::maxLength($Ort, self::MAX_LENGTH_ORT);
@@ -58,10 +43,6 @@ class AdresseJuristischePersonTyp
         return $new;
     }
 
-    /**
-     * @param string $Strasse
-     * @return AdresseJuristischePersonTyp
-     */
     public function withStrasse(string $Strasse): AdresseJuristischePersonTyp
     {
         Assert::maxLength($Strasse, self::MAX_LENGTH_STRASSE);
@@ -71,10 +52,6 @@ class AdresseJuristischePersonTyp
         return $new;
     }
 
-    /**
-     * @param string $Hausnummer
-     * @return AdresseJuristischePersonTyp
-     */
     public function withHausnummer(string $Hausnummer): AdresseJuristischePersonTyp
     {
         Assert::maxLength($Hausnummer, self::MAX_LENGTH_HAUSNUMMER);
@@ -84,10 +61,6 @@ class AdresseJuristischePersonTyp
         return $new;
     }
 
-    /**
-     * @param string $HausnummerZusatz
-     * @return AdresseJuristischePersonTyp
-     */
     public function withHausnummerZusatz(?string $HausnummerZusatz): AdresseJuristischePersonTyp
     {
         $new = clone $this;
@@ -99,10 +72,6 @@ class AdresseJuristischePersonTyp
         return $new;
     }
 
-    /**
-     * @param ?string $Postfach
-     * @return AdresseJuristischePersonTyp
-     */
     public function withPostfach(?string $Postfach): AdresseJuristischePersonTyp
     {
         $new = clone $this;
@@ -114,10 +83,6 @@ class AdresseJuristischePersonTyp
         return $new;
     }
 
-    /**
-     * @param string $Land
-     * @return AdresseJuristischePersonTyp
-     */
     public function withLand(string $Land): AdresseJuristischePersonTyp
     {
         Assert::oneOf($Land,
@@ -128,7 +93,4 @@ class AdresseJuristischePersonTyp
 
         return $new;
     }
-
-
 }
-

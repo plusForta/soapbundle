@@ -2,13 +2,10 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
-/**
- * @property NatuerlichePersonTyp|null NatuerlichePerson
- * @property JuristischePersonTyp|null JuristischePerson
- */
 class AbweichBuergEmpfaengerTyp
 {
-
+    public ?NatuerlichePersonTyp $NatuerlichePerson;
+    public ?JuristischePersonTyp $JuristischePerson;
     /**
      * @param ?NatuerlichePersonTyp $NatuerlichePerson
      * @return AbweichBuergEmpfaengerTyp
@@ -36,7 +33,5 @@ class AbweichBuergEmpfaengerTyp
 
         return $new;
     }
-
-
 }
 

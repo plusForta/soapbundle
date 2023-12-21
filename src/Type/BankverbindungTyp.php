@@ -4,17 +4,15 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 use Webmozart\Assert\Assert;
 
-/**
- * @property  LastschriftverfahrenTyp Lastschriftverfahren
- * @property  SepaMandatTyp|null SepaMandat
- * @property  string Kreditinstitut
- * @property  string Kontoinhaber
- */
 class BankverbindungTyp
 {
     public const MAX_LENGTH_KREDITINSTITUT = 30;
     public const MAX_LENGTH_KONTOINHABER = 30;
 
+    public LastschriftverfahrenTyp $Lastschriftverfahren;
+    public ?SepaMandatTyp $SepaMandat;
+    public string $Kreditinstitut;
+    public string $Kontoinhaber;
     /**
      * @param ?LastschriftverfahrenTyp $Lastschriftverfahren
      * @return BankverbindungTyp
