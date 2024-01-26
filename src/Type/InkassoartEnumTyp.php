@@ -16,7 +16,7 @@ class InkassoartEnumTyp
      */
     private $Inkassoart;
 
-    public function withInkassoart(string $inkassoart): InkassoartEnumTyp
+    public function withInkassoart(string $inkassoart): self
     {
         $new = clone $this;
         Assert::oneOf($inkassoart, [

@@ -11,7 +11,7 @@ class AllgemeineAngabenTyp
 
     private ?WerbewiderspruchTyp $Werbewiderspruch;
 
-    public function withAgenturdaten(AgenturdatenTyp $Agenturdaten): AllgemeineAngabenTyp
+    public function withAgenturdaten(AgenturdatenTyp $Agenturdaten): self
     {
         $new = clone $this;
         $new->Agenturdaten = $Agenturdaten;
@@ -19,7 +19,7 @@ class AllgemeineAngabenTyp
         return $new;
     }
 
-    public function withInkassodaten(InkassodatenTyp $Inkassodaten): AllgemeineAngabenTyp
+    public function withInkassodaten(InkassodatenTyp $Inkassodaten): self
     {
         $new = clone $this;
         $new->Inkassodaten = $Inkassodaten;
@@ -27,7 +27,7 @@ class AllgemeineAngabenTyp
         return $new;
     }
 
-    public function withWerbewiderspruch(WerbewiderspruchTyp $Werbewiderspruch): AllgemeineAngabenTyp
+    public function withWerbewiderspruch(WerbewiderspruchTyp $Werbewiderspruch): self
     {
         $new = clone $this;
         $new->Werbewiderspruch = $Werbewiderspruch;

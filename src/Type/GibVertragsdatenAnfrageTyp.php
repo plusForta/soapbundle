@@ -6,29 +6,15 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GibVertragsdatenAnfrageTyp implements RequestInterface
 {
-    /**
-     * @var \PlusForta\RuVSoapBundle\Type\BasisAnfrageTyp
-     */
-    private $Kennung;
+    private BasisAnfrageTyp $Kennung;
+    private ZugriffsschluesselTyp $Zugriffsschluessel;
 
-    /**
-     * @var \PlusForta\RuVSoapBundle\Type\ZugriffsschluesselTyp
-     */
-    private $Zugriffsschluessel;
-    
-    /**
-     * @return \PlusForta\RuVSoapBundle\Type\BasisAnfrageTyp
-     */
-    public function getKennung()
+    public function getKennung(): BasisAnfrageTyp
     {
         return $this->Kennung;
     }
 
-    /**
-     * @param \PlusForta\RuVSoapBundle\Type\BasisAnfrageTyp $Kennung
-     * @return GibVertragsdatenAnfrageTyp
-     */
-    public function withKennung($Kennung): GibVertragsdatenAnfrageTyp
+    public function withKennung(BasisAnfrageTyp $Kennung): self
     {
         $new = clone $this;
         $new->Kennung = $Kennung;
@@ -36,19 +22,12 @@ class GibVertragsdatenAnfrageTyp implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return \PlusForta\RuVSoapBundle\Type\ZugriffsschluesselTyp
-     */
-    public function getZugriffsschluessel()
+    public function getZugriffsschluessel(): ZugriffsschluesselTyp
     {
         return $this->Zugriffsschluessel;
     }
 
-    /**
-     * @param \PlusForta\RuVSoapBundle\Type\ZugriffsschluesselTyp $Zugriffsschluessel
-     * @return GibVertragsdatenAnfrageTyp
-     */
-    public function withZugriffsschluessel($Zugriffsschluessel)
+    public function withZugriffsschluessel(ZugriffsschluesselTyp $Zugriffsschluessel): self
     {
         $new = clone $this;
         $new->Zugriffsschluessel = $Zugriffsschluessel;

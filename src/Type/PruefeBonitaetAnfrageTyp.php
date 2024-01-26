@@ -6,13 +6,6 @@ use DateTimeImmutable;
 use Phpro\SoapClient\Type\RequestInterface;
 use Webmozart\Assert\Assert;
 
-/**
- * @property string|null Geburtsdatum
- * @property string|null Hausnummer
- * @property string|null Titel
- * @property string|null Anrede
- * @property string|null Referenznummer
- */
 class PruefeBonitaetAnfrageTyp implements RequestInterface
 {
     public const MAX_LENGTH_REFERENZNUMMER = 30;
@@ -24,45 +17,18 @@ class PruefeBonitaetAnfrageTyp implements RequestInterface
     public const MAX_LENGTH_HAUSNUMMER = 15;
     public const MAX_LENGTH_ORT = 50;
 
-    /**
-     * @var BasisAnfrageTyp
-     */
-    private $Kennung;
+    private BasisAnfrageTyp $Kennung;
+    private string $Vorname;
+    private string $Nachname;
+    private string $Strasse;
+    private string $Plz;
+    private string $Ort;
+    private ?string $Geburtsdatum = null;
+    private ?string $Hausnummer = null;
+    private ?string $Titel = null;
+    private ?string $Anrede = null;
+    private ?string $Referenznummer = null;
 
-    /**
-     * @var string
-     */
-    private $Vorname;
-
-    /**
-     * @var string
-     */
-    private $Nachname;
-
-    /**
-     * @var string
-     */
-    private $Strasse;
-
-    /**
-     * @var string
-     */
-    private $Plz;
-
-    /**
-     * @var string
-     */
-    private $Ort;
-
-    /**
-     * @var int
-     */
-    private $Land = 276;
-
-    /**
-     * @param BasisAnfrageTyp $Kennung
-     * @return PruefeBonitaetAnfrageTyp
-     */
     public function withKennung(BasisAnfrageTyp $Kennung): PruefeBonitaetAnfrageTyp
     {
         $new = clone $this;
@@ -71,11 +37,7 @@ class PruefeBonitaetAnfrageTyp implements RequestInterface
         return $new;
     }
 
-    /**
-     * @param ?string $Referenznummer
-     * @return PruefeBonitaetAnfrageTyp
-     */
-    public function withReferenznummer(?string $Referenznummer): PruefeBonitaetAnfrageTyp
+    public function withReferenznummer(?string $Referenznummer): self
     {
         $new = clone $this;
         if ($Referenznummer !== null) {
@@ -86,11 +48,7 @@ class PruefeBonitaetAnfrageTyp implements RequestInterface
         return $new;
     }
 
-    /**
-     * @param ?string $Anrede
-     * @return PruefeBonitaetAnfrageTyp
-     */
-    public function withAnrede(?string $Anrede): PruefeBonitaetAnfrageTyp
+    public function withAnrede(?string $Anrede): self
     {
         $new = clone $this;
         if ($Anrede !== null) {
@@ -101,11 +59,7 @@ class PruefeBonitaetAnfrageTyp implements RequestInterface
         return $new;
     }
 
-    /**
-     * @param string $Titel
-     * @return PruefeBonitaetAnfrageTyp
-     */
-    public function withTitel(?string $Titel): PruefeBonitaetAnfrageTyp
+    public function withTitel(?string $Titel): self
     {
         $new = clone $this;
         if ($Titel !== null) {
@@ -116,11 +70,7 @@ class PruefeBonitaetAnfrageTyp implements RequestInterface
         return $new;
     }
 
-    /**
-     * @param string $Vorname
-     * @return PruefeBonitaetAnfrageTyp
-     */
-    public function withVorname(string $Vorname): PruefeBonitaetAnfrageTyp
+    public function withVorname(string $Vorname): self
     {
         Assert::maxLength($Vorname, self::MAX_LENGTH_VORNAME);
         $new = clone $this;
@@ -129,11 +79,7 @@ class PruefeBonitaetAnfrageTyp implements RequestInterface
         return $new;
     }
 
-    /**
-     * @param string $Nachname
-     * @return PruefeBonitaetAnfrageTyp
-     */
-    public function withNachname(string $Nachname): PruefeBonitaetAnfrageTyp
+    public function withNachname(string $Nachname): self
     {
         Assert::maxLength($Nachname, self::MAX_LENGTH_NACHNAME);
         $new = clone $this;
@@ -142,11 +88,7 @@ class PruefeBonitaetAnfrageTyp implements RequestInterface
         return $new;
     }
 
-    /**
-     * @param string $Strasse
-     * @return PruefeBonitaetAnfrageTyp
-     */
-    public function withStrasse(string $Strasse): PruefeBonitaetAnfrageTyp
+    public function withStrasse(string $Strasse): self
     {
         Assert::maxLength($Strasse, self::MAX_LENGTH_STRASSE);
         $new = clone $this;
@@ -155,11 +97,7 @@ class PruefeBonitaetAnfrageTyp implements RequestInterface
         return $new;
     }
 
-    /**
-     * @param ?string $Hausnummer
-     * @return PruefeBonitaetAnfrageTyp
-     */
-    public function withHausnummer(?string $Hausnummer): PruefeBonitaetAnfrageTyp
+    public function withHausnummer(?string $Hausnummer): self
     {
         $new = clone $this;
         if ($Hausnummer !== null) {
@@ -170,11 +108,7 @@ class PruefeBonitaetAnfrageTyp implements RequestInterface
         return $new;
     }
 
-    /**
-     * @param string $Plz
-     * @return PruefeBonitaetAnfrageTyp
-     */
-    public function withPlz(string $Plz): PruefeBonitaetAnfrageTyp
+    public function withPlz(string $Plz): self
     {
         Assert::length($Plz, 5);
         $new = clone $this;
@@ -183,11 +117,7 @@ class PruefeBonitaetAnfrageTyp implements RequestInterface
         return $new;
     }
 
-    /**
-     * @param string $Ort
-     * @return PruefeBonitaetAnfrageTyp
-     */
-    public function withOrt(string $Ort): PruefeBonitaetAnfrageTyp
+    public function withOrt(string $Ort): self
     {
         Assert::maxLength($Ort, self::MAX_LENGTH_ORT);
         $new = clone $this;
@@ -196,11 +126,7 @@ class PruefeBonitaetAnfrageTyp implements RequestInterface
         return $new;
     }
 
-    /**
-     * @param ?int $Land
-     * @return PruefeBonitaetAnfrageTyp
-     */
-    public function withLand(?int $Land): PruefeBonitaetAnfrageTyp
+    public function withLand(?int $Land): self
     {
         $new = clone $this;
         if ($Land !== null) {
@@ -210,20 +136,14 @@ class PruefeBonitaetAnfrageTyp implements RequestInterface
         return $new;
     }
 
-    /**
-     * @param ?DateTimeImmutable $Geburtsdatum
-     * @return PruefeBonitaetAnfrageTyp
-     */
-    public function withGeburtsdatum(?DateTimeImmutable $Geburtsdatum): PruefeBonitaetAnfrageTyp
+    public function withGeburtsdatum(?DateTimeImmutable $Geburtsdatum): self
     {
         $new = clone $this;
-        if ($Geburtsdatum !== null) {
+        if ($Geburtsdatum instanceof DateTimeImmutable) {
             $new->Geburtsdatum = $Geburtsdatum->format('d.m.Y');
         }
 
         return $new;
     }
-
-
 }
 

@@ -4,6 +4,8 @@
 namespace PlusForta\RuVSoapBundle\Messages\Factories;
 
 
+use stdClass;
+use InvalidArgumentException;
 use Phpro\SoapClient\Type\MixedResult;
 use Phpro\SoapClient\Type\ResultInterface;
 use PlusForta\RuVSoapBundle\Type\AntragsdatenIdentifikationTyp;
@@ -16,18 +18,13 @@ use PlusForta\RuVSoapBundle\Type\StelleAntragAntwortTyp;
 
 class StelleAntragAntwortFactory
 {
-
-    /** @var \stdClass */
-    private $result;
+    private stdClass $result;
 
     public function create(ResultInterface $result): StelleAntragAntwortTyp
     {
-        if (!$result instanceof MixedResult) {
-            throw new \InvalidArgumentException('Only MixedResult is supported');
-        }
-
         $this->result = $result->getResult();
         $antwort = new StelleAntragAntwortTyp();
+
         return $antwort
             ->withStatus($this->getStatus())
             ->withReferenznummer($this->getReferenznummer())
@@ -42,6 +39,7 @@ class StelleAntragAntwortFactory
     private function getStatus(): StatusTyp
     {
         $status = new StatusTyp();
+
         return $status
             ->withCode($this->getCode())
             ->withNachricht($this->getNachricht())
@@ -51,6 +49,7 @@ class StelleAntragAntwortFactory
     private function getCode(): CodeEnumTyp
     {
         $code = new CodeEnumTyp();
+
         return $code->withCode($this->result->Status->Code);
     }
 
@@ -61,7 +60,7 @@ class StelleAntragAntwortFactory
 
     private function getReferenznummer(): ?string
     {
-        return isset($this->result->Referenznummer) ? $this->result->Referenznummer : null;
+        return $this->result->Referenznummer ?? null;
     }
 
     private function getBewertung(): ?BewertungTyp
@@ -71,6 +70,7 @@ class StelleAntragAntwortFactory
         }
 
         $bewertung = new BewertungTyp();
+
         return $bewertung
             ->withBewertungsergbnis($this->getBewertungsergbnis())
             ->withKommentar($this->getKommentar())
@@ -82,7 +82,6 @@ class StelleAntragAntwortFactory
         $egebnis = new BewertungsergebnisEnumTyp();
         return $egebnis
             ->withBewertungsergebnis($this->result->Bewertung->Bewertungsergebnis);
-        ;
     }
 
     private function getKommentar(): string
@@ -92,7 +91,7 @@ class StelleAntragAntwortFactory
 
     private function getVorgangsnummer(): ?string
     {
-        return isset($this->result->Vorgangsnummer) ? $this->result->Vorgangsnummer : null;
+        return $this->result->Vorgangsnummer ?? null;
     }
 
     private function getRechtsgeschaeft(): ?RechtsgeschaeftTyp
@@ -120,6 +119,4 @@ class StelleAntragAntwortFactory
             ->withBuergschaftstextVersion($this->result->AntragsdatenIdentifikation->BuergschaftstextVersion)
             ;
     }
-
-
 }

@@ -8,12 +8,10 @@ namespace PlusForta\RuVSoapBundle\Type;
  */
 class KontaktdatenTyp
 {
+    private PrivatTyp $Privat;
+    private GeschaeftlichTyp $Geschaeftlich;
 
-    /**
-     * @param PrivatTyp $Privat
-     * @return KontaktdatenTyp
-     */
-    public function withPrivat(PrivatTyp $Privat): KontaktdatenTyp
+    public function withPrivat(PrivatTyp $Privat): self
     {
         $new = clone $this;
         $new->Privat = $Privat;
@@ -21,18 +19,12 @@ class KontaktdatenTyp
         return $new;
     }
 
-    /**
-     * @param GeschaeftlichTyp $Geschaeftlich
-     * @return KontaktdatenTyp
-     */
-    public function withGeschaeftlich(GeschaeftlichTyp $Geschaeftlich): KontaktdatenTyp
+    public function withGeschaeftlich(GeschaeftlichTyp $Geschaeftlich): self
     {
         $new = clone $this;
         $new->Geschaeftlich = $Geschaeftlich;
 
         return $new;
     }
-
-
 }
 

@@ -20,7 +20,7 @@ class BasisAntwortTyp implements ResponseStatusInterface
         return $this->Status;
     }
 
-    public function withStatus(StatusTyp $Status): BasisAntwortTyp
+    public function withStatus(StatusTyp $Status): self
     {
         $new = clone $this;
         $new->Status = $Status;
@@ -33,7 +33,7 @@ class BasisAntwortTyp implements ResponseStatusInterface
         return $this->Referenznummer;
     }
 
-    public function withReferenznummer(?string $Referenznummer): BasisAntwortTyp
+    public function withReferenznummer(?string $Referenznummer): self
     {
         $new = clone $this;
         $new->Referenznummer = $Referenznummer;
@@ -46,7 +46,7 @@ class BasisAntwortTyp implements ResponseStatusInterface
         return $this->Bewertung;
     }
 
-    public function withBewertung(?BewertungTyp $Bewertung): BasisAntwortTyp
+    public function withBewertung(?BewertungTyp $Bewertung): self
     {
         $new = clone $this;
         $new->Bewertung = $Bewertung;
@@ -59,7 +59,7 @@ class BasisAntwortTyp implements ResponseStatusInterface
         return $this->Vorgangsnummer;
     }
 
-    public function withVorgangsnummer(?string $Vorgangsnummer): BasisAntwortTyp
+    public function withVorgangsnummer(?string $Vorgangsnummer): self
     {
         $new = clone $this;
         $new->Vorgangsnummer = $Vorgangsnummer;

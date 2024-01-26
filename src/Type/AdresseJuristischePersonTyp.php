@@ -25,7 +25,7 @@ class AdresseJuristischePersonTyp
 
     private ?string $Ort;
 
-    public function withPostleitzahl(string $Postleitzahl): AdresseJuristischePersonTyp
+    public function withPostleitzahl(string $Postleitzahl): self
     {
         Assert::length($Postleitzahl, self::LENGTH_POSTLEITZAHL);
         $new = clone $this;
@@ -34,7 +34,7 @@ class AdresseJuristischePersonTyp
         return $new;
     }
 
-    public function withOrt(string $Ort): AdresseJuristischePersonTyp
+    public function withOrt(string $Ort): self
     {
         Assert::maxLength($Ort, self::MAX_LENGTH_ORT);
         $new = clone $this;
@@ -43,7 +43,7 @@ class AdresseJuristischePersonTyp
         return $new;
     }
 
-    public function withStrasse(string $Strasse): AdresseJuristischePersonTyp
+    public function withStrasse(string $Strasse): self
     {
         Assert::maxLength($Strasse, self::MAX_LENGTH_STRASSE);
         $new = clone $this;
@@ -52,7 +52,7 @@ class AdresseJuristischePersonTyp
         return $new;
     }
 
-    public function withHausnummer(string $Hausnummer): AdresseJuristischePersonTyp
+    public function withHausnummer(string $Hausnummer): self
     {
         Assert::maxLength($Hausnummer, self::MAX_LENGTH_HAUSNUMMER);
         $new = clone $this;
@@ -61,7 +61,7 @@ class AdresseJuristischePersonTyp
         return $new;
     }
 
-    public function withHausnummerZusatz(?string $HausnummerZusatz): AdresseJuristischePersonTyp
+    public function withHausnummerZusatz(?string $HausnummerZusatz): self
     {
         $new = clone $this;
         if ($HausnummerZusatz !== null) {
@@ -72,7 +72,7 @@ class AdresseJuristischePersonTyp
         return $new;
     }
 
-    public function withPostfach(?string $Postfach): AdresseJuristischePersonTyp
+    public function withPostfach(?string $Postfach): self
     {
         $new = clone $this;
         if ($Postfach !== null) {
@@ -83,7 +83,7 @@ class AdresseJuristischePersonTyp
         return $new;
     }
 
-    public function withLand(string $Land): AdresseJuristischePersonTyp
+    public function withLand(string $Land): self
     {
         Assert::oneOf($Land,
             [self::DEUTSCHLAND]

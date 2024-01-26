@@ -26,7 +26,7 @@ class AdresseNatuerlichePersonTyp
 
     private string $Land = 'Deutschland';
 
-    public function withStrasse(string $Strasse): AdresseNatuerlichePersonTyp
+    public function withStrasse(string $Strasse): self
     {
         Assert::maxLength($Strasse, self::MAX_LENGTH_STRASSE);
         $new = clone $this;
@@ -35,7 +35,7 @@ class AdresseNatuerlichePersonTyp
         return $new;
     }
 
-    public function withHausnummer(string $Hausnummer): AdresseNatuerlichePersonTyp
+    public function withHausnummer(string $Hausnummer): self
     {
         Assert::maxLength($Hausnummer, self::MAX_LENGTH_HAUSNUMMER);
         $new = clone $this;
@@ -44,7 +44,7 @@ class AdresseNatuerlichePersonTyp
         return $new;
     }
 
-    public function withHausnummerZusatz(?string $HausnummerZusatz): AdresseNatuerlichePersonTyp
+    public function withHausnummerZusatz(?string $HausnummerZusatz): self
     {
         $new = clone $this;
         if ($HausnummerZusatz !== null) {
@@ -55,7 +55,7 @@ class AdresseNatuerlichePersonTyp
         return $new;
     }
 
-    public function withPostleitzahl(string $Postleitzahl): AdresseNatuerlichePersonTyp
+    public function withPostleitzahl(string $Postleitzahl): self
     {
         Assert::length($Postleitzahl, 5);
 
@@ -65,7 +65,7 @@ class AdresseNatuerlichePersonTyp
         return $new;
     }
 
-    public function withOrt(string $Ort): AdresseNatuerlichePersonTyp
+    public function withOrt(string $Ort): self
     {
         Assert::maxLength($Ort, self::MAX_LENGTH_ORT);
         $new = clone $this;
@@ -74,7 +74,7 @@ class AdresseNatuerlichePersonTyp
         return $new;
     }
 
-    public function withTeilort(?string $Teilort): AdresseNatuerlichePersonTyp
+    public function withTeilort(?string $Teilort): self
     {
         $new = clone $this;
         if ($Teilort !== null) {
@@ -85,7 +85,7 @@ class AdresseNatuerlichePersonTyp
         return $new;
     }
 
-    public function withLand(string $Land): AdresseNatuerlichePersonTyp
+    public function withLand(string $Land): self
     {
         Assert::oneOf($Land,
             [self::DEUTSCHLAND]
@@ -96,4 +96,3 @@ class AdresseNatuerlichePersonTyp
         return $new;
     }
 }
-

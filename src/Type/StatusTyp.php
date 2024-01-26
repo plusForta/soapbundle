@@ -4,30 +4,15 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class StatusTyp
 {
+    private string $Code;
+    private string $Nachricht;
 
-    /**
-     * @var string
-     */
-    private $Code;
-
-    /**
-     * @var string
-     */
-    private $Nachricht;
-
-    /**
-     * @return string
-     */
     public function getCode(): string
     {
         return $this->Code;
     }
 
-    /**
-     * @param CodeEnumTyp $Code
-     * @return StatusTyp
-     */
-    public function withCode(CodeEnumTyp $Code): StatusTyp
+    public function withCode(CodeEnumTyp $Code): self
     {
         $new = clone $this;
         $new->Code = $Code->toString();
@@ -35,26 +20,17 @@ class StatusTyp
         return $new;
     }
 
-    /**
-     * @return string
-     */
     public function getNachricht(): string
     {
         return $this->Nachricht;
     }
 
-    /**
-     * @param string $Nachricht
-     * @return StatusTyp
-     */
-    public function withNachricht(string $Nachricht): StatusTyp
+    public function withNachricht(string $Nachricht): self
     {
         $new = clone $this;
         $new->Nachricht = $Nachricht;
 
         return $new;
     }
-
-
 }
 

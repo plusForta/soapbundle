@@ -4,6 +4,14 @@
 namespace PlusForta\RuVSoapBundle\DependencyInjection;
 
 
+use InvalidArgumentException;
+use Exception;
+use PlusForta\RuVSoapBundle\RuvSoapClientFactory;
+use PlusForta\RuVSoapBundle\Messages\Factories\KennungFactory;
+use PlusForta\RuVSoapBundle\Messages\Factories\AgenturdatenFactory;
+use PlusForta\RuVSoapBundle\Messages\Factories\VertragsdatenFactory;
+use PlusForta\RuVSoapBundle\Messages\Factories\AntragMietkautionFactory;
+use PlusForta\RuVSoapBundle\Messages\Factories\UebergabeDokumenteFactory;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\Config\FileLocator;
@@ -16,55 +24,52 @@ class PlusFortaRuVSoapExtension extends Extension
     /**
      * Loads a specific configuration.
      *
-     * @throws \InvalidArgumentException|\Exception When provided tag is not defined in this extension
+     * @throws InvalidArgumentException|Exception When provided tag is not defined in this extension
      */
     public function load(array $configs, ContainerBuilder $container)
     {
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
 
-
         $configuration = $this->getConfiguration($configs, $container);
         /** @psalm-suppress PossiblyNullArgument */
         $config = $this->processConfiguration($configuration, $configs);
 
-        $definition = $container->getDefinition('PlusForta\RuVSoapBundle\RuvSoapClientFactory');
+        $definition = $container->getDefinition(RuvSoapClientFactory::class);
         $definition->setArgument(2, $this->getConnectionConfig($config));
         $definition->setArgument(3, $this->getWsdl($config));
         $definition->setArgument(4, $this->getLocation($config));
 
         // KennungsFactory
-        $definition = $container->getDefinition('PlusForta\RuVSoapBundle\Messages\Factories\KennungFactory');
+        $definition = $container->getDefinition(KennungFactory::class);
         $definition->setArgument(0, $this->getKennungBenutzer($config));
         $definition->setArgument(1, $this->getKennungPasswort($config));
 
         // AgenturdatenFactory
-        $definition = $container->getDefinition('PlusForta\RuVSoapBundle\Messages\Factories\AgenturdatenFactory');
+        $definition = $container->getDefinition(AgenturdatenFactory::class);
         $definition->setArgument(0, $this->getAgenturNummer($config));
         $definition->setArgument(1, $this->getMitarbeiternummer($config));
         $definition->setArgument(2, $this->getMitarbeiternummerZusaetzlicherMA($config));
         $definition->setArgument(3, $this->getStellennummerZusaetzlicherMA($config));
 
         // VertragsdatenFactory
-        $definition = $container->getDefinition('PlusForta\RuVSoapBundle\Messages\Factories\VertragsdatenFactory');
+        $definition = $container->getDefinition(VertragsdatenFactory::class);
         $definition->setArgument(1, $this->getProdukt($config));
         $definition->setArgument(2, $this->getVersicherungsbedingung($config));
 
         // AntragMietkautionFactory
-        $definition = $container->getDefinition('PlusForta\RuVSoapBundle\Messages\Factories\AntragMietkautionFactory');
+        $definition = $container->getDefinition(AntragMietkautionFactory::class);
         $definition->setArgument(2, $this->getKeineTelefonWerbung($config));
         $definition->setArgument(3, $this->getKeineEMailWerbung($config));
         $definition->setArgument(4, $this->getKeineDatenweitergabe($config));
         $definition->setArgument(5, $this->getKeineSchriftlicheWerbung($config));
 
         // UebergabeDokumenteFactory
-        $definition = $container->getDefinition('PlusForta\RuVSoapBundle\Messages\Factories\UebergabeDokumenteFactory');
+        $definition = $container->getDefinition(UebergabeDokumenteFactory::class);
         $definition->setArgument(0, $this->getVertragsbestimmungenUebergeben($config));
         $definition->setArgument(1, $this->getBuergschaftUebergeben($config));
         $definition->setArgument(2, $this->getVersicherungsscheinUebergeben($config));
         $definition->setArgument(3, $this->getRechnungUebergeben($config));
-
-
     }
 
     public function getAlias(): string

@@ -19,10 +19,11 @@ class PlusFortaRuVSoapBundle extends Bundle
         if (null === $this->extension) {
             $this->extension = new PlusFortaRuVSoapExtension();
         }
+
         return $this->extension;
     }
 
-    public function build(ContainerBuilder $container)
+    public function build(ContainerBuilder $container): void
     {
         $container->addCompilerPass(new RuVSoapBundleCompilerPass());
     }

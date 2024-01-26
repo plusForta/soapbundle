@@ -18,10 +18,10 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 class RuvSoapClientFactory
 {
     public function __construct(
-        private EventDispatcherInterface $eventDispatcher,
-        private LoggerInterface $logger,
+        private readonly EventDispatcherInterface $eventDispatcher,
+        private readonly LoggerInterface $logger,
         private array $config,
-        private string $wsdl,
+        private readonly string $wsdl,
         private string $location
     )
     {
@@ -41,9 +41,6 @@ class RuvSoapClientFactory
         return new RuvSoapClient($caller, $driver->getClient());
     }
 
-    /**
-     * @return array
-     */
     private function getDefaults(): array
     {
         $defaults = [

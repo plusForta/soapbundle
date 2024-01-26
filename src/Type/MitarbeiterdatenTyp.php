@@ -16,11 +16,7 @@ class MitarbeiterdatenTyp
     public string $StellennummerZusaetzlicherMA;
     public string $VermittlereigeneVorgangsnummer;
 
-    /**
-     * @param ?string $Mitarbeiternummer
-     * @return MitarbeiterdatenTyp
-     */
-    public function withMitarbeiternummer(?string $Mitarbeiternummer): MitarbeiterdatenTyp
+    public function withMitarbeiternummer(?string $Mitarbeiternummer): self
     {
         $new = clone $this;
         if ($Mitarbeiternummer !== null) {
@@ -31,11 +27,7 @@ class MitarbeiterdatenTyp
         return $new;
     }
 
-    /**
-     * @param ?string $MitarbeiternummerZusaetzlicherMA
-     * @return MitarbeiterdatenTyp
-     */
-    public function withMitarbeiternummerZusaetzlicherMA(?string $MitarbeiternummerZusaetzlicherMA): MitarbeiterdatenTyp
+    public function withMitarbeiternummerZusaetzlicherMA(?string $MitarbeiternummerZusaetzlicherMA): self
     {
         $new = clone $this;
         if ($MitarbeiternummerZusaetzlicherMA !== null) {
@@ -46,11 +38,7 @@ class MitarbeiterdatenTyp
         return $new;
     }
 
-    /**
-     * @param ?string $StellennummerZusaetzlicherMA
-     * @return MitarbeiterdatenTyp
-     */
-    public function withStellennummerZusaetzlicherMA(?string $StellennummerZusaetzlicherMA): MitarbeiterdatenTyp
+    public function withStellennummerZusaetzlicherMA(?string $StellennummerZusaetzlicherMA): self
     {
         $new = clone $this;
         if ($StellennummerZusaetzlicherMA !== null) {
@@ -61,11 +49,7 @@ class MitarbeiterdatenTyp
         return $new;
     }
 
-    /**
-     * @param ?string $VermittlereigeneVorgangsnummer
-     * @return MitarbeiterdatenTyp
-     */
-    public function withVermittlereigeneVorgangsnummer(?string $VermittlereigeneVorgangsnummer): MitarbeiterdatenTyp
+    public function withVermittlereigeneVorgangsnummer(?string $VermittlereigeneVorgangsnummer): self
     {
         $new = clone $this;
         if ($VermittlereigeneVorgangsnummer !== null) {
@@ -75,7 +59,5 @@ class MitarbeiterdatenTyp
 
         return $new;
     }
-
-
 }
 

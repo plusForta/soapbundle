@@ -12,7 +12,7 @@ class AntragsdatenTyp
     private ?AdressdatenTyp $Adressdaten;
     private ?VertragsdatenTyp $Vertragsdaten;
 
-    public function withAdressdaten(AdressdatenTyp $Adressdaten): AntragsdatenTyp
+    public function withAdressdaten(AdressdatenTyp $Adressdaten): self
     {
         $new = clone $this;
         $new->Adressdaten = $Adressdaten;
@@ -20,7 +20,7 @@ class AntragsdatenTyp
         return $new;
     }
 
-    public function withVertragsdaten(VertragsdatenTyp $Vertragsdaten): AntragsdatenTyp
+    public function withVertragsdaten(VertragsdatenTyp $Vertragsdaten): self
     {
         $new = clone $this;
         $new->Vertragsdaten = $Vertragsdaten;
@@ -28,7 +28,7 @@ class AntragsdatenTyp
         return $new;
     }
 
-    public function withAntragsdatenIdentifikation(?AntragsdatenIdentifikationTyp $AntragsdatenIdentifikation): AntragsdatenTyp
+    public function withAntragsdatenIdentifikation(?AntragsdatenIdentifikationTyp $AntragsdatenIdentifikation): self
     {
         $new = clone $this;
         if ($AntragsdatenIdentifikation !== null) {
@@ -38,4 +38,3 @@ class AntragsdatenTyp
         return $new;
     }
 }
-

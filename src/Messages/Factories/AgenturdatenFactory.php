@@ -12,40 +12,15 @@ use PlusForta\RuVSoapBundle\Utils\Modify;
 
 class AgenturdatenFactory
 {
-    /**
-     * @var AgenturdatenDto
-     */
-    private $agenturdatenDto;
-
-    /**
-     * @var string
-     */
-    private $agenturNummer;
-    /**
-     * @var string
-     */
-    private $mitarbeiternummer;
-    /**
-     * @var string
-     */
-    private $mitarbeiternummerZusaetzlicherMA;
-    /**
-     * @var string
-     */
-    private $stellennummerZusaetzlicherMA;
+    private AgenturdatenDto $agenturdatenDto;
 
     public function __construct(
-        string $agenturNummer,
-        $mitarbeiternummer,
-        $mitarbeiternummerZusaetzlicherMA,
-        $stellennummerZusaetzlicherMA
+        private readonly string $agenturNummer,
+        private string $mitarbeiternummer,
+        private string $mitarbeiternummerZusaetzlicherMA,
+        private string $stellennummerZusaetzlicherMA
     )
     {
-
-        $this->agenturNummer = $agenturNummer;
-        $this->mitarbeiternummer = $mitarbeiternummer;
-        $this->mitarbeiternummerZusaetzlicherMA = $mitarbeiternummerZusaetzlicherMA;
-        $this->stellennummerZusaetzlicherMA = $stellennummerZusaetzlicherMA;
     }
 
     public function create(AgenturdatenDto $agenturdatenDto): AgenturdatenTyp
@@ -54,22 +29,15 @@ class AgenturdatenFactory
         $agenturDaten = new AgenturdatenTyp();
         return $agenturDaten
             ->withAgentur($this->getAgentur())
-            ->withMitarbeiterdaten($this->getMitarbeiterdaten())
-            ;
+            ->withMitarbeiterdaten($this->getMitarbeiterdaten());
     }
 
-    /**
-     * @return AgenturTyp
-     */
     private function getAgentur(): AgenturTyp
     {
         $agentur = new AgenturTyp();
         return $agentur->withAgenturnummer($this->getAgenturNummer());
     }
 
-    /**
-     * @return string
-     */
     private function getAgenturNummer(): string
     {
         return $this->agenturdatenDto->agenturNummer ?? $this->agenturNummer;
@@ -82,13 +50,9 @@ class AgenturdatenFactory
             ->withMitarbeiternummer($this->getMitarbeiternummer())
             ->withMitarbeiternummerZusaetzlicherMA($this->getMitarbeiternummerZusaetzlicherMA())
             ->withStellennummerZusaetzlicherMA($this->getStellennummerZusaetzlicherMA())
-            ->withVermittlereigeneVorgangsnummer($this->getVermittlereigeneVorgangsnummer())
-            ;
+            ->withVermittlereigeneVorgangsnummer($this->getVermittlereigeneVorgangsnummer());
     }
 
-    /**
-     * @return string
-     */
     private function getMitarbeiternummer(): ?string
     {
         $mitarbeiternummer = $this->agenturdatenDto->mitarbeiternummer ?? $this->mitarbeiternummer;
@@ -112,7 +76,4 @@ class AgenturdatenFactory
         $vermittlereigeneVorgangsnummer = $this->agenturdatenDto->vermittlereigeneVorgangsnummer;
         return Modify::trimOrNull($vermittlereigeneVorgangsnummer, MitarbeiterdatenTyp::MAX_LENGTH_VERMITTLEREIGENE_VORGANGSNUMMER);
     }
-
-
-
 }

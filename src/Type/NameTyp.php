@@ -4,29 +4,15 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class NameTyp
 {
-    /**
-     * @var string
-     */
-    private $Name;
+    private string $Name;
+    private string $Namenszusatz;
 
-    /**
-     * @var string
-     */
-    private $Namenszusatz;
-
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return $this->Name;
     }
 
-    /**
-     * @param string $Name
-     * @return NameTyp
-     */
-    public function withName($Name)
+    public function withName(string $Name): self
     {
         $new = clone $this;
         $new->Name = $Name;
@@ -34,19 +20,12 @@ class NameTyp
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getNamenszusatz()
+    public function getNamenszusatz(): string
     {
         return $this->Namenszusatz;
     }
 
-    /**
-     * @param string $Namenszusatz
-     * @return NameTyp
-     */
-    public function withNamenszusatz($Namenszusatz)
+    public function withNamenszusatz(string $Namenszusatz): self
     {
         $new = clone $this;
         $new->Namenszusatz = $Namenszusatz;

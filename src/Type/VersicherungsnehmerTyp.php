@@ -4,49 +4,19 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class VersicherungsnehmerTyp
 {
-    /**
-     * @var \PlusForta\RuVSoapBundle\Type\NameTyp
-     */
-    private $Name;
+    private NameTyp $Name;
+    private string $Strasse;
+    private string $Postleitzahl;
+    private string $Ort;
+    private NatuerlichePersonErweitertTyp $NatuerlichePerson;
+    private GemeinschaftTyp $Gemeinschaft;
 
-    /**
-     * @var string
-     */
-    private $Strasse;
-
-    /**
-     * @var string
-     */
-    private $Postleitzahl;
-
-    /**
-     * @var string
-     */
-    private $Ort;
-
-    /**
-     * @var \PlusForta\RuVSoapBundle\Type\NatuerlichePersonErweitertTyp
-     */
-    private $NatuerlichePerson;
-
-    /**
-     * @var \PlusForta\RuVSoapBundle\Type\GemeinschaftTyp
-     */
-    private $Gemeinschaft;
-
-    /**
-     * @return \PlusForta\RuVSoapBundle\Type\NameTyp
-     */
-    public function getName()
+    public function getName(): NameTyp
     {
         return $this->Name;
     }
 
-    /**
-     * @param \PlusForta\RuVSoapBundle\Type\NameTyp $Name
-     * @return VersicherungsnehmerTyp
-     */
-    public function withName($Name)
+    public function withName(NameTyp $Name): self
     {
         $new = clone $this;
         $new->Name = $Name;
@@ -54,19 +24,12 @@ class VersicherungsnehmerTyp
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getStrasse()
+    public function getStrasse(): string
     {
         return $this->Strasse;
     }
 
-    /**
-     * @param string $Strasse
-     * @return VersicherungsnehmerTyp
-     */
-    public function withStrasse($Strasse)
+    public function withStrasse(string $Strasse): self
     {
         $new = clone $this;
         $new->Strasse = $Strasse;
@@ -74,19 +37,12 @@ class VersicherungsnehmerTyp
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getPostleitzahl()
+    public function getPostleitzahl(): string
     {
         return $this->Postleitzahl;
     }
 
-    /**
-     * @param string $Postleitzahl
-     * @return VersicherungsnehmerTyp
-     */
-    public function withPostleitzahl($Postleitzahl)
+    public function withPostleitzahl(string $Postleitzahl): self
     {
         $new = clone $this;
         $new->Postleitzahl = $Postleitzahl;
@@ -94,19 +50,12 @@ class VersicherungsnehmerTyp
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getOrt()
+    public function getOrt(): string
     {
         return $this->Ort;
     }
 
-    /**
-     * @param string $Ort
-     * @return VersicherungsnehmerTyp
-     */
-    public function withOrt($Ort)
+    public function withOrt(string $Ort): self
     {
         $new = clone $this;
         $new->Ort = $Ort;
@@ -114,19 +63,12 @@ class VersicherungsnehmerTyp
         return $new;
     }
 
-    /**
-     * @return \PlusForta\RuVSoapBundle\Type\NatuerlichePersonErweitertTyp
-     */
-    public function getNatuerlichePerson()
+    public function getNatuerlichePerson(): NatuerlichePersonErweitertTyp
     {
         return $this->NatuerlichePerson;
     }
 
-    /**
-     * @param \PlusForta\RuVSoapBundle\Type\NatuerlichePersonErweitertTyp $NatuerlichePerson
-     * @return VersicherungsnehmerTyp
-     */
-    public function withNatuerlichePerson($NatuerlichePerson)
+    public function withNatuerlichePerson(NatuerlichePersonErweitertTyp $NatuerlichePerson): self
     {
         $new = clone $this;
         $new->NatuerlichePerson = $NatuerlichePerson;
@@ -134,19 +76,12 @@ class VersicherungsnehmerTyp
         return $new;
     }
 
-    /**
-     * @return \PlusForta\RuVSoapBundle\Type\GemeinschaftTyp
-     */
-    public function getGemeinschaft()
+    public function getGemeinschaft(): GemeinschaftTyp
     {
         return $this->Gemeinschaft;
     }
 
-    /**
-     * @param \PlusForta\RuVSoapBundle\Type\GemeinschaftTyp $Gemeinschaft
-     * @return VersicherungsnehmerTyp
-     */
-    public function withGemeinschaft($Gemeinschaft)
+    public function withGemeinschaft(GemeinschaftTyp $Gemeinschaft): self
     {
         $new = clone $this;
         $new->Gemeinschaft = $Gemeinschaft;

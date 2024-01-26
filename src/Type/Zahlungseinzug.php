@@ -4,29 +4,15 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class Zahlungseinzug
 {
-    /**
-     * @var \PlusForta\RuVSoapBundle\Type\BankverbindungTyp
-     */
-    private $Bankverbindung;
+    private BankverbindungTyp $Bankverbindung;
+    private ZahlungsdienstleisterTyp $Zahlungsdienstleister;
 
-    /**
-     * @var \PlusForta\RuVSoapBundle\Type\ZahlungsdienstleisterTyp
-     */
-    private $Zahlungsdienstleister;
-
-    /**
-     * @return \PlusForta\RuVSoapBundle\Type\BankverbindungTyp
-     */
-    public function getBankverbindung()
+    public function getBankverbindung(): BankverbindungTyp
     {
         return $this->Bankverbindung;
     }
 
-    /**
-     * @param \PlusForta\RuVSoapBundle\Type\BankverbindungTyp $Bankverbindung
-     * @return Zahlungseinzug
-     */
-    public function withBankverbindung($Bankverbindung)
+    public function withBankverbindung(BankverbindungTyp $Bankverbindung): self
     {
         $new = clone $this;
         $new->Bankverbindung = $Bankverbindung;
@@ -34,19 +20,12 @@ class Zahlungseinzug
         return $new;
     }
 
-    /**
-     * @return \PlusForta\RuVSoapBundle\Type\ZahlungsdienstleisterTyp
-     */
-    public function getZahlungsdienstleister()
+    public function getZahlungsdienstleister(): ZahlungsdienstleisterTyp
     {
         return $this->Zahlungsdienstleister;
     }
 
-    /**
-     * @param \PlusForta\RuVSoapBundle\Type\ZahlungsdienstleisterTyp $Zahlungsdienstleister
-     * @return Zahlungseinzug
-     */
-    public function withZahlungsdienstleister($Zahlungsdienstleister)
+    public function withZahlungsdienstleister(ZahlungsdienstleisterTyp $Zahlungsdienstleister): self
     {
         $new = clone $this;
         $new->Zahlungsdienstleister = $Zahlungsdienstleister;

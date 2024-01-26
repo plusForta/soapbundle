@@ -2,6 +2,8 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Factories;
 
+use stdClass;
+use InvalidArgumentException;
 use Phpro\SoapClient\Type\MixedResult;
 use Phpro\SoapClient\Type\ResultInterface;
 use PlusForta\RuVSoapBundle\Type\AdressdatenTyp;
@@ -20,19 +22,15 @@ class GibVertragsdatenAntwortFactory
 {
     private const STATUS_OK = 'OK';
 
-    /** @var \stdClass */
-    private $result;
+    private stdClass $result;
 
     public function create(ResultInterface $result): GibVertragsdatenAntwortTyp
     {
-        if (!$result instanceof MixedResult) {
-            throw new \InvalidArgumentException('Only MixedResult is supported');
-        }
-
         $this->result = $result->getResult();
         $antwort = new GibVertragsdatenAntwortTyp();
         $status = $this->getStatus();
         $antwort = $antwort->withStatus($status);
+
         if ($status->getCode() === self::STATUS_OK) {
             return $antwort->withVertrag($this->getVertrag());
         }
@@ -116,11 +114,9 @@ class GibVertragsdatenAntwortFactory
 
     private function getName(): NameNatuerlichePersonHerrFrauTyp
     {
-        $name = new NameNatuerlichePersonHerrFrauTyp();
-        return $name;
+        return new NameNatuerlichePersonHerrFrauTyp();
     }
 
-    
     private function getBuergschaft(): ?string
     {
         return $this->result->Vertrag->Buergschaft;
@@ -138,6 +134,4 @@ class GibVertragsdatenAntwortFactory
 
         return $klauseln->withKlausel($klauselArray);
     }
-
-
 }

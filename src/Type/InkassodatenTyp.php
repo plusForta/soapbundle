@@ -2,27 +2,13 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
-/**
- * @property ZahlungseinzugTyp Zahlungseinzug
- */
 class InkassodatenTyp
 {
+    private string $Zahlungsweise;
+    private string $Inkassoart;
+    private ZahlungseinzugTyp $Zahlungseinzug;
 
-    /**
-     * @var string
-     */
-    private $Zahlungsweise;
-
-    /**
-     * @var string
-     */
-    private $Inkassoart;
-
-    /**
-     * @param ZahlungsweiseEnumTyp $Zahlungsweise
-     * @return InkassodatenTyp
-     */
-    public function withZahlungsweise(ZahlungsweiseEnumTyp $Zahlungsweise): InkassodatenTyp
+    public function withZahlungsweise(ZahlungsweiseEnumTyp $Zahlungsweise): self
     {
         $new = clone $this;
         $new->Zahlungsweise = $Zahlungsweise->toString();
@@ -30,11 +16,7 @@ class InkassodatenTyp
         return $new;
     }
 
-    /**
-     * @param InkassoartEnumTyp $Inkassoart
-     * @return InkassodatenTyp
-     */
-    public function withInkassoart(InkassoartEnumTyp $Inkassoart): InkassodatenTyp
+    public function withInkassoart(InkassoartEnumTyp $Inkassoart): self
     {
         $new = clone $this;
         $new->Inkassoart = $Inkassoart->toString();
@@ -42,24 +24,7 @@ class InkassodatenTyp
         return $new;
     }
 
-    /**
-     * @param BankverbindungTyp $Bankverbindung
-     * @return InkassodatenTyp
-     */
-    public function withBankverbindung(BankverbindungTyp $Bankverbindung): InkassodatenTyp
-    {
-        $new = clone $this;
-        $new->Zahlungseinzug = new \stdClass();
-        $new->Zahlungseinzug->Bankverbindung = $Bankverbindung;
-        return $new;
-    }
-
-
-    /**
-     * @param ZahlungseinzugTyp|null $Zahlungseinzug
-     * @return InkassodatenTyp
-     */
-    public function withZahlungseinzug(?ZahlungseinzugTyp $Zahlungseinzug): InkassodatenTyp
+    public function withZahlungseinzug(?ZahlungseinzugTyp $Zahlungseinzug): self
     {
         $new = clone $this;
         if ($Zahlungseinzug !== null) {
@@ -68,7 +33,4 @@ class InkassodatenTyp
 
         return $new;
     }
-
-
 }
-

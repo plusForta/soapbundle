@@ -4,35 +4,16 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class ServiceHeaderTyp
 {
+    private string $name;
+    private string $version;
+    private string $method;
 
-    /**
-     * @var string
-     */
-    private $name;
-
-    /**
-     * @var string
-     */
-    private $version;
-
-    /**
-     * @var string
-     */
-    private $method;
-
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @param string $name
-     * @return ServiceHeaderTyp
-     */
-    public function withName($name)
+    public function withName(string $name): self
     {
         $new = clone $this;
         $new->name = $name;
@@ -40,19 +21,12 @@ class ServiceHeaderTyp
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getVersion()
+    public function getVersion(): string
     {
         return $this->version;
     }
 
-    /**
-     * @param string $version
-     * @return ServiceHeaderTyp
-     */
-    public function withVersion($version)
+    public function withVersion(string $version): self
     {
         $new = clone $this;
         $new->version = $version;
@@ -60,26 +34,17 @@ class ServiceHeaderTyp
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getMethod()
+    public function getMethod(): string
     {
         return $this->method;
     }
 
-    /**
-     * @param string $method
-     * @return ServiceHeaderTyp
-     */
-    public function withMethod($method)
+    public function withMethod(string $method)
     {
         $new = clone $this;
         $new->method = $method;
 
         return $new;
     }
-
-
 }
 

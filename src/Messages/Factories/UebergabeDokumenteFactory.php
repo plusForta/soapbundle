@@ -9,48 +9,22 @@ use PlusForta\RuVSoapBundle\Messages\Dtos\UebergabeDokumenteDto;
     
 class UebergabeDokumenteFactory
 {
-    /**
-     * @var UebergabeDokumenteDto
-     */
-    private $dokumenteDto;
-
-    /**
-     * @var bool
-     */
-    private $vertragsbestimmungenUebergeben;
-
-    /**
-     * @var bool
-     */
-    private $buergschaftUebergeben;
-
-    /**
-     * @var bool
-     */
-    private $versicherungsscheinUebergeben;
-
-    /**
-     * @var bool
-     */
-    private $rechnungUebergeben;
+    private UebergabeDokumenteDto $dokumenteDto;
 
     public function __construct(
-        bool $vertragsbestimmungenUebergeben,
-        bool $buergschaftUebergeben,
-        bool $versicherungsscheinUebergeben,
-        bool $rechnungUebergeben
-    ) {
-
-        $this->vertragsbestimmungenUebergeben = $vertragsbestimmungenUebergeben;
-        $this->buergschaftUebergeben = $buergschaftUebergeben;
-        $this->versicherungsscheinUebergeben = $versicherungsscheinUebergeben;
-        $this->rechnungUebergeben = $rechnungUebergeben;
+        private readonly bool $vertragsbestimmungenUebergeben,
+        private readonly bool $buergschaftUebergeben,
+        private readonly bool $versicherungsscheinUebergeben,
+        private readonly bool $rechnungUebergeben
+    )
+    {
     }
 
     public function create(UebergabeDokumenteDto $dokumenteDto): UebergabeDokumenteTyp
     {
         $dokumente = new UebergabeDokumenteTyp();
         $this->dokumenteDto = $dokumenteDto;
+
         return $dokumente
             ->withVertragsbestimmungenUebergeben($this->getVertragsbestimmungenUebergeben())
             ->withBuergschaftUebergeben($this->getBuergschaftUebergeben())
@@ -78,5 +52,4 @@ class UebergabeDokumenteFactory
     {
         return $this->dokumenteDto->rechnungUebergeben ?? $this->rechnungUebergeben;
     }
-
 }

@@ -18,55 +18,17 @@ use PlusForta\RuVSoapBundle\Utils\Modify;
 
 class AntragMietkautionFactory
 {
-    /**
-     * @var AntragMietkautionDto
-     */
-    private $antragMietkautionDto;
-
-    /**
-     * @var bool
-     */
-    private $keineTelefonWerbung;
-
-    /**
-     * @var bool
-     */
-    private $keineEMailWerbung;
-
-    /**
-     * @var bool
-     */
-    private $keineDatenweitergabe;
-
-    /**
-     * @var bool
-     */
-    private $keineSchriftlicheWerbung;
-    /**
-     * @var AgenturdatenFactory
-     */
-    private $agenturdatenFactory;
-
-    /**
-     * @var VertragsdatenFactory
-     */
-    private $vertragsdatenFactory;
+    private AntragMietkautionDto $antragMietkautionDto;
 
     public function __construct(
-        AgenturdatenFactory $agenturdatenFactory,
-        VertragsdatenFactory $vertragsdatenFactory,
-        bool $keineTelefonWerbung,
-        bool $keineEMailWerbung,
-        bool $keineDatenweitergabe,
-        bool $keineSchriftlicheWerbung
+        private readonly AgenturdatenFactory $agenturdatenFactory,
+        private readonly VertragsdatenFactory $vertragsdatenFactory,
+        private readonly bool $keineTelefonWerbung,
+        private readonly bool $keineEMailWerbung,
+        private readonly bool $keineDatenweitergabe,
+        private readonly bool $keineSchriftlicheWerbung
     )
     {
-        $this->keineTelefonWerbung = $keineTelefonWerbung;
-        $this->keineEMailWerbung = $keineEMailWerbung;
-        $this->keineDatenweitergabe = $keineDatenweitergabe;
-        $this->keineSchriftlicheWerbung = $keineSchriftlicheWerbung;
-        $this->agenturdatenFactory = $agenturdatenFactory;
-        $this->vertragsdatenFactory = $vertragsdatenFactory;
     }
 
     public function create(AntragMietkautionDto $antragMietkautionDto): AntragMietkautionTyp
@@ -174,6 +136,4 @@ class AntragMietkautionFactory
             ->withBuergschaftstextVersion($antragsdatenIdentifikationsDto->buergschaftstextVersion)
             ;
     }
-
-
 }

@@ -7,21 +7,10 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GibAntragsstatusAnfrageTyp implements RequestInterface
 {
+    private BasisAnfrageTyp $Kennung;
+    private VorgangsnummerTyp $Vorgangsnummern;
 
-    /**
-     * @var BasisAnfrageTyp
-     */
-    private $Kennung;
-
-    /**
-     * @var VorgangsnummerTyp
-     */
-    private $Vorgangsnummern;
-
-    /**
-     * @param BasisAnfrageTyp $Kennung
-     */
-    public function withKennung(BasisAnfrageTyp $Kennung): GibAntragsstatusAnfrageTyp
+    public function withKennung(BasisAnfrageTyp $Kennung): self
     {
         $new = clone $this;
         $new->Kennung = $Kennung;
@@ -29,17 +18,11 @@ class GibAntragsstatusAnfrageTyp implements RequestInterface
         return $new;
     }
 
-
-    /**
-     * @param VorgangsnummerTyp $Vorgangsnummer
-     */
-    public function withVorgangsnummern(VorgangsnummerTyp $Vorgangsnummern): GibAntragsstatusAnfrageTyp
+    public function withVorgangsnummern(VorgangsnummerTyp $Vorgangsnummern): self
     {
         $new = clone $this;
         $new->Vorgangsnummern = $Vorgangsnummern;
 
         return $new;
     }
-
-
 }

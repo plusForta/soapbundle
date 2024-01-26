@@ -14,7 +14,7 @@ class AgenturTyp
      * @param string $Agenturnummer
      * @return AgenturTyp
      */
-    public function withAgenturnummer(string $Agenturnummer): AgenturTyp
+    public function withAgenturnummer(string $Agenturnummer): self
     {
         Assert::length($Agenturnummer, self::MAX_LENGTH_AGENTURNUMMER);
         $new = clone $this;

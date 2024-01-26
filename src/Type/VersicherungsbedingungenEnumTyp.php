@@ -3,18 +3,11 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
-
-use Webmozart\Assert\Assert;
-
 class VersicherungsbedingungenEnumTyp
 {
-
-    /**
-     * @var string
-     */
     private string $Versicherungsbedingungen;
 
-    public function withVersicherungsbedingungen($bedingung = 'Miet0422'): VersicherungsbedingungenEnumTyp
+    public function withVersicherungsbedingungen(string $bedingung = 'Miet0422'): self
     {
         $new = clone $this;
         $new->Versicherungsbedingungen = $bedingung;

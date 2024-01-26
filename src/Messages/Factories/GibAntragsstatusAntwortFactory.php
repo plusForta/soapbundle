@@ -4,6 +4,8 @@
 namespace PlusForta\RuVSoapBundle\Messages\Factories;
 
 
+use stdClass;
+use InvalidArgumentException;
 use Phpro\SoapClient\Type\MixedResult;
 use Phpro\SoapClient\Type\ResultInterface;
 use PlusForta\RuVSoapBundle\Type\AntraegeTyp;
@@ -16,23 +18,17 @@ use PlusForta\RuVSoapBundle\Type\StatusTyp;
 
 class GibAntragsstatusAntwortFactory
 {
-
-    /** @var \stdClass */
-    private $result;
+    private stdClass $result;
 
     public function create(ResultInterface $result): GibAntragsstatusAntwortTyp
     {
-        if (!$result instanceof MixedResult) {
-            throw new \InvalidArgumentException('Only MixedResult is supported');
-        }
-        
         $this->result = $result->getResult();
         $antwort = new GibAntragsstatusAntwortTyp();
+
         return $antwort
             ->withStatus($this->getStatus())
             ->withAntraege($this->getAntraege())
             ;
-
     }
 
     private function getStatus(): StatusTyp
@@ -84,7 +80,6 @@ class GibAntragsstatusAntwortFactory
         $egebnis = new BewertungsergebnisEnumTyp();
         return $egebnis
             ->withBewertungsergebnis($this->getAntragDto()->Bewertung->Bewertungsergebnis);
-        ;
     }
 
     private function getKommentar(): string
@@ -92,14 +87,9 @@ class GibAntragsstatusAntwortFactory
         return $this->getAntragDto()->Bewertung->Kommentar;
     }
 
-    /**
-     * @return mixed
-     */
-    private function getAntragDto()
+    private function getAntragDto(): mixed
     {
         $antrag = $this->result->Antraege->Antrag;
         return is_array($antrag) ? $antrag[0] : $antrag;
     }
-
-
 }

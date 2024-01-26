@@ -13,7 +13,7 @@ class AnredeGemeinschaftTyp
 
     private ?string $AnredeGemeinschaft;
 
-    public function withAnrede(string $anrede): AnredeGemeinschaftTyp
+    public function withAnrede(string $anrede): self
     {
         Assert::oneOf($anrede, [
             self::EHEPAAR,

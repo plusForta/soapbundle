@@ -4,20 +4,16 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 use Webmozart\Assert\Assert;
 
-/**
- * @property KontaktnummerTyp|null Telefon
- * @property KontaktnummerTyp|null Mobil
- * @property KontaktnummerTyp|null Fax
- * @property string|null EMail
- */
 class GeschaeftlichTyp
 {
     public const MAX_LENGTH_EMAIL = 50;
 
-    /**
-     * @param ?KontaktnummerTyp $Telefon
-     */
-    public function withTelefon(?KontaktnummerTyp $Telefon): GeschaeftlichTyp
+    private ?KontaktnummerTyp $Telefon = null;
+    private ?KontaktnummerTyp $Mobil = null;
+    private ?KontaktnummerTyp $Fax = null;
+    private ?string $EMail = null;
+
+    public function withTelefon(?KontaktnummerTyp $Telefon): self
     {
         $new = clone $this;
         if ($Telefon !== null) {
@@ -27,11 +23,7 @@ class GeschaeftlichTyp
         return $new;
     }
 
-    /**
-     * @param ?KontaktnummerTyp $Mobil
-     * @return GeschaeftlichTyp
-     */
-    public function withMobil(?KontaktnummerTyp $Mobil): GeschaeftlichTyp
+    public function withMobil(?KontaktnummerTyp $Mobil): self
     {
         $new = clone $this;
         if ($Mobil !== null) {
@@ -41,11 +33,7 @@ class GeschaeftlichTyp
         return $new;
     }
 
-    /**
-     * @param ?KontaktnummerTyp $Fax
-     * @return GeschaeftlichTyp
-     */
-    public function withFax(?KontaktnummerTyp $Fax): GeschaeftlichTyp
+    public function withFax(?KontaktnummerTyp $Fax): self
     {
         $new = clone $this;
         if ($Fax !== null) {
@@ -55,11 +43,7 @@ class GeschaeftlichTyp
         return $new;
     }
 
-    /**
-     * @param string $EMail
-     * @return GeschaeftlichTyp
-     */
-    public function withEMail(?string $EMail): GeschaeftlichTyp
+    public function withEMail(?string $EMail): self
     {
         $new = clone $this;
         if ($EMail !== null) {
@@ -70,6 +54,4 @@ class GeschaeftlichTyp
 
         return $new;
     }
-
-
 }

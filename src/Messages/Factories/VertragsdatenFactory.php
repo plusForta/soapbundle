@@ -4,6 +4,7 @@
 namespace PlusForta\RuVSoapBundle\Messages\Factories;
 
 
+use DateTimeImmutable;
 use PlusForta\RuVSoapBundle\Messages\Dtos\VertragsdatenDto;
 use PlusForta\RuVSoapBundle\Messages\Dtos\UebergabeDokumenteDto;
 use PlusForta\RuVSoapBundle\Type\DokumentenversandTyp;
@@ -16,31 +17,15 @@ use PlusForta\RuVSoapBundle\Type\VertragsdatenTyp;
 
 class VertragsdatenFactory
 {
-    /**
-     * @var VertragsdatenDto
-     */
-    private $vertragsdatenDto;
-    /**
-     * @var string|null
-     */
-    private $produkt;
-    /**
-     * @var string|null
-     */
-    private $versicherungsbedingung;
-    /**
-     * @var UebergabeDokumenteFactory
-     */
-    private $uebergabeDokumenteFactory;
+    private VertragsdatenDto $vertragsdatenDto;
 
-    public function __construct(UebergabeDokumenteFactory $uebergabeDokumenteFactory, ?string $produkt, ?string $versicherungsbedingung)
+    public function __construct(
+        private readonly UebergabeDokumenteFactory $uebergabeDokumenteFactory,
+        private readonly ?string $produkt,
+        private readonly ?string $versicherungsbedingung
+    )
     {
-
-        $this->produkt = $produkt;
-        $this->versicherungsbedingung = $versicherungsbedingung;
-        $this->uebergabeDokumenteFactory = $uebergabeDokumenteFactory;
     }
-
 
     public function create(VertragsdatenDto $vertragsdatenDto): VertragsdatenTyp
     {
@@ -65,7 +50,7 @@ class VertragsdatenFactory
         return $this->vertragsdatenDto->product ?? $this->produkt;
     }
 
-    private function getVertragsbeginn(): \DateTimeImmutable
+    private function getVertragsbeginn(): DateTimeImmutable
     {
         return $this->vertragsdatenDto->vertragsbeginn;
     }
@@ -73,6 +58,7 @@ class VertragsdatenFactory
     private function getTarifdaten(): TarifdatenTyp
     {
         $tarif = new TarifdatenTyp();
+
         return $tarif
             ->withVersicherungsbedingungen($this->getVersicherungsbedingungen())
             ->withBuergschaftssumme($this->getBuergschaftssumme())
@@ -84,6 +70,7 @@ class VertragsdatenFactory
     {
         $bedingung = new VersicherungsbedingungenEnumTyp();
         $versicherungsBedingungen = $this->vertragsdatenDto->versicherungsBedingungen ?? $this->versicherungsbedingung;
+
         return $bedingung->withVersicherungsbedingungen($versicherungsBedingungen);
     }
 
@@ -105,12 +92,12 @@ class VertragsdatenFactory
             ;
     }
 
-    private function getMietvertragVom(): \DateTimeImmutable
+    private function getMietvertragVom(): DateTimeImmutable
     {
         return $this->vertragsdatenDto->mietvertragVom;
     }
 
-    private function getEinzugsdatum(): ?\DateTimeImmutable
+    private function getEinzugsdatum(): ?DateTimeImmutable
     {
         return $this->vertragsdatenDto->einzugsDatum;
     }
@@ -118,18 +105,21 @@ class VertragsdatenFactory
     private function getDokumentenversand(): DokumentenversandTyp
     {
         $versand = new DokumentenversandTyp();
+
         return $versand->withVersandBuergschaft($this->getVersandBuergschaft());
     }
 
     private function getVersandBuergschaft(): VersandBuergschaftEnumTyp
     {
         $versandBuergschaft = new VersandBuergschaftEnumTyp();
+
         return $versandBuergschaft->withVersandBuergschaft($this->vertragsdatenDto->versandBuergschaft);
     }
 
     private function getUebergabeDokumente(): UebergabeDokumenteTyp
     {
         $dokumenteDto = $this->vertragsdatenDto->uebergabeDokumente ?? new UebergabeDokumenteDto();
+
         return $this->uebergabeDokumenteFactory->create($dokumenteDto);
     }
 }

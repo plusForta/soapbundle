@@ -4,29 +4,15 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class NatuerlichePersonOptionalAdresseTyp
 {
-    /**
-     * @var \PlusForta\RuVSoapBundle\Type\NameNatuerlichePersonTyp
-     */
-    private $Name;
+    private NameNatuerlichePersonTyp $Name;
+    private AdresseNatuerlichePersonTyp $Adresse;
 
-    /**
-     * @var \PlusForta\RuVSoapBundle\Type\AdresseNatuerlichePersonTyp
-     */
-    private $Adresse;
-
-    /**
-     * @return \PlusForta\RuVSoapBundle\Type\NameNatuerlichePersonTyp
-     */
-    public function getName()
+    public function getName(): NameNatuerlichePersonTyp
     {
         return $this->Name;
     }
 
-    /**
-     * @param \PlusForta\RuVSoapBundle\Type\NameNatuerlichePersonTyp $Name
-     * @return NatuerlichePersonOptionalAdresseTyp
-     */
-    public function withName($Name)
+    public function withName(NameNatuerlichePersonTyp $Name): self
     {
         $new = clone $this;
         $new->Name = $Name;
@@ -34,19 +20,12 @@ class NatuerlichePersonOptionalAdresseTyp
         return $new;
     }
 
-    /**
-     * @return \PlusForta\RuVSoapBundle\Type\AdresseNatuerlichePersonTyp
-     */
-    public function getAdresse()
+    public function getAdresse(): AdresseNatuerlichePersonTyp
     {
         return $this->Adresse;
     }
 
-    /**
-     * @param \PlusForta\RuVSoapBundle\Type\AdresseNatuerlichePersonTyp $Adresse
-     * @return NatuerlichePersonOptionalAdresseTyp
-     */
-    public function withAdresse($Adresse)
+    public function withAdresse(AdresseNatuerlichePersonTyp $Adresse): self
     {
         $new = clone $this;
         $new->Adresse = $Adresse;

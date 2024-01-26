@@ -4,49 +4,19 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class VertragTyp
 {
-    /**
-     * @var \PlusForta\RuVSoapBundle\Type\RechtsgeschaeftTyp
-     */
-    private $Rechtsgeschaeft;
+    private RechtsgeschaeftTyp $Rechtsgeschaeft;
+    private int $Buergschaftsnummer;
+    private float $Buergschaftssumme;
+    private AdressdatenTyp $Adressdaten;
+    private KlauselnTyp $Klauseln;
+    private string $Buergschaft;
 
-    /**
-     * @var int
-     */
-    private $Buergschaftsnummer;
-
-    /**
-     * @var float
-     */
-    private $Buergschaftssumme;
-
-    /**
-     * @var \PlusForta\RuVSoapBundle\Type\AdressdatenTyp
-     */
-    private $Adressdaten;
-
-    /**
-     * @var \PlusForta\RuVSoapBundle\Type\KlauselnTyp
-     */
-    private $Klauseln;
-
-    /**
-     * @var string
-     */
-    private $Buergschaft;
-
-    /**
-     * @return \PlusForta\RuVSoapBundle\Type\RechtsgeschaeftTyp
-     */
-    public function getRechtsgeschaeft()
+    public function getRechtsgeschaeft(): RechtsgeschaeftTyp
     {
         return $this->Rechtsgeschaeft;
     }
 
-    /**
-     * @param \PlusForta\RuVSoapBundle\Type\RechtsgeschaeftTyp $Rechtsgeschaeft
-     * @return VertragTyp
-     */
-    public function withRechtsgeschaeft($Rechtsgeschaeft)
+    public function withRechtsgeschaeft(RechtsgeschaeftTyp $Rechtsgeschaeft): self
     {
         $new = clone $this;
         $new->Rechtsgeschaeft = $Rechtsgeschaeft;
@@ -54,19 +24,12 @@ class VertragTyp
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getBuergschaftsnummer()
+    public function getBuergschaftsnummer(): int
     {
         return $this->Buergschaftsnummer;
     }
 
-    /**
-     * @param int $Buergschaftsnummer
-     * @return VertragTyp
-     */
-    public function withBuergschaftsnummer($Buergschaftsnummer)
+    public function withBuergschaftsnummer(int $Buergschaftsnummer): self
     {
         $new = clone $this;
         $new->Buergschaftsnummer = $Buergschaftsnummer;
@@ -74,19 +37,12 @@ class VertragTyp
         return $new;
     }
 
-    /**
-     * @return float
-     */
-    public function getBuergschaftssumme()
+    public function getBuergschaftssumme(): float
     {
         return $this->Buergschaftssumme;
     }
 
-    /**
-     * @param float $Buergschaftssumme
-     * @return VertragTyp
-     */
-    public function withBuergschaftssumme($Buergschaftssumme)
+    public function withBuergschaftssumme(float $Buergschaftssumme): self
     {
         $new = clone $this;
         $new->Buergschaftssumme = $Buergschaftssumme;
@@ -94,19 +50,12 @@ class VertragTyp
         return $new;
     }
 
-    /**
-     * @return \PlusForta\RuVSoapBundle\Type\AdressdatenTyp
-     */
-    public function getAdressdaten()
+    public function getAdressdaten(): AdressdatenTyp
     {
         return $this->Adressdaten;
     }
 
-    /**
-     * @param \PlusForta\RuVSoapBundle\Type\AdressdatenTyp $Adressdaten
-     * @return VertragTyp
-     */
-    public function withAdressdaten($Adressdaten)
+    public function withAdressdaten(AdressdatenTyp $Adressdaten): self
     {
         $new = clone $this;
         $new->Adressdaten = $Adressdaten;
@@ -114,19 +63,12 @@ class VertragTyp
         return $new;
     }
 
-    /**
-     * @return \PlusForta\RuVSoapBundle\Type\KlauselnTyp
-     */
-    public function getKlauseln()
+    public function getKlauseln(): KlauselnTyp
     {
         return $this->Klauseln;
     }
 
-    /**
-     * @param \PlusForta\RuVSoapBundle\Type\KlauselnTyp $Klauseln
-     * @return VertragTyp
-     */
-    public function withKlauseln($Klauseln)
+    public function withKlauseln(KlauselnTyp $Klauseln): self
     {
         $new = clone $this;
         $new->Klauseln = $Klauseln;
@@ -134,19 +76,12 @@ class VertragTyp
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getBuergschaft()
+    public function getBuergschaft(): string
     {
         return $this->Buergschaft;
     }
 
-    /**
-     * @param string $Buergschaft
-     * @return VertragTyp
-     */
-    public function withBuergschaft($Buergschaft)
+    public function withBuergschaft(string $Buergschaft): self
     {
         $new = clone $this;
         $new->Buergschaft = $Buergschaft;

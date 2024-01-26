@@ -4,24 +4,14 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class KlauselTyp
 {
-    /**
-     * @var string
-     */
-    private $Text;
+    private string $Text;
 
-    /**
-     * @return string
-     */
-    public function getText()
+    public function getText(): string
     {
         return $this->Text;
     }
 
-    /**
-     * @param string $Text
-     * @return KlauselTyp
-     */
-    public function withText($Text)
+    public function withText(string $Text):self
     {
         $new = clone $this;
         $new->Text = $Text;

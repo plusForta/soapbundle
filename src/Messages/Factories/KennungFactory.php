@@ -9,52 +9,28 @@ use PlusForta\RuVSoapBundle\Type\BasisAnfrageTyp;
 
 class KennungFactory
 {
-    /**
-     * @var KennungDto
-     */
-    private $kennungDto;
+    private KennungDto $kennungDto;
 
-    /**
-     * @var string
-     */
-    private $benutzer;
-
-    /**
-     * @var string
-     */
-    private $passwort;
-
-
-    public function __construct(string $benutzer, string $passwort)
+    public function __construct(private readonly string $benutzer, private readonly string $passwort)
     {
-        $this->benutzer = $benutzer;
-        $this->passwort = $passwort;
     }
 
     public function create(?KennungDto $kennungDto): BasisAnfrageTyp
     {
         $this->kennungDto = $kennungDto ?? new KennungDto();
         $anfrage = new BasisAnfrageTyp();
+
         return $anfrage->withBenutzer($this->getBenutzer())
             ->withPasswort($this->getPasswort());
     }
 
-    /**
-     * @return string
-     */
     private function getBenutzer(): string
     {
-
-        $benutzer = $this->kennungDto->benutzer ?? $this->benutzer;
-        return $benutzer;
+        return $this->kennungDto->benutzer ?? $this->benutzer;
     }
 
-    /**
-     * @return string
-     */
     private function getPasswort(): string
     {
         return $this->kennungDto->passwort ?? $this->passwort;
     }
-
 }

@@ -13,7 +13,7 @@ class AgenturdatenTyp
      * @param AgenturTyp $Agentur
      * @return AgenturdatenTyp
      */
-    public function withAgentur(AgenturTyp $Agentur): AgenturdatenTyp
+    public function withAgentur(AgenturTyp $Agentur): self
     {
         $new = clone $this;
         $new->Agentur = $Agentur;
@@ -25,7 +25,7 @@ class AgenturdatenTyp
      * @param MitarbeiterdatenTyp $Mitarbeiterdaten
      * @return AgenturdatenTyp
      */
-    public function withMitarbeiterdaten(MitarbeiterdatenTyp $Mitarbeiterdaten): AgenturdatenTyp
+    public function withMitarbeiterdaten(MitarbeiterdatenTyp $Mitarbeiterdaten): self
     {
         $new = clone $this;
         $new->Mitarbeiterdaten = $Mitarbeiterdaten;

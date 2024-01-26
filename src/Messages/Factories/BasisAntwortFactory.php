@@ -4,6 +4,8 @@
 namespace PlusForta\RuVSoapBundle\Messages\Factories;
 
 
+use stdClass;
+use InvalidArgumentException;
 use Phpro\SoapClient\Type\MixedResult;
 use Phpro\SoapClient\Type\ResultInterface;
 use PlusForta\RuVSoapBundle\Type\BasisAntwortTyp;
@@ -14,19 +16,15 @@ use PlusForta\RuVSoapBundle\Type\StatusTyp;
 
 class BasisAntwortFactory
 {
-
-    /** @var \stdClass */
-    private $result;
+    private stdClass $result;
 
     /**
-     * @param ResultInterface $result
-     * @return BasisAntwortTyp
      * @psalm-assert MixedResult $result
      */
     public function create(ResultInterface $result): BasisAntwortTyp
     {
         if (!$result instanceof MixedResult) {
-            throw new \InvalidArgumentException('Only MixedResult is supported');
+            throw new InvalidArgumentException('Only MixedResult is supported');
         }
 
         $this->result = $result->getResult();
@@ -39,8 +37,7 @@ class BasisAntwortFactory
             ;
     }
 
-
-    private function getStatus()
+    private function getStatus(): StatusTyp
     {
         $status = new StatusTyp();
         return $status
@@ -62,7 +59,7 @@ class BasisAntwortFactory
 
     private function getReferenznummer(): ?string
     {
-        return isset($this->result->Referenznummer) ? $this->result->Referenznummer : null;
+        return $this->result->Referenznummer ?? null;
     }
 
     private function getBewertung(): ?BewertungTyp
@@ -83,7 +80,6 @@ class BasisAntwortFactory
         $egebnis = new BewertungsergebnisEnumTyp();
         return $egebnis
             ->withBewertungsergebnis($this->result->Bewertung->Bewertungsergebnis);
-        ;
     }
 
     private function getKommentar(): string
@@ -93,9 +89,6 @@ class BasisAntwortFactory
 
     private function getVorgangsnummer(): ?string
     {
-        return isset($this->result->Vorgangsnummer) ? $this->result->Vorgangsnummer : null;
+        return $this->result->Vorgangsnummer ?? null;
     }
-
-
-
 }

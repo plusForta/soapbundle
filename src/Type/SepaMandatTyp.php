@@ -7,24 +7,13 @@ use Webmozart\Assert\Assert;
 class SepaMandatTyp
 {
 
-    public const BIC_NONE = 'ohne Angabe';
-    public const IBAN_LENGTH_MAX = 34;
-    public const BIC_LENGTH_MAX = 11;
+    final public const BIC_NONE = 'ohne Angabe';
+    final public const IBAN_LENGTH_MAX = 34;
+    final public const BIC_LENGTH_MAX = 11;
 
-    /**
-     * @var string
-     */
-    private $IBAN;
+    private string $IBAN;
+    private string $BIC;
 
-    /**
-     * @var string
-     */
-    private $BIC;
-
-    /**
-     * @param string $IBAN
-     * @return SepaMandatTyp
-     */
     public function withIBAN(string $IBAN): SepaMandatTyp
     {
         Assert::maxLength($IBAN, self::IBAN_LENGTH_MAX);
@@ -34,10 +23,6 @@ class SepaMandatTyp
         return $new;
     }
 
-    /**
-     * @param string $BIC
-     * @return SepaMandatTyp
-     */
     public function withBIC(?string $BIC): SepaMandatTyp
     {
         if ($BIC === null) {
@@ -51,7 +36,5 @@ class SepaMandatTyp
 
         return $new;
     }
-
-
 }
 

@@ -11,7 +11,7 @@ class AccountingHeaderTyp
         return $this->costCenterID;
     }
 
-    public function withCostCenterID(string $costCenterID): AccountingHeaderTyp
+    public function withCostCenterID(string $costCenterID): self
     {
         $new = clone $this;
         $new->costCenterID = $costCenterID;
@@ -19,4 +19,3 @@ class AccountingHeaderTyp
         return $new;
     }
 }
-

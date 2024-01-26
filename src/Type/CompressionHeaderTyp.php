@@ -4,32 +4,18 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class CompressionHeaderTyp
 {
+    private string $contentCoding;
 
-    /**
-     * @var string
-     */
-    private $contentCoding;
-
-    /**
-     * @return string
-     */
-    public function getContentCoding()
+    public function getContentCoding(): string
     {
         return $this->contentCoding;
     }
 
-    /**
-     * @param string $contentCoding
-     * @return CompressionHeaderTyp
-     */
-    public function withContentCoding($contentCoding)
+    public function withContentCoding(string $contentCoding): self
     {
         $new = clone $this;
         $new->contentCoding = $contentCoding;
 
         return $new;
     }
-
-
 }
-

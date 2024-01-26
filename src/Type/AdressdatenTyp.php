@@ -13,7 +13,7 @@ class AdressdatenTyp
 
     private ?MietobjektTyp $Mietobjekt;
 
-    public function withVersicherungsnehmer(VersicherungsnehmerTyp $Versicherungsnehmer): AdressdatenTyp
+    public function withVersicherungsnehmer(VersicherungsnehmerTyp $Versicherungsnehmer): self
     {
         $new = clone $this;
         $new->Versicherungsnehmer = $Versicherungsnehmer;
@@ -21,7 +21,7 @@ class AdressdatenTyp
         return $new;
     }
 
-    public function withVermieter(VermieterTyp $Vermieter): AdressdatenTyp
+    public function withVermieter(VermieterTyp $Vermieter): self
     {
         $new = clone $this;
         $new->Vermieter = $Vermieter;
@@ -29,7 +29,7 @@ class AdressdatenTyp
         return $new;
     }
 
-    public function withMietobjekt(MietobjektTyp $Mietobjekt): AdressdatenTyp
+    public function withMietobjekt(MietobjektTyp $Mietobjekt): self
     {
         $new = clone $this;
         $new->Mietobjekt = $Mietobjekt;
@@ -37,7 +37,7 @@ class AdressdatenTyp
         return $new;
     }
 
-    public function withAbweichBuergEmpfaenger(?AbweichBuergEmpfaengerTyp $AbweichBuergEmpfaenger): AdressdatenTyp
+    public function withAbweichBuergEmpfaenger(?AbweichBuergEmpfaengerTyp $AbweichBuergEmpfaenger): self
     {
         $new = clone $this;
         if ($AbweichBuergEmpfaenger !== null) {
@@ -47,4 +47,3 @@ class AdressdatenTyp
         return $new;
     }
 }
-

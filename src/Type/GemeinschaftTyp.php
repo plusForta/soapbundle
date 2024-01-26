@@ -4,44 +4,18 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class GemeinschaftTyp
 {
-    /**
-     * @var string
-     */
-    private $AnredeGemeinschaft;
+    private string $AnredeGemeinschaft;
+    private NamePersonGemeinschaftTyp $NameErstePerson;
+    private NamePersonGemeinschaftOhneNamenszusatzTyp $NameZweitePerson;
+    private AdresseNatuerlichePersonTyp $Adresse;
+    private KontaktdatenTyp $Kontaktdaten;
 
-    /**
-     * @var \PlusForta\RuVSoapBundle\Type\NamePersonGemeinschaftTyp
-     */
-    private $NameErstePerson;
-
-    /**
-     * @var \PlusForta\RuVSoapBundle\Type\NamePersonGemeinschaftOhneNamenszusatzTyp
-     */
-    private $NameZweitePerson;
-
-    /**
-     * @var \PlusForta\RuVSoapBundle\Type\AdresseNatuerlichePersonTyp
-     */
-    private $Adresse;
-
-    /**
-     * @var \PlusForta\RuVSoapBundle\Type\KontaktdatenTyp
-     */
-    private $Kontaktdaten;
-
-    /**
-     * @return string
-     */
-    public function getAnredeGemeinschaft()
+    public function getAnredeGemeinschaft(): string
     {
         return $this->AnredeGemeinschaft;
     }
 
-    /**
-     * @param string $AnredeGemeinschaft
-     * @return GemeinschaftTyp
-     */
-    public function withAnredeGemeinschaft($AnredeGemeinschaft)
+    public function withAnredeGemeinschaft(string $AnredeGemeinschaft): self
     {
         $new = clone $this;
         $new->AnredeGemeinschaft = $AnredeGemeinschaft;
@@ -49,19 +23,12 @@ class GemeinschaftTyp
         return $new;
     }
 
-    /**
-     * @return \PlusForta\RuVSoapBundle\Type\NamePersonGemeinschaftTyp
-     */
-    public function getNameErstePerson()
+    public function getNameErstePerson(): NamePersonGemeinschaftTyp
     {
         return $this->NameErstePerson;
     }
 
-    /**
-     * @param \PlusForta\RuVSoapBundle\Type\NamePersonGemeinschaftTyp $NameErstePerson
-     * @return GemeinschaftTyp
-     */
-    public function withNameErstePerson($NameErstePerson)
+    public function withNameErstePerson(NamePersonGemeinschaftTyp $NameErstePerson): self
     {
         $new = clone $this;
         $new->NameErstePerson = $NameErstePerson;
@@ -69,19 +36,12 @@ class GemeinschaftTyp
         return $new;
     }
 
-    /**
-     * @return \PlusForta\RuVSoapBundle\Type\NamePersonGemeinschaftOhneNamenszusatzTyp
-     */
-    public function getNameZweitePerson()
+    public function getNameZweitePerson(): NamePersonGemeinschaftOhneNamenszusatzTyp
     {
         return $this->NameZweitePerson;
     }
 
-    /**
-     * @param \PlusForta\RuVSoapBundle\Type\NamePersonGemeinschaftOhneNamenszusatzTyp $NameZweitePerson
-     * @return GemeinschaftTyp
-     */
-    public function withNameZweitePerson($NameZweitePerson)
+    public function withNameZweitePerson(NamePersonGemeinschaftOhneNamenszusatzTyp $NameZweitePerson): self
     {
         $new = clone $this;
         $new->NameZweitePerson = $NameZweitePerson;
@@ -89,19 +49,12 @@ class GemeinschaftTyp
         return $new;
     }
 
-    /**
-     * @return \PlusForta\RuVSoapBundle\Type\AdresseNatuerlichePersonTyp
-     */
-    public function getAdresse()
+    public function getAdresse(): AdresseNatuerlichePersonTyp
     {
         return $this->Adresse;
     }
 
-    /**
-     * @param \PlusForta\RuVSoapBundle\Type\AdresseNatuerlichePersonTyp $Adresse
-     * @return GemeinschaftTyp
-     */
-    public function withAdresse($Adresse)
+    public function withAdresse(AdresseNatuerlichePersonTyp $Adresse): self
     {
         $new = clone $this;
         $new->Adresse = $Adresse;
@@ -109,19 +62,12 @@ class GemeinschaftTyp
         return $new;
     }
 
-    /**
-     * @return \PlusForta\RuVSoapBundle\Type\KontaktdatenTyp
-     */
-    public function getKontaktdaten()
+    public function getKontaktdaten(): KontaktdatenTyp
     {
         return $this->Kontaktdaten;
     }
 
-    /**
-     * @param \PlusForta\RuVSoapBundle\Type\KontaktdatenTyp $Kontaktdaten
-     * @return GemeinschaftTyp
-     */
-    public function withKontaktdaten($Kontaktdaten)
+    public function withKontaktdaten(KontaktdatenTyp $Kontaktdaten): self
     {
         $new = clone $this;
         $new->Kontaktdaten = $Kontaktdaten;

@@ -19,17 +19,14 @@ use PlusForta\RuVSoapBundle\Type\PrivatTyp;
 class GemeinschaftFactory
 {
 
-    /** @var GemeinschaftDto  */
-    private $dto;
-
-    public function __construct(GemeinschaftDto $dto)
+    public function __construct(private readonly GemeinschaftDto $dto)
     {
-        $this->dto = $dto;
     }
 
     public function create(): GemeinschaftTyp
     {
         $gemeinschaft = new GemeinschaftTyp();
+
         return $gemeinschaft
             ->withAnredeGemeinschaft($this->getAnredeGemeinschaft()->toString())
             ->withNameErstePerson($this->getNameErstePerson())
@@ -42,6 +39,7 @@ class GemeinschaftFactory
     private function getAnredeGemeinschaft(): AnredeGemeinschaftTyp
     {
         $anrede = new AnredeGemeinschaftTyp();
+
         return $anrede->withAnrede($this->dto->anredeGemeinschaft);
     }
 
@@ -49,6 +47,7 @@ class GemeinschaftFactory
     {
         $lessee = $this->dto->lessees[0];
         $name = new NamePersonGemeinschaftTyp();
+
         return $name->withAnrede($this->getAnrede($lessee))
             ->withTitel($this->getTitel($lessee))
             ->withVorname($this->getVorname($lessee))
@@ -60,6 +59,7 @@ class GemeinschaftFactory
     {
         $lessee = $this->dto->lessees[1];
         $name = new NamePersonGemeinschaftOhneNamenszusatzTyp();
+
         return $name->withAnrede($this->getAnrede($lessee)->toString())
             ->withTitel($this->getTitel($lessee))
             ->withVorname($this->getVorname($lessee))
@@ -70,6 +70,7 @@ class GemeinschaftFactory
     private function getAnrede(LesseeDto $lessee): AnredeHerrFrauTyp
     {
         $anrede = new AnredeHerrFrauTyp();
+
         return $anrede->withAnrede($lessee->anrede);
     }
 
@@ -104,5 +105,4 @@ class GemeinschaftFactory
 
         return $factory->create(KontaktFactory::GESCHAEFTLICH);
     }
-
 }

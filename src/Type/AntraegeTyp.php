@@ -13,7 +13,7 @@ class AntraegeTyp
         return $this->Antrag;
     }
 
-    public function withAntrag(AntragTyp $Antrag): AntraegeTyp
+    public function withAntrag(AntragTyp $Antrag): self
     {
         $new = clone $this;
         $new->Antrag = $Antrag;

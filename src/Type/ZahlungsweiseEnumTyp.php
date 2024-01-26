@@ -8,16 +8,14 @@ use Webmozart\Assert\Assert;
 
 class ZahlungsweiseEnumTyp
 {
-    const MONATLICH = 'monatlich';
-    const JAEHRLICH = 'jaehrlich';
-    const HALBJAEHRLICH = 'halbjaehrlich';
-    const VIERTELJAEHRLICH = 'vierteljaehrlich';
-    /**
-     * @var string
-     */
-    private $Zahlungsweise;
+    final public const MONATLICH = 'monatlich';
+    final public const JAEHRLICH = 'jaehrlich';
+    final public const HALBJAEHRLICH = 'halbjaehrlich';
+    final public const VIERTELJAEHRLICH = 'vierteljaehrlich';
 
-    public function withZahlungsweise(string $zahlungsweise): ZahlungsweiseEnumTyp
+    private string $Zahlungsweise;
+
+    public function withZahlungsweise(string $zahlungsweise): self
     {
         Assert::oneOf($zahlungsweise, [
             self::MONATLICH,
@@ -25,6 +23,7 @@ class ZahlungsweiseEnumTyp
             self::HALBJAEHRLICH,
             self::VIERTELJAEHRLICH,
         ]);
+
         $new = clone $this;
         $new->Zahlungsweise = $zahlungsweise;
 

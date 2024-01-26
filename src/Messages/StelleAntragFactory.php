@@ -13,23 +13,13 @@ use PlusForta\RuVSoapBundle\Type\StelleAntragAnfrageTyp;
 
 class StelleAntragFactory
 {
+    private StelleAntragDto $dto;
 
-    /** @var StelleAntragDto */
-    private $dto;
-
-    /**
-     * @var KennungFactory
-     */
-    private $kennungFactory;
-    /**
-     * @var AntragMietkautionFactory
-     */
-    private $antragMietkautionFactory;
-
-    public function __construct(KennungFactory $kennungFactory, AntragMietkautionFactory $antragMietkautionFactory)
+    public function __construct(
+        private readonly KennungFactory $kennungFactory,
+        private readonly AntragMietkautionFactory $antragMietkautionFactory
+    )
     {
-        $this->kennungFactory = $kennungFactory;
-        $this->antragMietkautionFactory = $antragMietkautionFactory;
     }
 
     public function create(StelleAntragDto $dto): StelleAntragAnfrageTyp
@@ -41,6 +31,7 @@ class StelleAntragFactory
     private function getStelleAntragAnfrage(): StelleAntragAnfrageTyp
     {
         $stelleAntrag = new StelleAntragAnfrageTyp();
+
         return $stelleAntrag
             ->withKennung($this->getKennung())
             ->withBonitaetspruefungDurchfuehren($this->getBonitaetspruefungDurhchfuehren())
@@ -48,18 +39,11 @@ class StelleAntragFactory
             ;
     }
 
-    /**
-     * @return BasisAnfrageTyp
-     */
     private function getKennung(): BasisAnfrageTyp
     {
-
         return $this->kennungFactory->create($this->dto->kennung);
     }
 
-    /**
-     * @return bool
-     */
     private function getBonitaetspruefungDurhchfuehren(): bool
     {
         return $this->dto->bonitaetspruefungDurhchfuehren;
@@ -69,5 +53,4 @@ class StelleAntragFactory
     {
         return $this->antragMietkautionFactory->create($this->dto->antragMietkaution);
     }
-
 }

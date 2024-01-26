@@ -15,7 +15,7 @@ class AnredeHerrFrauTyp
 
     private ?string $Anrede;
 
-    public function withAnrede(string $andrede): AnredeHerrFrauTyp
+    public function withAnrede(string $andrede): self
     {
         Assert::oneOf($andrede, [
             self::HERR,

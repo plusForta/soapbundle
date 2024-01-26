@@ -3,15 +3,10 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
-
-/**
- * @property string|null AntragsdatenID
- * @property string|null BuergschaftstextVersion
- */
 class AntragsdatenIdentifikationTyp
 {
 
-    public ?string $AntagsdatenID;
+    public ?string $AntragsdatenID;
     public ?string $BuergschaftstextVersion;
 
     public function withAntragsdatenID(?string $AntragsdatenID): AntragsdatenIdentifikationTyp

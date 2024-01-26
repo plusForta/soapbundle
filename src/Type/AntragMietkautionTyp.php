@@ -12,7 +12,7 @@ class AntragMietkautionTyp
     public AllgemeineAngabenTyp $AllgemeineAngaben;
     public AntragsdatenTyp $Antragsdaten;
 
-    public function withReferenznummer(?string $Referenznummer): AntragMietkautionTyp
+    public function withReferenznummer(?string $Referenznummer): self
     {
         $new = clone $this;
         if ($Referenznummer !== null) {
@@ -23,7 +23,7 @@ class AntragMietkautionTyp
         return $new;
     }
 
-    public function withAllgemeineAngaben(AllgemeineAngabenTyp $AllgemeineAngaben): AntragMietkautionTyp
+    public function withAllgemeineAngaben(AllgemeineAngabenTyp $AllgemeineAngaben): self
     {
         $new = clone $this;
         $new->AllgemeineAngaben = $AllgemeineAngaben;
@@ -31,7 +31,7 @@ class AntragMietkautionTyp
         return $new;
     }
 
-    public function withAntragsdaten(AntragsdatenTyp $Antragsdaten): AntragMietkautionTyp
+    public function withAntragsdaten(AntragsdatenTyp $Antragsdaten): self
     {
         $new = clone $this;
         $new->Antragsdaten = $Antragsdaten;
@@ -39,4 +39,3 @@ class AntragMietkautionTyp
         return $new;
     }
 }
-

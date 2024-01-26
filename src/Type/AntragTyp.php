@@ -18,7 +18,7 @@ class AntragTyp
         return $this->Vorgangsnummer;
     }
 
-    public function withVorgangsnummer(string $Referenznummer): AntragTyp
+    public function withVorgangsnummer(string $Referenznummer): self
     {
         Assert::maxLength($Referenznummer, self::MAX_LENGTH_REFERENZNUMMER);
         $new = clone $this;
@@ -32,7 +32,7 @@ class AntragTyp
         return $this->Bewertung;
     }
 
-    public function withBewertung(BewertungTyp $Bewertung): AntragTyp
+    public function withBewertung(BewertungTyp $Bewertung): self
     {
         $new = clone $this;
         $new->Bewertung = $Bewertung;

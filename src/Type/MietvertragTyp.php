@@ -4,30 +4,17 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 use DateTimeImmutable;
 
-/**
- * @property string Einzugsdatum
- */
 class MietvertragTyp
 {
+    private string $MietvertragVom;
+    private string $Einzugsdatum;
 
-    /**
-     * @var string
-     */
-    private $MietvertragVom;
-
-    /**
-     * @return string
-     */
-    public function getMietvertragVom()
+    public function getMietvertragVom(): string
     {
         return $this->MietvertragVom;
     }
 
-    /**
-     * @param DateTimeImmutable $MietvertragVom
-     * @return MietvertragTyp
-     */
-    public function withMietvertragVom(DateTimeImmutable $MietvertragVom): MietvertragTyp
+    public function withMietvertragVom(DateTimeImmutable $MietvertragVom): self
     {
         $new = clone $this;
         $new->MietvertragVom = $MietvertragVom->format('d.m.Y');
@@ -35,11 +22,7 @@ class MietvertragTyp
         return $new;
     }
 
-    /**
-     * @param ?DateTimeImmutable $Einzugsdatum
-     * @return MietvertragTyp
-     */
-    public function withEinzugsdatum(?DateTimeImmutable $Einzugsdatum): MietvertragTyp
+    public function withEinzugsdatum(?DateTimeImmutable $Einzugsdatum): self
     {
         $new = clone $this;
         if ($Einzugsdatum !== null) {
@@ -48,7 +31,5 @@ class MietvertragTyp
 
         return $new;
     }
-
-
 }
 

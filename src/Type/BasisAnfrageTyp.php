@@ -13,7 +13,7 @@ class BasisAnfrageTyp
 
     private ?string $Passwort;
 
-    public function withBenutzer(string $Benutzer): BasisAnfrageTyp
+    public function withBenutzer(string $Benutzer): self
     {
         Assert::maxLength($Benutzer, self::MAX_LENGTH_BENUTZER);
         $new = clone $this;
@@ -22,7 +22,7 @@ class BasisAnfrageTyp
         return $new;
     }
 
-    public function withPasswort(string $Passwort): BasisAnfrageTyp
+    public function withPasswort(string $Passwort): self
     {
         Assert::maxLength($Passwort, self::MAX_LENGTH_PASSWORT);
         $new = clone $this;
@@ -31,4 +31,3 @@ class BasisAnfrageTyp
         return $new;
     }
 }
-
