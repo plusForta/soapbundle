@@ -15,14 +15,22 @@ use Webmozart\Assert\Assert;
 
 class KontaktFactory
 {
-    final public const PRIVAT = PrivatTyp::class;
-    final public const GESCHAEFTLICH = GeschaeftlichTyp::class;
+    public const PRIVAT = PrivatTyp::class;
+    public const GESCHAEFTLICH = GeschaeftlichTyp::class;
 
-    public function __construct(private readonly KontaktDto $dto)
+    /** @var KontaktDto  */
+    private $dto;
+
+    public function __construct(KontaktDto $dto)
     {
+        $this->dto = $dto;
     }
 
-    public function create(string $type = PrivatTyp::class): KontaktdatenTyp
+    /**
+     * @param string $type
+     * @return KontaktdatenTyp
+     */
+    public function create($type = PrivatTyp::class): KontaktdatenTyp
     {
         Assert::oneOf($type, [
             self::PRIVAT,
@@ -41,7 +49,6 @@ class KontaktFactory
     private function getPrivat(): PrivatTyp
     {
         $privat = new PrivatTyp();
-
         return $privat
             ->withTelefon($this->getContactNumber($this->dto->telefon))
             ->withMobil($this->getContactNumber($this->dto->mobile))
@@ -53,7 +60,6 @@ class KontaktFactory
     private function getGeschaeftlich(): GeschaeftlichTyp
     {
         $geschaeftlich = new GeschaeftlichTyp();
-
         return $geschaeftlich
             ->withTelefon($this->getContactNumber($this->dto->telefon))
             ->withMobil($this->getContactNumber($this->dto->mobile))
@@ -64,12 +70,12 @@ class KontaktFactory
 
     private function getContactNumber(?NumberDto $number): ?KontaktnummerTyp
     {
-        if (!$number instanceof NumberDto) {
+        if ($number === null) {
             return  null;
         }
 
         $telefon = new KontaktnummerTyp();
-        if ($number->rawNumber !== '' && $number->rawNumber !== '0') {
+        if ($number->rawNumber) {
             return $telefon->fromRawNumber($number->rawNumber);
         }
 
@@ -78,8 +84,13 @@ class KontaktFactory
             ->withRufnummer(Modify::trim($number->rufnummer, KontaktnummerTyp::MAX_LENGTH_VORWAHL));
     }
 
+
     private function getEMail(): ?string
     {
         return $this->dto->email;
     }
+
+
+
+
 }

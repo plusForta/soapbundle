@@ -10,14 +10,16 @@ use PlusForta\RuVSoapBundle\Utils\Modify;
 
 class MietobjectFactory
 {
-    public function __construct(private readonly MietobjektDto $mietobjektDto)
+    private $mietobjektDto;
+
+    public function __construct(MietobjektDto $dto)
     {
+        $this->mietobjektDto = $dto;
     }
 
     public function create(): MietobjektTyp
     {
         $objekt = new MietobjektTyp();
-
         return $objekt
             ->withStrasse($this->getStrasse())
             ->withHausnummer($this->getHausnummer())
@@ -32,21 +34,18 @@ class MietobjectFactory
     private function getStrasse(): string
     {
         $strasse = $this->mietobjektDto->strasse;
-
         return Modify::trim($strasse, MietobjektTyp::MAX_LENGTH_STRASSE);
     }
 
     private function getHausnummer(): string
     {
         $hausnummer = $this->mietobjektDto->hausnummer;
-
         return Modify::trim($hausnummer, MietobjektTyp::MAX_LENGTH_HAUSNUMMER);
     }
 
     private function getHausnummerZusatz(): ?string
     {
         $hausnummerZusatz = $this->mietobjektDto->hausnummerZusatz;
-
         return Modify::trimOrNull($hausnummerZusatz, MietobjektTyp::MAX_LENGTH_HAUSNUMMER_ZUSATZ);
     }
 
@@ -69,7 +68,6 @@ class MietobjectFactory
     private function getWeitereObjektbeschreibung(): ?string
     {
         $beschreibung = $this->mietobjektDto->beschreibung;
-
         return Modify::trimOrNull($beschreibung, MietobjektTyp::MAX_LENGTH_WEITERE_OBJECTBESCHREIBUNG);
     }
 }

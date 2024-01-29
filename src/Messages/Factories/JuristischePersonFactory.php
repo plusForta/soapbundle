@@ -13,14 +13,17 @@ use PlusForta\RuVSoapBundle\Utils\Modify;
 
 class JuristischePersonFactory
 {
-    public function __construct(private readonly JuristischePersonDto $dto)
+    /** @var JuristischePersonDto  */
+    private $dto;
+
+    public function __construct(JuristischePersonDto $dto)
     {
+        $this->dto = $dto;
     }
 
     public function create(): JuristischePersonTyp
     {
         $person = new JuristischePersonTyp();
-
         return $person
             ->withNameJuristischePerson($this->getNameJuristischePerson())
             ->withAdresseJuristischePerson($this->getAdresseJuristischePerson())
@@ -30,7 +33,6 @@ class JuristischePersonFactory
     private function getNameJuristischePerson(): NameJuristischePersonTyp
     {
         $name = new NameJuristischePersonTyp();
-
         return $name
             ->withAnrede($this->getAnrede())
             ->withName($this->getName())
@@ -41,21 +43,18 @@ class JuristischePersonFactory
     private function getAnrede(): AnredeTyp
     {
         $anrede = new AnredeTyp();
-
         return $anrede->withAnrede($this->dto->anrede);
     }
 
     private function getName(): string
     {
         $name = $this->dto->name;
-
         return Modify::trim($name, NameJuristischePersonTyp::MAX_LENGTH_NAME);
     }
 
     private function getNamenszusatz(): ?string
     {
         $namenszusatz = $this->dto->namenszusatz;
-
         return Modify::trimOrNull($namenszusatz, NameJuristischePersonTyp::MAX_LENGTH_NAMENSZUSATZ);
     }
 
@@ -69,7 +68,7 @@ class JuristischePersonFactory
             ->withOrt($this->getOrt())
             ;
 
-        if ($this->dto->postfach !== '' && $this->dto->postfach !== '0') {
+        if ($this->dto->postfach) {
             return $adresse
                 ->withPostfach(Modify::trim(
                     $this->dto->postfach,
@@ -119,4 +118,6 @@ class JuristischePersonFactory
         $hausnummerZusatz = $this->dto->adresse->hausnummerZusatz;
         return Modify::trimOrNull($hausnummerZusatz, AdresseJuristischePersonTyp::MAX_LENGTH_HAUSNUMMER_ZUSATZ);
     }
+
+
 }

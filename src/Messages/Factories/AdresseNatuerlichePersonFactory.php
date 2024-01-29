@@ -10,8 +10,12 @@ use PlusForta\RuVSoapBundle\Utils\Modify;
 
 class AdresseNatuerlichePersonFactory
 {
-    public function __construct(private readonly AdresseDto $adresseDto)
+    /** @var AdresseDto  */
+    private $adresseDto;
+
+    public function __construct(AdresseDto $dto)
     {
+        $this->adresseDto = $dto;
     }
 
     public function create(): AdresseNatuerlichePersonTyp

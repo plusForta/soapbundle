@@ -4,21 +4,28 @@
 namespace PlusForta\RuVSoapBundle\Messages\Factories;
 
 
-use RuntimeException;
 use PlusForta\RuVSoapBundle\Messages\Dtos\AdressdatenDto;
 use PlusForta\RuVSoapBundle\Messages\Dtos\GemeinschaftDto;
 use PlusForta\RuVSoapBundle\Messages\Dtos\NatuerlichePersonDto;
 use PlusForta\RuVSoapBundle\Type\AbweichBuergEmpfaengerTyp;
 use PlusForta\RuVSoapBundle\Type\AdressdatenTyp;
+use PlusForta\RuVSoapBundle\Type\GemeinschaftTyp;
 use PlusForta\RuVSoapBundle\Type\MietobjektTyp;
+use PlusForta\RuVSoapBundle\Type\NatuerlichePersonTyp;
 use PlusForta\RuVSoapBundle\Type\VermieterTyp;
 use PlusForta\RuVSoapBundle\Type\VersicherungsnehmerTyp;
 
 class AdressdatenFactory
 {
 
-    public function __construct(private readonly AdressdatenDto $adressdatenDto)
+    /**
+     * @var AdressdatenDto
+     */
+    private $adressdatenDto;
+
+    public function __construct(AdressdatenDto $adressdatenDto)
     {
+        $this->adressdatenDto = $adressdatenDto;
     }
 
     public function create(): AdressdatenTyp
@@ -60,7 +67,7 @@ class AdressdatenFactory
                 return $versicherungsnehmer->withGemeinschaft($factory->create());
         }
 
-        throw new RuntimeException('Versicherungsnehmer muss gesetzt sein');
+        throw new \RuntimeException('Versicherungsnehmer muss gesetzt sein');
     }
 
     private function getVermieter(): VermieterTyp

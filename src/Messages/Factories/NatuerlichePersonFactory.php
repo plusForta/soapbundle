@@ -4,7 +4,6 @@
 namespace PlusForta\RuVSoapBundle\Messages\Factories;
 
 
-use DateTimeImmutable;
 use PlusForta\RuVSoapBundle\Messages\Dtos\NatuerlichePersonDto;
 use PlusForta\RuVSoapBundle\Type\AdresseNatuerlichePersonTyp;
 use PlusForta\RuVSoapBundle\Type\AnredeHerrFrauTyp;
@@ -20,14 +19,16 @@ use PlusForta\RuVSoapBundle\Utils\Modify;
 
 class NatuerlichePersonFactory
 {
-    public function __construct(private readonly NatuerlichePersonDto $dto)
+    private $dto;
+
+    public function __construct(NatuerlichePersonDto $dto)
     {
+        $this->dto = $dto;
     }
 
     public function create(): NatuerlichePersonTyp
     {
         $natuerlichePerson = new NatuerlichePersonTyp();
-
         return $natuerlichePerson
             ->withName($this->getName())
             ->withAdresse($this->getAdresse());
@@ -36,7 +37,6 @@ class NatuerlichePersonFactory
     public function createErweitert(): NatuerlichePersonErweitertTyp
     {
         $natuerlichePerson = new NatuerlichePersonErweitertTyp();
-
         return $natuerlichePerson
             ->withName($this->getNameErweitert())
             ->withAdresse($this->getAdresse())
@@ -61,7 +61,6 @@ class NatuerlichePersonFactory
     private function getName(): NameNatuerlichePersonTyp
     {
         $name = new NameNatuerlichePersonTyp();
-
         return $name
             ->withAnrede($this->getAnrede())
             ->withTitel(Modify::trimOrNull($this->getTitel(), NameNatuerlichePersonTyp::MAX_LENGTH_TITEL))
@@ -74,7 +73,6 @@ class NatuerlichePersonFactory
     private function getNameErweitert(): NameNatuerlichePersonHerrFrauTyp
     {
         $name = new NameNatuerlichePersonHerrFrauTyp();
-
         return $name
             ->withAnrede($this->getAnredeErweitert())
             ->withTitel(Modify::trimOrNull($this->getTitel(), NameNatuerlichePersonHerrFrauTyp::MAX_LENGTH_TITEL))
@@ -87,14 +85,12 @@ class NatuerlichePersonFactory
     private function getAnrede(): AnredeTyp
     {
         $anrede = new AnredeTyp();
-
         return $anrede->withAnrede($this->dto->anrede);
     }
 
     private function getAnredeErweitert(): AnredeHerrFrauTyp
     {
         $anrede = new AnredeHerrFrauTyp();
-
         return $anrede->withAnrede($this->dto->anrede);
     }
 
@@ -121,7 +117,6 @@ class NatuerlichePersonFactory
     private function getAdresse(): AdresseNatuerlichePersonTyp
     {
         $factory = new AdresseNatuerlichePersonFactory($this->dto->adresse);
-
         return $factory->create();
     }
 
@@ -135,14 +130,15 @@ class NatuerlichePersonFactory
         return $factory->create(KontaktFactory::GESCHAEFTLICH);
     }
 
-    private function getGeburtsdatum(): DateTimeImmutable
+    private function getGeburtsdatum(): \DateTimeImmutable
     {
         return $this->dto->geburtsdatum;
 
     }
 
-    private function getNationalitaet(): string
+    private function getNationalitaet()
     {
         return $this->dto->nationalitaet;
     }
+
 }
