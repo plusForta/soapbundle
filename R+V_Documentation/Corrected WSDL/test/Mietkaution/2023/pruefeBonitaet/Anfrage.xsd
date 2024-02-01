@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema xmlns:pruefeBonitaet="http://ruv-schema.de/Mietkaution/v1.0/pruefeBonitaet" xmlns:service="http://ruv-schema.de/Mietkaution/v1.0/_types" xmlns:method="http://ruv-schema.de/Mietkaution/v1.0/pruefeBonitaet/_types" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" version="1.0">
+	<xsd:import namespace="http://ruv-schema.de/Mietkaution/v1.0/pruefeBonitaet/_types" schemaLocation="_types/types.xsd"/>
+	<xsd:element name="pruefeBonitaet" type="method:pruefeBonitaetAnfrageTyp">
+		<xsd:annotation>
+			<xsd:documentation>Prüfen der Bonitaet</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+</xsd:schema>
