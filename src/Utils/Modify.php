@@ -17,6 +17,7 @@ class Modify
 
         $trace = self::getTrace();
         self::logTrace($trace);
+
         return mb_strcut($value, 0, $length);
     }
 
@@ -28,11 +29,13 @@ class Modify
 
         $trace = self::getTrace();
         self::logTrace($trace);
+
         return mb_strcut($value, 0, $length);
     }
 
     private static function getTrace() {
-		$trace = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT);
+		$trace = debug_backtrace();
+
 		return $trace[1];
 	}
 

@@ -5,30 +5,11 @@ namespace PlusForta\RuVSoapBundle\Type;
 class UebergabeDokumenteTyp
 {
 
-    /**
-     * @var bool
-     */
-    private $VertragsbestimmungenUebergeben = true;
+    private bool $VertragsbestimmungenUebergeben = true;
+    private bool $BuergschaftUebergeben = true;
+    private bool $VersicherungsscheinUebergeben = true;
+    private bool $RechnungUebergeben = true;
 
-    /**
-     * @var bool
-     */
-    private $BuergschaftUebergeben = true;
-
-    /**
-     * @var bool
-     */
-    private $VersicherungsscheinUebergeben = true;
-
-    /**
-     * @var bool
-     */
-    private $RechnungUebergeben = true;
-
-    /**
-     * @param bool $VertragsbestimmungenUebergeben
-     * @return UebergabeDokumenteTyp
-     */
     public function withVertragsbestimmungenUebergeben($VertragsbestimmungenUebergeben): UebergabeDokumenteTyp
     {
         $new = clone $this;
@@ -37,11 +18,7 @@ class UebergabeDokumenteTyp
         return $new;
     }
 
-    /**
-     * @param bool $BuergschaftUebergeben
-     * @return UebergabeDokumenteTyp
-     */
-    public function withBuergschaftUebergeben($BuergschaftUebergeben): UebergabeDokumenteTyp
+    public function withBuergschaftUebergeben(bool $BuergschaftUebergeben): self
     {
         $new = clone $this;
         $new->BuergschaftUebergeben = $BuergschaftUebergeben;
@@ -49,11 +26,7 @@ class UebergabeDokumenteTyp
         return $new;
     }
 
-    /**
-     * @param bool $VersicherungsscheinUebergeben
-     * @return UebergabeDokumenteTyp
-     */
-    public function withVersicherungsscheinUebergeben($VersicherungsscheinUebergeben): UebergabeDokumenteTyp
+    public function withVersicherungsscheinUebergeben(bool $VersicherungsscheinUebergeben): self
     {
         $new = clone $this;
         $new->VersicherungsscheinUebergeben = $VersicherungsscheinUebergeben;
@@ -61,18 +34,12 @@ class UebergabeDokumenteTyp
         return $new;
     }
 
-    /**
-     * @param bool $RechnungUebergeben
-     * @return UebergabeDokumenteTyp
-     */
-    public function withRechnungUebergeben($RechnungUebergeben): UebergabeDokumenteTyp
+    public function withRechnungUebergeben(bool $RechnungUebergeben): self
     {
         $new = clone $this;
         $new->RechnungUebergeben = $RechnungUebergeben;
 
         return $new;
     }
-
-
 }
 

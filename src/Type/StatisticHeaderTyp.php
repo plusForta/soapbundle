@@ -4,35 +4,16 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class StatisticHeaderTyp
 {
+    private string $channel;
+    private string $application;
+    private string $applicationRelease;
 
-    /**
-     * @var string
-     */
-    private $channel;
-
-    /**
-     * @var string
-     */
-    private $application;
-
-    /**
-     * @var string
-     */
-    private $applicationRelease;
-
-    /**
-     * @return string
-     */
-    public function getChannel()
+    public function getChannel(): string
     {
         return $this->channel;
     }
 
-    /**
-     * @param string $channel
-     * @return StatisticHeaderTyp
-     */
-    public function withChannel($channel)
+    public function withChannel(string $channel): self
     {
         $new = clone $this;
         $new->channel = $channel;
@@ -40,19 +21,12 @@ class StatisticHeaderTyp
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getApplication()
+    public function getApplication(): string
     {
         return $this->application;
     }
 
-    /**
-     * @param string $application
-     * @return StatisticHeaderTyp
-     */
-    public function withApplication($application)
+    public function withApplication(string $application): self
     {
         $new = clone $this;
         $new->application = $application;
@@ -60,26 +34,17 @@ class StatisticHeaderTyp
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getApplicationRelease()
+    public function getApplicationRelease(): string
     {
         return $this->applicationRelease;
     }
 
-    /**
-     * @param string $applicationRelease
-     * @return StatisticHeaderTyp
-     */
-    public function withApplicationRelease($applicationRelease)
+    public function withApplicationRelease(string $applicationRelease): self
     {
         $new = clone $this;
         $new->applicationRelease = $applicationRelease;
 
         return $new;
     }
-
-
 }
 

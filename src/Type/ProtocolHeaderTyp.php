@@ -4,32 +4,19 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class ProtocolHeaderTyp
 {
+    private string $version;
 
-    /**
-     * @var string
-     */
-    private $version;
-
-    /**
-     * @return string
-     */
-    public function getVersion()
+    public function getVersion(): string
     {
         return $this->version;
     }
 
-    /**
-     * @param string $version
-     * @return ProtocolHeaderTyp
-     */
-    public function withVersion($version)
+    public function withVersion(string $version): self
     {
         $new = clone $this;
         $new->version = $version;
 
         return $new;
     }
-
-
 }
 

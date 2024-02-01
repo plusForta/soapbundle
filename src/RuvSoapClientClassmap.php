@@ -2,13 +2,13 @@
 
 namespace PlusForta\RuVSoapBundle;
 
-use PlusForta\RuVSoapBundle\Type;
 use Soap\ExtSoapEngine\Configuration\ClassMap\ClassMap;
 use Soap\ExtSoapEngine\Configuration\ClassMap\ClassMapCollection;
 
 class RuvSoapClientClassmap
 {
 
+    public $number;
     public static function getCollection() : ClassMapCollection
     {
         return new ClassMapCollection(...[
@@ -64,8 +64,6 @@ class RuvSoapClientClassmap
 //            new ClassMap('pruefeBonitaetAnfrageTyp', Type\PruefeBonitaetAnfrageTyp::class),
         ]);
     }
-
-
 
     function __construct ($number){
         if (!preg_match('#^(\+[0-9]{1,2}|0[0-9]{2,4})\s*[0-9\.\-\/\(\)]\s*[0-9\.\-\/\(\) ]+$#', $number)) {

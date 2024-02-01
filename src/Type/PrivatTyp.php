@@ -4,65 +4,47 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 use Webmozart\Assert\Assert;
 
-/**
- * @property KontaktnummerTyp Telefon
- * @property KontaktnummerTyp Mobil
- * @property KontaktnummerTyp Fax
- * @property string EMail
- */
 class PrivatTyp
 {
-    public const MAX_LENGTH_EMAIL = 50;
+    final public const MAX_LENGTH_EMAIL = 50;
 
-    /**
-     * @param ?KontaktnummerTyp $Telefon
-     * @return PrivatTyp
-     */
-    public function withTelefon(?KontaktnummerTyp $Telefon): PrivatTyp
+    public KontaktnummerTyp $Telefon;
+    public KontaktnummerTyp $Mobil;
+    public KontaktnummerTyp $Fax;
+    public string $EMail;
+
+    public function withTelefon(?KontaktnummerTyp $Telefon): self
     {
         $new = clone $this;
-        if ($Telefon !== null) {
+        if ($Telefon instanceof KontaktnummerTyp) {
             $new->Telefon = $Telefon;
         }
 
         return $new;
     }
 
-    /**
-     * @param ?KontaktnummerTyp $Mobil
-     * @return PrivatTyp
-     */
-    public function withMobil(?KontaktnummerTyp $Mobil): PrivatTyp
+    public function withMobil(?KontaktnummerTyp $Mobil): self
     {
         $new = clone $this;
-        if ($Mobil !== null) {
+        if ($Mobil instanceof KontaktnummerTyp) {
             $new->Mobil = $Mobil;
         }
 
         return $new;
     }
 
-    /**
-     * @param ?KontaktnummerTyp $Fax
-     * @return PrivatTyp
-     */
-    public function withFax(?KontaktnummerTyp $Fax): PrivatTyp
+    public function withFax(?KontaktnummerTyp $Fax): self
     {
         $new = clone $this;
-        if ($Fax !== null) {
+        if ($Fax instanceof KontaktnummerTyp) {
             $new->Fax = $Fax;
         }
 
         return $new;
     }
 
-    /**
-     * @param ?string $EMail
-     * @return PrivatTyp
-     */
-    public function withEMail(?string $EMail): PrivatTyp
+    public function withEMail(?string $EMail): self
     {
-
         $new = clone $this;
         if ($EMail !== null) {
             Assert::maxLength($EMail, self::MAX_LENGTH_EMAIL);
@@ -72,7 +54,5 @@ class PrivatTyp
 
         return $new;
     }
-
-
 }
 

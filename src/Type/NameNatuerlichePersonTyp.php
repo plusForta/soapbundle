@@ -4,10 +4,6 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 use Webmozart\Assert\Assert;
 
-/**
- * @property string|null Titel
- * @property string|null Namenszusatz
- */
 class NameNatuerlichePersonTyp
 {
     public const MAX_LENGTH_TITEL = 10;
@@ -15,26 +11,13 @@ class NameNatuerlichePersonTyp
     public const MAX_LENGTH_NACHNAME = 30;
     public const MAX_LENGTH_NAMENSZUSATZ = 30;
 
-    /**
-     * @var mixed
-     */
-    private $Anrede;
+    private mixed $Anrede;
+    private string $Vorname;
+    private string $Nachname;
+    private ?string $Titel = null;
+    private ?string $Namenszusatz = null;
 
-    /**
-     * @var string
-     */
-    private $Vorname;
-
-    /**
-     * @var string
-     */
-    private $Nachname;
-
-    /**
-     * @param AnredeTyp $Anrede
-     * @return NameNatuerlichePersonTyp
-     */
-    public function withAnrede(AnredeTyp $Anrede): NameNatuerlichePersonTyp
+    public function withAnrede(AnredeTyp $Anrede): self
     {
         $new = clone $this;
         $new->Anrede = $Anrede->toString();
@@ -42,11 +25,7 @@ class NameNatuerlichePersonTyp
         return $new;
     }
 
-    /**
-     * @param ?string $Titel
-     * @return NameNatuerlichePersonTyp
-     */
-    public function withTitel(?string $Titel): NameNatuerlichePersonTyp
+    public function withTitel(?string $Titel): self
     {
         $new = clone $this;
         if ($Titel !== null) {
@@ -57,11 +36,7 @@ class NameNatuerlichePersonTyp
         return $new;
     }
 
-    /**
-     * @param string $Vorname
-     * @return NameNatuerlichePersonTyp
-     */
-    public function withVorname(string $Vorname)
+    public function withVorname(string $Vorname): self
     {
         Assert::maxLength($Vorname, self::MAX_LENGTH_VORNAME);
         $new = clone $this;
@@ -70,11 +45,7 @@ class NameNatuerlichePersonTyp
         return $new;
     }
 
-    /**
-     * @param string $Nachname
-     * @return NameNatuerlichePersonTyp
-     */
-    public function withNachname(string $Nachname): NameNatuerlichePersonTyp
+    public function withNachname(string $Nachname): self
     {
         Assert::maxLength($Nachname, self::MAX_LENGTH_NACHNAME);
         $new = clone $this;
@@ -83,11 +54,7 @@ class NameNatuerlichePersonTyp
         return $new;
     }
 
-    /**
-     * @param ?string $Namenszusatz
-     * @return NameNatuerlichePersonTyp
-     */
-    public function withNamenszusatz(?string $Namenszusatz): NameNatuerlichePersonTyp
+    public function withNamenszusatz(?string $Namenszusatz): self
     {
         $new = clone $this;
         if ($Namenszusatz !== null) {
@@ -97,7 +64,5 @@ class NameNatuerlichePersonTyp
 
         return $new;
     }
-
-
 }
 

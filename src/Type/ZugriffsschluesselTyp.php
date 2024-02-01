@@ -4,29 +4,16 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class ZugriffsschluesselTyp
 {
-    /**
-     * @var string
-     */
-    private $Vorgangsnummer;
+    private string $Vorgangsnummer;
 
-    /**
-     * @var \PlusForta\RuVSoapBundle\Type\RechtsgeschaeftTyp
-     */
-    private $Rechtsgeschaeft;
+    private RechtsgeschaeftTyp $Rechtsgeschaeft;
 
-    /**
-     * @return string
-     */
-    public function getVorgangsnummer()
+    public function getVorgangsnummer(): string
     {
         return $this->Vorgangsnummer;
     }
 
-    /**
-     * @param string $Vorgangsnummer
-     * @return ZugriffsschluesselTyp
-     */
-    public function withVorgangsnummer($Vorgangsnummer)
+    public function withVorgangsnummer(string $Vorgangsnummer): self
     {
         $new = clone $this;
         $new->Vorgangsnummer = $Vorgangsnummer;
@@ -34,19 +21,12 @@ class ZugriffsschluesselTyp
         return $new;
     }
 
-    /**
-     * @return \PlusForta\RuVSoapBundle\Type\RechtsgeschaeftTyp
-     */
-    public function getRechtsgeschaeft()
+    public function getRechtsgeschaeft(): RechtsgeschaeftTyp
     {
         return $this->Rechtsgeschaeft;
     }
 
-    /**
-     * @param \PlusForta\RuVSoapBundle\Type\RechtsgeschaeftTyp $Rechtsgeschaeft
-     * @return ZugriffsschluesselTyp
-     */
-    public function withRechtsgeschaeft($Rechtsgeschaeft)
+    public function withRechtsgeschaeft(RechtsgeschaeftTyp $Rechtsgeschaeft): self
     {
         $new = clone $this;
         $new->Rechtsgeschaeft = $Rechtsgeschaeft;

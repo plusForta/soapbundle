@@ -4,40 +4,17 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class WerbewiderspruchTyp
 {
+    private bool $KeineTelefonWerbung = false;
+    private bool $KeineEMailWerbung = false;
+    private bool $KeineDatenweitergabe = false;
+    private bool $KeineSchriftlicheWerbung = false;
 
-    /**
-     * @var bool
-     */
-    private $KeineTelefonWerbung = false;
-
-    /**
-     * @var bool
-     */
-    private $KeineEMailWerbung = false;
-
-    /**
-     * @var bool
-     */
-    private $KeineDatenweitergabe = false;
-
-    /**
-     * @var bool
-     */
-    private $KeineSchriftlicheWerbung = false;
-
-    /**
-     * @return bool
-     */
-    public function getKeineTelefonWerbung()
+    public function getKeineTelefonWerbung(): bool
     {
         return $this->KeineTelefonWerbung;
     }
 
-    /**
-     * @param bool $KeineTelefonWerbung
-     * @return WerbewiderspruchTyp
-     */
-    public function withKeineTelefonWerbung($KeineTelefonWerbung)
+    public function withKeineTelefonWerbung(bool $KeineTelefonWerbung): self
     {
         $new = clone $this;
         $new->KeineTelefonWerbung = $KeineTelefonWerbung;
@@ -45,19 +22,12 @@ class WerbewiderspruchTyp
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getKeineEMailWerbung()
+    public function getKeineEMailWerbung(): bool
     {
         return $this->KeineEMailWerbung;
     }
 
-    /**
-     * @param bool $KeineEMailWerbung
-     * @return WerbewiderspruchTyp
-     */
-    public function withKeineEMailWerbung($KeineEMailWerbung)
+    public function withKeineEMailWerbung(bool $KeineEMailWerbung): self
     {
         $new = clone $this;
         $new->KeineEMailWerbung = $KeineEMailWerbung;
@@ -65,19 +35,12 @@ class WerbewiderspruchTyp
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getKeineDatenweitergabe()
+    public function getKeineDatenweitergabe(): bool
     {
         return $this->KeineDatenweitergabe;
     }
 
-    /**
-     * @param bool $KeineDatenweitergabe
-     * @return WerbewiderspruchTyp
-     */
-    public function withKeineDatenweitergabe($KeineDatenweitergabe)
+    public function withKeineDatenweitergabe(bool $KeineDatenweitergabe): self
     {
         $new = clone $this;
         $new->KeineDatenweitergabe = $KeineDatenweitergabe;
@@ -85,26 +48,17 @@ class WerbewiderspruchTyp
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getKeineSchriftlicheWerbung()
+    public function getKeineSchriftlicheWerbung(): bool
     {
         return $this->KeineSchriftlicheWerbung;
     }
 
-    /**
-     * @param bool $KeineSchriftlicheWerbung
-     * @return WerbewiderspruchTyp
-     */
-    public function withKeineSchriftlicheWerbung($KeineSchriftlicheWerbung)
+    public function withKeineSchriftlicheWerbung(bool $KeineSchriftlicheWerbung): self
     {
         $new = clone $this;
         $new->KeineSchriftlicheWerbung = $KeineSchriftlicheWerbung;
 
         return $new;
     }
-
-
 }
 

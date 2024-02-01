@@ -6,27 +6,11 @@ use Webmozart\Assert\Assert;
 
 class TarifdatenTyp
 {
+    private string $Versicherungsbedingungen;
+    private float $Buergschaftssumme;
+    private float $Jahresbeitrag;
 
-    /**
-     * @var string
-     */
-    private $Versicherungsbedingungen;
-
-    /**
-     * @var float
-     */
-    private $Buergschaftssumme;
-
-    /**
-     * @var float
-     */
-    private $Jahresbeitrag;
-
-    /**
-     * @param VersicherungsbedingungenEnumTyp $Versicherungsbedingungen
-     * @return TarifdatenTyp
-     */
-    public function withVersicherungsbedingungen(VersicherungsbedingungenEnumTyp $Versicherungsbedingungen): TarifdatenTyp
+    public function withVersicherungsbedingungen(VersicherungsbedingungenEnumTyp $Versicherungsbedingungen): self
     {
         $new = clone $this;
         $new->Versicherungsbedingungen = $Versicherungsbedingungen->toString();
@@ -34,25 +18,14 @@ class TarifdatenTyp
         return $new;
     }
 
-    /**
-     * @param float $Buergschaftssumme
-     * @return TarifdatenTyp
-     */
-    public function withBuergschaftssumme(float $Buergschaftssumme): TarifdatenTyp
+    public function withBuergschaftssumme(float $Buergschaftssumme): self
     {
         Assert::greaterThan($Buergschaftssumme, 0.0);
 
-        $new = clone $this;
-        $new->Buergschaftssumme = round($Buergschaftssumme, 2);
-
-        return $new;
+        return clone $this;
     }
 
-    /**
-     * @param float $Jahresbeitrag
-     * @return TarifdatenTyp
-     */
-    public function withJahresbeitrag(float $Jahresbeitrag): TarifdatenTyp
+    public function withJahresbeitrag(float $Jahresbeitrag): self
     {
         Assert::greaterThan($Jahresbeitrag, 0.0);
 
@@ -61,7 +34,5 @@ class TarifdatenTyp
 
         return $new;
     }
-
-
 }
 

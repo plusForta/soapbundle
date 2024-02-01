@@ -4,6 +4,7 @@
 namespace PlusForta\RuVSoapBundle\Messages;
 
 
+use DateTimeImmutable;
 use PlusForta\RuVSoapBundle\Messages\Dtos\PruefeBonitaetDto;
 use PlusForta\RuVSoapBundle\Messages\Factories\KennungFactory;
 use PlusForta\RuVSoapBundle\Type\PruefeBonitaetAnfrageTyp;
@@ -11,25 +12,17 @@ use PlusForta\RuVSoapBundle\Utils\Modify;
 
 class PruefeBonitaetFactory
 {
-    /**
-     * @var PruefeBonitaetDto
-     */
-    private $dto;
+    private PruefeBonitaetDto $dto;
 
-    /**
-     * @var KennungFactory
-     */
-    private $kennungFactory;
-
-    public function __construct(KennungFactory $kennungFactory)
+    public function __construct(private readonly KennungFactory $kennungFactory)
     {
-        $this->kennungFactory = $kennungFactory;
     }
 
     public function create(PruefeBonitaetDto $dto): PruefeBonitaetAnfrageTyp
     {
         $this->dto = $dto;
         $anfrage = new PruefeBonitaetAnfrageTyp();
+
         return $anfrage->withKennung($this->getKennung())
             ->withReferenznummer($this->getReferenznummer())
             ->withAnrede($this->getAnrede())
@@ -52,66 +45,56 @@ class PruefeBonitaetFactory
 
     private function getReferenznummer(): string
     {
-        $referenznummer = $this->dto->referenznummer;
-        return Modify::trim($referenznummer, PruefeBonitaetAnfrageTyp::MAX_LENGTH_REFERENZNUMMER);
+        return Modify::trim($this->dto->referenznummer, PruefeBonitaetAnfrageTyp::MAX_LENGTH_REFERENZNUMMER);
     }
 
     private function getAnrede(): string
     {
-        $anrede = $this->dto->anrede;
-        return Modify::trim($anrede, PruefeBonitaetAnfrageTyp::MAX_LENGTH_ANREDE);
+        return Modify::trim($this->dto->anrede, PruefeBonitaetAnfrageTyp::MAX_LENGTH_ANREDE);
     }
 
     private function getTitel(): string
     {
-        $titel = $this->dto->titel;
-        return Modify::trim($titel, PruefeBonitaetAnfrageTyp::MAX_LENGTH_TITEL);
+        return Modify::trim($this->dto->titel, PruefeBonitaetAnfrageTyp::MAX_LENGTH_TITEL);
     }
 
     private function getVorname(): string
     {
-        $vorname = $this->dto->vorname;
-        return Modify::trim($vorname, PruefeBonitaetAnfrageTyp::MAX_LENGTH_VORNAME);
+        return Modify::trim($this->dto->vorname, PruefeBonitaetAnfrageTyp::MAX_LENGTH_VORNAME);
     }
 
     private function getNachname(): string
     {
-        $nachname = $this->dto->nachname;
-        return Modify::trim($nachname, PruefeBonitaetAnfrageTyp::MAX_LENGTH_NACHNAME);
+        return Modify::trim($this->dto->nachname, PruefeBonitaetAnfrageTyp::MAX_LENGTH_NACHNAME);
     }
 
     private function getStrasse(): string
     {
-        $strasse = $this->dto->strasse;
-        return Modify::trim($strasse, PruefeBonitaetAnfrageTyp::MAX_LENGTH_STRASSE);
+        return Modify::trim($this->dto->strasse, PruefeBonitaetAnfrageTyp::MAX_LENGTH_STRASSE);
     }
 
     private function getHausnummer(): string
     {
-        $hausnummer = $this->dto->Hausnummer;
-        return Modify::trim($hausnummer, PruefeBonitaetAnfrageTyp::MAX_LENGTH_HAUSNUMMER);
+        return Modify::trim($this->dto->Hausnummer, PruefeBonitaetAnfrageTyp::MAX_LENGTH_HAUSNUMMER);
     }
 
-    private function getPlz()
+    private function getPlz(): string
     {
         return $this->dto->plz;
     }
 
-    private function getOrt()
+    private function getOrt(): string
     {
-        $ort = $this->dto->ort;
-        return Modify::trim($ort, PruefeBonitaetAnfrageTyp::MAX_LENGTH_ORT);
+        return Modify::trim($this->dto->ort, PruefeBonitaetAnfrageTyp::MAX_LENGTH_ORT);
     }
 
-    private function getLand()
+    private function getLand(): string
     {
         return $this->dto->land;
     }
 
-    private function getGeburtsdatum(): \DateTimeImmutable
+    private function getGeburtsdatum(): DateTimeImmutable
     {
         return $this->dto->geburtsdatum;
     }
-
-
 }

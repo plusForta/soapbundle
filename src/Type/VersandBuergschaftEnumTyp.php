@@ -8,17 +8,14 @@ use Webmozart\Assert\Assert;
 
 class VersandBuergschaftEnumTyp
 {
-    const VERSICHERUNGSNEHMER = 'Versicherungsnehmer';
-    const VERMIETER = 'Vermieter';
-    const HAUSVERWALTER = 'Hausverwalter';
-    const VERSAND_AN_DRITTEN = 'Versand an Dritten';
+    final public const VERSICHERUNGSNEHMER = 'Versicherungsnehmer';
+    final public const VERMIETER = 'Vermieter';
+    final public const HAUSVERWALTER = 'Hausverwalter';
+    final public const VERSAND_AN_DRITTEN = 'Versand an Dritten';
 
-    /**
-     * @var string
-     */
-    private $VersandBuergschaft;
+    private string $VersandBuergschaft;
 
-    public function withVersandBuergschaft(string $bedingung): VersandBuergschaftEnumTyp
+    public function withVersandBuergschaft(string $bedingung): self
     {
         Assert::oneOf($bedingung, [
             self::VERSICHERUNGSNEHMER,

@@ -4,29 +4,16 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 use Webmozart\Assert\Assert;
 
-/**
- * @property string Namenszusatz
- */
 class NameJuristischePersonTyp
 {
     public const MAX_LENGTH_NAMENSZUSATZ = 30;
     public const MAX_LENGTH_NAME = 30;
 
-    /**
-     * @var string
-     */
-    private $Anrede;
+    private string $Anrede;
+    private string $Name;
+    private string $Namenszusatz;
 
-    /**
-     * @var string
-     */
-    private $Name;
-
-    /**
-     * @param AnredeTyp $Anrede
-     * @return NameJuristischePersonTyp
-     */
-    public function withAnrede(AnredeTyp $Anrede): NameJuristischePersonTyp
+    public function withAnrede(AnredeTyp $Anrede): self
     {
         $new = clone $this;
         $new->Anrede = $Anrede->toString();
@@ -34,11 +21,7 @@ class NameJuristischePersonTyp
         return $new;
     }
 
-    /**
-     * @param string $Name
-     * @return NameJuristischePersonTyp
-     */
-    public function withName(string $Name)
+    public function withName(string $Name): self
     {
         Assert::maxLength($Name, self::MAX_LENGTH_NAME);
         $new = clone $this;
@@ -47,11 +30,7 @@ class NameJuristischePersonTyp
         return $new;
     }
 
-    /**
-     * @param ?string $Namenszusatz
-     * @return NameJuristischePersonTyp
-     */
-    public function withNamenszusatz(?string $Namenszusatz): NameJuristischePersonTyp
+    public function withNamenszusatz(?string $Namenszusatz): self
     {
         $new = clone $this;
         if ($Namenszusatz !== null) {
@@ -61,7 +40,5 @@ class NameJuristischePersonTyp
 
         return $new;
     }
-
-
 }
 

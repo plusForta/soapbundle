@@ -6,46 +6,19 @@ use PlusForta\RuVSoapBundle\Messages\ResponseStatusInterface;
 
 class StelleAntragAntwortTyp implements ResponseStatusInterface
 {
+    private StatusTyp $Status;
+    private ?RechtsgeschaeftTyp $Rechtsgeschaeft = null;
+    private ?BewertungTyp $Bewertung = null;
+    private ?string $Vorgangsnummer = null;
+    private ?AntragsdatenIdentifikationTyp $AntragsdatenIdentifikation = null;
+    private ?string $Referenznummer = null;
 
-    /**
-     * @var StatusTyp
-     */
-    private $Status;
-
-    /**
-     * @var RechtsgeschaeftTyp|null
-     */
-    private $Rechtsgeschaeft;
-
-    /**
-     * @var string|null
-     */
-    private $Referenznummer;
-
-    /**
-     * @var BewertungTyp|null
-     */
-    private $Bewertung;
-
-    /**
-     * @var string|null
-     */
-    private $Vorgangsnummer;
-
-    /**
-     * @var AntragsdatenIdentifikationTyp|null
-     */
-    private $AntragsdatenIdentifikation;
-
-    /**
-     * @return StatusTyp
-     */
     public function getStatus(): StatusTyp
     {
         return $this->Status;
     }
 
-    public function withStatus(StatusTyp $Status): StelleAntragAntwortTyp
+    public function withStatus(StatusTyp $Status): self
     {
         $new = clone $this;
         $new->Status = $Status;
@@ -53,20 +26,12 @@ class StelleAntragAntwortTyp implements ResponseStatusInterface
         return $new;
     }
 
-    /**
-     * @return RechtsgeschaeftTyp|null
-     */
-    public function getRechtsgeschaeft()
+    public function getRechtsgeschaeft(): ?RechtsgeschaeftTyp
     {
         return $this->Rechtsgeschaeft;
     }
 
-
-    /**
-     * @param ?RechtsgeschaeftTyp $Rechtsgeschaeft
-     * @return StelleAntragAntwortTyp
-     */
-    public function withRechtsgeschaeft(?RechtsgeschaeftTyp $Rechtsgeschaeft): StelleAntragAntwortTyp
+    public function withRechtsgeschaeft(?RechtsgeschaeftTyp $Rechtsgeschaeft): self
     {
         $new = clone $this;
         $new->Rechtsgeschaeft = $Rechtsgeschaeft;
@@ -74,11 +39,7 @@ class StelleAntragAntwortTyp implements ResponseStatusInterface
         return $new;
     }
 
-    /**
-     * @param ?string $Rechtsgeschaeft
-     * @return StelleAntragAntwortTyp
-     */
-    public function withReferenznummer(?string $Referenznummer): StelleAntragAntwortTyp
+    public function withReferenznummer(?string $Referenznummer): self
     {
         $new = clone $this;
         $new->Referenznummer = $Referenznummer;
@@ -86,19 +47,12 @@ class StelleAntragAntwortTyp implements ResponseStatusInterface
         return $new;
     }
 
-    /**
-     * @return BewertungTyp|null
-     */
-    public function getBewertung()
+    public function getBewertung(): ?BewertungTyp
     {
         return $this->Bewertung;
     }
 
-    /**
-     * @param ?BewertungTyp $Bewertung
-     * @return StelleAntragAntwortTyp
-     */
-    public function withBewertung(?BewertungTyp $Bewertung): StelleAntragAntwortTyp
+    public function withBewertung(?BewertungTyp $Bewertung): self
     {
         $new = clone $this;
         $new->Bewertung = $Bewertung;
@@ -106,17 +60,12 @@ class StelleAntragAntwortTyp implements ResponseStatusInterface
         return $new;
     }
 
-
     public function getVorgangsnummer(): ?string
     {
         return $this->Vorgangsnummer;
     }
 
-    /**
-     * @param ?string $Vorgangsnummer
-     * @return StelleAntragAntwortTyp
-     */
-    public function withVorgangsnummer(?string $Vorgangsnummer): StelleAntragAntwortTyp
+    public function withVorgangsnummer(?string $Vorgangsnummer): self
     {
         $new = clone $this;
         $new->Vorgangsnummer = $Vorgangsnummer;
@@ -124,18 +73,12 @@ class StelleAntragAntwortTyp implements ResponseStatusInterface
         return $new;
     }
 
-
-    /**
-     * @param ?AntragsdatenIdentifikation $Vorgangsnummer
-     * @return StelleAntragAntwortTyp
-     */
-    public function withAntragsdatenIdentifikation(?AntragsdatenIdentifikationTyp $AntragsdatenIdentifikation): StelleAntragAntwortTyp
+    public function withAntragsdatenIdentifikation(?AntragsdatenIdentifikationTyp $AntragsdatenIdentifikation): self
     {
         $new = clone $this;
         $new->AntragsdatenIdentifikation = $AntragsdatenIdentifikation;
 
         return $new;
     }
-
 }
 

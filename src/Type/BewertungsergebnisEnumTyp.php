@@ -12,12 +12,9 @@ class BewertungsergebnisEnumTyp
     public const NEGATIV = 'Negativ';
     public const PRUEFUNG = 'Pruefung';
 
-    /**
-     * @var string
-     */
-    private $Bewertungsergebnis;
+    private string $Bewertungsergebnis;
 
-    public function withBewertungsergebnis(string $Bewertungsergebnis)
+    public function withBewertungsergebnis(string $Bewertungsergebnis): self
     {
 
         Assert::oneOf($Bewertungsergebnis, [
@@ -31,7 +28,7 @@ class BewertungsergebnisEnumTyp
         return $new;
     }
 
-    public function toString()
+    public function toString(): string
     {
         return $this->Bewertungsergebnis;
     }

@@ -3,15 +3,13 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
-
-/**
- * @property string|null AntragsdatenID
- * @property string|null BuergschaftstextVersion
- */
 class AntragsdatenIdentifikationTyp
 {
 
-    public function withAntragsdatenID(?string $AntragsdatenID)
+    public ?string $AntragsdatenID;
+    public ?string $BuergschaftstextVersion;
+
+    public function withAntragsdatenID(?string $AntragsdatenID): AntragsdatenIdentifikationTyp
     {
         $new = clone $this;
         if ($AntragsdatenID !== null) {
@@ -21,7 +19,7 @@ class AntragsdatenIdentifikationTyp
         return $new;
     }
 
-    public function withBuergschaftstextVersion(?string $BuergschaftstextVersion)
+    public function withBuergschaftstextVersion(?string $BuergschaftstextVersion): AntragsdatenIdentifikationTyp
     {
         $new = clone $this;
         if ($BuergschaftstextVersion !== null) {
@@ -30,5 +28,4 @@ class AntragsdatenIdentifikationTyp
 
         return $new;
     }
-
 }

@@ -12,23 +12,17 @@ use PlusForta\RuVSoapBundle\Type\VorgangsnummerTyp;
 
 class GibAntragsstatusFactory
 {
-    /** @var KennungFactory */
-    private $kennungFactory;
+    private GibAntragsstatusDto $dto;
 
-    /**
-     * @var GibAntragsstatusDto
-     */
-    private $dto;
-
-    public function __construct(KennungFactory $kennungFactory)
+    public function __construct(private readonly KennungFactory $kennungFactory)
     {
-        $this->kennungFactory = $kennungFactory;
     }
 
     public function create(GibAntragsstatusDto $dto): GibAntragsstatusAnfrageTyp
     {
         $this->dto = $dto;
         $antrag = new GibAntragsstatusAnfrageTyp();
+
         return $antrag
             ->withKennung($this->getKennung())
             ->withVorgangsnummern($this->getVorgangsnummer())
@@ -40,9 +34,6 @@ class GibAntragsstatusFactory
         return $this->kennungFactory->create($this->dto->kennungDto);
     }
 
-    /**
-     * @return VorgangsnummerTyp
-     */
     private function getVorgangsnummer(): VorgangsnummerTyp
     {
         $vorgangsnummer = new VorgangsnummerTyp();

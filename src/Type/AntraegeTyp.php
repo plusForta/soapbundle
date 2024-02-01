@@ -6,25 +6,18 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class AntraegeTyp
 {
-    /**
-     * @var AntragTyp
-     */
-    private $Antrag;
+    private ?AntragTyp $Antrag;
 
     public function getAntrag(): AntragTyp
     {
         return $this->Antrag;
     }
 
-    /**
-     * @param AntragTyp $Antrag
-     */
-    public function withAntrag(AntragTyp $Antrag): AntraegeTyp
+    public function withAntrag(AntragTyp $Antrag): self
     {
         $new = clone $this;
         $new->Antrag = $Antrag;
 
         return $new;
     }
-
 }

@@ -2,20 +2,30 @@
 
 namespace PlusForta\RuVSoapBundle;
 
+use Phpro\SoapClient\Type\ResultInterface;
+use PlusForta\RuVSoapBundle\Type\PruefeBonitaetAnfrageTyp;
+use PlusForta\RuVSoapBundle\Type\BasisAntwortTyp;
+use PlusForta\RuVSoapBundle\Messages\Factories\BasisAntwortFactory;
+use PlusForta\RuVSoapBundle\Type\StelleAntragAnfrageTyp;
+use PlusForta\RuVSoapBundle\Type\StelleAntragAntwortTyp;
+use PlusForta\RuVSoapBundle\Messages\Factories\StelleAntragAntwortFactory;
+use PlusForta\RuVSoapBundle\Type\GibVertragsdatenAnfrageTyp;
+use PlusForta\RuVSoapBundle\Type\GibVertragsdatenAntwortTyp;
+use PlusForta\RuVSoapBundle\Messages\Factories\GibVertragsdatenAntwortFactory;
+use PlusForta\RuVSoapBundle\Type\GibAntragsstatusAnfrageTyp;
+use PlusForta\RuVSoapBundle\Type\GibAntragsstatusAntwortTyp;
+use PlusForta\RuVSoapBundle\Messages\Factories\GibAntragsstatusAntwortFactory;
 use Phpro\SoapClient\Caller\Caller;
 use Phpro\SoapClient\Type\RequestInterface;
-use PlusForta\RuVSoapBundle\Messages\Factories;
-use PlusForta\RuVSoapBundle\Type;
 use Soap\ExtSoapEngine\AbusedClient;
 
 class RuvSoapClient
 {
-
-    public function __construct(private Caller $caller, private AbusedClient $client)
+    public function __construct(private readonly Caller $caller, private readonly AbusedClient $client)
     {
     }
 
-    private function call(string $method, RequestInterface $request)
+    private function call(string $method, RequestInterface $request): ResultInterface
     {
         return ($this->caller)($method, $request);
     }
@@ -25,48 +35,34 @@ class RuvSoapClient
         return $this->client;
     }
 
-    /**
-     * @param Type\PruefeBonitaetAnfrageTyp $inDoc
-     * @return Type\BasisAntwortTyp
-     */
-    public function pruefeBonitaetOperation(Type\PruefeBonitaetAnfrageTyp $inDoc): Type\BasisAntwortTyp
+    public function pruefeBonitaetOperation(PruefeBonitaetAnfrageTyp $inDoc): BasisAntwortTyp
     {
         $result = $this->call('pruefeBonitaetOperation', $inDoc);
-        $factory = new Factories\BasisAntwortFactory();
+        $factory = new BasisAntwortFactory();
 
         return $factory->create($result);
     }
 
-    /**
-     * @param Type\StelleAntragAnfrageTyp $inDoc
-     * @return Type\StelleAntragAntwortTyp
-     */
-    public function stelleAntragOperation(Type\StelleAntragAnfrageTyp $inDoc): Type\StelleAntragAntwortTyp
+    public function stelleAntragOperation(StelleAntragAnfrageTyp $inDoc): StelleAntragAntwortTyp
     {
         $result = $this->call('stelleAntragOperation', $inDoc);
-        $factory = new Factories\StelleAntragAntwortFactory();
+        $factory = new StelleAntragAntwortFactory();
 
         return $factory->create($result);
     }
 
-
-    public function gibVertragsdatenOperation(Type\GibVertragsdatenAnfrageTyp $inDoc): Type\GibVertragsdatenAntwortTyp
+    public function gibVertragsdatenOperation(GibVertragsdatenAnfrageTyp $inDoc): GibVertragsdatenAntwortTyp
     {
         $result = $this->call('gibVertragsdatenOperation', $inDoc);
-        $factory = new Factories\GibVertragsdatenAntwortFactory();
+        $factory = new GibVertragsdatenAntwortFactory();
 
         return $factory->create($result);
     }
 
-
-    /**
-     * @param Type\GibAntragsstatusAnfrageTyp $inDoc
-     * @return Type\GibAntragsstatusAntwortTyp
-     */
-    public function gibAntragsstatusOperation(Type\GibAntragsstatusAnfrageTyp $inDoc): Type\GibAntragsstatusAntwortTyp
+    public function gibAntragsstatusOperation(GibAntragsstatusAnfrageTyp $inDoc): GibAntragsstatusAntwortTyp
     {
         $result = $this->call('gibAntragsstatusOperation', $inDoc);
-        $factory = new Factories\GibAntragsstatusAntwortFactory();
+        $factory = new GibAntragsstatusAntwortFactory();
 
         return $factory->create($result);
     }

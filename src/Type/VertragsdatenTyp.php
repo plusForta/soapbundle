@@ -5,48 +5,19 @@ namespace PlusForta\RuVSoapBundle\Type;
 use DateTimeImmutable;
 use Webmozart\Assert\Assert;
 
-/**
- * @property string $Buergschaftsvariante
- */
 class VertragsdatenTyp
 {
     public const MIETKAUTION = 'Mietkaution';
 
-    /**
-     * @var string
-     */
-    private $Produkt = 'Miet2018';
+    private string $Produkt = 'Miet2018';
+    private string $Vertragsbeginn;
+    private mixed $Tarifdaten;
+    private mixed $Mietvertrag;
+    private mixed $Dokumentenversand;
+    private mixed $UebergabeDokumente;
+    private string $Buergschaftsvariante;
 
-    /**
-     * @var string
-     */
-    private $Vertragsbeginn;
-
-    /**
-     * @var mixed
-     */
-    private $Tarifdaten;
-
-    /**
-     * @var mixed
-     */
-    private $Mietvertrag;
-
-    /**
-     * @var mixed
-     */
-    private $Dokumentenversand;
-
-    /**
-     * @var mixed
-     */
-    private $UebergabeDokumente;
-
-    /**
-     * @param ?string $Produkt
-     * @return VertragsdatenTyp
-     */
-    public function withProdukt(?string $Produkt): VertragsdatenTyp
+    public function withProdukt(?string $Produkt): self
     {
         $new = clone $this;
         if ($Produkt !== null) {
@@ -59,11 +30,7 @@ class VertragsdatenTyp
         return $new;
     }
 
-    /**
-     * @param DateTimeImmutable $Vertragsbeginn
-     * @return VertragsdatenTyp
-     */
-    public function withVertragsbeginn(DateTimeImmutable $Vertragsbeginn): VertragsdatenTyp
+    public function withVertragsbeginn(DateTimeImmutable $Vertragsbeginn): self
     {
         $new = clone $this;
         $new->Vertragsbeginn = $Vertragsbeginn->format('d.m.Y');
@@ -71,11 +38,7 @@ class VertragsdatenTyp
         return $new;
     }
 
-    /**
-     * @param TarifdatenTyp $Tarifdaten
-     * @return VertragsdatenTyp
-     */
-    public function withTarifdaten(TarifdatenTyp $Tarifdaten): VertragsdatenTyp
+    public function withTarifdaten(TarifdatenTyp $Tarifdaten): self
     {
         $new = clone $this;
         $new->Tarifdaten = $Tarifdaten;
@@ -83,11 +46,7 @@ class VertragsdatenTyp
         return $new;
     }
 
-    /**
-     * @param MietvertragTyp $Mietvertrag
-     * @return VertragsdatenTyp
-     */
-    public function withMietvertrag(MietvertragTyp $Mietvertrag): VertragsdatenTyp
+    public function withMietvertrag(MietvertragTyp $Mietvertrag): self
     {
         $new = clone $this;
         $new->Mietvertrag = $Mietvertrag;
@@ -95,11 +54,7 @@ class VertragsdatenTyp
         return $new;
     }
 
-    /**
-     * @param DokumentenversandTyp $Dokumentenversand
-     * @return VertragsdatenTyp
-     */
-    public function withDokumentenversand(DokumentenversandTyp $Dokumentenversand)
+    public function withDokumentenversand(DokumentenversandTyp $Dokumentenversand): self
     {
         $new = clone $this;
         $new->Dokumentenversand = $Dokumentenversand;
@@ -107,11 +62,7 @@ class VertragsdatenTyp
         return $new;
     }
 
-    /**
-     * @param UebergabeDokumenteTyp $UebergabeDokumente
-     * @return VertragsdatenTyp
-     */
-    public function withUebergabeDokumente(UebergabeDokumenteTyp $UebergabeDokumente): VertragsdatenTyp
+    public function withUebergabeDokumente(UebergabeDokumenteTyp $UebergabeDokumente): self
     {
         $new = clone $this;
         $new->UebergabeDokumente = $UebergabeDokumente;
@@ -119,14 +70,12 @@ class VertragsdatenTyp
         return $new;
     }
 
-    public function withBuergschaftsvariante(string $buergschaftsvariante): VertragsdatenTyp
+    public function withBuergschaftsvariante(string $buergschaftsvariante): self
     {
         $new = clone $this;
         $new->Buergschaftsvariante = $buergschaftsvariante;
 
         return $new;
     }
-
-
 }
 

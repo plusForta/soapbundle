@@ -4,24 +4,13 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class DokumentenversandTyp
 {
+    private string $VersandBuergschaft;
 
-    /**
-     * @var string
-     */
-    private $VersandBuergschaft;
-
-    /**
-     * @param VersandBuergschaftEnumTyp $VersandBuergschaft
-     * @return DokumentenversandTyp
-     */
-    public function withVersandBuergschaft(VersandBuergschaftEnumTyp $VersandBuergschaft): DokumentenversandTyp
+    public function withVersandBuergschaft(VersandBuergschaftEnumTyp $VersandBuergschaft): self
     {
         $new = clone $this;
         $new->VersandBuergschaft = $VersandBuergschaft->toString();
 
         return $new;
     }
-
-
 }
-

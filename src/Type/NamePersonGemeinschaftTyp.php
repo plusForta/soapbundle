@@ -4,45 +4,18 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class NamePersonGemeinschaftTyp
 {
+    private mixed $Anrede;
+    private string $Titel;
+    private string $Vorname;
+    private string $Nachname;
+    private string $Namenszusatz;
 
-    /**
-     * @var mixed
-     */
-    private $Anrede;
-
-    /**
-     * @var string
-     */
-    private $Titel;
-
-    /**
-     * @var string
-     */
-    private $Vorname;
-
-    /**
-     * @var string
-     */
-    private $Nachname;
-
-    /**
-     * @var string
-     */
-    private $Namenszusatz;
-
-    /**
-     * @return mixed
-     */
-    public function getAnrede()
+    public function getAnrede(): mixed
     {
         return $this->Anrede;
     }
 
-    /**
-     * @param mixed $Anrede
-     * @return NamePersonGemeinschaftTyp
-     */
-    public function withAnrede($Anrede)
+    public function withAnrede(mixed $Anrede): self
     {
         $new = clone $this;
         $new->Anrede = $Anrede->toString();
@@ -50,19 +23,12 @@ class NamePersonGemeinschaftTyp
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getTitel()
+    public function getTitel(): string
     {
         return $this->Titel;
     }
 
-    /**
-     * @param string $Titel
-     * @return NamePersonGemeinschaftTyp
-     */
-    public function withTitel($Titel)
+    public function withTitel(string $Titel): self
     {
         $new = clone $this;
         $new->Titel = $Titel;
@@ -70,19 +36,12 @@ class NamePersonGemeinschaftTyp
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getVorname()
+    public function getVorname(): string
     {
         return $this->Vorname;
     }
 
-    /**
-     * @param string $Vorname
-     * @return NamePersonGemeinschaftTyp
-     */
-    public function withVorname($Vorname)
+    public function withVorname(string $Vorname): self
     {
         $new = clone $this;
         $new->Vorname = $Vorname;
@@ -90,19 +49,12 @@ class NamePersonGemeinschaftTyp
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getNachname()
+    public function getNachname(): string
     {
         return $this->Nachname;
     }
 
-    /**
-     * @param string $Nachname
-     * @return NamePersonGemeinschaftTyp
-     */
-    public function withNachname($Nachname)
+    public function withNachname(string $Nachname): self
     {
         $new = clone $this;
         $new->Nachname = $Nachname;
@@ -110,26 +62,17 @@ class NamePersonGemeinschaftTyp
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getNamenszusatz()
+    public function getNamenszusatz(): string
     {
         return $this->Namenszusatz;
     }
 
-    /**
-     * @param string $Namenszusatz
-     * @return NamePersonGemeinschaftTyp
-     */
-    public function withNamenszusatz($Namenszusatz)
+    public function withNamenszusatz(string $Namenszusatz): self
     {
         $new = clone $this;
         $new->Namenszusatz = $Namenszusatz;
 
         return $new;
     }
-
-
 }
 

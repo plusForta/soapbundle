@@ -4,10 +4,6 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 use Webmozart\Assert\Assert;
 
-/**
- * @property string|null HausnummerZusatz
- * @property string|null Teilort
- */
 class AdresseNatuerlichePersonTyp
 {
     public const DEUTSCHLAND = 'Deutschland';
@@ -17,36 +13,20 @@ class AdresseNatuerlichePersonTyp
     public const MAX_LENGTH_ORT = 25;
     public const MAX_LENGTH_TEILORT = 30;
 
-    /**
-     * @var string
-     */
-    private $Strasse;
+    public ?string $HausnummerZusatz;
+    public ?string $Teilort;
 
-    /**
-     * @var string
-     */
-    private $Hausnummer;
+    private ?string $Strasse;
 
-    /**
-     * @var string
-     */
-    private $Postleitzahl;
+    private ?string $Hausnummer;
 
-    /**
-     * @var string
-     */
-    private $Ort;
+    private ?string $Postleitzahl;
 
-    /**
-     * @var mixed
-     */
-    private $Land = 'Deutschland';
+    private ?string $Ort;
 
-    /**
-     * @param string $Strasse
-     * @return AdresseNatuerlichePersonTyp
-     */
-    public function withStrasse(string $Strasse): AdresseNatuerlichePersonTyp
+    private string $Land = 'Deutschland';
+
+    public function withStrasse(string $Strasse): self
     {
         Assert::maxLength($Strasse, self::MAX_LENGTH_STRASSE);
         $new = clone $this;
@@ -55,11 +35,7 @@ class AdresseNatuerlichePersonTyp
         return $new;
     }
 
-    /**
-     * @param string $Hausnummer
-     * @return AdresseNatuerlichePersonTyp
-     */
-    public function withHausnummer(string $Hausnummer): AdresseNatuerlichePersonTyp
+    public function withHausnummer(string $Hausnummer): self
     {
         Assert::maxLength($Hausnummer, self::MAX_LENGTH_HAUSNUMMER);
         $new = clone $this;
@@ -68,11 +44,7 @@ class AdresseNatuerlichePersonTyp
         return $new;
     }
 
-    /**
-     * @param string $HausnummerZusatz
-     * @return AdresseNatuerlichePersonTyp
-     */
-    public function withHausnummerZusatz(?string $HausnummerZusatz): AdresseNatuerlichePersonTyp
+    public function withHausnummerZusatz(?string $HausnummerZusatz): self
     {
         $new = clone $this;
         if ($HausnummerZusatz !== null) {
@@ -83,11 +55,7 @@ class AdresseNatuerlichePersonTyp
         return $new;
     }
 
-    /**
-     * @param string $Postleitzahl
-     * @return AdresseNatuerlichePersonTyp
-     */
-    public function withPostleitzahl(string $Postleitzahl): AdresseNatuerlichePersonTyp
+    public function withPostleitzahl(string $Postleitzahl): self
     {
         Assert::length($Postleitzahl, 5);
 
@@ -97,11 +65,7 @@ class AdresseNatuerlichePersonTyp
         return $new;
     }
 
-    /**
-     * @param string $Ort
-     * @return AdresseNatuerlichePersonTyp
-     */
-    public function withOrt(string $Ort): AdresseNatuerlichePersonTyp
+    public function withOrt(string $Ort): self
     {
         Assert::maxLength($Ort, self::MAX_LENGTH_ORT);
         $new = clone $this;
@@ -110,11 +74,7 @@ class AdresseNatuerlichePersonTyp
         return $new;
     }
 
-    /**
-     * @param string $Teilort
-     * @return AdresseNatuerlichePersonTyp
-     */
-    public function withTeilort(?string $Teilort): AdresseNatuerlichePersonTyp
+    public function withTeilort(?string $Teilort): self
     {
         $new = clone $this;
         if ($Teilort !== null) {
@@ -125,11 +85,7 @@ class AdresseNatuerlichePersonTyp
         return $new;
     }
 
-    /**
-     * @param string $Land
-     * @return AdresseNatuerlichePersonTyp
-     */
-    public function withLand(string $Land): AdresseNatuerlichePersonTyp
+    public function withLand(string $Land): self
     {
         Assert::oneOf($Land,
             [self::DEUTSCHLAND]
@@ -139,7 +95,4 @@ class AdresseNatuerlichePersonTyp
 
         return $new;
     }
-
-
 }
-

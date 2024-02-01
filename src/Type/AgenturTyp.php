@@ -8,16 +8,13 @@ class AgenturTyp
 {
     const MAX_LENGTH_AGENTURNUMMER = 6;
 
-    /**
-     * @var string
-     */
-    private $Agenturnummer;
+    private ?string $Agenturnummer;
 
     /**
      * @param string $Agenturnummer
      * @return AgenturTyp
      */
-    public function withAgenturnummer(string $Agenturnummer): AgenturTyp
+    public function withAgenturnummer(string $Agenturnummer): self
     {
         Assert::length($Agenturnummer, self::MAX_LENGTH_AGENTURNUMMER);
         $new = clone $this;
@@ -25,7 +22,5 @@ class AgenturTyp
 
         return $new;
     }
-
-
 }
 

@@ -6,11 +6,7 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class VorgangsnummerTyp
 {
-
-    /**
-     * @var string
-     */
-    private $Vorgangsnummer;
+    private string $Vorgangsnummer;
 
     public function withVorgangsnummer(string $Vorgangsnummer): VorgangsnummerTyp
     {

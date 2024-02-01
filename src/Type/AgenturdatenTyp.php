@@ -5,21 +5,15 @@ namespace PlusForta\RuVSoapBundle\Type;
 class AgenturdatenTyp
 {
 
-    /**
-     * @var AgenturTyp
-     */
-    private $Agentur;
+    private ?AgenturTyp $Agentur;
 
-    /**
-     * @var MitarbeiterdatenTyp
-     */
-    private $Mitarbeiterdaten;
+    private ?MitarbeiterdatenTyp $Mitarbeiterdaten;
 
     /**
      * @param AgenturTyp $Agentur
      * @return AgenturdatenTyp
      */
-    public function withAgentur(AgenturTyp $Agentur): AgenturdatenTyp
+    public function withAgentur(AgenturTyp $Agentur): self
     {
         $new = clone $this;
         $new->Agentur = $Agentur;
@@ -31,7 +25,7 @@ class AgenturdatenTyp
      * @param MitarbeiterdatenTyp $Mitarbeiterdaten
      * @return AgenturdatenTyp
      */
-    public function withMitarbeiterdaten(MitarbeiterdatenTyp $Mitarbeiterdaten): AgenturdatenTyp
+    public function withMitarbeiterdaten(MitarbeiterdatenTyp $Mitarbeiterdaten): self
     {
         $new = clone $this;
         $new->Mitarbeiterdaten = $Mitarbeiterdaten;

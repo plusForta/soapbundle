@@ -3,18 +3,15 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
-
-/**
- * @property BankverbindungTyp|null $Bankverbindung
- * @property ZahlungsdienstleisterTyp|null $Zahlungsdienstleister
- */
 class ZahlungseinzugTyp
 {
+    public ?BankverbindungTyp $Bankverbindung = null;
+    public ?ZahlungsdienstleisterTyp $Zahlungsdienstleister = null;
 
     public function withBankverbindung(?BankverbindungTyp $Bankverbindung): ZahlungseinzugTyp
     {
         $new = clone $this;
-        if ($Bankverbindung !== null) {
+        if ($Bankverbindung instanceof BankverbindungTyp) {
             $new->Bankverbindung = $Bankverbindung;
         }
 
@@ -24,7 +21,7 @@ class ZahlungseinzugTyp
     public function withZahlungsdienstleister(?ZahlungsdienstleisterTyp $Zahlungsdienstleister): ZahlungseinzugTyp
     {
         $new = clone $this;
-        if ($Zahlungsdienstleister !== null) {
+        if ($Zahlungsdienstleister instanceof ZahlungsdienstleisterTyp) {
             $new->Zahlungsdienstleister = $Zahlungsdienstleister;
         }
 

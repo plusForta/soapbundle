@@ -2,22 +2,12 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
-/**
- * @property AdresseJuristischePersonTyp|null AdresseJuristischePerson
- */
 class JuristischePersonTyp
 {
+    private NameJuristischePersonTyp $NameJuristischePerson;
+    private ?AdresseJuristischePersonTyp $AdresseJuristischePerson = null;
 
-    /**
-     * @var NameJuristischePersonTyp
-     */
-    private $NameJuristischePerson;
-
-    /**
-     * @param mixed $NameJuristischePerson
-     * @return JuristischePersonTyp
-     */
-    public function withNameJuristischePerson(NameJuristischePersonTyp $NameJuristischePerson): JuristischePersonTyp
+    public function withNameJuristischePerson(NameJuristischePersonTyp $NameJuristischePerson): self
     {
         $new = clone $this;
         $new->NameJuristischePerson = $NameJuristischePerson;
@@ -25,11 +15,7 @@ class JuristischePersonTyp
         return $new;
     }
 
-    /**
-     * @param mixed $AdresseJuristischePerson
-     * @return JuristischePersonTyp
-     */
-    public function withAdresseJuristischePerson(?AdresseJuristischePersonTyp $AdresseJuristischePerson): JuristischePersonTyp
+    public function withAdresseJuristischePerson(?AdresseJuristischePersonTyp $AdresseJuristischePerson): self
     {
         $new = clone $this;
         if ($AdresseJuristischePerson !== null) {
@@ -38,7 +24,4 @@ class JuristischePersonTyp
 
         return $new;
     }
-
-
 }
-

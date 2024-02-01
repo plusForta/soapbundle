@@ -7,17 +7,10 @@ namespace PlusForta\RuVSoapBundle\Type;
  */
 class NatuerlichePersonTyp
 {
+    private NameNatuerlichePersonTyp $Name;
+    private AdresseNatuerlichePersonTyp $Adresse;
 
-    /**
-     * @var NameNatuerlichePersonTyp
-     */
-    private $Name;
-
-    /**
-     * @param NameNatuerlichePersonTyp $Name
-     * @return NatuerlichePersonTyp
-     */
-    public function withName(NameNatuerlichePersonTyp $Name): NatuerlichePersonTyp
+    public function withName(NameNatuerlichePersonTyp $Name): self
     {
         $new = clone $this;
         $new->Name = $Name;
@@ -25,17 +18,12 @@ class NatuerlichePersonTyp
         return $new;
     }
 
-    /**
-     * @param AdresseNatuerlichePersonTyp $Adresse
-     */
-    public function withAdresse(AdresseNatuerlichePersonTyp $Adresse): NatuerlichePersonTyp
+    public function withAdresse(AdresseNatuerlichePersonTyp $Adresse): self
     {
         $new = clone $this;
         $new->Adresse = $Adresse;
 
         return $new;
     }
-
-
 }
 

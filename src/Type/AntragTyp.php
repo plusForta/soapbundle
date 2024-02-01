@@ -10,26 +10,15 @@ class AntragTyp
 {
     public const MAX_LENGTH_REFERENZNUMMER = 50;
 
-    /** @var BewertungTyp */
-    private $Bewertung;
+    private ?BewertungTyp $Bewertung;
+    private ?string $Vorgangsnummer;
 
-    /** @var string */
-    private $Vorgangsnummer;
-
-
-    /**
-     * @return string|null
-     */
     public function getVorgangsnummer(): ?string
     {
         return $this->Vorgangsnummer;
     }
 
-    /**
-     * @param string $Referenznummer
-     * @return AntragTyp
-     */
-    public function withVorgangsnummer(string $Referenznummer): AntragTyp
+    public function withVorgangsnummer(string $Referenznummer): self
     {
         Assert::maxLength($Referenznummer, self::MAX_LENGTH_REFERENZNUMMER);
         $new = clone $this;
@@ -38,19 +27,12 @@ class AntragTyp
         return $new;
     }
 
-    /**
-     * @return BewertungTyp
-     */
     public function getBewertung(): BewertungTyp
     {
         return $this->Bewertung;
     }
 
-    /**
-     * @param BewertungTyp $Bewertung
-     * @return AntragTyp
-     */
-    public function withBewertung(BewertungTyp $Bewertung): AntragTyp
+    public function withBewertung(BewertungTyp $Bewertung): self
     {
         $new = clone $this;
         $new->Bewertung = $Bewertung;

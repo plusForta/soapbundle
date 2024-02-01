@@ -4,50 +4,19 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class IdentityCompanyTyp
 {
+    private string $name;
+    private string $userid;
+    private string $userGroup;
+    private string $userDomain;
+    private string $agencyNumber;
+    private string $salesTaxID;
 
-    /**
-     * @var string
-     */
-    private $name;
-
-    /**
-     * @var string
-     */
-    private $userid;
-
-    /**
-     * @var string
-     */
-    private $userGroup;
-
-    /**
-     * @var string
-     */
-    private $userDomain;
-
-    /**
-     * @var string
-     */
-    private $agencyNumber;
-
-    /**
-     * @var string
-     */
-    private $salesTaxID;
-
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @param string $name
-     * @return IdentityCompanyTyp
-     */
-    public function withName($name)
+    public function withName(string $name): self
     {
         $new = clone $this;
         $new->name = $name;
@@ -55,19 +24,12 @@ class IdentityCompanyTyp
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserid()
+    public function getUserid(): string
     {
         return $this->userid;
     }
 
-    /**
-     * @param string $userid
-     * @return IdentityCompanyTyp
-     */
-    public function withUserid($userid)
+    public function withUserid(string $userid): self
     {
         $new = clone $this;
         $new->userid = $userid;
@@ -75,19 +37,12 @@ class IdentityCompanyTyp
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserGroup()
+    public function getUserGroup(): string
     {
         return $this->userGroup;
     }
 
-    /**
-     * @param string $userGroup
-     * @return IdentityCompanyTyp
-     */
-    public function withUserGroup($userGroup)
+    public function withUserGroup(string $userGroup): self
     {
         $new = clone $this;
         $new->userGroup = $userGroup;
@@ -95,19 +50,12 @@ class IdentityCompanyTyp
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserDomain()
+    public function getUserDomain(): string
     {
         return $this->userDomain;
     }
 
-    /**
-     * @param string $userDomain
-     * @return IdentityCompanyTyp
-     */
-    public function withUserDomain($userDomain)
+    public function withUserDomain(string $userDomain): self
     {
         $new = clone $this;
         $new->userDomain = $userDomain;
@@ -115,19 +63,12 @@ class IdentityCompanyTyp
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getAgencyNumber()
+    public function getAgencyNumber(): string
     {
         return $this->agencyNumber;
     }
 
-    /**
-     * @param string $agencyNumber
-     * @return IdentityCompanyTyp
-     */
-    public function withAgencyNumber($agencyNumber)
+    public function withAgencyNumber(string $agencyNumber): self
     {
         $new = clone $this;
         $new->agencyNumber = $agencyNumber;
@@ -135,26 +76,16 @@ class IdentityCompanyTyp
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSalesTaxID()
+    public function getSalesTaxID(): string
     {
         return $this->salesTaxID;
     }
 
-    /**
-     * @param string $salesTaxID
-     * @return IdentityCompanyTyp
-     */
-    public function withSalesTaxID($salesTaxID)
+    public function withSalesTaxID(string $salesTaxID): self
     {
         $new = clone $this;
         $new->salesTaxID = $salesTaxID;
 
         return $new;
     }
-
-
 }
-

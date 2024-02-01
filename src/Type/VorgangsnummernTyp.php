@@ -4,24 +4,14 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class VorgangsnummernTyp
 {
-    /**
-     * @var string
-     */
-    private $Vorgangsnummer;
+    private string $Vorgangsnummer;
 
-    /**
-     * @return string
-     */
-    public function getVorgangsnummer()
+    public function getVorgangsnummer(): string
     {
         return $this->Vorgangsnummer;
     }
 
-    /**
-     * @param string $Vorgangsnummer
-     * @return VorgangsnummernTyp
-     */
-    public function withVorgangsnummer($Vorgangsnummer)
+    public function withVorgangsnummer(string $Vorgangsnummer): self
     {
         $new = clone $this;
         $new->Vorgangsnummer = $Vorgangsnummer;

@@ -49,32 +49,32 @@ Starting on 1.1.2024, we also must have a local version of the WSDL.   The WSDL 
 R+V is not usable because it has absolute links between documents that only work on the computer
 of the person that created the WSDL.
 
-In the directory /R+V_Documentation/Corrected WSDL you'll find prod and test versions of the WSDL
-The only difference between the two of them is the URL of the server.
+The corrected WSDL is here: R+V_Documentation/Corrected WSDL/Mietkaution/2020/1/_impl/RuV/Service.wsdl
 
 | Environment          | WSDL Path | Location |
 |----------------------|-----------|----------|
 | S-test (development) | R+V_Documentation/Corrected WSDL/test/Mietkaution/2020/1/_impl/RuV/Service.wsdl   | https://s.webservice.ruv.de/integ/kredit/mietkaution/2020_1/ |
-| Production           | R+V_Documentation/Corrected WSDL/prod/Mietkaution/2020/1/_impl/RuV/Service.wsdl    | https://ws.kredit-privat-webservice.de/bonipruef   |
+| Production           | R+V_Documentation/Corrected WSDL/prod/Mietkaution/2020/1/_impl/RuV/Service.wsdl    | https://webservice.ruv.de/integ/kredit/mietkaution/2020_1/   |
 
 
 ```yaml
 # config/packages/plusforta_ruv_soap.yaml
 plusforta_ruv_soap:
     wsdl: Path to WSDL document (note that as of 01.01.2024, you must provide a local WSDL)
+    location: Set to either the production or s-test URL above
     connection:
-        proxy:
+        proxy:  # set proxy server here for development servers
           host: proxyserver Hostname
           port: proxyserver Port
         basicAuth:
-          username: username for the R+V API Server (stest only)
-          password: password for the R+V API Server (stest only)
+          username: username for the R+V API Server
+          password: password for the R+V API Server
         ssl:
           verify_peer: false
           verify_peer_name: false
     Antrag:
         Kennung:
-          benutzer: R+V API Username (varys by environment and product type)
+          benutzer: R+V API Username (varies by environment and product type)
           passwort: R+V API Password
         Identity: # optional
           name: optional, defaults to 'plusforta GmbH Düsseldorf'
@@ -101,8 +101,7 @@ plusforta_ruv_soap:
 
 ## Upgrade to a new API
 
-The *soapbundle* is based on the Soap Client (https://github.com/phpro/soap-client). If a new
-new R+V API version is to be addressed, the wizard of `phpro/soap-client` should be used to create the value objects.
+The *soapbundle* is based on the Soap Client (https://github.com/phpro/soap-client). If a new R+V API version is to be addressed, the wizard of `phpro/soap-client` should be used to create the value objects.
 
 ```shell
 ./vendor/bin/soap-client wizard
@@ -133,14 +132,12 @@ To update a particular version, checkout the corresponding branch, make a new co
 git pull
 git checkout 1.7.x
 # make changes
-# also make sure to update composer.json with the new version number
 git add .
 git commit -m "Describe what you changed"
-git tag $newVersion
-git push --tags
+git tag $newVersion  # $newVersion is the new version number.
 git push
+git push --tags
 ```
-**Don't forget to update the version # is composer.json!**
 
 ## Testing
 

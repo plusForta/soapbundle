@@ -4,10 +4,6 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 use Webmozart\Assert\Assert;
 
-/**
- * @property string|null HausnummerZusatz
- * @property string|null WeitereObjektbeschreibung
- */
 class MietobjektTyp
 {
     public const DEUTSCHLAND = 'Deutschland';
@@ -17,37 +13,15 @@ class MietobjektTyp
     public const MAX_LENGTH_ORT = 30;
     public const MAX_LENGTH_WEITERE_OBJECTBESCHREIBUNG = 60;
 
-    /**
-     * @var string
-     */
-    private $Strasse;
+    private string $Strasse;
+    private string $Hausnummer;
+    private string $Postleitzahl;
+    private string $Ort;
+    private string $Land = 'Deutschland';
+    private ?string $HausnummerZusatz = null;
+    private ?string $WeitereObjektbeschreibung = null;
 
-    /**
-     * @var string
-     */
-    private $Hausnummer;
-
-    /**
-     * @var string
-     */
-    private $Postleitzahl;
-
-    /**
-     * @var string
-     */
-    private $Ort;
-
-    /**
-     * @var string
-     */
-    private $Land = 'Deutschland';
-
-
-    /**
-     * @param string $Strasse
-     * @return MietobjektTyp
-     */
-    public function withStrasse(string $Strasse): MietobjektTyp
+    public function withStrasse(string $Strasse): self
     {
         Assert::maxLength($Strasse, self::MAX_LENGTH_STRASSE);
         $new = clone $this;
@@ -56,11 +30,7 @@ class MietobjektTyp
         return $new;
     }
 
-    /**
-     * @param string $Hausnummer
-     * @return MietobjektTyp
-     */
-    public function withHausnummer(string $Hausnummer): MietobjektTyp
+    public function withHausnummer(string $Hausnummer): self
     {
         Assert::maxLength($Hausnummer, self::MAX_LENGTH_HAUSNUMMER);
         $new = clone $this;
@@ -69,11 +39,7 @@ class MietobjektTyp
         return $new;
     }
 
-    /**
-     * @param ?string $HausnummerZusatz
-     * @return MietobjektTyp
-     */
-    public function withHausnummerZusatz(?string $HausnummerZusatz): MietobjektTyp
+    public function withHausnummerZusatz(?string $HausnummerZusatz): self
     {
         $new = clone $this;
         if ($HausnummerZusatz !== null) {
@@ -84,11 +50,7 @@ class MietobjektTyp
         return $new;
     }
 
-    /**
-     * @param string $Postleitzahl
-     * @return MietobjektTyp
-     */
-    public function withPostleitzahl(string $Postleitzahl): MietobjektTyp
+    public function withPostleitzahl(string $Postleitzahl): self
     {
         Assert::length($Postleitzahl, 5);
         $new = clone $this;
@@ -97,11 +59,7 @@ class MietobjektTyp
         return $new;
     }
 
-    /**
-     * @param string $Ort
-     * @return MietobjektTyp
-     */
-    public function withOrt(string $Ort): MietobjektTyp
+    public function withOrt(string $Ort): self
     {
         Assert::maxLength($Ort, self::MAX_LENGTH_ORT);
         $new = clone $this;
@@ -110,11 +68,7 @@ class MietobjektTyp
         return $new;
     }
 
-    /**
-     * @param string $Land
-     * @return MietobjektTyp
-     */
-    public function withLand(?string $Land): MietobjektTyp
+    public function withLand(?string $Land): self
     {
         $new = clone $this;
         if ($Land !== null) {
@@ -127,11 +81,7 @@ class MietobjektTyp
         return $new;
     }
 
-    /**
-     * @param ?string $WeitereObjektbeschreibung
-     * @return MietobjektTyp
-     */
-    public function withWeitereObjektbeschreibung(?string $WeitereObjektbeschreibung): MietobjektTyp
+    public function withWeitereObjektbeschreibung(?string $WeitereObjektbeschreibung): self
     {
         $new = clone $this;
         if ($WeitereObjektbeschreibung !== null) {
@@ -141,7 +91,5 @@ class MietobjektTyp
 
         return $new;
     }
-
-
 }
 

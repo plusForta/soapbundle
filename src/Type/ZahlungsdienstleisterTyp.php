@@ -11,13 +11,11 @@ use Webmozart\Assert\Assert;
  */
 class ZahlungsdienstleisterTyp
 {
-    public const MAX_LENGTH_ZAHLUNGSART_ID = 50;
-    public const MAX_LENGTH_ZAHLUNGSVORGANG_ID = 50;
+    final public const MAX_LENGTH_ZAHLUNGSART_ID = 50;
+    final public const MAX_LENGTH_ZAHLUNGSVORGANG_ID = 50;
 
-    /**
-     * @var string
-     */
-    private $ZahlungsvorgangID;
+    public string $ZahlungsartID;
+    public string $ZahlungsvorgangID;
 
     public function withZahlungsartID(?string $ZahlungsartID): ZahlungsdienstleisterTyp
     {
@@ -38,5 +36,4 @@ class ZahlungsdienstleisterTyp
 
         return $new;
     }
-
 }

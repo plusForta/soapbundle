@@ -6,45 +6,18 @@ use DateTimeImmutable;
 
 class NatuerlichePersonErweitertTyp
 {
+    private NameNatuerlichePersonHerrFrauTyp $Name;
+    private AdresseNatuerlichePersonTyp $Adresse;
+    private KontaktdatenTyp $Kontaktdaten;
+    private string $Geburtsdatum;
+    private string $Nationalitaet;
 
-    /**
-     * @var mixed
-     */
-    private $Name;
-
-    /**
-     * @var mixed
-     */
-    private $Adresse;
-
-    /**
-     * @var mixed
-     */
-    private $Kontaktdaten;
-
-    /**
-     * @var string
-     */
-    private $Geburtsdatum;
-
-    /**
-     * @var string
-     */
-    private $Nationalitaet;
-
-    /**
-     * @return mixed
-     */
-    public function getName()
+    public function getName(): NameNatuerlichePersonHerrFrauTyp
     {
         return $this->Name;
     }
 
-    /**
-     * @param NameNatuerlichePersonHerrFrauTyp $Name
-     * @return NatuerlichePersonErweitertTyp
-     */
-    public function withName(NameNatuerlichePersonHerrFrauTyp $Name): NatuerlichePersonErweitertTyp
+    public function withName(NameNatuerlichePersonHerrFrauTyp $Name): self
     {
         $new = clone $this;
         $new->Name = $Name;
@@ -52,11 +25,7 @@ class NatuerlichePersonErweitertTyp
         return $new;
     }
 
-    /**
-     * @param AdresseNatuerlichePersonTyp $Adresse
-     * @return NatuerlichePersonErweitertTyp
-     */
-    public function withAdresse(AdresseNatuerlichePersonTyp $Adresse): NatuerlichePersonErweitertTyp
+    public function withAdresse(AdresseNatuerlichePersonTyp $Adresse): self
     {
         $new = clone $this;
         $new->Adresse = $Adresse;
@@ -64,11 +33,7 @@ class NatuerlichePersonErweitertTyp
         return $new;
     }
 
-    /**
-     * @param KontaktdatenTyp $Kontaktdaten
-     * @return NatuerlichePersonErweitertTyp
-     */
-    public function withKontaktdaten(KontaktdatenTyp $Kontaktdaten): NatuerlichePersonErweitertTyp
+    public function withKontaktdaten(KontaktdatenTyp $Kontaktdaten): self
     {
         $new = clone $this;
         $new->Kontaktdaten = $Kontaktdaten;
@@ -76,11 +41,7 @@ class NatuerlichePersonErweitertTyp
         return $new;
     }
 
-    /**
-     * @param DateTimeImmutable $Geburtsdatum
-     * @return NatuerlichePersonErweitertTyp
-     */
-    public function withGeburtsdatum(DateTimeImmutable $Geburtsdatum): NatuerlichePersonErweitertTyp
+    public function withGeburtsdatum(DateTimeImmutable $Geburtsdatum): self
     {
         $new = clone $this;
         $new->Geburtsdatum = $Geburtsdatum->format('d.m.Y');
@@ -88,18 +49,12 @@ class NatuerlichePersonErweitertTyp
         return $new;
     }
 
-    /**
-     * @param string $Nationalitaet
-     * @return NatuerlichePersonErweitertTyp
-     */
-    public function withNationalitaet($Nationalitaet): NatuerlichePersonErweitertTyp
+    public function withNationalitaet(string $Nationalitaet): self
     {
         $new = clone $this;
         $new->Nationalitaet = $Nationalitaet;
 
         return $new;
     }
-
-
 }
 

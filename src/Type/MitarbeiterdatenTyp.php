@@ -4,12 +4,6 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 use Webmozart\Assert\Assert;
 
-/**
- * @property string Mitarbeiternummer
- * @property string MitarbeiternummerZusaetzlicherMA
- * @property string StellennummerZusaetzlicherMA
- * @property string VermittlereigeneVorgangsnummer
- */
 class MitarbeiterdatenTyp
 {
     public const MAX_LENGTH_MITARBEITERNUMMER = 12;
@@ -17,11 +11,12 @@ class MitarbeiterdatenTyp
     public const MAX_LENGTH_STELLENNUMMER_ZUSAETZLICHER_MA = 6;
     public const MAX_LENGTH_VERMITTLEREIGENE_VORGANGSNUMMER = 9;
 
-    /**
-     * @param ?string $Mitarbeiternummer
-     * @return MitarbeiterdatenTyp
-     */
-    public function withMitarbeiternummer(?string $Mitarbeiternummer): MitarbeiterdatenTyp
+    public string $Mitarbeiternummer;
+    public string $MitarbeiternummerZusaetzlicherMA;
+    public string $StellennummerZusaetzlicherMA;
+    public string $VermittlereigeneVorgangsnummer;
+
+    public function withMitarbeiternummer(?string $Mitarbeiternummer): self
     {
         $new = clone $this;
         if ($Mitarbeiternummer !== null) {
@@ -32,11 +27,7 @@ class MitarbeiterdatenTyp
         return $new;
     }
 
-    /**
-     * @param ?string $MitarbeiternummerZusaetzlicherMA
-     * @return MitarbeiterdatenTyp
-     */
-    public function withMitarbeiternummerZusaetzlicherMA(?string $MitarbeiternummerZusaetzlicherMA): MitarbeiterdatenTyp
+    public function withMitarbeiternummerZusaetzlicherMA(?string $MitarbeiternummerZusaetzlicherMA): self
     {
         $new = clone $this;
         if ($MitarbeiternummerZusaetzlicherMA !== null) {
@@ -47,11 +38,7 @@ class MitarbeiterdatenTyp
         return $new;
     }
 
-    /**
-     * @param ?string $StellennummerZusaetzlicherMA
-     * @return MitarbeiterdatenTyp
-     */
-    public function withStellennummerZusaetzlicherMA(?string $StellennummerZusaetzlicherMA): MitarbeiterdatenTyp
+    public function withStellennummerZusaetzlicherMA(?string $StellennummerZusaetzlicherMA): self
     {
         $new = clone $this;
         if ($StellennummerZusaetzlicherMA !== null) {
@@ -62,11 +49,7 @@ class MitarbeiterdatenTyp
         return $new;
     }
 
-    /**
-     * @param ?string $VermittlereigeneVorgangsnummer
-     * @return MitarbeiterdatenTyp
-     */
-    public function withVermittlereigeneVorgangsnummer(?string $VermittlereigeneVorgangsnummer): MitarbeiterdatenTyp
+    public function withVermittlereigeneVorgangsnummer(?string $VermittlereigeneVorgangsnummer): self
     {
         $new = clone $this;
         if ($VermittlereigeneVorgangsnummer !== null) {
@@ -76,7 +59,5 @@ class MitarbeiterdatenTyp
 
         return $new;
     }
-
-
 }
 

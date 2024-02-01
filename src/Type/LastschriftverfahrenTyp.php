@@ -4,22 +4,10 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class LastschriftverfahrenTyp
 {
+    private int $Kontonummer;
+    private int $Bankleitzahl;
 
-    /**
-     * @var int
-     */
-    private $Kontonummer;
-
-    /**
-     * @var int
-     */
-    private $Bankleitzahl;
-
-    /**
-     * @param int $Kontonummer
-     * @return LastschriftverfahrenTyp
-     */
-    public function withKontonummer(int $Kontonummer): LastschriftverfahrenTyp
+    public function withKontonummer(int $Kontonummer): self
     {
         $new = clone $this;
         $new->Kontonummer = $Kontonummer;
@@ -27,18 +15,12 @@ class LastschriftverfahrenTyp
         return $new;
     }
 
-    /**
-     * @param int $Bankleitzahl
-     * @return LastschriftverfahrenTyp
-     */
-    public function withBankleitzahl(int $Bankleitzahl): LastschriftverfahrenTyp
+    public function withBankleitzahl(int $Bankleitzahl): self
     {
         $new = clone $this;
         $new->Bankleitzahl = $Bankleitzahl;
 
         return $new;
     }
-
-
 }
 

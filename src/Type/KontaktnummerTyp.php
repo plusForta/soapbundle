@@ -6,25 +6,13 @@ use Webmozart\Assert\Assert;
 
 class KontaktnummerTyp
 {
-
-    protected const PHONE_NUMBER_REGEX = '#^(\+[0-9]{1,2}|0[0-9]{2,4})\s*[0-9\.\-\/\(\)]\s*[0-9\.\-\/\(\) ]+$#';
+    protected const PHONE_NUMBER_REGEX = '#^(\+[0-9]{1,2}|0[0-9]{2,4})\s*[0-9.\-/()]\s*[0-9.\-/() ]+$#';
     public const MAX_LENGTH_VORWAHL = 15;
 
-    /**
-     * @var mixed
-     */
-    private $Vorwahl;
+    private string $Vorwahl;
+    private string $Rufnummer;
 
-    /**
-     * @var string
-     */
-    private $Rufnummer;
-
-    /**
-     * @param string $Vorwahl
-     * @return KontaktnummerTyp
-     */
-    public function withVorwahl(string $Vorwahl): KontaktnummerTyp
+    public function withVorwahl(string $Vorwahl): self
     {
         Assert::regex($Vorwahl, '/[0+][0-9]{2,7}/');
 
@@ -34,11 +22,7 @@ class KontaktnummerTyp
         return $new;
     }
 
-    /**
-     * @param string $Rufnummer
-     * @return KontaktnummerTyp
-     */
-    public function withRufnummer(string $Rufnummer): KontaktnummerTyp
+    public function withRufnummer(string $Rufnummer): self
     {
         Assert::maxLength($Rufnummer, self::MAX_LENGTH_VORWAHL);
         $new = clone $this;
@@ -47,7 +31,7 @@ class KontaktnummerTyp
         return $new;
     }
     
-    public function fromRawNumber(string $rawNumber): KontaktnummerTyp
+    public function fromRawNumber(string $rawNumber): self
     {
         Assert::regex($rawNumber, self::PHONE_NUMBER_REGEX);
         $number = $this->trimNumber($rawNumber);
@@ -79,7 +63,8 @@ class KontaktnummerTyp
         return preg_replace('/^(0049|\+49)/', '', $number) ?? '';
     }
 
-    private function trimNumber($number) {
+    private function trimNumber($number): string|array|null
+    {
         return preg_replace('/[^+0-9]/','',$number);
     }
 
@@ -89,4 +74,3 @@ class KontaktnummerTyp
         return $strippedAreaCode ?: $number;
     }
 }
-

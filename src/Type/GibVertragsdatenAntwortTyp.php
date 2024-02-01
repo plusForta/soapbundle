@@ -6,29 +6,15 @@ use PlusForta\RuVSoapBundle\Messages\ResponseStatusInterface;
 
 class GibVertragsdatenAntwortTyp implements ResponseStatusInterface
 {
-    /**
-     * @var \PlusForta\RuVSoapBundle\Type\StatusTyp
-     */
-    private $Status;
+    private StatusTyp $Status;
+    private VertragTyp $Vertrag;
 
-    /**
-     * @var \PlusForta\RuVSoapBundle\Type\VertragTyp
-     */
-    private $Vertrag;
-
-    /**
-     * @return \PlusForta\RuVSoapBundle\Type\StatusTyp
-     */
     public function getStatus(): StatusTyp
     {
         return $this->Status;
     }
 
-    /**
-     * @param \PlusForta\RuVSoapBundle\Type\StatusTyp $Status
-     * @return GibVertragsdatenAntwortTyp
-     */
-    public function withStatus($Status)
+    public function withStatus(StatusTyp $Status): self
     {
         $new = clone $this;
         $new->Status = $Status;
@@ -36,19 +22,12 @@ class GibVertragsdatenAntwortTyp implements ResponseStatusInterface
         return $new;
     }
 
-    /**
-     * @return \PlusForta\RuVSoapBundle\Type\VertragTyp
-     */
-    public function getVertrag()
+    public function getVertrag(): VertragTyp
     {
         return $this->Vertrag;
     }
 
-    /**
-     * @param \PlusForta\RuVSoapBundle\Type\VertragTyp $Vertrag
-     * @return GibVertragsdatenAntwortTyp
-     */
-    public function withVertrag($Vertrag)
+    public function withVertrag(VertragTyp $Vertrag): self
     {
         $new = clone $this;
         $new->Vertrag = $Vertrag;
@@ -56,4 +35,3 @@ class GibVertragsdatenAntwortTyp implements ResponseStatusInterface
         return $new;
     }
 }
-
