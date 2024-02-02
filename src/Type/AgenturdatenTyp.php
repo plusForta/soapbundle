@@ -9,10 +9,6 @@ class AgenturdatenTyp
 
     private ?MitarbeiterdatenTyp $Mitarbeiterdaten;
 
-    /**
-     * @param AgenturTyp $Agentur
-     * @return AgenturdatenTyp
-     */
     public function withAgentur(AgenturTyp $Agentur): self
     {
         $new = clone $this;
@@ -21,10 +17,6 @@ class AgenturdatenTyp
         return $new;
     }
 
-    /**
-     * @param MitarbeiterdatenTyp $Mitarbeiterdaten
-     * @return AgenturdatenTyp
-     */
     public function withMitarbeiterdaten(MitarbeiterdatenTyp $Mitarbeiterdaten): self
     {
         $new = clone $this;
@@ -32,7 +24,5 @@ class AgenturdatenTyp
 
         return $new;
     }
-
-
 }
 

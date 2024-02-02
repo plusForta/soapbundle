@@ -18,10 +18,7 @@ class CodeEnumTyp
     public const UNGUELTIGE_ANFRAGE = 'UNGUELTIGE_ANFRAGE';
     public const XPSFEHLER = 'XPSFEHLER';
 
-    /**
-     * @var string
-     */
-    private $Code;
+    private string $Code;
 
     public function withCode(string $Code): CodeEnumTyp
     {

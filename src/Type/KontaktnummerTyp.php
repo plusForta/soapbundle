@@ -48,6 +48,7 @@ class KontaktnummerTyp
     private function getGermanAreaCode(string $number): string
     {
         $numberWithoutCountryCode = $this->stripGermanCountryCode($number);
+        // ToDo: Replace with real area codes
         $areaCodesLines = file_get_contents('/Users/janhentschel/Projects/kautionsfrei/entwicklung.onlineantrag/ONKZ.txt');
         $areaCodes = trim($areaCodesLines);
         $codes = array_filter(explode(PHP_EOL, $areaCodes), function ($elem) use ($numberWithoutCountryCode) {

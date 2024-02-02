@@ -10,10 +10,6 @@ class AgenturTyp
 
     private ?string $Agenturnummer;
 
-    /**
-     * @param string $Agenturnummer
-     * @return AgenturTyp
-     */
     public function withAgenturnummer(string $Agenturnummer): self
     {
         Assert::length($Agenturnummer, self::MAX_LENGTH_AGENTURNUMMER);
