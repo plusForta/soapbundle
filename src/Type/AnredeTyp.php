@@ -22,6 +22,7 @@ class AnredeTyp
             self::HERR,
             self::FRAU,
             self::OHNE_ANREDE,
+            self::DIVERS,
             '',
         ]);
         $new = clone $this;
