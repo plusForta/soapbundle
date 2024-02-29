@@ -11,7 +11,7 @@ class Modify
         if ($value === null) {
             return null;
         }
-        if (strlen($value) <= $length) {
+        if (mb_strlen($value) <= $length) {
             return $value;
         }
 
@@ -23,7 +23,7 @@ class Modify
 
     public static function trim(string $value, int $length): string
     {
-        if (strlen($value) <= $length) {
+        if (mb_strlen($value) <= $length) {
             return $value;
         }
 
