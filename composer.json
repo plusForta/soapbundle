@@ -2,6 +2,7 @@
     "name": "plusforta/soapbundle",
     "description": "SOAP for R+V Api",
     "type": "symfony-bundle",
+    "license": "MIT",
     "authors": [
         {
             "name": "Anar Haqverdiyev@plusforta.de",
