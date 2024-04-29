@@ -6,20 +6,7 @@ The project is a Symfony bundle (https://symfony.com/doc/current/bundles.html).
 
 ## Installation
 
-First, the github repository must be added to composer.json.
-
-**composer.json**
-````json
-"repositories": [
-    ...
-    {
-      "type": "git",
-      "url": "https://github.com/plusForta/soapbundle.git"
-    }
-  ],
-````
-
-Then you can install the bundle with composer.
+You can install the bundle with composer.
 
 ```shell
 composer require plusforta/soapbundle:x.x.x
