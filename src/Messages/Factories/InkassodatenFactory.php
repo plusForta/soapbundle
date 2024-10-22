@@ -74,7 +74,10 @@ class InkassodatenFactory
             ->withLastschriftverfahren($this->getLastschriftverfahren())
             ->withSepaMandat($this->getSepaMandat())
             ->withKreditinstitut(Modify::trim($bankverbindungDto->kreditinstitut, BankverbindungTyp::MAX_LENGTH_KREDITINSTITUT))
-            ->withKontoinhaber(Modify::trim($bankverbindungDto->kontoinhaber, BankverbindungTyp::MAX_LENGTH_KONTOINHABER))
+            ->withKontoinhaber(Modify::trim(
+                $bankverbindungDto->kontoinhaber,
+                BankverbindungTyp::MAX_LENGTH_KONTOINHABER, true
+            ))
             ;
     }
 

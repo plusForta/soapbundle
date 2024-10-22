@@ -76,8 +76,8 @@ class NatuerlichePersonFactory
         return $name
             ->withAnrede($this->getAnredeErweitert())
             ->withTitel(Modify::trimOrNull($this->getTitel(), NameNatuerlichePersonHerrFrauTyp::MAX_LENGTH_TITEL))
-            ->withVorname(Modify::trim($this->getVorname(), NameNatuerlichePersonHerrFrauTyp::MAX_LENGTH_VORNAME))
-            ->withNachname(Modify::trim($this->getNachname(), NameNatuerlichePersonHerrFrauTyp::MAX_LENGTH_NACHNAME))
+            ->withVorname(Modify::trim($this->getVorname(), NameNatuerlichePersonHerrFrauTyp::MAX_LENGTH_VORNAME, true))
+            ->withNachname(Modify::trim($this->getNachname(), NameNatuerlichePersonHerrFrauTyp::MAX_LENGTH_NACHNAME, true))
             ->withNamenszusatz(Modify::trimOrNull($this->getNamenszusatz(), NameNatuerlichePersonHerrFrauTyp::MAX_LENGTH_NAMENSZUSATZ))
             ;
     }
