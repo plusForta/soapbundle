@@ -1,0 +1,8 @@
+grumphp:
+    tasks:
+        ecs: ~
+        npm_script:
+            script: "commitlint"
+            working_directory: "./"
+            is_run_task: true
+            silent: false

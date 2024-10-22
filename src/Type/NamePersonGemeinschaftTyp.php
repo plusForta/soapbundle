@@ -75,4 +75,3 @@ class NamePersonGemeinschaftTyp
         return $new;
     }
 }
-

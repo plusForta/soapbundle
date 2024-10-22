@@ -32,4 +32,3 @@ class MietvertragTyp
         return $new;
     }
 }
-

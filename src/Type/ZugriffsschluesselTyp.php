@@ -34,4 +34,3 @@ class ZugriffsschluesselTyp
         return $new;
     }
 }
-

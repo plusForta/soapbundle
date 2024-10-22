@@ -3,10 +3,8 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Dtos;
 
-
 class LesseeDto
 {
-
     /** @var string */
     public $anrede;
 
@@ -21,5 +19,4 @@ class LesseeDto
 
     /** @var string */
     public $namenszusatz;
-
 }

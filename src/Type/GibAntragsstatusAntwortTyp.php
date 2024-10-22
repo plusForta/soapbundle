@@ -3,7 +3,6 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
-
 use PlusForta\RuVSoapBundle\Messages\ResponseStatusInterface;
 
 class GibAntragsstatusAntwortTyp implements ResponseStatusInterface

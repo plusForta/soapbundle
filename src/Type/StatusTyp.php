@@ -33,4 +33,3 @@ class StatusTyp
         return $new;
     }
 }
-

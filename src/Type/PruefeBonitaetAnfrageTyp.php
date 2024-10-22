@@ -28,6 +28,7 @@ class PruefeBonitaetAnfrageTyp implements RequestInterface
     private ?string $Titel = null;
     private ?string $Anrede = null;
     private ?string $Referenznummer = null;
+    private ?int $Land = null;
 
     public function withKennung(BasisAnfrageTyp $Kennung): PruefeBonitaetAnfrageTyp
     {
@@ -146,4 +147,3 @@ class PruefeBonitaetAnfrageTyp implements RequestInterface
         return $new;
     }
 }
-

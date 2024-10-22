@@ -89,4 +89,3 @@ class VersicherungsnehmerTyp
         return $new;
     }
 }
-

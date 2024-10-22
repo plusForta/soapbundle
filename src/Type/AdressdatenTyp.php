@@ -4,7 +4,6 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class AdressdatenTyp
 {
-
     public ?AbweichBuergEmpfaengerTyp $AbweichBuergEmpfaenger;
 
     private ?VersicherungsnehmerTyp $Versicherungsnehmer;

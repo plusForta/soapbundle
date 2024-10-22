@@ -57,4 +57,3 @@ class NatuerlichePersonErweitertTyp
         return $new;
     }
 }
-

@@ -4,7 +4,6 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class UebergabeDokumenteTyp
 {
-
     private bool $VertragsbestimmungenUebergeben = true;
     private bool $BuergschaftUebergeben = true;
     private bool $VersicherungsscheinUebergeben = true;
@@ -42,4 +41,3 @@ class UebergabeDokumenteTyp
         return $new;
     }
 }
-

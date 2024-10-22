@@ -3,7 +3,6 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Factories;
 
-
 use Phpro\SoapClient\Type\MixedResult;
 use Phpro\SoapClient\Type\ResultInterface;
 use PlusForta\RuVSoapBundle\Type\AntragsdatenIdentifikationTyp;
@@ -16,7 +15,6 @@ use PlusForta\RuVSoapBundle\Type\StelleAntragAntwortTyp;
 
 class StelleAntragAntwortFactory
 {
-
     /** @var \stdClass */
     private $result;
 
@@ -35,8 +33,7 @@ class StelleAntragAntwortFactory
             ->withVorgangsnummer($this->getVorgangsnummer())
             ->withRechtsgeschaeft($this->getRechtsgeschaeft())
             ->withAntragsdatenIdentifikation($this->getAntragsdatenIdentifikation())
-            ;
-
+        ;
     }
 
     private function getStatus(): StatusTyp
@@ -45,7 +42,7 @@ class StelleAntragAntwortFactory
         return $status
             ->withCode($this->getCode())
             ->withNachricht($this->getNachricht())
-            ;
+        ;
     }
 
     private function getCode(): CodeEnumTyp
@@ -74,7 +71,7 @@ class StelleAntragAntwortFactory
         return $bewertung
             ->withBewertungsergbnis($this->getBewertungsergbnis())
             ->withKommentar($this->getKommentar())
-            ;
+        ;
     }
 
     private function getBewertungsergbnis(): BewertungsergebnisEnumTyp
@@ -105,7 +102,7 @@ class StelleAntragAntwortFactory
         return $rechtsgeschaeft
             ->withArbeitsgebiet((int) $this->result->Rechtsgeschaeft->Arbeitsgebiet)
             ->withVersicherungsnummer((int) $this->result->Rechtsgeschaeft->Versicherungsnummer)
-            ;
+        ;
     }
 
     private function getAntragsdatenIdentifikation(): ?AntragsdatenIdentifikationTyp
@@ -118,8 +115,6 @@ class StelleAntragAntwortFactory
         return $identifikation
             ->withAntragsdatenID($this->result->AntragsdatenIdentifikation->AntragsdatenID)
             ->withBuergschaftstextVersion($this->result->AntragsdatenIdentifikation->BuergschaftstextVersion)
-            ;
+        ;
     }
-
-
 }

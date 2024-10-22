@@ -3,7 +3,6 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Factories;
 
-
 use Phpro\SoapClient\Type\MixedResult;
 use Phpro\SoapClient\Type\ResultInterface;
 use PlusForta\RuVSoapBundle\Type\BasisAntwortTyp;
@@ -14,7 +13,6 @@ use PlusForta\RuVSoapBundle\Type\StatusTyp;
 
 class BasisAntwortFactory
 {
-
     /** @var \stdClass */
     private $result;
 
@@ -36,7 +34,7 @@ class BasisAntwortFactory
             ->withReferenznummer($this->getReferenznummer())
             ->withBewertung($this->getBewertung())
             ->withVorgangsnummer($this->getVorgangsnummer())
-            ;
+        ;
     }
 
 
@@ -46,7 +44,7 @@ class BasisAntwortFactory
         return $status
             ->withCode($this->getCode())
             ->withNachricht($this->getNachricht())
-            ;
+        ;
     }
 
     private function getCode(): CodeEnumTyp
@@ -75,7 +73,7 @@ class BasisAntwortFactory
         return $bewertung
             ->withBewertungsergbnis($this->getBewertungsergbnis())
             ->withKommentar($this->getKommentar())
-            ;
+        ;
     }
 
     private function getBewertungsergbnis(): BewertungsergebnisEnumTyp
@@ -95,7 +93,4 @@ class BasisAntwortFactory
     {
         return isset($this->result->Vorgangsnummer) ? $this->result->Vorgangsnummer : null;
     }
-
-
-
 }

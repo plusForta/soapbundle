@@ -7,9 +7,8 @@ use Soap\ExtSoapEngine\Configuration\ClassMap\ClassMapCollection;
 
 class RuvSoapClientClassmap
 {
-
     public $number;
-    public static function getCollection() : ClassMapCollection
+    public static function getCollection(): ClassMapCollection
     {
         return new ClassMapCollection(...[
             new ClassMap('protocolHeaderTyp', Type\ProtocolHeaderTyp::class),
@@ -65,7 +64,8 @@ class RuvSoapClientClassmap
         ]);
     }
 
-    function __construct ($number){
+    public function __construct($number)
+    {
         if (!preg_match('#^(\+[0-9]{1,2}|0[0-9]{2,4})\s*[0-9\.\-\/\(\)]\s*[0-9\.\-\/\(\) ]+$#', $number)) {
             throw new \InvalidArgumentException('wrong number');
         }
@@ -73,4 +73,3 @@ class RuvSoapClientClassmap
         $this->number = $number;
     }
 }
-

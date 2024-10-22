@@ -3,12 +3,10 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
-
 use Webmozart\Assert\Assert;
 
 class CodeEnumTyp
 {
-
     public const OK = 'OK';
     public const ANMELDEFEHLER = 'ANMELDEFEHLER';
     public const FEHLER = 'FEHLER';
@@ -18,10 +16,7 @@ class CodeEnumTyp
     public const UNGUELTIGE_ANFRAGE = 'UNGUELTIGE_ANFRAGE';
     public const XPSFEHLER = 'XPSFEHLER';
 
-    /**
-     * @var string
-     */
-    private $Code;
+    private string $Code;
 
     public function withCode(string $Code): CodeEnumTyp
     {

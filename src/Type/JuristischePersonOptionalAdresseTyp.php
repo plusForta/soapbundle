@@ -33,4 +33,3 @@ class JuristischePersonOptionalAdresseTyp
         return $new;
     }
 }
-

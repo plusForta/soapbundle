@@ -42,12 +42,12 @@ class KontaktnummerTyp
         $new->Rufnummer = $this->getDialCode($number, $areaCode);
 
         return $new;
-
     }
 
     private function getGermanAreaCode(string $number): string
     {
         $numberWithoutCountryCode = $this->stripGermanCountryCode($number);
+        // ToDo: Replace with real area codes
         $areaCodesLines = file_get_contents('/Users/janhentschel/Projects/kautionsfrei/entwicklung.onlineantrag/ONKZ.txt');
         $areaCodes = trim($areaCodesLines);
         $codes = array_filter(explode(PHP_EOL, $areaCodes), function ($elem) use ($numberWithoutCountryCode) {
@@ -55,7 +55,6 @@ class KontaktnummerTyp
         });
 
         return reset($codes) ?: '';
-
     }
 
     private function stripGermanCountryCode(string $number): string
@@ -65,7 +64,7 @@ class KontaktnummerTyp
 
     private function trimNumber($number): string|array|null
     {
-        return preg_replace('/[^+0-9]/','',$number);
+        return preg_replace('/[^+0-9]/', '', $number);
     }
 
     private function getDialCode(string $number, string $areaCode): string

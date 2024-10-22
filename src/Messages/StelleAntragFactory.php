@@ -3,7 +3,6 @@
 
 namespace PlusForta\RuVSoapBundle\Messages;
 
-
 use PlusForta\RuVSoapBundle\Messages\Dtos\StelleAntragDto;
 use PlusForta\RuVSoapBundle\Messages\Factories\AntragMietkautionFactory;
 use PlusForta\RuVSoapBundle\Messages\Factories\KennungFactory;
@@ -18,8 +17,7 @@ class StelleAntragFactory
     public function __construct(
         private readonly KennungFactory $kennungFactory,
         private readonly AntragMietkautionFactory $antragMietkautionFactory
-    )
-    {
+    ) {
     }
 
     public function create(StelleAntragDto $dto): StelleAntragAnfrageTyp
@@ -36,7 +34,7 @@ class StelleAntragFactory
             ->withKennung($this->getKennung())
             ->withBonitaetspruefungDurchfuehren($this->getBonitaetspruefungDurhchfuehren())
             ->withAntragMietkaution($this->getAntragMietkaution())
-            ;
+        ;
     }
 
     private function getKennung(): BasisAnfrageTyp

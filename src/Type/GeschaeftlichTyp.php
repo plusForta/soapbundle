@@ -43,7 +43,7 @@ class GeschaeftlichTyp
         return $new;
     }
 
-    public function withEMail(?string $EMail): self
+    public function withEmail(?string $EMail): self
     {
         $new = clone $this;
         if ($EMail !== null) {

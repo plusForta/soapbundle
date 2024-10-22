@@ -1,0 +1,87 @@
+default:
+    image: plusforta/php-deploy8.2:latest
+
+workflow:
+    rules:
+        # Always run pipelines for Merge Requests (this rule should take precedence)
+        - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+          when: always
+        # Skip pipelines on 'develop' if the commit message contains '[no ci]'
+        - if: '$CI_COMMIT_BRANCH == "master" && $CI_COMMIT_MESSAGE =~ /(\[no ci\])/i'
+          when: never
+        # Run pipelines in all other cases
+        - when: always
+
+before_script:
+    - . "$NVM_DIR/nvm.sh"
+    - nvm install
+    - nvm use
+    - npm install -g yarn
+
+stages:
+    - build
+    - test
+    - lint
+    - version
+
+composer:
+    # The job's stage (build, test or deploy).
+    stage: build
+    # What to run on the job.
+    script:
+        - composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
+    artifacts:
+        # (Optional) Give it an expiration date,
+        # after that period you won't be able to
+        # download them via the UI anymore.
+        expire_in: 1 week
+
+        # Define what to output from the job.
+        paths:
+            - vendor/
+
+    cache:
+        # The variable CI_COMMIT_REF_SLUG
+        # refers to the slug of the branch.
+        # For example: `master` for the master branch.
+        # We use the `composer` suffix to avoid conflicts with
+        # the `npm` cache that we'll define next.
+        key: ${CI_COMMIT_REF_SLUG}-composer
+
+        # Define what to cache.
+        paths:
+            - vendor/
+
+PHPStyle:
+    stage: test
+    allow_failure: false
+    dependencies:
+        - composer
+    script:
+        - ./vendor/bin/ecs --output-format=gitlab > gl-php-code-quality-report.json
+    artifacts:
+        when: always
+        paths:
+            - gl-php-code-quality-report.json
+        reports:
+            codequality: gl-php-code-quality-report.json
+
+commit-check:
+    stage: lint
+    script:
+        - git fetch origin master --unshallow
+        - yarn install
+        - yarn commitlint --from HEAD~1 --to HEAD # temporary fix for commitlint to not fetch all commits. Todo: make changes in the next mr yarn commitlint --from origin/master --to HEAD
+    only:
+        - branches
+        - merge_requests
+
+version:
+    stage: version
+    script:
+        - yarn install
+        - yarn semantic-release
+    variables:
+        GITLAB_TOKEN: $PAT_SEMANTIC_RELEASE
+    only:
+        - master

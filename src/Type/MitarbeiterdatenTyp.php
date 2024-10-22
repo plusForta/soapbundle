@@ -60,4 +60,3 @@ class MitarbeiterdatenTyp
         return $new;
     }
 }
-

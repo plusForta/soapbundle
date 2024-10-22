@@ -3,13 +3,12 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
-
 use Webmozart\Assert\Assert;
 
 class AnredeGemeinschaftTyp
 {
-    const EHEPAAR = 'Ehepaar';
-    const OHNE_ANREDE = 'ohne Anrede';
+    public const EHEPAAR = 'Ehepaar';
+    public const OHNE_ANREDE = 'ohne Anrede';
 
     private ?string $AnredeGemeinschaft;
 

@@ -3,10 +3,9 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Factories;
 
-
-use PlusForta\RuVSoapBundle\Type\UebergabeDokumenteTyp;
 use PlusForta\RuVSoapBundle\Messages\Dtos\UebergabeDokumenteDto;
-    
+use PlusForta\RuVSoapBundle\Type\UebergabeDokumenteTyp;
+
 class UebergabeDokumenteFactory
 {
     /**
@@ -40,7 +39,6 @@ class UebergabeDokumenteFactory
         bool $versicherungsscheinUebergeben,
         bool $rechnungUebergeben
     ) {
-
         $this->vertragsbestimmungenUebergeben = $vertragsbestimmungenUebergeben;
         $this->buergschaftUebergeben = $buergschaftUebergeben;
         $this->versicherungsscheinUebergeben = $versicherungsscheinUebergeben;
@@ -56,7 +54,7 @@ class UebergabeDokumenteFactory
             ->withBuergschaftUebergeben($this->getBuergschaftUebergeben())
             ->withVersicherungsscheinUebergeben($this->getVersicherungsscheinUebergeben())
             ->withRechnungUebergeben($this->getRechnungUebergeben())
-            ;
+        ;
     }
 
     private function getVertragsbestimmungenUebergeben(): bool
@@ -78,5 +76,4 @@ class UebergabeDokumenteFactory
     {
         return $this->dokumenteDto->rechnungUebergeben ?? $this->rechnungUebergeben;
     }
-
 }

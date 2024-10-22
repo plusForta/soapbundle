@@ -3,10 +3,8 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Dtos;
 
-
 class NumberDto
 {
-
     /** @var string */
     public $vorwahl;
 
@@ -15,5 +13,4 @@ class NumberDto
 
     /** @var string */
     public $rawNumber;
-
 }

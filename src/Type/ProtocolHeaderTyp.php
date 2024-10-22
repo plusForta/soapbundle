@@ -19,4 +19,3 @@ class ProtocolHeaderTyp
         return $new;
     }
 }
-

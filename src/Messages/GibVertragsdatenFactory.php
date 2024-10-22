@@ -25,7 +25,7 @@ class GibVertragsdatenFactory
         return $antrag
             ->withKennung($this->getKennung())
             ->withZugriffsschluessel($this->getZugriffsschluessel())
-            ;
+        ;
     }
 
     private function getKennung(): BasisAnfrageTyp
@@ -40,7 +40,7 @@ class GibVertragsdatenFactory
         return $zugriffsschluessel
             ->withVorgangsnummer($this->dto->vorgangsnummer)
             ->withRechtsgeschaeft($this->getReqchtsgeschaeft())
-            ;
+        ;
     }
 
     private function getReqchtsgeschaeft(): RechtsgeschaeftTyp
@@ -50,6 +50,6 @@ class GibVertragsdatenFactory
         return $rechtsgeschaeft
             ->withArbeitsgebiet($this->dto->arbeitesgebiet)
             ->withVersicherungsnummer($this->dto->versicherungsnummer)
-            ;
+        ;
     }
 }

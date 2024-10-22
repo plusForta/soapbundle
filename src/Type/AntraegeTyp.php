@@ -3,7 +3,6 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
-
 class AntraegeTyp
 {
     private ?AntragTyp $Antrag;

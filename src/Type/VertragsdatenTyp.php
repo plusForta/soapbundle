@@ -21,7 +21,8 @@ class VertragsdatenTyp
     {
         $new = clone $this;
         if ($Produkt !== null) {
-            Assert::oneOf($Produkt,
+            Assert::oneOf(
+                $Produkt,
                 [self::MIETKAUTION]
             );
             $new->Produkt = $Produkt;
@@ -78,4 +79,3 @@ class VertragsdatenTyp
         return $new;
     }
 }
-

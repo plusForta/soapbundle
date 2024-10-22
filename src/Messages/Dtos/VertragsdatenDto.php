@@ -3,11 +3,8 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Dtos;
 
-
-
 class VertragsdatenDto
 {
-
     /** @var string */
     public $product;
 
@@ -37,5 +34,4 @@ class VertragsdatenDto
 
     /** @var UebergabeDokumenteDto */
     public $uebergabeDokumente;
-
 }

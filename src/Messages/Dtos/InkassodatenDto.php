@@ -3,10 +3,8 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Dtos;
 
-
 class InkassodatenDto
 {
-
     /** @var string */
     public $zahlungsweise;
 

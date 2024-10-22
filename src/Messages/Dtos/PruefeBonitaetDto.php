@@ -3,10 +3,8 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Dtos;
 
-
 class PruefeBonitaetDto
 {
-
     /** @var KennungDto */
     public $kennungDto;
 
@@ -42,5 +40,4 @@ class PruefeBonitaetDto
 
     /** @var \DateTimeImmutable */
     public $geburtsdatum;
-
 }

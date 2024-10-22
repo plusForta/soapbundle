@@ -3,7 +3,6 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Factories;
 
-
 use PlusForta\RuVSoapBundle\Messages\Dtos\KontaktDto;
 use PlusForta\RuVSoapBundle\Messages\Dtos\NumberDto;
 use PlusForta\RuVSoapBundle\Type\GeschaeftlichTyp;
@@ -53,8 +52,8 @@ class KontaktFactory
             ->withTelefon($this->getContactNumber($this->dto->telefon))
             ->withMobil($this->getContactNumber($this->dto->mobile))
             ->withFax($this->getContactNumber($this->dto->fax))
-            ->withEMail(Modify::trimOrNull($this->getEMail(), PrivatTyp::MAX_LENGTH_EMAIL))
-            ;
+            ->withEMail(Modify::trimOrNull($this->getEmail(), PrivatTyp::MAX_LENGTH_EMAIL))
+        ;
     }
 
     private function getGeschaeftlich(): GeschaeftlichTyp
@@ -64,14 +63,14 @@ class KontaktFactory
             ->withTelefon($this->getContactNumber($this->dto->telefon))
             ->withMobil($this->getContactNumber($this->dto->mobile))
             ->withFax($this->getContactNumber($this->dto->fax))
-            ->withEMail(Modify::trimOrNull($this->getEMail(), GeschaeftlichTyp::MAX_LENGTH_EMAIL))
-            ;
+            ->withEmail(Modify::trimOrNull($this->getEmail(), GeschaeftlichTyp::MAX_LENGTH_EMAIL))
+        ;
     }
 
     private function getContactNumber(?NumberDto $number): ?KontaktnummerTyp
     {
         if ($number === null) {
-            return  null;
+            return null;
         }
 
         $telefon = new KontaktnummerTyp();
@@ -84,13 +83,8 @@ class KontaktFactory
             ->withRufnummer(Modify::trim($number->rufnummer, KontaktnummerTyp::MAX_LENGTH_VORWAHL));
     }
 
-
-    private function getEMail(): ?string
+    private function getEmail(): ?string
     {
         return $this->dto->email;
     }
-
-
-
-
 }

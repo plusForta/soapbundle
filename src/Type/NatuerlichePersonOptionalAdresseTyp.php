@@ -33,4 +33,3 @@ class NatuerlichePersonOptionalAdresseTyp
         return $new;
     }
 }
-

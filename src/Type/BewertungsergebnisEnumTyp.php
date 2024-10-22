@@ -3,7 +3,6 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
-
 use Webmozart\Assert\Assert;
 
 class BewertungsergebnisEnumTyp
@@ -16,7 +15,6 @@ class BewertungsergebnisEnumTyp
 
     public function withBewertungsergebnis(string $Bewertungsergebnis): self
     {
-
         Assert::oneOf($Bewertungsergebnis, [
             self::POSITIV,
             self::NEGATIV,
@@ -32,5 +30,4 @@ class BewertungsergebnisEnumTyp
     {
         return $this->Bewertungsergebnis;
     }
-
 }

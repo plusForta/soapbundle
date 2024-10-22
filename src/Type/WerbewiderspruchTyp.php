@@ -61,4 +61,3 @@ class WerbewiderspruchTyp
         return $new;
     }
 }
-

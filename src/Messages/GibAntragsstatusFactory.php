@@ -3,7 +3,6 @@
 
 namespace PlusForta\RuVSoapBundle\Messages;
 
-
 use PlusForta\RuVSoapBundle\Messages\Dtos\GibAntragsstatusDto;
 use PlusForta\RuVSoapBundle\Messages\Factories\KennungFactory;
 use PlusForta\RuVSoapBundle\Type\BasisAnfrageTyp;
@@ -26,7 +25,7 @@ class GibAntragsstatusFactory
         return $antrag
             ->withKennung($this->getKennung())
             ->withVorgangsnummern($this->getVorgangsnummer())
-            ;
+        ;
     }
 
     private function getKennung(): BasisAnfrageTyp
