@@ -29,7 +29,7 @@ class Modify
 
     public static function sanitizeString(string $inputString, bool $isNameField = false): string
     {
-        $pattern = $isNameField ? "/[^a-zA-ZäöüßÄÖÜ ()+&\\\-_\/:'éıćáčşğłóšİńŞėžèâíũċżëìñČĆĞŁŃÇŻŠÁŚÉ]/u"
+        $pattern = $isNameField ? "/[^a-zA-ZäöüßÄÖÜ ()+&\\\-_\/:éıćáčşğłóšİńŞėžèâíũċżëìñČĆĞŁŃÇŻŠÁŚÉ]/u"
                                 : "/[^a-zA-ZäöüßÄÖÜ ,.()+&\\\-_\/:'éıćáčşğłóšİńŞėžèâíũċżëìñČĆĞŁŃÇŻŠÁŚÉ0-9]/u";
 
         return preg_replace($pattern, '', $inputString);
