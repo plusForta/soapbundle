@@ -10,7 +10,6 @@ class AnredeHerrFrauTyp
 {
     const HERR = 'Herr';
     const FRAU = 'Frau';
-
     const DIVERS = 'Divers'; // need to switch to WSDL 2023 for this
 
     private ?string $Anrede;

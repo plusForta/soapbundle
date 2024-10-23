@@ -22,7 +22,10 @@ class TarifdatenTyp
     {
         Assert::greaterThan($Buergschaftssumme, 0.0);
 
-        return clone $this;
+        $new = clone $this;
+        $new->Buergschaftssumme = round($Buergschaftssumme, 2);
+
+        return $new;
     }
 
     public function withJahresbeitrag(float $Jahresbeitrag): self
