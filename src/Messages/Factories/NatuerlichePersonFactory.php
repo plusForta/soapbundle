@@ -64,8 +64,8 @@ class NatuerlichePersonFactory
         return $name
             ->withAnrede($this->getAnrede())
             ->withTitel(Modify::trimOrNull($this->getTitel(), NameNatuerlichePersonTyp::MAX_LENGTH_TITEL))
-            ->withVorname(Modify::trim($this->getVorname(), NameNatuerlichePersonTyp::MAX_LENGTH_VORNAME))
-            ->withNachname(Modify::trim($this->getNachname(), NameNatuerlichePersonTyp::MAX_LENGTH_NACHNAME))
+            ->withVorname($this->getVorname())
+            ->withNachname($this->getNachname())
             ->withNamenszusatz(Modify::trimOrNull($this->getNamenszusatz(), NameNatuerlichePersonTyp::MAX_LENGTH_NAMENSZUSATZ))
             ;
     }
@@ -76,8 +76,8 @@ class NatuerlichePersonFactory
         return $name
             ->withAnrede($this->getAnredeErweitert())
             ->withTitel(Modify::trimOrNull($this->getTitel(), NameNatuerlichePersonHerrFrauTyp::MAX_LENGTH_TITEL))
-            ->withVorname(Modify::trim($this->getVorname(), NameNatuerlichePersonHerrFrauTyp::MAX_LENGTH_VORNAME, true))
-            ->withNachname(Modify::trim($this->getNachname(), NameNatuerlichePersonHerrFrauTyp::MAX_LENGTH_NACHNAME, true))
+            ->withVorname($this->getVorname())
+            ->withNachname($this->getNachname())
             ->withNamenszusatz(Modify::trimOrNull($this->getNamenszusatz(), NameNatuerlichePersonHerrFrauTyp::MAX_LENGTH_NAMENSZUSATZ))
             ;
     }
@@ -101,12 +101,18 @@ class NatuerlichePersonFactory
 
     private function getVorname(): string
     {
-        return $this->dto->vorname;
+        return Modify::trim(
+            Modify::sanitizeString($this->dto->vorname, true),
+            NameNatuerlichePersonTyp::MAX_LENGTH_VORNAME
+        );
     }
 
     private function getNachname(): string
     {
-        return $this->dto->nachname;
+        return Modify::trim(
+            Modify::sanitizeString($this->dto->nachname, true),
+            NameNatuerlichePersonTyp::MAX_LENGTH_NACHNAME
+        );
     }
 
     private function getNamenszusatz(): ?string

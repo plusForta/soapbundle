@@ -15,6 +15,7 @@ use PlusForta\RuVSoapBundle\Type\KontaktdatenTyp;
 use PlusForta\RuVSoapBundle\Type\NamePersonGemeinschaftOhneNamenszusatzTyp;
 use PlusForta\RuVSoapBundle\Type\NamePersonGemeinschaftTyp;
 use PlusForta\RuVSoapBundle\Type\PrivatTyp;
+use PlusForta\RuVSoapBundle\Utils\Modify;
 
 class GemeinschaftFactory
 {
@@ -80,12 +81,12 @@ class GemeinschaftFactory
 
     private function getVorname(LesseeDto $lessee): string
     {
-        return $lessee->vorname;
+        return Modify::sanitizeString($lessee->vorname, true);
     }
 
     private function getNachname(LesseeDto $lessee): string
     {
-        return $lessee->nachname;
+        return Modify::sanitizeString($lessee->nachname, true);
     }
 
     private function getAdresse(): AdresseNatuerlichePersonTyp

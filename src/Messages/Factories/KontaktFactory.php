@@ -53,7 +53,7 @@ class KontaktFactory
             ->withTelefon($this->getContactNumber($this->dto->telefon))
             ->withMobil($this->getContactNumber($this->dto->mobile))
             ->withFax($this->getContactNumber($this->dto->fax))
-            ->withEMail(Modify::trimOrNull($this->getEMail(), PrivatTyp::MAX_LENGTH_EMAIL))
+            ->withEMail(Modify::trimOrNull($this->getEmail(), PrivatTyp::MAX_LENGTH_EMAIL))
             ;
     }
 
@@ -64,7 +64,7 @@ class KontaktFactory
             ->withTelefon($this->getContactNumber($this->dto->telefon))
             ->withMobil($this->getContactNumber($this->dto->mobile))
             ->withFax($this->getContactNumber($this->dto->fax))
-            ->withEMail(Modify::trimOrNull($this->getEMail(), GeschaeftlichTyp::MAX_LENGTH_EMAIL))
+            ->withEmail(Modify::trimOrNull($this->getEmail(), GeschaeftlichTyp::MAX_LENGTH_EMAIL))
             ;
     }
 
@@ -84,13 +84,8 @@ class KontaktFactory
             ->withRufnummer(Modify::trim($number->rufnummer, KontaktnummerTyp::MAX_LENGTH_VORWAHL));
     }
 
-
-    private function getEMail(): ?string
+    private function getEmail(): ?string
     {
         return $this->dto->email;
     }
-
-
-
-
 }

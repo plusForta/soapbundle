@@ -15,26 +15,23 @@ class Modify
         return self::trim($value, $length);
     }
 
-    public static function trim(string $value, int $length, bool $isNameField = false): string
+    public static function trim(string $value, int $length): string
     {
-        $sanitizedString = self::sanitizeString($value, $isNameField);
-
-        if (strlen($sanitizedString) <= $length) {
-            return $sanitizedString;
+        if (strlen($value) <= $length) {
+            return $value;
         }
 
         $trace = self::getTrace();
         self::logTrace($trace);
 
-        return mb_strcut($sanitizedString, 0, $length);
+        return mb_strcut($value, 0, $length);
     }
 
-    public static function sanitizeString(string $inputString, bool $isNameField): string
+    public static function sanitizeString(string $inputString, bool $isNameField = false): string
     {
         $pattern = $isNameField ? "/[^a-zA-ZäöüßÄÖÜ ()+&\\\-_\/:'éıćáčşğłóšİńŞėžèâíũċżëìñČĆĞŁŃÇŻŠÁŚÉ]/u"
                                 : "/[^a-zA-ZäöüßÄÖÜ ,.()+&\\\-_\/:'éıćáčşğłóšİńŞėžèâíũċżëìñČĆĞŁŃÇŻŠÁŚÉ0-9]/u";
 
-        // Replace all characters that do not match the allowed pattern
         return preg_replace($pattern, '', $inputString);
     }
 

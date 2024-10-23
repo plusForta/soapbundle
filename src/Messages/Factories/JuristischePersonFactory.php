@@ -49,7 +49,7 @@ class JuristischePersonFactory
     private function getName(): string
     {
         $name = $this->dto->name;
-        return Modify::trim($name, NameJuristischePersonTyp::MAX_LENGTH_NAME);
+        return Modify::trim(Modify::sanitizeString($name), NameJuristischePersonTyp::MAX_LENGTH_NAME);
     }
 
     private function getNamenszusatz(): ?string
@@ -93,7 +93,7 @@ class JuristischePersonFactory
     private function getOrt(): string
     {
         $ort = $this->dto->adresse->ort;
-        return Modify::trim($ort, AdresseJuristischePersonTyp::MAX_LENGTH_ORT);
+        return Modify::trim(Modify::sanitizeString($ort), AdresseJuristischePersonTyp::MAX_LENGTH_ORT);
     }
 
     private function getLand(): string
@@ -104,13 +104,13 @@ class JuristischePersonFactory
     private function getStrasse(): string
     {
         $strasse = $this->dto->adresse->strasse;
-        return Modify::trim($strasse, AdresseJuristischePersonTyp::MAX_LENGTH_STRASSE);
+        return Modify::trim(Modify::sanitizeString($strasse), AdresseJuristischePersonTyp::MAX_LENGTH_STRASSE);
     }
 
     private function getHausnummer(): string
     {
         $hausnummer = $this->dto->adresse->hausnummer;
-        return Modify::trim($hausnummer, AdresseJuristischePersonTyp::MAX_LENGTH_HAUSNUMMER);
+        return Modify::trim(Modify::sanitizeString($hausnummer), AdresseJuristischePersonTyp::MAX_LENGTH_HAUSNUMMER);
     }
 
     private function getHausnummerZusatz(): ?string

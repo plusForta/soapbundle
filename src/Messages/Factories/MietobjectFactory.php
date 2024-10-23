@@ -34,13 +34,13 @@ class MietobjectFactory
     private function getStrasse(): string
     {
         $strasse = $this->mietobjektDto->strasse;
-        return Modify::trim($strasse, MietobjektTyp::MAX_LENGTH_STRASSE);
+        return Modify::trim(Modify::sanitizeString($strasse), MietobjektTyp::MAX_LENGTH_STRASSE);
     }
 
     private function getHausnummer(): string
     {
         $hausnummer = $this->mietobjektDto->hausnummer;
-        return Modify::trim($hausnummer, MietobjektTyp::MAX_LENGTH_HAUSNUMMER);
+        return Modify::trim(Modify::sanitizeString($hausnummer), MietobjektTyp::MAX_LENGTH_HAUSNUMMER);
     }
 
     private function getHausnummerZusatz(): ?string
@@ -57,7 +57,7 @@ class MietobjectFactory
     private function getOrt(): string
     {
         $ort = $this->mietobjektDto->ort;
-        return Modify::trim($ort, MietobjektTyp::MAX_LENGTH_ORT);
+        return Modify::trim(Modify::sanitizeString($ort), MietobjektTyp::MAX_LENGTH_ORT);
     }
 
     private function getLand(): ?string
