@@ -72,6 +72,7 @@ commit-check:
         - git fetch origin master --unshallow
         - yarn install
         - yarn commitlint --from origin/master --to HEAD
+    only:
         - branches
         - merge_requests
 
