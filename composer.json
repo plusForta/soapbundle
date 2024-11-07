@@ -46,5 +46,6 @@
             "php-http/discovery": true,
             "phpro/grumphp": true
         }
-    }
+    },
+    "version": "1.0.0"
 }
