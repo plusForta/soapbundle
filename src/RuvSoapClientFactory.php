@@ -4,15 +4,11 @@ namespace PlusForta\RuVSoapBundle;
 
 use Phpro\SoapClient\Caller\EngineCaller;
 use Phpro\SoapClient\Caller\EventDispatchingCaller;
-use Psr\Log\LoggerAwareInterface;
-use Psr\Log\LoggerAwareTrait;
 use Psr\Log\LoggerInterface;
 use Soap\Engine\SimpleEngine;
 use Soap\ExtSoapEngine\ExtSoapDriver;
-use Soap\ExtSoapEngine\ExtSoapEngineFactory;
 use Soap\ExtSoapEngine\ExtSoapOptions;
 use Soap\ExtSoapEngine\Transport\ExtSoapClientTransport;
-use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class RuvSoapClientFactory
@@ -23,15 +19,15 @@ class RuvSoapClientFactory
         private array $config,
         private readonly string $wsdl,
         private string $location
-    )
-    {
+    ) {
     }
 
-    public function factory() : RuvSoapClient
+    public function factory(): RuvSoapClient
     {
         $options = ExtSoapOptions::defaults($this->wsdl, $this->getDefaults())
-            ->withClassMap(RuvSoapClientClassmap::getCollection()
-        );
+            ->withClassMap(
+                RuvSoapClientClassmap::getCollection()
+            );
 
         $driver = ExtSoapDriver::createFromOptions($options);
         $handler = new ExtSoapClientTransport($driver->getClient());
@@ -79,4 +75,3 @@ class RuvSoapClientFactory
         return $defaults;
     }
 }
-

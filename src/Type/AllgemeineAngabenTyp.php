@@ -4,7 +4,6 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class AllgemeineAngabenTyp
 {
-
     private ?AgenturdatenTyp $Agenturdaten;
 
     private ?InkassodatenTyp $Inkassodaten;
@@ -35,4 +34,3 @@ class AllgemeineAngabenTyp
         return $new;
     }
 }
-

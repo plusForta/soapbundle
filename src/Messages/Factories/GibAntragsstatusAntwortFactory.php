@@ -3,7 +3,6 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Factories;
 
-
 use Phpro\SoapClient\Type\MixedResult;
 use Phpro\SoapClient\Type\ResultInterface;
 use PlusForta\RuVSoapBundle\Type\AntraegeTyp;
@@ -16,7 +15,6 @@ use PlusForta\RuVSoapBundle\Type\StatusTyp;
 
 class GibAntragsstatusAntwortFactory
 {
-
     /** @var \stdClass */
     private $result;
 
@@ -31,8 +29,7 @@ class GibAntragsstatusAntwortFactory
         return $antwort
             ->withStatus($this->getStatus())
             ->withAntraege($this->getAntraege())
-            ;
-
+        ;
     }
 
     private function getStatus(): StatusTyp
@@ -41,7 +38,7 @@ class GibAntragsstatusAntwortFactory
         return $status
             ->withCode($this->getCode())
             ->withNachricht($this->getNachricht())
-            ;
+        ;
     }
 
     private function getCode(): CodeEnumTyp
@@ -76,7 +73,7 @@ class GibAntragsstatusAntwortFactory
         return $bewertung
             ->withBewertungsergbnis($this->getBewertungsergbnis())
             ->withKommentar($this->getKommentar())
-            ;
+        ;
     }
 
     private function getBewertungsergbnis(): BewertungsergebnisEnumTyp
@@ -100,6 +97,4 @@ class GibAntragsstatusAntwortFactory
         $antrag = $this->result->Antraege->Antrag;
         return is_array($antrag) ? $antrag[0] : $antrag;
     }
-
-
 }

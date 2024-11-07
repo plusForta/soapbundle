@@ -3,10 +3,8 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Dtos;
 
-
 class KennungDto
 {
-
     /** @var string */
     public $benutzer;
 

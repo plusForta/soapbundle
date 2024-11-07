@@ -147,4 +147,3 @@ class PruefeBonitaetAnfrageTyp implements RequestInterface
         return $new;
     }
 }
-

@@ -61,4 +61,3 @@ class NamePersonGemeinschaftOhneNamenszusatzTyp
         return $new;
     }
 }
-

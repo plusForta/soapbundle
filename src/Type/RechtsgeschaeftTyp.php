@@ -33,4 +33,3 @@ class RechtsgeschaeftTyp
         return $new;
     }
 }
-

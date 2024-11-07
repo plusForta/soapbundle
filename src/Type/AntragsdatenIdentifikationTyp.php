@@ -5,7 +5,6 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class AntragsdatenIdentifikationTyp
 {
-
     public ?string $AntragsdatenID;
     public ?string $BuergschaftstextVersion;
 

@@ -11,7 +11,7 @@ class KlauselTyp
         return $this->Text;
     }
 
-    public function withText(string $Text):self
+    public function withText(string $Text): self
     {
         $new = clone $this;
         $new->Text = $Text;
@@ -19,4 +19,3 @@ class KlauselTyp
         return $new;
     }
 }
-

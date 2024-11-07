@@ -22,9 +22,6 @@
             "PlusForta\\RuVSoapBundle\\": "src/"
         }
     },
-    "repositories": [
-
-    ],
     "require": {
         "phpro/soap-client": "^2.1.0",
         "webmozart/assert": "^1.5",
@@ -39,12 +36,15 @@
         "symfony/dependency-injection": "^6.2",
         "vimeo/psalm": "^5.9.0",
         "symfony/http-kernel": "^6.2",
-        "php-parallel-lint/php-parallel-lint": "^v1.3.2"
+        "php-parallel-lint/php-parallel-lint": "^v1.3.2",
+        "symplify/easy-coding-standard": "^12.3",
+        "phpro/grumphp": "^1.16"
     },
     "config": {
         "allow-plugins": {
             "composer/package-versions-deprecated": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "phpro/grumphp": true
         }
     }
 }

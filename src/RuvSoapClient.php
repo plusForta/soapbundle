@@ -2,21 +2,21 @@
 
 namespace PlusForta\RuVSoapBundle;
 
-use Phpro\SoapClient\Type\ResultInterface;
-use PlusForta\RuVSoapBundle\Type\PruefeBonitaetAnfrageTyp;
-use PlusForta\RuVSoapBundle\Type\BasisAntwortTyp;
-use PlusForta\RuVSoapBundle\Messages\Factories\BasisAntwortFactory;
-use PlusForta\RuVSoapBundle\Type\StelleAntragAnfrageTyp;
-use PlusForta\RuVSoapBundle\Type\StelleAntragAntwortTyp;
-use PlusForta\RuVSoapBundle\Messages\Factories\StelleAntragAntwortFactory;
-use PlusForta\RuVSoapBundle\Type\GibVertragsdatenAnfrageTyp;
-use PlusForta\RuVSoapBundle\Type\GibVertragsdatenAntwortTyp;
-use PlusForta\RuVSoapBundle\Messages\Factories\GibVertragsdatenAntwortFactory;
-use PlusForta\RuVSoapBundle\Type\GibAntragsstatusAnfrageTyp;
-use PlusForta\RuVSoapBundle\Type\GibAntragsstatusAntwortTyp;
-use PlusForta\RuVSoapBundle\Messages\Factories\GibAntragsstatusAntwortFactory;
 use Phpro\SoapClient\Caller\Caller;
 use Phpro\SoapClient\Type\RequestInterface;
+use Phpro\SoapClient\Type\ResultInterface;
+use PlusForta\RuVSoapBundle\Messages\Factories\BasisAntwortFactory;
+use PlusForta\RuVSoapBundle\Messages\Factories\GibAntragsstatusAntwortFactory;
+use PlusForta\RuVSoapBundle\Messages\Factories\GibVertragsdatenAntwortFactory;
+use PlusForta\RuVSoapBundle\Messages\Factories\StelleAntragAntwortFactory;
+use PlusForta\RuVSoapBundle\Type\BasisAntwortTyp;
+use PlusForta\RuVSoapBundle\Type\GibAntragsstatusAnfrageTyp;
+use PlusForta\RuVSoapBundle\Type\GibAntragsstatusAntwortTyp;
+use PlusForta\RuVSoapBundle\Type\GibVertragsdatenAnfrageTyp;
+use PlusForta\RuVSoapBundle\Type\GibVertragsdatenAntwortTyp;
+use PlusForta\RuVSoapBundle\Type\PruefeBonitaetAnfrageTyp;
+use PlusForta\RuVSoapBundle\Type\StelleAntragAnfrageTyp;
+use PlusForta\RuVSoapBundle\Type\StelleAntragAntwortTyp;
 use Soap\ExtSoapEngine\AbusedClient;
 
 class RuvSoapClient
@@ -67,4 +67,3 @@ class RuvSoapClient
         return $factory->create($result);
     }
 }
-

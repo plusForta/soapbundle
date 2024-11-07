@@ -3,7 +3,6 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
-
 class VorgangsnummerTyp
 {
     private string $Vorgangsnummer;

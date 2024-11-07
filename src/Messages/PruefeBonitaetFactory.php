@@ -3,7 +3,6 @@
 
 namespace PlusForta\RuVSoapBundle\Messages;
 
-
 use DateTimeImmutable;
 use PlusForta\RuVSoapBundle\Messages\Dtos\PruefeBonitaetDto;
 use PlusForta\RuVSoapBundle\Messages\Factories\KennungFactory;
@@ -35,7 +34,7 @@ class PruefeBonitaetFactory
             ->withOrt($this->getOrt())
             ->withLand($this->getLand())
             ->withGeburtsdatum($this->getGeburtsdatum())
-            ;
+        ;
     }
 
     private function getKennung()
@@ -60,22 +59,34 @@ class PruefeBonitaetFactory
 
     private function getVorname(): string
     {
-        return Modify::trim($this->dto->vorname, PruefeBonitaetAnfrageTyp::MAX_LENGTH_VORNAME);
+        return Modify::trim(
+            Modify::sanitizeString($this->dto->vorname, true),
+            PruefeBonitaetAnfrageTyp::MAX_LENGTH_VORNAME
+        );
     }
 
     private function getNachname(): string
     {
-        return Modify::trim($this->dto->nachname, PruefeBonitaetAnfrageTyp::MAX_LENGTH_NACHNAME);
+        return Modify::trim(
+            Modify::sanitizeString($this->dto->nachname, true),
+            PruefeBonitaetAnfrageTyp::MAX_LENGTH_NACHNAME
+        );
     }
 
     private function getStrasse(): string
     {
-        return Modify::trim($this->dto->strasse, PruefeBonitaetAnfrageTyp::MAX_LENGTH_STRASSE);
+        return Modify::trim(
+            Modify::sanitizeString($this->dto->strasse),
+            PruefeBonitaetAnfrageTyp::MAX_LENGTH_STRASSE
+        );
     }
 
     private function getHausnummer(): string
     {
-        return Modify::trim($this->dto->Hausnummer, PruefeBonitaetAnfrageTyp::MAX_LENGTH_HAUSNUMMER);
+        return Modify::trim(
+            Modify::sanitizeString($this->dto->Hausnummer),
+            PruefeBonitaetAnfrageTyp::MAX_LENGTH_HAUSNUMMER
+        );
     }
 
     private function getPlz(): string
@@ -85,7 +96,10 @@ class PruefeBonitaetFactory
 
     private function getOrt(): string
     {
-        return Modify::trim($this->dto->ort, PruefeBonitaetAnfrageTyp::MAX_LENGTH_ORT);
+        return Modify::trim(
+            Modify::sanitizeString($this->dto->ort),
+            PruefeBonitaetAnfrageTyp::MAX_LENGTH_ORT
+        );
     }
 
     private function getLand(): string

@@ -3,7 +3,6 @@
 namespace PlusForta\RuVSoapBundle\Type;
 
 use PlusForta\RuVSoapBundle\Messages\ResponseStatusInterface;
-use Psalm\Internal\Analyzer\StatementsAnalyzer;
 
 class BasisAntwortTyp implements ResponseStatusInterface
 {
@@ -67,4 +66,3 @@ class BasisAntwortTyp implements ResponseStatusInterface
         return $new;
     }
 }
-

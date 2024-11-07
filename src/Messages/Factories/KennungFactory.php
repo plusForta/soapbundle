@@ -3,7 +3,6 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Factories;
 
-
 use PlusForta\RuVSoapBundle\Messages\Dtos\KennungDto;
 use PlusForta\RuVSoapBundle\Type\BasisAnfrageTyp;
 
@@ -44,7 +43,6 @@ class KennungFactory
      */
     private function getBenutzer(): string
     {
-
         $benutzer = $this->kennungDto->benutzer ?? $this->benutzer;
         return $benutzer;
     }
@@ -56,5 +54,4 @@ class KennungFactory
     {
         return $this->kennungDto->passwort ?? $this->passwort;
     }
-
 }

@@ -38,4 +38,3 @@ class TarifdatenTyp
         return $new;
     }
 }
-

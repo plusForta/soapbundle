@@ -72,7 +72,8 @@ class MietobjektTyp
     {
         $new = clone $this;
         if ($Land !== null) {
-            Assert::oneOf($Land,
+            Assert::oneOf(
+                $Land,
                 [self::DEUTSCHLAND]
             );
             $new->Land = $Land;
@@ -92,4 +93,3 @@ class MietobjektTyp
         return $new;
     }
 }
-

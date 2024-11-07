@@ -42,7 +42,6 @@ class KontaktnummerTyp
         $new->Rufnummer = $this->getDialCode($number, $areaCode);
 
         return $new;
-
     }
 
     private function getGermanAreaCode(string $number): string
@@ -56,7 +55,6 @@ class KontaktnummerTyp
         });
 
         return reset($codes) ?: '';
-
     }
 
     private function stripGermanCountryCode(string $number): string
@@ -66,7 +64,7 @@ class KontaktnummerTyp
 
     private function trimNumber($number): string|array|null
     {
-        return preg_replace('/[^+0-9]/','',$number);
+        return preg_replace('/[^+0-9]/', '', $number);
     }
 
     private function getDialCode(string $number, string $areaCode): string

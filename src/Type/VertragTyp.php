@@ -89,4 +89,3 @@ class VertragTyp
         return $new;
     }
 }
-

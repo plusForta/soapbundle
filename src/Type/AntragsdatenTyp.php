@@ -7,7 +7,6 @@ namespace PlusForta\RuVSoapBundle\Type;
  */
 class AntragsdatenTyp
 {
-
     public ?AntragsdatenIdentifikationTyp $AntragsdatenIdentifikation;
     private ?AdressdatenTyp $Adressdaten;
     private ?VertragsdatenTyp $Vertragsdaten;

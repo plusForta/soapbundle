@@ -41,4 +41,3 @@ class NameJuristischePersonTyp
         return $new;
     }
 }
-

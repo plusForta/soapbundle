@@ -47,4 +47,3 @@ class ServiceHeaderTyp
         return $new;
     }
 }
-

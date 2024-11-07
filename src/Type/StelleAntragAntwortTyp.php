@@ -81,4 +81,3 @@ class StelleAntragAntwortTyp implements ResponseStatusInterface
         return $new;
     }
 }
-

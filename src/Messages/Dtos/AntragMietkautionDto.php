@@ -3,10 +3,8 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Dtos;
 
-
 class AntragMietkautionDto
 {
-
     /** @var string */
     public $referenzNummer;
 
@@ -27,5 +25,4 @@ class AntragMietkautionDto
 
     /** @var AntragsdatenIdentifikationsDto|null */
     public $antragsdatenIdentifikationsDto;
-
 }

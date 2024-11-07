@@ -55,4 +55,3 @@ class PrivatTyp
         return $new;
     }
 }
-

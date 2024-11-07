@@ -2,7 +2,6 @@
 
 namespace PlusForta\RuVSoapBundle;
 
-
 use PlusForta\RuVSoapBundle\DependencyInjection\Compiler\RuVSoapBundleCompilerPass;
 use PlusForta\RuVSoapBundle\DependencyInjection\PlusFortaRuVSoapExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

@@ -26,4 +26,3 @@ class NatuerlichePersonTyp
         return $new;
     }
 }
-

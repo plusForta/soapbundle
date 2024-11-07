@@ -4,7 +4,6 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class AgenturdatenTyp
 {
-
     private ?AgenturTyp $Agentur;
 
     private ?MitarbeiterdatenTyp $Mitarbeiterdaten;
@@ -25,4 +24,3 @@ class AgenturdatenTyp
         return $new;
     }
 }
-

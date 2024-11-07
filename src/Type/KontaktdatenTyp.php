@@ -27,4 +27,3 @@ class KontaktdatenTyp
         return $new;
     }
 }
-
