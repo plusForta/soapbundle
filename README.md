@@ -14,25 +14,25 @@ composer require plusforta/soapbundle:x.x.x
 
 # Versions Overview
 
-We currently maintain two active versions of our project: **1.8.x** and **1.7.x**.
+We currently maintain two active versions of our project: **1.9.x** and **1.7.x**.
 
-- **1.8.x** is the latest and default version, incorporating the most up-to-date features and optimizations.
+- **1.9.x** is the latest and default version, incorporating the most up-to-date features and optimizations.
 - **1.7.x** represents the previous iteration, which we continue to maintain for backward compatibility and stability.
 
 ## Compatibility and Requirements
 
 - **PHP Compatibility:**
     - Version **1.7.x** is compatible up to PHP 8.1.
-    - Version **1.8.x** supports PHP 8.2 and later, aligning with the latest PHP advancements.
+    - Version **1.9.x** supports PHP 8.2 and later, aligning with the latest PHP advancements.
 
 - **Dependencies:**
   Both versions require:
     - `PHPPro/Soapclient v2` for enhanced SOAP client capabilities.
     - `Symfony 6.x` for robust framework support.
 
-## Key Differences Between 1.7.x and 1.8.x
+## Key Differences Between 1.7.x and 1.9.x
 
-The transition from 1.7.x to 1.8.x includes significant improvements, especially in adapting to PHP 8.2's changes:
+The transition from 1.7.x to 1.9.x includes significant improvements, especially in adapting to PHP 8.2's changes:
 
 - **Dynamic Properties:**
     - In version **1.8.x**, we've removed all dynamic properties in response to their deprecation in PHP 8.2. 
@@ -134,11 +134,63 @@ changing product types and such._
 
 ## Versioning
 
-The project uses semantic versioning. If changes are pushed, a corresponding tag should be added for
-version should be added.
+
+
+This project uses Semantic Versioning and automated release management via semantic-release. 
+Version numbers and changelogs are automatically generated based on commit messages that follow the Conventional Commits specification.
+
+### How it works
+
+- **Automated Releases:** When changes are merged into the master branch, the CI pipeline triggers semantic-release 
+  to analyze commit messages and determine if a new release should be published.
+- **Version Incrementing:**
+  - **Major Release (X.0.0):** For incompatible API changes. Triggered by a commit that includes `BREAKING CHANGE` in the body or footer.
+  - **Minor Release (0.X.0):** For new features added in a backward-compatible manner. Triggered by a feat: commit.    
+  - **Patch Release (0.0.X):** For backward-compatible bug fixes. Triggered by a `fix:` commit.
+- **Git Tags and Changelog:**
+  - **Tags:** A new git tag corresponding to the version is automatically created.
+  - **Changelog:** An updated `CHANGELOG.md` is generated, summarizing the changes.
 
 There are multiple branches for each major version. The master branch is the latest version.
 To update a particular version, checkout the corresponding branch, make a new commit, and tag it.
+
+### Make Your Changes:
+ - For new features or bug fixes, create a feature branch from `master`
+```shell
+git checkout master
+git pull
+git checkout -b feature/PF-1234-new-feature
+```
+
+### Commit Your Changes:
+
+* Ensure your commit messages follow the Conventional Commits format.
+* Use the pre-commit hooks provided by **GrumPHP** to validate commit messages locally.
+
+```shell
+git add .
+git commit -m "feat(PF-1234): add new feature module"
+Push and Create a Merge Request:
+```
+
+### Create a Merge Request:
+
+ - Push your branch to the remote repository:
+    ```shell
+    git push -u origin feature/PF-1234-new-feature
+    ```
+ - Create a merge request (MR) targeting the master branch.
+ - Ensure all CI checks pass, including Commitlint validation in the pipeline.
+
+### Merge and Release:
+
+ - Once the MR is approved and merged into master, the CI pipeline will automatically run semantic-release.
+ - If your commits warrant a new version (e.g., contain feat or fix), a new release will be published, and a git tag will be created.  
+
+
+## Manual Versioning (Maintenance Branches)
+For maintenance branches like 1.7.x, versioning is handled manually. This allows for targeted fixes and 
+updates to previous major versions without affecting the main development line
 
 ```shell
 git pull
