@@ -2,6 +2,9 @@ module.exports = {
     extends: ['@commitlint/config-conventional'],
     rules: {
         'jira-issue-rule': [2, 'always'],
+        'header-max-length': [1, 'always', 256],
+        'subject-case': [0, 'never'],
+        'body-case': [0, 'never'],
     },
     plugins: [
         {

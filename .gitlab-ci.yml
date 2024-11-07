@@ -71,8 +71,7 @@ commit-check:
     script:
         - git fetch origin master --unshallow
         - yarn install
-        - yarn commitlint --from HEAD~1 --to HEAD # temporary fix for commitlint to not fetch all commits. Todo: make changes in the next mr yarn commitlint --from origin/master --to HEAD
-    only:
+        - yarn commitlint --from origin/master --to HEAD
         - branches
         - merge_requests
 
