@@ -1,3 +1,10 @@
+## [1.9.1](https://gitlab.com/plusforta/public/soapbundle/compare/v1.9.0...v1.9.1) (2024-11-08)
+
+
+### Bug Fixes
+
+* add yarn lock ([8e96318](https://gitlab.com/plusforta/public/soapbundle/commit/8e9631860546b390fc7c4996ff698a9872c30455))
+
 # 1.0.0 (2024-11-07)
 
 
