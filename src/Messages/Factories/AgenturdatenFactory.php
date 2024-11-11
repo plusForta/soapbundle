@@ -3,7 +3,6 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Factories;
 
-
 use PlusForta\RuVSoapBundle\Messages\Dtos\AgenturdatenDto;
 use PlusForta\RuVSoapBundle\Type\AgenturdatenTyp;
 use PlusForta\RuVSoapBundle\Type\AgenturTyp;
@@ -39,9 +38,7 @@ class AgenturdatenFactory
         $mitarbeiternummer,
         $mitarbeiternummerZusaetzlicherMA,
         $stellennummerZusaetzlicherMA
-    )
-    {
-
+    ) {
         $this->agenturNummer = $agenturNummer;
         $this->mitarbeiternummer = $mitarbeiternummer;
         $this->mitarbeiternummerZusaetzlicherMA = $mitarbeiternummerZusaetzlicherMA;
@@ -55,7 +52,7 @@ class AgenturdatenFactory
         return $agenturDaten
             ->withAgentur($this->getAgentur())
             ->withMitarbeiterdaten($this->getMitarbeiterdaten())
-            ;
+        ;
     }
 
     /**
@@ -83,7 +80,7 @@ class AgenturdatenFactory
             ->withMitarbeiternummerZusaetzlicherMA($this->getMitarbeiternummerZusaetzlicherMA())
             ->withStellennummerZusaetzlicherMA($this->getStellennummerZusaetzlicherMA())
             ->withVermittlereigeneVorgangsnummer($this->getVermittlereigeneVorgangsnummer())
-            ;
+        ;
     }
 
     /**
@@ -112,7 +109,4 @@ class AgenturdatenFactory
         $vermittlereigeneVorgangsnummer = $this->agenturdatenDto->vermittlereigeneVorgangsnummer;
         return Modify::trimOrNull($vermittlereigeneVorgangsnummer, MitarbeiterdatenTyp::MAX_LENGTH_VERMITTLEREIGENE_VORGANGSNUMMER);
     }
-
-
-
 }

@@ -3,13 +3,12 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
-
 use Webmozart\Assert\Assert;
 
 class AnredeHerrFrauTyp
 {
-    const HERR = 'Herr';
-    const FRAU = 'Frau';
+    public const HERR = 'Herr';
+    public const FRAU = 'Frau';
     /**
      * @var string
      */

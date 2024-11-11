@@ -3,14 +3,12 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
-
 /**
  * @property BankverbindungTyp|null $Bankverbindung
  * @property ZahlungsdienstleisterTyp|null $Zahlungsdienstleister
  */
 class ZahlungseinzugTyp
 {
-
     public function withBankverbindung(?BankverbindungTyp $Bankverbindung): ZahlungseinzugTyp
     {
         $new = clone $this;
@@ -30,5 +28,4 @@ class ZahlungseinzugTyp
 
         return $new;
     }
-
 }

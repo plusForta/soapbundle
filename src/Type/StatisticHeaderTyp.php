@@ -4,7 +4,6 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class StatisticHeaderTyp
 {
-
     /**
      * @var string
      */
@@ -79,7 +78,4 @@ class StatisticHeaderTyp
 
         return $new;
     }
-
-
 }
-

@@ -3,7 +3,6 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Factories;
 
-
 use PlusForta\RuVSoapBundle\Messages\Dtos\AdresseDto;
 use PlusForta\RuVSoapBundle\Type\AdresseNatuerlichePersonTyp;
 use PlusForta\RuVSoapBundle\Utils\Modify;
@@ -29,19 +28,19 @@ class AdresseNatuerlichePersonFactory
             ->withOrt($this->getOrt())
             ->withTeilort($this->getTeilOrt())
             ->withLand($this->getLand())
-            ;
+        ;
     }
 
     private function getStrasse(): string
     {
         $strasse = $this->adresseDto->strasse;
-        return Modify::trim($strasse, AdresseNatuerlichePersonTyp::MAX_LENGTH_STRASSE);
+        return Modify::trim(Modify::sanitizeString($strasse), AdresseNatuerlichePersonTyp::MAX_LENGTH_STRASSE);
     }
 
     private function getHausnummer(): string
     {
         $hausnummer = $this->adresseDto->hausnummer;
-        return Modify::trim($hausnummer, AdresseNatuerlichePersonTyp::MAX_LENGTH_HAUSNUMMER);
+        return Modify::trim(Modify::sanitizeString($hausnummer), AdresseNatuerlichePersonTyp::MAX_LENGTH_HAUSNUMMER);
     }
 
     private function getHausnummerZusatz(): ?string
@@ -72,5 +71,4 @@ class AdresseNatuerlichePersonFactory
         // hard coded
         return 'Deutschland';
     }
-
 }

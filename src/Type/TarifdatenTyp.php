@@ -6,7 +6,6 @@ use Webmozart\Assert\Assert;
 
 class TarifdatenTyp
 {
-
     /**
      * @var string
      */
@@ -61,7 +60,4 @@ class TarifdatenTyp
 
         return $new;
     }
-
-
 }
-

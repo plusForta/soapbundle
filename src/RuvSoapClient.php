@@ -5,12 +5,10 @@ namespace PlusForta\RuVSoapBundle;
 use Phpro\SoapClient\Caller\Caller;
 use Phpro\SoapClient\Type\RequestInterface;
 use PlusForta\RuVSoapBundle\Messages\Factories;
-use PlusForta\RuVSoapBundle\Type;
 use Soap\ExtSoapEngine\AbusedClient;
 
 class RuvSoapClient
 {
-
     public function __construct(private Caller $caller, private AbusedClient $client)
     {
     }
@@ -71,4 +69,3 @@ class RuvSoapClient
         return $factory->create($result);
     }
 }
-

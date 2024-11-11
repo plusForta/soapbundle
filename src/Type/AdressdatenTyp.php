@@ -7,7 +7,6 @@ namespace PlusForta\RuVSoapBundle\Type;
  */
 class AdressdatenTyp
 {
-
     /**
      * @var VersicherungsnehmerTyp
      */
@@ -72,7 +71,4 @@ class AdressdatenTyp
 
         return $new;
     }
-
-
 }
-

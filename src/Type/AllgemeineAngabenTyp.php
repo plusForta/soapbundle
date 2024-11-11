@@ -4,7 +4,6 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class AllgemeineAngabenTyp
 {
-
     /**
      * @var AgenturdatenTyp
      */
@@ -55,7 +54,4 @@ class AllgemeineAngabenTyp
 
         return $new;
     }
-
-
 }
-

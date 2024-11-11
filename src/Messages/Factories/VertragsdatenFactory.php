@@ -3,9 +3,8 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Factories;
 
-
-use PlusForta\RuVSoapBundle\Messages\Dtos\VertragsdatenDto;
 use PlusForta\RuVSoapBundle\Messages\Dtos\UebergabeDokumenteDto;
+use PlusForta\RuVSoapBundle\Messages\Dtos\VertragsdatenDto;
 use PlusForta\RuVSoapBundle\Type\DokumentenversandTyp;
 use PlusForta\RuVSoapBundle\Type\MietvertragTyp;
 use PlusForta\RuVSoapBundle\Type\TarifdatenTyp;
@@ -35,7 +34,6 @@ class VertragsdatenFactory
 
     public function __construct(UebergabeDokumenteFactory $uebergabeDokumenteFactory, ?string $produkt, ?string $versicherungsbedingung)
     {
-
         $this->produkt = $produkt;
         $this->versicherungsbedingung = $versicherungsbedingung;
         $this->uebergabeDokumenteFactory = $uebergabeDokumenteFactory;
@@ -57,7 +55,7 @@ class VertragsdatenFactory
             ->withMietvertrag($this->getMietvertrag())
             ->withDokumentenversand($this->getDokumentenversand())
             ->withUebergabeDokumente($this->getUebergabeDokumente())
-            ;
+        ;
     }
 
     private function getProduct(): ?string
@@ -77,7 +75,7 @@ class VertragsdatenFactory
             ->withVersicherungsbedingungen($this->getVersicherungsbedingungen())
             ->withBuergschaftssumme($this->getBuergschaftssumme())
             ->withJahresbeitrag($this->getJahresbeitrag())
-            ;
+        ;
     }
 
     private function getVersicherungsbedingungen(): VersicherungsbedingungenEnumTyp
@@ -102,7 +100,7 @@ class VertragsdatenFactory
         $vertrag = new MietvertragTyp();
         return $vertrag->withMietvertragVom($this->getMietvertragVom())
             ->withEinzugsdatum($this->getEinzugsdatum())
-            ;
+        ;
     }
 
     private function getMietvertragVom(): \DateTimeImmutable

@@ -7,7 +7,6 @@ namespace PlusForta\RuVSoapBundle\Type;
  */
 class AntragsdatenTyp
 {
-
     /**
      * @var AdressdatenTyp
      */
@@ -51,7 +50,4 @@ class AntragsdatenTyp
 
         return $new;
     }
-
-
 }
-

@@ -6,7 +6,6 @@ use DateTimeImmutable;
 
 class NatuerlichePersonErweitertTyp
 {
-
     /**
      * @var mixed
      */
@@ -99,7 +98,4 @@ class NatuerlichePersonErweitertTyp
 
         return $new;
     }
-
-
 }
-

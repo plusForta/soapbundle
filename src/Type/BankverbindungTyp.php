@@ -68,7 +68,4 @@ class BankverbindungTyp
 
         return $new;
     }
-
-
 }
-

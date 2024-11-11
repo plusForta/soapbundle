@@ -3,15 +3,14 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
-
 use Webmozart\Assert\Assert;
 
 class VersandBuergschaftEnumTyp
 {
-    const VERSICHERUNGSNEHMER = 'Versicherungsnehmer';
-    const VERMIETER = 'Vermieter';
-    const HAUSVERWALTER = 'Hausverwalter';
-    const VERSAND_AN_DRITTEN = 'Versand an Dritten';
+    public const VERSICHERUNGSNEHMER = 'Versicherungsnehmer';
+    public const VERMIETER = 'Vermieter';
+    public const HAUSVERWALTER = 'Hausverwalter';
+    public const VERSAND_AN_DRITTEN = 'Versand an Dritten';
 
     /**
      * @var string

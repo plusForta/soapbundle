@@ -9,7 +9,6 @@ use DateTimeImmutable;
  */
 class MietvertragTyp
 {
-
     /**
      * @var string
      */
@@ -48,7 +47,4 @@ class MietvertragTyp
 
         return $new;
     }
-
-
 }
-

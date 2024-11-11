@@ -76,7 +76,4 @@ class MitarbeiterdatenTyp
 
         return $new;
     }
-
-
 }
-

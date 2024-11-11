@@ -3,7 +3,6 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
-
 use Webmozart\Assert\Assert;
 
 /**
@@ -38,5 +37,4 @@ class ZahlungsdienstleisterTyp
 
         return $new;
     }
-
 }

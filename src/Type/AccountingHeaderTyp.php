@@ -4,7 +4,6 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class AccountingHeaderTyp
 {
-
     /**
      * @var string
      */
@@ -29,7 +28,4 @@ class AccountingHeaderTyp
 
         return $new;
     }
-
-
 }
-

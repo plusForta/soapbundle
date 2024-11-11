@@ -3,18 +3,15 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Factories;
 
-
 use PlusForta\RuVSoapBundle\Messages\Dtos\NatuerlichePersonDto;
 use PlusForta\RuVSoapBundle\Type\AdresseNatuerlichePersonTyp;
 use PlusForta\RuVSoapBundle\Type\AnredeHerrFrauTyp;
 use PlusForta\RuVSoapBundle\Type\AnredeTyp;
-use PlusForta\RuVSoapBundle\Type\GeschaeftlichTyp;
 use PlusForta\RuVSoapBundle\Type\KontaktdatenTyp;
 use PlusForta\RuVSoapBundle\Type\NameNatuerlichePersonHerrFrauTyp;
 use PlusForta\RuVSoapBundle\Type\NameNatuerlichePersonTyp;
 use PlusForta\RuVSoapBundle\Type\NatuerlichePersonErweitertTyp;
 use PlusForta\RuVSoapBundle\Type\NatuerlichePersonTyp;
-use PlusForta\RuVSoapBundle\Type\PrivatTyp;
 use PlusForta\RuVSoapBundle\Utils\Modify;
 
 class NatuerlichePersonFactory
@@ -43,7 +40,7 @@ class NatuerlichePersonFactory
             ->withKontaktdaten($this->getKontaktdaten())
             ->withGeburtsdatum($this->getGeburtsdatum())
             ->withNationalitaet($this->getNationalitaet())
-            ;
+        ;
     }
 
     public function createAdresseOptional()
@@ -64,10 +61,10 @@ class NatuerlichePersonFactory
         return $name
             ->withAnrede($this->getAnrede())
             ->withTitel(Modify::trimOrNull($this->getTitel(), NameNatuerlichePersonTyp::MAX_LENGTH_TITEL))
-            ->withVorname(Modify::trim($this->getVorname(), NameNatuerlichePersonTyp::MAX_LENGTH_VORNAME))
-            ->withNachname(Modify::trim($this->getNachname(), NameNatuerlichePersonTyp::MAX_LENGTH_NACHNAME))
+            ->withVorname($this->getVorname())
+            ->withNachname($this->getNachname())
             ->withNamenszusatz(Modify::trimOrNull($this->getNamenszusatz(), NameNatuerlichePersonTyp::MAX_LENGTH_NAMENSZUSATZ))
-            ;
+        ;
     }
 
     private function getNameErweitert(): NameNatuerlichePersonHerrFrauTyp
@@ -76,10 +73,10 @@ class NatuerlichePersonFactory
         return $name
             ->withAnrede($this->getAnredeErweitert())
             ->withTitel(Modify::trimOrNull($this->getTitel(), NameNatuerlichePersonHerrFrauTyp::MAX_LENGTH_TITEL))
-            ->withVorname(Modify::trim($this->getVorname(), NameNatuerlichePersonHerrFrauTyp::MAX_LENGTH_VORNAME))
-            ->withNachname(Modify::trim($this->getNachname(), NameNatuerlichePersonHerrFrauTyp::MAX_LENGTH_NACHNAME))
+            ->withVorname($this->getVorname())
+            ->withNachname($this->getNachname())
             ->withNamenszusatz(Modify::trimOrNull($this->getNamenszusatz(), NameNatuerlichePersonHerrFrauTyp::MAX_LENGTH_NAMENSZUSATZ))
-            ;
+        ;
     }
 
     private function getAnrede(): AnredeTyp
@@ -101,12 +98,18 @@ class NatuerlichePersonFactory
 
     private function getVorname(): string
     {
-        return $this->dto->vorname;
+        return Modify::trim(
+            Modify::sanitizeString($this->dto->vorname, true),
+            NameNatuerlichePersonTyp::MAX_LENGTH_VORNAME
+        );
     }
 
     private function getNachname(): string
     {
-        return $this->dto->nachname;
+        return Modify::trim(
+            Modify::sanitizeString($this->dto->nachname, true),
+            NameNatuerlichePersonTyp::MAX_LENGTH_NACHNAME
+        );
     }
 
     private function getNamenszusatz(): ?string
@@ -133,12 +136,10 @@ class NatuerlichePersonFactory
     private function getGeburtsdatum(): \DateTimeImmutable
     {
         return $this->dto->geburtsdatum;
-
     }
 
     private function getNationalitaet()
     {
         return $this->dto->nationalitaet;
     }
-
 }

@@ -3,15 +3,14 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
-
 use Webmozart\Assert\Assert;
 
 class ZahlungsweiseEnumTyp
 {
-    const MONATLICH = 'monatlich';
-    const JAEHRLICH = 'jaehrlich';
-    const HALBJAEHRLICH = 'halbjaehrlich';
-    const VIERTELJAEHRLICH = 'vierteljaehrlich';
+    public const MONATLICH = 'monatlich';
+    public const JAEHRLICH = 'jaehrlich';
+    public const HALBJAEHRLICH = 'halbjaehrlich';
+    public const VIERTELJAEHRLICH = 'vierteljaehrlich';
     /**
      * @var string
      */

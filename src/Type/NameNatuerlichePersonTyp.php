@@ -97,7 +97,4 @@ class NameNatuerlichePersonTyp
 
         return $new;
     }
-
-
 }
-

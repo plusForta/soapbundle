@@ -4,7 +4,6 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class WerbewiderspruchTyp
 {
-
     /**
      * @var bool
      */
@@ -104,7 +103,4 @@ class WerbewiderspruchTyp
 
         return $new;
     }
-
-
 }
-

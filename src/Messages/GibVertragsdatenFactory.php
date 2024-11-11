@@ -28,10 +28,11 @@ class GibVertragsdatenFactory
     {
         $this->dto = $dto;
         $antrag = new GibVertragsdatenAnfrageTyp();
+
         return $antrag
             ->withKennung($this->getKennung())
             ->withZugriffsschluessel($this->getZugriffsschluessel())
-            ;
+        ;
     }
 
     private function getKennung(): BasisAnfrageTyp
@@ -42,18 +43,20 @@ class GibVertragsdatenFactory
     private function getZugriffsschluessel(): ZugriffsschluesselTyp
     {
         $zugriffsschluessel = new ZugriffsschluesselTyp();
+
         return $zugriffsschluessel
             ->withVorgangsnummer($this->dto->vorgangsnummer)
             ->withRechtsgeschaeft($this->getReqchtsgeschaeft())
-            ;
+        ;
     }
 
     private function getReqchtsgeschaeft(): RechtsgeschaeftTyp
     {
         $rechtsgeschaeft = new RechtsgeschaeftTyp();
+
         return $rechtsgeschaeft
             ->withArbeitsgebiet($this->dto->arbeitesgebiet)
             ->withVersicherungsnummer($this->dto->versicherungsnummer)
-            ;
+        ;
     }
 }

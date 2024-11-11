@@ -104,4 +104,3 @@ class NamePersonGemeinschaftOhneNamenszusatzTyp
         return $new;
     }
 }
-

@@ -10,10 +10,10 @@ use Webmozart\Assert\Assert;
  */
 class NameNatuerlichePersonHerrFrauTyp
 {
-    const MAX_LENGTH_TITEL = 10;
-    const MAX_LENGTH_VORNAME = 30;
-    const MAX_LENGTH_NACHNAME = 30;
-    const MAX_LENGTH_NAMENSZUSATZ = 30;
+    public const MAX_LENGTH_TITEL = 10;
+    public const MAX_LENGTH_VORNAME = 30;
+    public const MAX_LENGTH_NACHNAME = 30;
+    public const MAX_LENGTH_NAMENSZUSATZ = 30;
 
     /**
      * @var string
@@ -98,7 +98,4 @@ class NameNatuerlichePersonHerrFrauTyp
 
         return $new;
     }
-
-
 }
-

@@ -3,10 +3,8 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Dtos;
 
-
 class AdresseDto
 {
-
     /** @var string */
     public $strasse;
 
@@ -27,6 +25,4 @@ class AdresseDto
 
     /** @var string */
     public $land;
-
-
 }

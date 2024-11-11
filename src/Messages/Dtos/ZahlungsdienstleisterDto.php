@@ -3,7 +3,6 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Dtos;
 
-
 class ZahlungsdienstleisterDto
 {
     /** @var ?string */

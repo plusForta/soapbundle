@@ -3,16 +3,13 @@
 
 namespace PlusForta\RuVSoapBundle\DependencyInjection;
 
-
+use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
-use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
-
 
 class PlusFortaRuVSoapExtension extends Extension
 {
-
     /**
      * Loads a specific configuration.
      *
@@ -20,7 +17,7 @@ class PlusFortaRuVSoapExtension extends Extension
      */
     public function load(array $configs, ContainerBuilder $container)
     {
-        $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.xml');
 
 
@@ -63,8 +60,6 @@ class PlusFortaRuVSoapExtension extends Extension
         $definition->setArgument(1, $this->getBuergschaftUebergeben($config));
         $definition->setArgument(2, $this->getVersicherungsscheinUebergeben($config));
         $definition->setArgument(3, $this->getRechnungUebergeben($config));
-
-
     }
 
     public function getAlias(): string

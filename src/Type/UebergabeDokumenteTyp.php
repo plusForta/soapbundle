@@ -4,7 +4,6 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class UebergabeDokumenteTyp
 {
-
     /**
      * @var bool
      */
@@ -72,7 +71,4 @@ class UebergabeDokumenteTyp
 
         return $new;
     }
-
-
 }
-

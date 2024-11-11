@@ -3,7 +3,6 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Factories;
 
-
 use PlusForta\RuVSoapBundle\Messages\Dtos\AntragMietkautionDto;
 use PlusForta\RuVSoapBundle\Type\AdressdatenTyp;
 use PlusForta\RuVSoapBundle\Type\AgenturdatenTyp;
@@ -59,8 +58,7 @@ class AntragMietkautionFactory
         bool $keineEMailWerbung,
         bool $keineDatenweitergabe,
         bool $keineSchriftlicheWerbung
-    )
-    {
+    ) {
         $this->keineTelefonWerbung = $keineTelefonWerbung;
         $this->keineEMailWerbung = $keineEMailWerbung;
         $this->keineDatenweitergabe = $keineDatenweitergabe;
@@ -77,7 +75,7 @@ class AntragMietkautionFactory
             ->withReferenznummer($this->getReferenzNummer())
             ->withAllgemeineAngaben($this->getAllgemeineAngaben())
             ->withAntragsdaten($this->getAntragsdaten())
-            ;
+        ;
     }
 
     private function getReferenzNummer(): ?string
@@ -93,13 +91,12 @@ class AntragMietkautionFactory
             ->withAgenturdaten($this->getAgenturDaten())
             ->withInkassodaten($this->getInkassodaten())
             ->withWerbewiderspruch($this->getWerbewiderspruch())
-            ;
+        ;
     }
 
     private function getAgenturDaten(): AgenturdatenTyp
     {
         return $this->agenturdatenFactory->create($this->antragMietkautionDto->agenturdaten);
-
     }
 
     private function getInkassodaten(): InkassodatenTyp
@@ -118,7 +115,7 @@ class AntragMietkautionFactory
             ->withKeineEMailWerbung($this->getKeineEMailWerbung())
             ->withKeineDatenweitergabe($this->getKeineDatenweitergabe())
             ->withKeineSchriftlicheWerbung($this->getKeineSchriftlicheWerbung())
-            ;
+        ;
     }
 
     private function getKeineTelefonwerbung(): bool
@@ -148,7 +145,7 @@ class AntragMietkautionFactory
             ->withAdressdaten($this->getAdressdaten())
             ->withVertragsdaten($this->getVertragsdaten())
             ->withAntragsdatenIdentifikation($this->getAntragsdatenIdentifikation())
-            ;
+        ;
     }
 
     private function getAdressdaten(): AdressdatenTyp
@@ -172,8 +169,6 @@ class AntragMietkautionFactory
         return $identifikation
             ->withAntragsdatenID($antragsdatenIdentifikationsDto->antragsdatenId)
             ->withBuergschaftstextVersion($antragsdatenIdentifikationsDto->buergschaftstextVersion)
-            ;
+        ;
     }
-
-
 }

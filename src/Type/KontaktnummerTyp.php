@@ -6,7 +6,6 @@ use Webmozart\Assert\Assert;
 
 class KontaktnummerTyp
 {
-
     protected const PHONE_NUMBER_REGEX = '#^(\+[0-9]{1,2}|0[0-9]{2,4})\s*[0-9\.\-\/\(\)]\s*[0-9\.\-\/\(\) ]+$#';
     public const MAX_LENGTH_VORWAHL = 15;
 
@@ -58,7 +57,6 @@ class KontaktnummerTyp
         $new->Rufnummer = $this->getDialCode($number, $areaCode);
 
         return $new;
-
     }
 
     private function getGermanAreaCode(string $number): string
@@ -71,7 +69,6 @@ class KontaktnummerTyp
         });
 
         return reset($codes) ?: '';
-
     }
 
     private function stripGermanCountryCode(string $number): string
@@ -79,8 +76,9 @@ class KontaktnummerTyp
         return preg_replace('/^(0049|\+49)/', '', $number) ?? '';
     }
 
-    private function trimNumber($number) {
-        return preg_replace('/[^+0-9]/','',$number);
+    private function trimNumber($number)
+    {
+        return preg_replace('/[^+0-9]/', '', $number);
     }
 
     private function getDialCode(string $number, string $areaCode): string
@@ -89,4 +87,3 @@ class KontaktnummerTyp
         return $strippedAreaCode ?: $number;
     }
 }
-
