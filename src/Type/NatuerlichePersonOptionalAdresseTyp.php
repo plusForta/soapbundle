@@ -54,4 +54,3 @@ class NatuerlichePersonOptionalAdresseTyp
         return $new;
     }
 }
-

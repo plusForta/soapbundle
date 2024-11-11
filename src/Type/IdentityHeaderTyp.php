@@ -4,7 +4,6 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class IdentityHeaderTyp
 {
-
     /**
      * @var \PlusForta\RuVSoapBundle\Type\IdentityCompanyTyp
      */
@@ -29,7 +28,4 @@ class IdentityHeaderTyp
 
         return $new;
     }
-
-
 }
-

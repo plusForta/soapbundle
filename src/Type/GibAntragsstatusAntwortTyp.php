@@ -3,13 +3,10 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
-
 use PlusForta\RuVSoapBundle\Messages\ResponseStatusInterface;
 
 class GibAntragsstatusAntwortTyp implements ResponseStatusInterface
 {
-
-
     /** @var StatusTyp */
     private $Status;
 

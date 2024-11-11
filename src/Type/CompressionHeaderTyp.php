@@ -4,7 +4,6 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class CompressionHeaderTyp
 {
-
     /**
      * @var string
      */
@@ -29,7 +28,4 @@ class CompressionHeaderTyp
 
         return $new;
     }
-
-
 }
-

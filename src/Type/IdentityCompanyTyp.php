@@ -4,7 +4,6 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class IdentityCompanyTyp
 {
-
     /**
      * @var string
      */
@@ -154,7 +153,4 @@ class IdentityCompanyTyp
 
         return $new;
     }
-
-
 }
-

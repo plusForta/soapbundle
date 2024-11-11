@@ -54,4 +54,3 @@ class Zahlungseinzug
         return $new;
     }
 }
-

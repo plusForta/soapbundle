@@ -4,7 +4,6 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class RechtsgeschaeftTyp
 {
-
     /**
      * @var int
      */
@@ -54,7 +53,4 @@ class RechtsgeschaeftTyp
 
         return $new;
     }
-
-
 }
-

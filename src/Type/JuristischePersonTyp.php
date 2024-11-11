@@ -7,7 +7,6 @@ namespace PlusForta\RuVSoapBundle\Type;
  */
 class JuristischePersonTyp
 {
-
     /**
      * @var NameJuristischePersonTyp
      */
@@ -38,7 +37,4 @@ class JuristischePersonTyp
 
         return $new;
     }
-
-
 }
-

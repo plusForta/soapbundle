@@ -46,7 +46,7 @@ class GibVertragsdatenAntwortFactory
         return $status
             ->withCode($this->getCode())
             ->withNachricht($this->getNachricht())
-            ;
+        ;
     }
 
     private function getCode(): CodeEnumTyp
@@ -70,7 +70,7 @@ class GibVertragsdatenAntwortFactory
             ->withAdressdaten($this->getAdressdaten())
             ->withKlauseln($this->getKlauseln())
             ->withBuergschaft($this->getBuergschaft())
-            ;
+        ;
     }
 
     private function getRechtsgeschaeft(): RechtsgeschaeftTyp
@@ -79,7 +79,7 @@ class GibVertragsdatenAntwortFactory
         return $rechtsgeschaeft
             ->withArbeitsgebiet((int) $this->result->Vertrag->Rechtsgeschaeft->Arbeitsgebiet)
             ->withVersicherungsnummer((int) $this->result->Vertrag->Rechtsgeschaeft->Versicherungsnummer)
-            ;
+        ;
     }
 
     private function getAdressdaten(): AdressdatenTyp
@@ -90,7 +90,7 @@ class GibVertragsdatenAntwortFactory
 //            ->withVermieter()
 //            ->withMietobjekt()
 //            ->withAbweichBuergEmpfaenger()
-            ;
+        ;
     }
 
     private function getVersicherungsnehmer(): VersicherungsnehmerTyp
@@ -99,7 +99,7 @@ class GibVertragsdatenAntwortFactory
         return $versicherungsnehmer
             ->withNatuerlichePerson($this->getNatuerlichePerson())
 //            ->withGemeinschaft()
-            ;
+        ;
     }
 
     private function getNatuerlichePerson(): NatuerlichePersonErweitertTyp
@@ -111,7 +111,7 @@ class GibVertragsdatenAntwortFactory
 //            ->withKontaktdaten()
 //            ->withGeburtsdatum()
 //            ->withNationalitaet()
-            ;
+        ;
     }
 
     private function getName(): NameNatuerlichePersonHerrFrauTyp
@@ -130,14 +130,11 @@ class GibVertragsdatenAntwortFactory
     {
         $klauseln = new KlauselnTyp();
         $klauselArray = [];
-        foreach($this->result->Vertrag->Klauseln->Klausel as $item)
-        {
+        foreach ($this->result->Vertrag->Klauseln->Klausel as $item) {
             $klausel = new KlauselTyp();
             $klauselArray[] = $klausel->withText($item->Text);
         }
 
         return $klauseln->withKlausel($klauselArray);
     }
-
-
 }

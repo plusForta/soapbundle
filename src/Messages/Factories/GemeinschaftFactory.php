@@ -3,22 +3,19 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Factories;
 
-
 use PlusForta\RuVSoapBundle\Messages\Dtos\GemeinschaftDto;
 use PlusForta\RuVSoapBundle\Messages\Dtos\LesseeDto;
 use PlusForta\RuVSoapBundle\Type\AdresseNatuerlichePersonTyp;
 use PlusForta\RuVSoapBundle\Type\AnredeGemeinschaftTyp;
 use PlusForta\RuVSoapBundle\Type\AnredeHerrFrauTyp;
 use PlusForta\RuVSoapBundle\Type\GemeinschaftTyp;
-use PlusForta\RuVSoapBundle\Type\GeschaeftlichTyp;
 use PlusForta\RuVSoapBundle\Type\KontaktdatenTyp;
 use PlusForta\RuVSoapBundle\Type\NamePersonGemeinschaftOhneNamenszusatzTyp;
 use PlusForta\RuVSoapBundle\Type\NamePersonGemeinschaftTyp;
-use PlusForta\RuVSoapBundle\Type\PrivatTyp;
+use PlusForta\RuVSoapBundle\Utils\Modify;
 
 class GemeinschaftFactory
 {
-
     /** @var GemeinschaftDto  */
     private $dto;
 
@@ -36,7 +33,7 @@ class GemeinschaftFactory
             ->withNameZweitePerson($this->getNameZweitePerson())
             ->withAdresse($this->getAdresse())
             ->withKontaktdaten($this->getKontaktdaten())
-            ;
+        ;
     }
 
     private function getAnredeGemeinschaft(): AnredeGemeinschaftTyp
@@ -53,7 +50,7 @@ class GemeinschaftFactory
             ->withTitel($this->getTitel($lessee))
             ->withVorname($this->getVorname($lessee))
             ->withNachname($this->getNachname($lessee))
-            ;
+        ;
     }
 
     private function getNameZweitePerson(): NamePersonGemeinschaftOhneNamenszusatzTyp
@@ -64,7 +61,7 @@ class GemeinschaftFactory
             ->withTitel($this->getTitel($lessee))
             ->withVorname($this->getVorname($lessee))
             ->withNachname($this->getNachname($lessee))
-            ;
+        ;
     }
 
     private function getAnrede(LesseeDto $lessee): AnredeHerrFrauTyp
@@ -80,12 +77,12 @@ class GemeinschaftFactory
 
     private function getVorname(LesseeDto $lessee): string
     {
-        return $lessee->vorname;
+        return Modify::sanitizeString($lessee->vorname, true);
     }
 
     private function getNachname(LesseeDto $lessee): string
     {
-        return $lessee->nachname;
+        return Modify::sanitizeString($lessee->nachname, true);
     }
 
     private function getAdresse(): AdresseNatuerlichePersonTyp
@@ -104,5 +101,4 @@ class GemeinschaftFactory
 
         return $factory->create(KontaktFactory::GESCHAEFTLICH);
     }
-
 }

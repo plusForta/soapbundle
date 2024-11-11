@@ -4,7 +4,6 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class LastschriftverfahrenTyp
 {
-
     /**
      * @var int
      */
@@ -38,7 +37,4 @@ class LastschriftverfahrenTyp
 
         return $new;
     }
-
-
 }
-

@@ -3,14 +3,13 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
-
 use Webmozart\Assert\Assert;
 
 class AnredeTyp
 {
-    const HERR = 'Herr';
-    const FRAU = 'Frau';
-    const OHNE_ANREDE = 'ohne Anrede';
+    public const HERR = 'Herr';
+    public const FRAU = 'Frau';
+    public const OHNE_ANREDE = 'ohne Anrede';
     /**
      * @var string
      */

@@ -3,12 +3,8 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
-
-use Webmozart\Assert\Assert;
-
 class VersicherungsbedingungenEnumTyp
 {
-
     /**
      * @var string
      */

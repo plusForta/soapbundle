@@ -3,11 +3,8 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Dtos;
 
-
-
 class GemeinschaftDto
 {
-
     /** @var string */
     public $anredeGemeinschaft;
 
@@ -19,5 +16,4 @@ class GemeinschaftDto
 
     /** @var KontaktDto */
     public $kontaktdaten;
-
 }

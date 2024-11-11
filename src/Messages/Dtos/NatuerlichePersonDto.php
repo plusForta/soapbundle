@@ -3,10 +3,8 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Dtos;
 
-
 class NatuerlichePersonDto
 {
-
     /** @var string */
     public $anrede;
 
@@ -33,5 +31,4 @@ class NatuerlichePersonDto
 
     /** @var string */
     public $nationalitaet;
-
 }

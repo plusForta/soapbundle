@@ -131,7 +131,8 @@ class AdresseNatuerlichePersonTyp
      */
     public function withLand(string $Land): AdresseNatuerlichePersonTyp
     {
-        Assert::oneOf($Land,
+        Assert::oneOf(
+            $Land,
             [self::DEUTSCHLAND]
         );
         $new = clone $this;
@@ -139,7 +140,4 @@ class AdresseNatuerlichePersonTyp
 
         return $new;
     }
-
-
 }
-

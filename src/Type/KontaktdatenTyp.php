@@ -8,7 +8,6 @@ namespace PlusForta\RuVSoapBundle\Type;
  */
 class KontaktdatenTyp
 {
-
     /**
      * @param PrivatTyp $Privat
      * @return KontaktdatenTyp
@@ -32,7 +31,4 @@ class KontaktdatenTyp
 
         return $new;
     }
-
-
 }
-

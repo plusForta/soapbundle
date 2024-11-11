@@ -3,10 +3,8 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Dtos;
 
-
 class AgenturdatenDto
 {
-
     /** @var string */
     public $agenturNummer;
 
@@ -21,5 +19,4 @@ class AgenturdatenDto
 
     /** @var string */
     public $vermittlereigeneVorgangsnummer;
-
 }

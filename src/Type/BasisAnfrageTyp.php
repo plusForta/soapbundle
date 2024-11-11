@@ -44,7 +44,4 @@ class BasisAnfrageTyp
 
         return $new;
     }
-
-
 }
-

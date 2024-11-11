@@ -3,10 +3,8 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Dtos;
 
-
 class WerbewiderspruchDto
 {
-
     /** @var bool */
     public $keineTelefonwerbung;
 
@@ -18,5 +16,4 @@ class WerbewiderspruchDto
 
     /** @var bool */
     public $keineSchriftlicheWerbung;
-
 }

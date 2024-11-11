@@ -3,7 +3,6 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Dtos;
 
-
 class UebergabeDokumenteDto
 {
     /** @var bool */
@@ -17,5 +16,4 @@ class UebergabeDokumenteDto
 
     /** @var bool */
     public $rechnungUebergeben;
-
 }

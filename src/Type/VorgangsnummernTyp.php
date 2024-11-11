@@ -29,4 +29,3 @@ class VorgangsnummernTyp
         return $new;
     }
 }
-

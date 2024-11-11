@@ -4,7 +4,6 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class NamePersonGemeinschaftTyp
 {
-
     /**
      * @var mixed
      */
@@ -129,7 +128,4 @@ class NamePersonGemeinschaftTyp
 
         return $new;
     }
-
-
 }
-

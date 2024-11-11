@@ -3,10 +3,8 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Dtos;
 
-
 class MietobjektDto
 {
-
     /** @var string */
     public $strasse;
 
@@ -27,5 +25,4 @@ class MietobjektDto
 
     /** @var string */
     public $beschreibung;
-
 }

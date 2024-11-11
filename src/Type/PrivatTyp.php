@@ -62,7 +62,6 @@ class PrivatTyp
      */
     public function withEMail(?string $EMail): PrivatTyp
     {
-
         $new = clone $this;
         if ($EMail !== null) {
             Assert::maxLength($EMail, self::MAX_LENGTH_EMAIL);
@@ -72,7 +71,4 @@ class PrivatTyp
 
         return $new;
     }
-
-
 }
-

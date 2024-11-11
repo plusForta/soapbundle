@@ -3,7 +3,6 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
-
 class AntraegeTyp
 {
     /**
@@ -26,5 +25,4 @@ class AntraegeTyp
 
         return $new;
     }
-
 }

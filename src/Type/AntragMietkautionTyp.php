@@ -51,7 +51,4 @@ class AntragMietkautionTyp
 
         return $new;
     }
-
-
 }
-

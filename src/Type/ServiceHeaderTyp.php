@@ -4,7 +4,6 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class ServiceHeaderTyp
 {
-
     /**
      * @var string
      */
@@ -79,7 +78,4 @@ class ServiceHeaderTyp
 
         return $new;
     }
-
-
 }
-

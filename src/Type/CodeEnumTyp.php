@@ -3,12 +3,10 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
-
 use Webmozart\Assert\Assert;
 
 class CodeEnumTyp
 {
-
     public const OK = 'OK';
     public const ANMELDEFEHLER = 'ANMELDEFEHLER';
     public const FEHLER = 'FEHLER';

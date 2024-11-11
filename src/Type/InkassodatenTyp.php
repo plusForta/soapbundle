@@ -7,7 +7,6 @@ namespace PlusForta\RuVSoapBundle\Type;
  */
 class InkassodatenTyp
 {
-
     /**
      * @var string
      */
@@ -68,7 +67,4 @@ class InkassodatenTyp
 
         return $new;
     }
-
-
 }
-

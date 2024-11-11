@@ -4,7 +4,6 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class BewertungTyp
 {
-
     /**
      * @var string
      */
@@ -54,7 +53,4 @@ class BewertungTyp
 
         return $new;
     }
-
-
 }
-

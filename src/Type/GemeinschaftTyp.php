@@ -129,4 +129,3 @@ class GemeinschaftTyp
         return $new;
     }
 }
-

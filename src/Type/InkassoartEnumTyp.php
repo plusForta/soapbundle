@@ -3,14 +3,13 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
-
 use Webmozart\Assert\Assert;
 
 class InkassoartEnumTyp
 {
-    const LASTSCHRIFT = 'Lastschrift';
-    const SELBSTZAHLER = 'Selbstzahler';
-    const ZAHLUNGSDIENSTLEISTER = 'Zahlungsdienstleister';
+    public const LASTSCHRIFT = 'Lastschrift';
+    public const SELBSTZAHLER = 'Selbstzahler';
+    public const ZAHLUNGSDIENSTLEISTER = 'Zahlungsdienstleister';
     /**
      * @var string
      */

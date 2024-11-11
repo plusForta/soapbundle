@@ -6,7 +6,7 @@ use Webmozart\Assert\Assert;
 
 class AgenturTyp
 {
-    const MAX_LENGTH_AGENTURNUMMER = 6;
+    public const MAX_LENGTH_AGENTURNUMMER = 6;
 
     /**
      * @var string
@@ -25,7 +25,4 @@ class AgenturTyp
 
         return $new;
     }
-
-
 }
-

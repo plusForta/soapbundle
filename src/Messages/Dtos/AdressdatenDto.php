@@ -3,11 +3,8 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Dtos;
 
-
 class AdressdatenDto
 {
-
-
     /** @var NatuerlichePersonDto|JuristischePersonDto */
     public $empfaenger;
 

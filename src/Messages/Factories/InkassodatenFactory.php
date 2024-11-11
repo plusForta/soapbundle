@@ -3,7 +3,6 @@
 
 namespace PlusForta\RuVSoapBundle\Messages\Factories;
 
-
 use PlusForta\RuVSoapBundle\Messages\Dtos\BankverbindungDto;
 use PlusForta\RuVSoapBundle\Messages\Dtos\InkassodatenDto;
 use PlusForta\RuVSoapBundle\Messages\Dtos\ZahlungsdienstleisterDto;
@@ -37,7 +36,7 @@ class InkassodatenFactory
             ->withInkassoart($this->getInkassoart())
             ->withZahlungseinzug($this->getZahlungseinzug())
 
-            ;
+        ;
     }
 
     private function getZahlungsweise(): ZahlungsweiseEnumTyp
@@ -50,7 +49,6 @@ class InkassodatenFactory
     {
         $inkassoart = new InkassoartEnumTyp();
         return $inkassoart->withInkassoart($this->inkassodatenDto->inkassoart);
-
     }
 
     private function getZahlungseinzug()
@@ -59,7 +57,6 @@ class InkassodatenFactory
         return $zahlungseinzug
             ->withBankverbindung($this->getBankverbindung())
             ->withZahlungsdienstleister($this->getZahlungsdienstleister());
-
     }
 
     private function getBankverbindung(): ?BankverbindungTyp
@@ -74,8 +71,11 @@ class InkassodatenFactory
             ->withLastschriftverfahren($this->getLastschriftverfahren())
             ->withSepaMandat($this->getSepaMandat())
             ->withKreditinstitut(Modify::trim($bankverbindungDto->kreditinstitut, BankverbindungTyp::MAX_LENGTH_KREDITINSTITUT))
-            ->withKontoinhaber(Modify::trim($bankverbindungDto->kontoinhaber, BankverbindungTyp::MAX_LENGTH_KONTOINHABER))
-            ;
+            ->withKontoinhaber(Modify::trim(
+                Modify::sanitizeString($bankverbindungDto->kontoinhaber),
+                BankverbindungTyp::MAX_LENGTH_KONTOINHABER
+            ))
+        ;
     }
 
     private function getLastschriftverfahren(): ?LastschriftverfahrenTyp
@@ -90,7 +90,7 @@ class InkassodatenFactory
         return $lastschrift
             ->withBankleitzahl($this->inkassodatenDto->zahlungseinzug->bankverbindung->bankleitzahl)
             ->withKontonummer($this->inkassodatenDto->zahlungseinzug->bankverbindung->kontonummer)
-            ;
+        ;
     }
 
     private function getSepaMandat(): ?SepaMandatTyp
@@ -104,7 +104,7 @@ class InkassodatenFactory
         return $sepa
             ->withIBAN($this->getIban($bankverbindungDto))
             ->withBIC($this->getBic($bankverbindungDto))
-            ;
+        ;
     }
 
     private function getZahlungsdienstleister(): ?ZahlungsdienstleisterTyp
@@ -117,7 +117,7 @@ class InkassodatenFactory
         return $dienstleister
             ->withZahlungsartID($this->getZahlungsartID($zahlungsdienstleisterDto))
             ->withZahlungsvorgangID($this->getZahlungsvorgangID($zahlungsdienstleisterDto))
-            ;
+        ;
     }
 
     private function getIban(BankverbindungDto $bankverbindung): string
@@ -143,5 +143,4 @@ class InkassodatenFactory
         $zahlungsvorgangID = $zahlungsdienstleisterDto->zahlungsvorgangID;
         return Modify::trim($zahlungsvorgangID, ZahlungsdienstleisterTyp::MAX_LENGTH_ZAHLUNGSVORGANG_ID);
     }
-
 }

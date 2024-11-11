@@ -7,7 +7,6 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GibAntragsstatusAnfrageTyp implements RequestInterface
 {
-
     /**
      * @var BasisAnfrageTyp
      */
@@ -40,6 +39,4 @@ class GibAntragsstatusAnfrageTyp implements RequestInterface
 
         return $new;
     }
-
-
 }

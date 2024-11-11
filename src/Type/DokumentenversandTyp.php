@@ -4,7 +4,6 @@ namespace PlusForta\RuVSoapBundle\Type;
 
 class DokumentenversandTyp
 {
-
     /**
      * @var string
      */
@@ -21,7 +20,4 @@ class DokumentenversandTyp
 
         return $new;
     }
-
-
 }
-

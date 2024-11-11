@@ -61,7 +61,4 @@ class NameJuristischePersonTyp
 
         return $new;
     }
-
-
 }
-

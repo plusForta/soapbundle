@@ -56,4 +56,3 @@ class GibVertragsdatenAnfrageTyp implements RequestInterface
         return $new;
     }
 }
-

@@ -8,7 +8,6 @@ namespace PlusForta\RuVSoapBundle\Type;
  */
 class VermieterTyp
 {
-
     /**
      * @param NatuerlichePersonTyp $NatuerlichePerson
      * @return VermieterTyp
@@ -32,7 +31,4 @@ class VermieterTyp
 
         return $new;
     }
-
-
 }
-

@@ -1,11 +1,11 @@
 <?php
 
 namespace PlusForta\RuVSoapBundle\Type;
+
 use Phpro\SoapClient\Type\RequestInterface;
 
 class StelleAntragAnfrageTyp implements RequestInterface
 {
-
     /**
      * @var BasisAnfrageTyp
      */
@@ -56,7 +56,4 @@ class StelleAntragAnfrageTyp implements RequestInterface
 
         return $new;
     }
-
-
 }
-

@@ -54,4 +54,3 @@ class NameTyp
         return $new;
     }
 }
-

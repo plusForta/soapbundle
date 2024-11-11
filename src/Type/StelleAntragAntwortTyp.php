@@ -6,7 +6,6 @@ use PlusForta\RuVSoapBundle\Messages\ResponseStatusInterface;
 
 class StelleAntragAntwortTyp implements ResponseStatusInterface
 {
-
     /**
      * @var StatusTyp
      */
@@ -136,6 +135,4 @@ class StelleAntragAntwortTyp implements ResponseStatusInterface
 
         return $new;
     }
-
 }
-

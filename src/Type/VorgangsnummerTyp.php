@@ -3,10 +3,8 @@
 
 namespace PlusForta\RuVSoapBundle\Type;
 
-
 class VorgangsnummerTyp
 {
-
     /**
      * @var string
      */

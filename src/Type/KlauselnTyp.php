@@ -29,4 +29,3 @@ class KlauselnTyp
         return $new;
     }
 }
-
