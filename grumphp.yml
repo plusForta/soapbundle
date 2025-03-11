@@ -1,6 +1,7 @@
 grumphp:
     tasks:
         ecs: ~
+        phpunit: ~
         git_commit_message:
             enforce_capitalized_subject: false
             max_body_width: 0
