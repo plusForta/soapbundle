@@ -23,9 +23,6 @@ class Modify
             return $value;
         }
 
-        $trace = self::getTrace();
-        self::logTrace($trace);
-
         return mb_strcut($value, 0, $length);
     }
 
@@ -43,27 +40,10 @@ class Modify
 
         $inputString = strtr($inputString, $replacements);
 
-        $pattern = $isNameField ? "/[^a-zA-ZäöüßÄÖÜ ()+&\\\-_\/:]/u"
-                                : "/[^a-zA-ZäöüßÄÖÜ ,.()+&\\\-_\/:'0-9]/u";
+        $pattern = $isNameField ? "/[^a-zA-ZäöüßÄÖÜ& ()\+\\_\/:\-]/u"
+            : "/[^a-zA-ZäöüßÄÖÜ& ,\.()\+\\_\/:'0-9\-]/u";
 
         // Remove disallowed characters
         return preg_replace($pattern, '', $inputString);
-    }
-
-    private static function getTrace()
-    {
-        $trace = debug_backtrace();
-
-        return $trace[1];
-    }
-
-    private static function logTrace($trace): void
-    {
-        $function = $trace['function'];
-        $file = $trace['file'];
-        $line = $trace['line'];
-        $args = implode(', ', $trace['args']);
-        $message = "Value is truncated: $function($args) in $file:$line";
-        error_log($message);
     }
 }
