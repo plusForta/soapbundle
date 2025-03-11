@@ -1,5 +1,5 @@
 module.exports = {
-    branches: [{name: 'master'}],
+    branches: [{name: 'main'}],
     repositoryUrl: 'https://gitlab.com/plusforta/public/soapbundle.git',
     plugins: [
         '@semantic-release/commit-analyzer',

@@ -141,7 +141,7 @@ Version numbers and changelogs are automatically generated based on commit messa
 
 ### How it works
 
-- **Automated Releases:** When changes are merged into the master branch, the CI pipeline triggers semantic-release 
+- **Automated Releases:** When changes are merged into the main branch, the CI pipeline triggers semantic-release 
   to analyze commit messages and determine if a new release should be published.
 - **Version Incrementing:**
   - **Major Release (X.0.0):** For incompatible API changes. Triggered by a commit that includes `BREAKING CHANGE` in the body or footer.
@@ -151,13 +151,13 @@ Version numbers and changelogs are automatically generated based on commit messa
   - **Tags:** A new git tag corresponding to the version is automatically created.
   - **Changelog:** An updated `CHANGELOG.md` is generated, summarizing the changes.
 
-There are multiple branches for each major version. The master branch is the latest version.
+There are multiple branches for each major version. The main branch is the latest version.
 To update a particular version, checkout the corresponding branch, make a new commit, and tag it.
 
 ### Make Your Changes:
- - For new features or bug fixes, create a feature branch from `master`
+ - For new features or bug fixes, create a feature branch from `main`
 ```shell
-git checkout master
+git checkout main
 git pull
 git checkout -b feature/PF-1234-new-feature
 ```
@@ -179,12 +179,12 @@ Push and Create a Merge Request:
     ```shell
     git push -u origin feature/PF-1234-new-feature
     ```
- - Create a merge request (MR) targeting the master branch.
+ - Create a merge request (MR) targeting the main branch.
  - Ensure all CI checks pass, including Commitlint validation in the pipeline.
 
 ### Merge and Release:
 
- - Once the MR is approved and merged into master, the CI pipeline will automatically run semantic-release.
+ - Once the MR is approved and merged into main, the CI pipeline will automatically run semantic-release.
  - If your commits warrant a new version (e.g., contain feat or fix), a new release will be published, and a git tag will be created.  
 
 
