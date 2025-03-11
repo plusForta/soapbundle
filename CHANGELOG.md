@@ -1,3 +1,10 @@
+## [1.9.2](https://gitlab.com/plusforta/public/soapbundle/compare/v1.9.1...v1.9.2) (2025-03-11)
+
+
+### Bug Fixes
+
+* **PF-10222:** Rearrange order of regex to make the escaping clear.  Add unit tests to verify correct operation ([5043299](https://gitlab.com/plusforta/public/soapbundle/commit/50432993d6b066ede86746b9aeceaacf289baef7))
+
 ## [1.9.1](https://gitlab.com/plusforta/public/soapbundle/compare/v1.9.0...v1.9.1) (2024-11-08)
 
 
