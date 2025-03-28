@@ -23,8 +23,6 @@ class Modify
             return $value;
         }
 
-        $trace = self::getTrace();
-        self::logTrace($trace);
 
         return mb_strcut($value, 0, $length);
     }
@@ -35,35 +33,49 @@ class Modify
     public static function sanitizeString(string $inputString, bool $isNameField = false): string
     {
         $replacements = [
-            'é' => 'e', 'ı' => 'i', 'ć' => 'c', 'á' => 'a', 'č' => 'c', 'ş' => 's', 'ğ' => 'g', 'ł' => 'l', 'ó' => 'o',
-            'İ' => 'I', 'ń' => 'n', 'Ş' => 'S', 'ė' => 'e', 'ž' => 'z', 'è' => 'e', 'â' => 'a', 'í' => 'i', 'ũ' => 'u',
-            'ż' => 'z', 'ë' => 'e', 'ì' => 'i', 'ñ' => 'n', 'Č' => 'C', 'Ć' => 'C', 'Ğ' => 'G', 'Ł' => 'L', 'Ń' => 'N',
-            'Ç' => 'C', 'Ż' => 'Z', 'Š' => 'S', 'Á' => 'A', 'Ś' => 'S', 'É' => 'E', 'š' => 's', 'ċ' => 'c',
+            'é' => 'e',
+            'ı' => 'i',
+            'ć' => 'c',
+            'á' => 'a',
+            'č' => 'c',
+            'ş' => 's',
+            'ğ' => 'g',
+            'ł' => 'l',
+            'ó' => 'o',
+            'İ' => 'I',
+            'ń' => 'n',
+            'Ş' => 'S',
+            'ė' => 'e',
+            'ž' => 'z',
+            'è' => 'e',
+            'â' => 'a',
+            'í' => 'i',
+            'ũ' => 'u',
+            'ż' => 'z',
+            'ë' => 'e',
+            'ì' => 'i',
+            'ñ' => 'n',
+            'Č' => 'C',
+            'Ć' => 'C',
+            'Ğ' => 'G',
+            'Ł' => 'L',
+            'Ń' => 'N',
+            'Ç' => 'C',
+            'Ż' => 'Z',
+            'Š' => 'S',
+            'Á' => 'A',
+            'Ś' => 'S',
+            'É' => 'E',
+            'š' => 's',
+            'ċ' => 'c',
         ];
 
         $inputString = strtr($inputString, $replacements);
 
-        $pattern = $isNameField ? "/[^a-zA-ZäöüßÄÖÜ ()+&\\\-_\/:]/u"
-                                : "/[^a-zA-ZäöüßÄÖÜ ,.()+&\\\-_\/:'0-9]/u";
+        $pattern = $isNameField ? "/[^a-zA-ZäöüßÄÖÜ& ()\+\\_\/:\-]/u" : "/[^a-zA-ZäöüßÄÖÜ& ,\.()\+\\_\/:'0-9\-]/u";
+
 
         // Remove disallowed characters
         return preg_replace($pattern, '', $inputString);
-    }
-
-    private static function getTrace()
-    {
-        $trace = debug_backtrace();
-
-        return $trace[1];
-    }
-
-    private static function logTrace($trace): void
-    {
-        $function = $trace['function'];
-        $file = $trace['file'];
-        $line = $trace['line'];
-        $args = implode(', ', $trace['args']);
-        $message = "Value is truncated: $function($args) in $file:$line";
-        error_log($message);
     }
 }
